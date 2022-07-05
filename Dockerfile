@@ -9,7 +9,8 @@ RUN apk add --update --no-cache \
       yarn \
       imagemagick \
       git \
-      tzdata
+      tzdata \
+      gcompat
 
 RUN mkdir -p /opt/rails
 WORKDIR /opt/rails
