@@ -1,0 +1,58 @@
+version: '3'
+services:
+
+  db:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data:delegated
+
+  webpacker:
+    build: .
+    command: sh -c "rm -rf public/packs && bin/webpack-dev-server"
+    volumes:
+      - .:/opt/rails:delegated
+      - yarn_cache:/opt/yarn:delegated
+      - bundle_cache:/usr/local/bundle:delegated
+      - node_modules_cache:/opt/rails/node_modules:delegated
+    ports:
+      - "3035:3035"
+
+  web:
+    build: .
+    command: sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -b0"
+    environment:
+      - SECRET_KEY_BASE
+    env_file: secrets.env
+    volumes:
+      - .:/opt/rails:delegated
+      - yarn_cache:/opt/yarn:delegated
+      - bundle_cache:/usr/local/bundle:delegated
+      - node_modules_cache:/opt/rails/node_modules:delegated
+    ports:
+      - "3190:3000"
+    healthcheck:
+      disable: true
+    depends_on:
+      - db
+      - webpacker
+      - memcached
+      - mailcatcher
+      - redis
+
+  memcached:
+    image: memcached:1.6-alpine
+
+  mailcatcher:
+    image: schickling/mailcatcher
+    ports:
+      - "1080:1080"
+
+  redis:
+    image: redis:alpine
+
+volumes:
+  yarn_cache:
+  bundle_cache:
+  node_modules_cache:
