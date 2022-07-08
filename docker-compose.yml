@@ -8,9 +8,10 @@ services:
     volumes:
       - ./tmp/db:/var/lib/postgresql/data:delegated
 
-  webpacker:
+  js:
     build: .
-    command: sh -c "rm -rf public/packs && bin/webpack-dev-server"
+    command: sh -c "yarn install --frozen-lockfile && yarn build --watch"
+    tty: true
     volumes:
       - .:/opt/rails:delegated
       - yarn_cache:/opt/yarn:delegated
@@ -36,7 +37,7 @@ services:
       disable: true
     depends_on:
       - db
-      - webpacker
+      - js
       - memcached
       - mailcatcher
       - redis
