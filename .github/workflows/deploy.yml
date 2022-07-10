@@ -1,0 +1,67 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+  workflow_dispatch:
+
+concurrency: production_deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Determine REV
+        run: echo "REV=$(git rev-parse HEAD)" >> $GITHUB_ENV
+
+      - name: Sign in to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Pull last image
+        run: docker pull jmarquis/controllers:latest
+        continue-on-error: true
+
+      - name: Build image
+        run: echo $RAILS_MASTER_KEY > config/master.key && DOCKER_BUILDKIT=1 docker build --secret id=master_key,src=config/master.key -f Dockerfile.production --build-arg BUILDKIT_INLINE_CACHE=1 --cache-from jmarquis/controllers -t jmarquis/controllers:latest -t jmarquis/controllers:$REV .
+        env:
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+
+      - name: Push image
+        run: docker push jmarquis/controllers:latest && docker push jmarquis/controllers:$REV
+
+      - name: Pull image
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.CLOUDY_IP }}
+          username: jeremy
+          key: ${{ secrets.GH_RSA }}
+          script: docker pull jmarquis/controllers:$REV
+          envs: REV
+
+      - name: Migrate database
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.CLOUDY_IP }}
+          username: jeremy
+          key: ${{ secrets.GH_RSA }}
+          script: docker run --network=controllers -e RAILS_ENV=production -v /opt/secrets/controllers.key:/opt/rails/config/master.key:ro jmarquis/controllers:$REV rails db:migrate
+          envs: REV
+
+      - name: Deploy image
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.CLOUDY_IP }}
+          username: jeremy
+          key: ${{ secrets.GH_RSA }}
+          script: docker service update --force --image jmarquis/controllers:$REV controllers
+          envs: REV
+
