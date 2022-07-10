@@ -17,8 +17,16 @@ services:
       - yarn_cache:/opt/yarn:delegated
       - bundle_cache:/usr/local/bundle:delegated
       - node_modules_cache:/opt/rails/node_modules:delegated
-    ports:
-      - "3035:3035"
+
+  css:
+    build: .
+    command: sh -c "yarn install --frozen-lockfile && yarn build:css --watch"
+    tty: true
+    volumes:
+      - .:/opt/rails:delegated
+      - yarn_cache:/opt/yarn:delegated
+      - bundle_cache:/usr/local/bundle:delegated
+      - node_modules_cache:/opt/rails/node_modules:delegated
 
   web:
     build: .
@@ -32,12 +40,13 @@ services:
       - bundle_cache:/usr/local/bundle:delegated
       - node_modules_cache:/opt/rails/node_modules:delegated
     ports:
-      - "3190:3000"
+      - "3199:3000"
     healthcheck:
       disable: true
     depends_on:
       - db
       - js
+      - css
       - memcached
       - mailcatcher
       - redis
