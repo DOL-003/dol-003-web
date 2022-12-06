@@ -10,7 +10,8 @@ RUN apk add --update --no-cache \
       imagemagick \
       git \
       tzdata \
-      gcompat
+      gcompat \
+      libssl1.1
 
 RUN mkdir -p /opt/rails
 WORKDIR /opt/rails
