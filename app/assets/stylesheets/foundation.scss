@@ -1,0 +1,23 @@
+*,
+::before,
+::after,
+::placeholder {
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // @media (prefers-color-scheme: dark) {
+    // -webkit-font-smoothing: initial;
+    // -moz-osx-font-smoothing: initial;
+  // }
+}
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: #fff;
+}

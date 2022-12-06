@@ -1,4 +1,9 @@
-// Entry point for your Sass build
-body {
-  background-color: blue;
-}
+@import "normalize.css/normalize";
+
+@import "./colors";
+@import "./typography";
+@import "./foundation";
+
+@import "./layouts/default";
+
+@import "./header";

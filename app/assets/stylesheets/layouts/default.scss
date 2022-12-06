@@ -1,0 +1,30 @@
+body.layout-default {
+
+  > header {
+    height: 80px;
+  }
+
+  > main {
+  }
+
+  > footer {
+    background-color: $black;
+    color: $platinum;
+  }
+
+  .container {
+
+  }
+
+  .content {
+    padding: 0 3%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    &.grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-gap: 40px;
+    }
+  }
+}

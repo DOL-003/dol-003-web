@@ -3,6 +3,7 @@
   "private": "true",
   "dependencies": {
     "esbuild": "^0.14.48",
+    "normalize.css": "^8.0.1",
     "sass": "^1.53.0"
   },
   "scripts": {

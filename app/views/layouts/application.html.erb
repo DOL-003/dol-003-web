@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>App</title>
+
+    <title>Controllers</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://use.typekit.net/uju8khj.css">
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application", defer: true %>
+
   </head>
 
-  <body>
-    <%= yield %>
+
+  <body class="<%= controller_name %> <%= action_name %> layout-<%= current_layout %>">
+    <%= content_for?(:content) ? yield(:content) : yield %>
   </body>
 </html>
