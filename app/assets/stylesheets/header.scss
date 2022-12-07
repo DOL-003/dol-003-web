@@ -1,7 +1,42 @@
 header {
 
-  > div > div {
-    background-color: green;
-    height: 30px;
+  > .content {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 80px;
+
+    .logo {
+      flex: none;
+      font-size: 20px;
+      line-height: 1;
+      font-weight: bold;
+      padding: 3px 10px 2px;
+      border-radius: 100px;
+      box-shadow: inset 0 0 0 3px $spice;
+      color: $spice;
+    }
+
+    > .menu {
+      margin: 0 0 0 auto;
+      list-style: none;
+      display: flex;
+      flex-flow: row nowrap;
+
+      > li {
+        margin: 0;
+
+        a {
+          text-transform: uppercase;
+          font-size: 14px;
+          letter-spacing: 1px;
+          font-weight: bold;
+        }
+
+        + li {
+          margin-left: 32px;
+        }
+      }
+    }
   }
 }
