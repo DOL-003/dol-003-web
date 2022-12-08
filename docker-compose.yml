@@ -18,6 +18,18 @@ services:
       - bundle_cache:/usr/local/bundle:delegated
       - node_modules_cache:/opt/rails/node_modules:delegated
 
+  vite:
+    build: .
+    command: sh -c "yarn install --frozen-lockfile && bin/vite dev"
+    tty: true
+    ports:
+      - "3036:3036"
+    volumes:
+      - .:/opt/rails:delegated
+      - yarn_cache:/opt/yarn:delegated
+      - bundle_cache:/usr/local/bundle:delegated
+      - node_modules_cache:/opt/rails/node_modules:delegated
+
   css:
     build: .
     command: sh -c "yarn install --frozen-lockfile && yarn build:css --watch"
@@ -46,6 +58,7 @@ services:
     depends_on:
       - db
       - js
+      - vite
       - css
       - memcached
       - mailcatcher
