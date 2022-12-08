@@ -8,8 +8,51 @@ body {
 a {
   text-decoration: none;
   color: $indigo;
+  font-weight: bold;
 
   &:hover {
     color: $black;
   }
+}
+
+h1, h2, h3, p, ol, ul {
+  margin: 0;
+
+  & + h1,
+  & + h2,
+  & + h3 {
+    margin-top: 1.5em;
+  }
+
+  & + p,
+  & + ol,
+  & + ul {
+    margin-top: 1em;
+  }
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+strong {
+  color: $spice;
 }
