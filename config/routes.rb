@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   get '/ping', to: 'application#ping'
 
-  get '/test' to: 'application#test'
+  get '/test', to: 'application#test'
 
 end
