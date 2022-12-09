@@ -1,0 +1,7 @@
+.git
+.github
+.deploy
+tmp
+log
+node_modules
+config/master.key
