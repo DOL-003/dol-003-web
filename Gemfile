@@ -67,3 +67,5 @@ end
 gem 'pry'
 gem 'pry-rails'
 gem 'pry-byebug'
+
+gem 'lograge'
