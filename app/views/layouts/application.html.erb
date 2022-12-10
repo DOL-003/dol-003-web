@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
 
     <title>Controllers</title>
@@ -11,21 +12,17 @@
     <link rel="stylesheet" href="https://use.typekit.net/uju8khj.css">
 
     <%= vite_client_tag %>
-    <%= vite_javascript_tag 'application' %>
-    <!--
-      If using a TypeScript entrypoint file:
-        vite_typescript_tag 'application'
-
-      If using a .jsx or .tsx entrypoint, add the extension:
-        vite_javascript_tag 'application.jsx'
-
-      Visit the guide for more information: https://vite-ruby.netlify.app/guide/rails
-    -->
+    <%= vite_typescript_tag 'base' %>
+    <%= vite_stylesheet_tag 'base.scss' %>
+    <%= vite_typescript_tag "layout-#{current_layout}" %>
+    <%= vite_stylesheet_tag "layout-#{current_layout}.scss" %>
+    <%= vite_typescript_tag controller_name %>
+    <%= vite_stylesheet_tag "#{controller_name}.scss" %>
 
   </head>
-
 
   <body class="<%= controller_name %> <%= action_name %> layout-<%= current_layout %>">
     <%= content_for?(:content) ? yield(:content) : yield %>
   </body>
+
 </html>
