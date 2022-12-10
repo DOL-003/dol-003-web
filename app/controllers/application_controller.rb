@@ -9,4 +9,7 @@ class ApplicationController < ActionController::Base
     head :no_content
   end
 
+  def about
+  end
+
 end
