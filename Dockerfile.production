@@ -25,7 +25,7 @@ RUN yarn config set cache-folder $YARN_CACHE_FOLDER && yarn install --frozen-loc
 
 COPY . ./
 
-RUN --mount=type=secret,id=master_key,dst=/opt/rails/config/master.key rm -rf public/assets/builds && RAILS_ENV=production rails assets:precompile
+RUN --mount=type=secret,id=master_key,dst=/opt/rails/config/master.key --mount=type=secret,id=production_key,dst=/opt/rails/config/credentials/production.key rm -rf public/assets/builds && RAILS_ENV=production rails assets:precompile
 
 EXPOSE 3000
 
