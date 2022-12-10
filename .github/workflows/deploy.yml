@@ -53,7 +53,7 @@ jobs:
           host: ${{ secrets.CLOUDY_IP }}
           username: jeremy
           key: ${{ secrets.GH_RSA }}
-          script: docker run --network=controllers -e RAILS_ENV=production -v /opt/secrets/controllers.key:/opt/rails/config/master.key:ro jmarquis/controllers:$REV rails db:migrate
+          script: docker run --network=controllers -e RAILS_ENV=production -v /opt/secrets/controllers.key:/opt/rails/config/master.key:ro -v /opt/secrets/controllers-production.key:/opt/rails/config/credentials/production.key:ro jmarquis/controllers:$REV rails db:migrate
           envs: REV
 
       - name: Deploy image
