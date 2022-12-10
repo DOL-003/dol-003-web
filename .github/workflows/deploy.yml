@@ -31,9 +31,10 @@ jobs:
         continue-on-error: true
 
       - name: Build image
-        run: echo $RAILS_MASTER_KEY > config/master.key && DOCKER_BUILDKIT=1 docker build --secret id=master_key,src=config/master.key -f Dockerfile.production --build-arg BUILDKIT_INLINE_CACHE=1 --cache-from jmarquis/controllers -t jmarquis/controllers:latest -t jmarquis/controllers:$REV .
+        run: echo $RAILS_MASTER_KEY > config/master.key && echo $RAILS_PRODUCTION_KEY > config/credentials/production.key && DOCKER_BUILDKIT=1 docker build --secret id=master_key,src=config/master.key --secret id=production_key,src=config/credentials/production.key -f Dockerfile.production --build-arg BUILDKIT_INLINE_CACHE=1 --cache-from jmarquis/controllers -t jmarquis/controllers:latest -t jmarquis/controllers:$REV .
         env:
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+          RAILS_PRODUCTION_KEY: ${{ secrets.RAILS_PRODUCTION_KEY }}
 
       - name: Push image
         run: docker push jmarquis/controllers:latest && docker push jmarquis/controllers:$REV
