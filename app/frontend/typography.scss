@@ -1,5 +1,6 @@
 body {
   font-family: source-code-pro, monospace;
+  font-size: 16px;
   font-weight: 400;
   font-style: normal;
   color: $black;
@@ -51,6 +52,10 @@ h3 {
 
 p {
   line-height: 1.5;
+
+  &.big {
+    font-size: 18px;
+  }
 }
 
 strong {
