@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   layout 'default'
 
   def index
-    @user_id = current_user_id
+    @user_id = current_user&.id
   end
 
   def ping
