@@ -2,13 +2,14 @@
 
   <%= render 'header' %>
 
-  <div class="flash">
-    <% flash.each do |type, message| %>
-      <p class="<%= type %>"><%= message %></p>
-    <% end %>
-  </div>
-
   <main>
+
+    <div class="flash">
+      <% flash.each do |type, message| %>
+        <p class="<%= type %>"><%= message %></p>
+      <% end %>
+    </div>
+
     <%= yield %>
   </main>
 
