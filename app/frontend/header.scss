@@ -25,6 +25,7 @@ header {
       list-style: none;
       display: flex;
       flex-flow: row nowrap;
+      align-items: center;
 
       > li {
         margin: 0;
@@ -39,6 +40,14 @@ header {
         + li {
           margin-left: 32px;
         }
+      }
+
+      .avatar {
+        margin: 0;
+        width: 48px;
+        height: 48px;
+        border-radius: 48px;
+        background-color: $platinum;
       }
     }
   }

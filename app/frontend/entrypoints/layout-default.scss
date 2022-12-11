@@ -2,13 +2,20 @@
 @import "../footer";
 
 body.layout-default {
+  display: flex;
+  flex-flow: column;
+  justify-content: stretch;
 
   > header {
     height: 80px;
+    position: relative;
+    z-index: 100;
   }
 
-  > footer {
-    margin-top: 96px;
+  > main {
+    flex: auto;
+    background-color: green;
+    padding-bottom: 96px;
   }
 
   .content {
