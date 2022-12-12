@@ -1,29 +1,38 @@
-<h2>Sign up</h2>
+<div class="content grid">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <section class="span-5">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <h2>Modder registration</h2>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form' }) do |f| %>
+      <%= render 'devise/shared/error_messages', resource: resource %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+      <div class="field">
+        <%= f.label :email, class: 'label' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'text-input large' %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+      <div class="field">
+        <%= f.label :password, class: 'label' %>
+        <%= f.password_field :password, autocomplete: 'new-password', class: 'text-input large' %>
+      </div>
 
-<%= render "devise/shared/links" %>
+      <div class="field">
+        <%= f.label :password_confirmation, 'Confirm password', class: 'label' %>
+        <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'text-input large' %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit 'Sign up', class: 'button' %>
+        <%= link_to 'Sign in', new_session_path(resource_name) %><br />
+      </div>
+    <% end %>
+
+  </section>
+
+  <section class="span-6">
+    <p class="big">Register as a modder and get found by people looking for your services.</p>
+    <p>Note that modder content is regularly monitored and subject to removal at any time by the DOL-003 team. Anyone found impersonating a modder, posting or linking to inappropriate content, or taking other actions that are deemed to violate the standards of the community may be subject to permanent suspension without warning.</p>
+  </section>
+
+</div>
