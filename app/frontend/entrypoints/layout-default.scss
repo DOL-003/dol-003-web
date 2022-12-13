@@ -17,6 +17,34 @@ body.layout-default {
     padding-bottom: 96px;
   }
 
+  .flash {
+
+    > p {
+      padding: 16px 24px;
+      border: 2px solid $platinum;
+      border-radius: 16px;
+
+      &.notice {
+        background-color: hsl(hue($emerald), saturation($emerald), 80%);
+        border-color: hsl(hue($emerald), saturation($emerald), 70%);
+        color: hsl(hue($emerald), saturation($emerald), 20%);
+      }
+
+      &.error {
+        background-color: lighten($mario, 10%);
+        border-color: darken($mario, 20%);
+      }
+
+      & + p {
+        margin-top: 8px;
+      }
+
+      &:last-child {
+        margin-bottom: 64px;
+      }
+    }
+  }
+
   .content {
     width: 100%;
     max-width: 1200px;

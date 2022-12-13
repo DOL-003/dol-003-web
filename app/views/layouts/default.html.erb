@@ -4,13 +4,25 @@
 
   <main>
 
-    <div class="flash">
+    <% if controller_name == 'application' && action_name == 'index' %>
+      <div class="intro" style="background-image:url(<%= image_path 'index-bg.jpg' %>)">
+        <div class="content grid">
+          <section class="span-8">
+            <h1>The ultimate directory<br>of GameCube controller modders</h1>
+            <p class="big">Find your next custom controller, or connect with controller modders who can help with diagnostics, repairs, or upgrades. <a href="/about">About DOL-003</a>
+          </section>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="flash content grid">
       <% flash.each do |type, message| %>
-        <p class="<%= type %>"><%= message %></p>
+        <p class="<%= type %> span-12 big"><%= message %></p>
       <% end %>
     </div>
 
     <%= yield %>
+
   </main>
 
   <%= render 'footer' %>

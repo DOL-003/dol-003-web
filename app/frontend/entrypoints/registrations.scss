@@ -6,5 +6,9 @@ body.registrations {
     align-items: center;
     justify-content: center;
     padding-top: 64px;
+
+    .flash.content.grid {
+      display: none;
+    }
   }
 }
