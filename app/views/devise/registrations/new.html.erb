@@ -5,27 +5,37 @@
     <h2>Modder registration</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form' }) do |f| %>
-      <%= render 'devise/shared/error_messages', resource: resource %>
 
-      <div class="field">
-        <%= f.label :email, class: 'label' %>
-        <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'text-input large' %>
-      </div>
+      <%= render 'form_field', locals: {
+        resource: resource,
+        form: f,
+        field_name: :email,
+        field_type: :email_field,
+        options: { autofocus: true, autocomplete: :email, class: 'text-input large' }
+      } %>
 
-      <div class="field">
-        <%= f.label :password, class: 'label' %>
-        <%= f.password_field :password, autocomplete: 'new-password', class: 'text-input large' %>
-      </div>
+      <%= render 'form_field', locals: {
+        resource: resource,
+        form: f,
+        field_name: :password,
+        field_type: :password_field,
+        options: { autocomplete: 'new-password', class: 'text-input large' }
+      } %>
 
-      <div class="field">
-        <%= f.label :password_confirmation, 'Confirm password', class: 'label' %>
-        <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'text-input large' %>
-      </div>
+      <%= render 'form_field', locals: {
+        resource: resource,
+        form: f,
+        field_name: :password_confirmation,
+        label: 'Confirm password',
+        field_type: :password_field,
+        options: { autocomplete: 'new-password', class: 'text-input large' }
+      } %>
 
       <div class="actions">
         <%= f.submit 'Sign up', class: 'button' %>
         <%= link_to 'Sign in', new_session_path(resource_name) %><br />
       </div>
+
     <% end %>
 
   </section>

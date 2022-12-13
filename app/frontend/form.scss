@@ -1,16 +1,44 @@
 .form {
 
+  .errors {
+    color: $mario;
+    list-style: none;
+    margin: 0 0 32px;
+    padding: 0;
+
+    > li {
+      margin: 0;
+      padding: 0;
+
+      & + li {
+        margin-top: 8px;
+      }
+    }
+  }
+
   .field {
 
     .label {
+      display: inline-block;
       font-size: 12px;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
 
-      & + .text-input {
-        margin-top: 4px;
+    &.error {
+
+      .label {
+        color: $mario;
       }
+    }
+
+    .error-message {
+      font-size: 14px;
+      font-weight: 500;
+      color: $mario;
+      margin: 4px 0 0;
     }
 
     & + .field {
