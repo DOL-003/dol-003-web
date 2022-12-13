@@ -4,20 +4,15 @@
 
   <main>
 
-    <% if controller_name == 'application' && action_name == 'index' %>
-      <div class="intro" style="background-image:url(<%= image_path 'index-bg.jpg' %>)">
-        <div class="content grid">
-          <section class="span-8">
-            <h1>The ultimate directory<br>of GameCube controller modders</h1>
-            <p class="big">Find your next custom controller, or connect with controller modders who can help with diagnostics, repairs, or upgrades. <a href="/about">About DOL-003</a>
-          </section>
-        </div>
-      </div>
-    <% end %>
-
-    <div class="flash content grid">
+    <div class="flash">
+      <% flash.notice = 'A message with a confirmation link has been sent to your email address. Please follow the link to activate your account.' %>
       <% flash.each do |type, message| %>
-        <p class="<%= type %> span-12 big"><%= message %></p>
+        <% key = (0...8).map { (65 + rand(26)).chr }.join %>
+        <input type="checkbox" id="<%= key %>">
+        <div class="<%= type %>">
+          <p><%= message %></p>
+          <label for="<%= key %>"><%= inline_svg_tag 'x.svg' %></label>
+        </div>
       <% end %>
     </div>
 

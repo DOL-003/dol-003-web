@@ -1,0 +1,80 @@
+@keyframes fadein {
+
+  from {
+    opacity: 0;
+    transform: translateY(-32px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.flash {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 90vw;
+  max-width: 640px;
+
+  > input {
+    display: none;
+
+    &:checked + div {
+      display: none;
+    }
+  }
+
+  > div {
+    padding: 16px 64px 18px 24px;
+    border: 2px solid $platinum;
+    border-radius: 16px;
+    box-shadow: 0 12px 12px -16px $black;
+    opacity: 0;
+    animation: fadein .4s ease-out 1s forwards;
+
+    &.notice {
+      background-color: hsl(hue($emerald), saturation($emerald), 80%);
+      border-color: hsl(hue($emerald), saturation($emerald), 60%);
+      color: hsl(hue($emerald), saturation($emerald), 20%);
+
+      label {
+        color: $emerald;
+
+        &:hover {
+          color: darken($emerald, 10%);
+        }
+      }
+    }
+
+    &.error {
+      background-color: lighten($mario, 10%);
+      border-color: darken($mario, 20%);
+    }
+
+    > label {
+      position: absolute;
+      display: block;
+      top: 16px;
+      right: 16px;
+      cursor: pointer;
+      padding: 4px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      &:hover {
+        color: $black;
+      }
+    }
+
+    & + p {
+      margin-top: 8px;
+    }
+  }
+}

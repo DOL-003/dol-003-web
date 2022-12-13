@@ -106,6 +106,9 @@ GEM
       activesupport (>= 5.0)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
+    inline_svg (1.8.0)
+      activesupport (>= 3.0)
+      nokogiri (>= 1.6)
     io-console (0.5.11)
     irb (1.4.1)
       reline (>= 0.3.0)
@@ -253,6 +256,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  inline_svg
   jbuilder
   lograge
   pg (~> 1.1)
