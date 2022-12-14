@@ -7,8 +7,9 @@ Rails.application.routes.draw do
 
   get '/about', to: 'application#about'
 
-  get '/auth', to: 'modders#auth', as: 'auth'
-  get '/onboarding', to: 'modders#onboarding', as: 'onboarding'
-  get '/profile', to: 'modders#profile', as: 'profile'
+  get '/onboarding', to: 'modders#onboarding', as: :onboarding
+  get '/profile', to: 'modders#profile', as: :user_root
+
+  resources :modders
 
 end

@@ -10,9 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_11_033803) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_14_041729) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "modders", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "name", null: false
+    t.string "slug", null: false
+    t.string "description"
+    t.string "twitter_username"
+    t.string "etsy_shop"
+    t.string "website_url"
+    t.string "featured_link"
+    t.string "status", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_modders_on_slug", unique: true
+    t.index ["user_id"], name: "index_modders_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

@@ -1,8 +1,8 @@
-<% errors = resource.errors.select { |message| message.attribute == locals[:field_name] } %>
+<% errors = locals[:resource].errors.select { |message| message.attribute == locals[:field_name] } %>
 <div class="field<%= ' error' if errors.any? %>">
   <% if locals[:label].present? %>
     <%= locals[:form].label locals[:field_name], locals[:label], class: 'label' %>
-  <% else %>
+  <% elsif locals[:label] != false %>
     <%= locals[:form].label locals[:field_name], class: 'label' %>
   <% end %>
   <%= locals[:form].send locals[:field_type], locals[:field_name], locals[:options] %>
