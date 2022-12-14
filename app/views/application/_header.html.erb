@@ -2,12 +2,14 @@
   <div class="content">
     <a href="/" class="logo">DOL-003</a>
     <ul class="menu">
-      <li><a href="#">About</a></li>
       <li><a href="#">Find a modder</a></li>
-      <li><a href="#">Get listed</a></li>
-      <li>
-        <figure class="avatar"></figure>
-      </li>
+      <% if user_signed_in? %>
+        <li>
+          <figure class="avatar"></figure>
+        </li>
+      <% else %>
+        <li><%= link_to 'Get listed', new_registration_path %></li>
+      <% end %>
     </ul>
   </div>
 </header>
