@@ -50,9 +50,19 @@
       }
     }
 
-    &.error {
-      background-color: lighten($mario, 10%);
-      border-color: darken($mario, 20%);
+    &.error,
+    &.alert {
+      background-color: hsl(hue($mario), saturation($mario), 90%);
+      border-color: hsl(hue($mario), saturation($mario), 70%);
+      color: hsl(hue($mario), saturation($mario), 20%);
+
+      label {
+        color: hsl(hue($mario), saturation($mario), 70%);
+
+        &:hover {
+        color: hsl(hue($mario), saturation($mario), 50%);
+        }
+      }
     }
 
     > label {
@@ -62,6 +72,7 @@
       right: 16px;
       cursor: pointer;
       padding: 4px;
+      color: rgba($black, 20%);
 
       svg {
         width: 16px;
@@ -69,7 +80,7 @@
       }
 
       &:hover {
-        color: $black;
+        color: rgba($black, 40%);
       }
     }
 
