@@ -3,11 +3,11 @@
     <a href="/" class="logo">DOL-003</a>
     <ul class="menu">
       <li><a href="#">Find a modder</a></li>
-      <% if user_signed_in? %>
+      <% if current_modder.present? %>
         <li>
           <figure class="avatar"></figure>
         </li>
-      <% else %>
+      <% elsif !user_signed_in? %>
         <li><%= link_to 'Get listed', new_registration_path %></li>
       <% end %>
     </ul>

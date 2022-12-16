@@ -3,7 +3,7 @@
 # Table name: modders
 #
 #  id               :bigint           not null, primary key
-#  description      :string
+#  bio              :string
 #  etsy_shop        :string
 #  featured_link    :string
 #  name             :string           not null
@@ -22,4 +22,18 @@
 #
 class Modder < ApplicationRecord
   belongs_to :user
+
+  attribute :status, :string, default: 'active'
+
+  validates :name, presence: true, length: { minimum: 3, maximum: 50 }
+  validates :bio, length: { maximum: 500 }
+  validates :slug, presence: true, uniqueness: true
+
+  before_validation :generate_slug, if: :will_save_change_to_name?
+
+  private
+
+  def generate_slug
+    self.slug = name.parameterize
+  end
 end

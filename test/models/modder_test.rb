@@ -3,7 +3,7 @@
 # Table name: modders
 #
 #  id               :bigint           not null, primary key
-#  description      :string
+#  bio              :string
 #  etsy_shop        :string
 #  featured_link    :string
 #  name             :string           not null

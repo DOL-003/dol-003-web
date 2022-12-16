@@ -7,9 +7,9 @@ Rails.application.routes.draw do
 
   get '/about', to: 'application#about'
 
-  get '/onboarding', to: 'modders#onboarding', as: :onboarding
-  get '/profile', to: 'modders#profile', as: :user_root
+  get '/profile', to: 'profiles#show', as: :user_root
+  resource :profile, only: [:edit, :update, :create]
 
-  resources :modders
+  resources :modders, only: [:index, :get]
 
 end

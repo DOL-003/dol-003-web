@@ -13,4 +13,12 @@ class ApplicationController < ActionController::Base
   def about
   end
 
+  protected
+
+  def current_modder
+    return nil if !user_signed_in?
+
+    Modder.find_by(user: current_user)
+  end
+
 end
