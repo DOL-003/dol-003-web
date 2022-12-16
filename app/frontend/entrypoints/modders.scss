@@ -11,15 +11,6 @@ body.modders.show {
 
   section.info {
 
-    .logo {
-      flex: none;
-      margin: 0;
-      width: 64px;
-      height: 64px;
-      background-color: $platinum;
-      border-radius: 64px;
-    }
-
     .meta {
       display: flex;
 
@@ -29,6 +20,7 @@ body.modders.show {
         height: 64px;
         background-color: $platinum;
         border-radius: 64px;
+        margin-left: -2px;
       }
 
       > div {
@@ -68,6 +60,7 @@ body.modders.show {
       }
 
       &.button {
+        margin-right: -2px;
 
         svg {
           margin: 0 0 0 12px;
