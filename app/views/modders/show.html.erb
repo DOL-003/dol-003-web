@@ -1,1 +1,37 @@
-Modder view! <%= @modder.id %>
+<div class="content grid">
+
+  <section class="span-12 photos">
+    photos
+  </section>
+
+  <section class="span-8 info">
+    <div class="meta">
+      <figure class="logo"></figure>
+      <div>
+        <h1><%= @modder.name %></h1>
+        <p><%= @modder.bio %></p>
+      </div>
+    </div>
+    <div class="services">
+      services
+    </div>
+  </section>
+
+  <nav class="span-4 links">
+    <%= link_to 'https://google.com', class: 'button' do %>Visit website<%= inline_svg_tag 'external' %><% end %>
+    <a href="#"><%= inline_svg_tag 'twitter' %> @VulpineCustoms</a>
+    <a href="#"><%= inline_svg_tag 'instagram' %> VulpineCustoms</a>
+    <a href="#"><%= inline_svg_tag 'email' %> hello@vulpinecustoms.com</a>
+  </nav>
+
+  <section class="span-12 location">
+    location
+  </section>
+
+  <section class="span-8 get-listed">
+    <h2>Are you a modder? <strong>Get listed.</strong></h2>
+    <p>Players are always looking for great controllers. Create an account and get found by people looking for your skills.</p>
+    <p class="actions"><%= link_to 'Get started →', new_user_registration_path, class: 'button secondary' %> <%= link_to 'Sign in', new_user_session_path %></p>
+  </section>
+
+</div>

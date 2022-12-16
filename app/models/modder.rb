@@ -31,6 +31,10 @@ class Modder < ApplicationRecord
 
   before_validation :generate_slug, if: :will_save_change_to_name?
 
+  def to_param
+    slug
+  end
+
   private
 
   def generate_slug

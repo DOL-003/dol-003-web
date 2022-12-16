@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   get '/profile', to: 'profiles#show', as: :user_root
   resource :profile, only: [:edit, :update, :create]
 
-  resources :modders, only: [:index, :get]
+  resources :modders, only: [:index, :show]
 
 end

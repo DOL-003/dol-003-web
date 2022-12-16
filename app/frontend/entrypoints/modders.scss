@@ -1,16 +1,83 @@
-body.modders.onboarding {
+@import "../colors";
 
-  .form {
+body.modders.show {
 
-    > .content {
-      margin-top: 48px;
+  section.photos {
+    height: 20vw;
+    min-height: 180px;
+    max-height: 280px;
+    background-color: skyblue;
+  }
 
-      .caption {
-        padding-top: 13px;
+  section.info {
+
+    .logo {
+      flex: none;
+      margin: 0;
+      width: 64px;
+      height: 64px;
+      background-color: $platinum;
+      border-radius: 64px;
+    }
+
+    .meta {
+      display: flex;
+
+      > .logo {
+        margin: 0;
+        width: 64px;
+        height: 64px;
+        background-color: $platinum;
+        border-radius: 64px;
       }
 
-      .input-container {
-        padding-left: 48px;
+      > div {
+        flex: auto;
+        margin-left: 24px;
+        padding-top: 13px;
+      }
+    }
+
+    .services {
+      margin-top: 48px;
+    }
+  }
+
+  nav.links {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    padding-top: 8px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      font-size: 14px;
+
+      svg {
+        margin-right: 8px;
+      }
+
+      & + a {
+        margin-top: 16px;
+      }
+
+      &.button {
+
+        svg {
+          margin: 0 0 0 12px;
+          position: relative;
+          top: -1px;
+        }
+
+        & + a {
+          margin-top: 24px;
+        }
       }
     }
   }

@@ -58,6 +58,16 @@ p {
     font-size: 18px;
     font-weight: 500;
   }
+
+  &.actions {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    > * + * {
+      margin-left: 24px;
+    }
+  }
 }
 
 strong {

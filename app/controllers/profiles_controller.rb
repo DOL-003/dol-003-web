@@ -4,9 +4,7 @@ class ProfilesController < ApplicationController
 
   def show
     return redirect_to edit_profile_path if current_modder.blank?
-
-    @modder = current_modder
-    render 'modders/show'
+    return redirect_to modder_path(current_modder)
   end
 
   def edit
