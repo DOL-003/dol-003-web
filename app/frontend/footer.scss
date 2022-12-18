@@ -6,5 +6,9 @@ footer {
   .sign-in-link {
     display: flex;
     justify-content: flex-end;
+
+    .button {
+      margin-right: -2px;
+    }
   }
 }

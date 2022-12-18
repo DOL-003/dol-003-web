@@ -4,8 +4,23 @@
     <ul class="menu">
       <li><a href="#">Find a modder</a></li>
       <% if current_modder.present? %>
-        <li>
-          <figure class="avatar"></figure>
+        <li class="user-menu">
+
+          <input type="checkbox" id="user-menu-toggle">
+
+          <div class="overlay-trim"></div>
+
+          <label for="user-menu-toggle">
+            <figure class="avatar"></figure>
+          </label>
+
+          <ul class="overlay">
+            <li class="name"><p class="big"><%= current_modder.name %></p></li>
+            <li><a href="#">Edit profile</a></li>
+            <li><a href="#">Account settings</a></li>
+            <li><a href="#">Sign out</a></li>
+          </ul>
+
         </li>
       <% elsif !user_signed_in? %>
         <li><%= link_to 'Get listed', new_registration_path %></li>
