@@ -47,10 +47,27 @@
       } %>
     </div>
 
+    <div class="span-4 caption">
+      <p class="label large">Services offered<p>
+      <p>Hehehhehe ha hahahha hohohohhoho</p>
+    </div>
+
+    <div class="span-8 input-container">
+      services UI
+    </div>
+
+    <% if !@onboarding %>
+
+      <h2>Photos</h2>
+
+      <div class="span-12">Photos UI here</div>
+
+    <% end %>
+
   </div>
 
   <div class="content">
-    <%= form.submit 'Continue →', class: 'button' %>
+    <%= form.submit (@onboarding ? 'Continue →' : 'Save'), class: 'button' %>
   </div>
 
 <% end %>
