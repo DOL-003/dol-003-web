@@ -2,4 +2,9 @@ footer {
   background-color: $black;
   color: $platinum;
   padding: 64px 0 72px;
+
+  .sign-in-link {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
