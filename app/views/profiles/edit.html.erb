@@ -1,14 +1,22 @@
-<div class="content">
+<div class="content grid">
   <% if @onboarding %>
-    <h2>Welcome! Tell us a little about yourself.</h2>
+    <h2 class="span-12">Welcome! Tell us a little about yourself.</h2>
   <% else %>
-    <h2>Edit your profile</h2>
+    <div class="span-8">
+      <h1>Edit your profile</h1>
+      <p>Keep your information up to date to ensure you’re only contacted by players looking for what you’re currently offering.</p>
+    </div>
   <% end %>
 </div>
 
 <%= form_with model: @modder, url: profile_path, html: { class: 'form' } do |form| %>
 
   <div class="content grid">
+
+    <% if !@onboarding %>
+      <h2 class="span-12">General info</h2>
+    <% end %>
+
     <div class="span-4 caption">
       <%= form.label :name, 'Modder name', class: 'label large' %>
       <p>The name you use as a modder. This can be a brand name or your actual name, whichever you use to advertise your modding services. You can change this later if necessary.</p>
@@ -23,9 +31,7 @@
         options: { autofocus: true, class: 'text-input large', placeholder: 'Something Something Customs' }
       } %>
     </div>
-  </div>
 
-  <div class="content grid">
     <div class="span-4 caption">
       <%= form.label :bio, 'About you', class: 'label large' %>
       <p>A short bio introducing yourself to people who see your profile. 500 characters max. Note that line breaks will not be preserved.</p>
@@ -40,6 +46,7 @@
         options: { autofocus: true, maxlength: 500, class: 'textarea height-medium', placeholder: 'I started modding controllers in 1973 and ...' }
       } %>
     </div>
+
   </div>
 
   <div class="content">
