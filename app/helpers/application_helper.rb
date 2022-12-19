@@ -10,4 +10,8 @@ module ApplicationHelper
     Modder.find_by(user: current_user)
   end
 
+  def react_component(component, props = {})
+    render 'react_component', locals: { component: component, props: props.to_json }
+  end
+
 end

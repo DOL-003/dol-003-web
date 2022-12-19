@@ -2,6 +2,9 @@ import { defineConfig } from 'vite'
 import RubyPlugin from 'vite-plugin-ruby'
 
 export default defineConfig({
+  additionalEntrypoints: [
+    "@/components/*"
+  ],
   plugins: [
     RubyPlugin(),
   ],

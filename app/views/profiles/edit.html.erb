@@ -19,7 +19,7 @@
 
     <div class="span-4 caption">
       <%= form.label :name, 'Modder name', class: 'label large' %>
-      <p>The name you use as a modder. This can be a brand name or your actual name, whichever you use to advertise your modding services. You can change this later if necessary.</p>
+      <p class="small">The name you use as a modder. This can be a brand name or your actual name, whichever you use to advertise your modding services. You can change this later if necessary.</p>
     </div>
     <div class="span-8 input-container">
       <%= render 'form_field', locals: {
@@ -34,7 +34,7 @@
 
     <div class="span-4 caption">
       <%= form.label :bio, 'About you', class: 'label large' %>
-      <p>A short bio introducing yourself to people who see your profile. 500 characters max. Note that line breaks will not be preserved.</p>
+      <p class="small">A short bio introducing yourself to people who see your profile. 500 characters max. Note that line breaks will not be preserved.</p>
     </div>
     <div class="span-8 input-container">
       <%= render 'form_field', locals: {
@@ -48,12 +48,23 @@
     </div>
 
     <div class="span-4 caption">
-      <p class="label large">Services offered<p>
-      <p>Hehehhehe ha hahahha hohohohhoho</p>
+      <p class="label large">Location</p>
+      <p class="small">Specify where you’re located so nearby players can find you.</p>
     </div>
 
     <div class="span-8 input-container">
-      services UI
+      location UI
+    </div>
+
+    <div class="span-4 caption">
+      <p class="label large">Services offered<p>
+      <p class="small">Select the services you’re currently offering. This will be displayed on your profile and used to filter search results. You can update this as often as needed to reflect your current offerings.</p>
+    </div>
+
+    <div class="span-8 input-container">
+      <%= react_component "ServiceSelector", {
+        test: 'oajwfijaweoij'
+      } %>
     </div>
 
     <% if !@onboarding %>
