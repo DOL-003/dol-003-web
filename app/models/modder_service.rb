@@ -14,5 +14,12 @@
 #  index_modder_services_on_modder_id  (modder_id)
 #
 class ModderService < ApplicationRecord
+
+  SERVICES = [
+    { name: 'prebuilt controllers', color: '#fdb03a' },
+    { name: 'repairs', color: '#fdb03a' }
+  ]
+
   belongs_to :modder
+
 end

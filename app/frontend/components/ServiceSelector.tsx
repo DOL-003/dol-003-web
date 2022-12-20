@@ -1,17 +1,22 @@
 import React from "react"
 
 interface Service {
-  readonly value: string;
-  readonly label: string;
+  readonly name: string;
   readonly color: string;
-  readonly isFixed?: boolean;
-  readonly isDisabled?: boolean;
+}
+
+interface ServiceSelectorProps {
+  readonly services: Service[]
 }
 
 const services: Service[] = [
 
 ]
 
-export default props => {
-  return <div>hello! {props.test}</div>
+export default (props: ServiceSelectorProps) => {
+  return (
+    <div className="ServiceSelector">
+      {props.services.map(service => <p>Service: {service.name}</p>)}
+    </div>
+  )
 }
