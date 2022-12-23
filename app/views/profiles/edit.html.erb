@@ -62,9 +62,11 @@
     </div>
 
     <div class="span-8 input-container">
-      <%= react_component "ServiceSelector", {
-        services: ModderService::SERVICES
-      } %>
+      <%=
+        react_component "ServiceSelector", {
+          services: ModderService::SERVICES.map { |service| { value: service[:name], label: service[:name], color: service[:color] } }
+        }
+      %>
     </div>
 
     <% if !@onboarding %>
