@@ -20,4 +20,8 @@
   &.height-medium {
     height: 240px;
   }
+
+  &::placeholder {
+    color: $platinum;
+  }
 }

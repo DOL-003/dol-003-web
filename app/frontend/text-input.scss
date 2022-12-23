@@ -22,4 +22,8 @@
   &.large {
     width: 360px;
   }
+
+  &::placeholder {
+    color: $platinum;
+  }
 }
