@@ -55,21 +55,19 @@ const SortableSelect = SortableContainer(Select) as React.ComponentClass<
 >;
 
 interface ServiceSelectorProps {
-  readonly services: ServiceOption[]
+  readonly allServices: ServiceOption[]
+  readonly modderServices: ServiceOption[],
+  readonly fieldName: string
 }
 
 export default (props: ServiceSelectorProps) => {
 
-  const [selected, setSelected] = useState<readonly ServiceOption[]>([])
+  const [selectedServices, setSelectedServices] = useState<readonly ServiceOption[]>(props.modderServices)
 
-  const onChange = (selectedOptions: OnChangeValue<ServiceOption, true>) => setSelected(selectedOptions);
+  const onChange = (selectedOptions: OnChangeValue<ServiceOption, true>) => setSelectedServices(selectedOptions);
   const onSortEnd: SortEndHandler = ({ oldIndex, newIndex }) => {
-    const newValue = arrayMove(selected, oldIndex, newIndex);
-    setSelected(newValue);
-    console.log(
-      'Values sorted:',
-      newValue.map((i) => i.value)
-    );
+    const newValue = arrayMove(selectedServices, oldIndex, newIndex);
+    setSelectedServices(newValue);
   };
 
   return (
@@ -84,8 +82,8 @@ export default (props: ServiceSelectorProps) => {
         getHelperDimensions={({ node }) => node.getBoundingClientRect()}
         // react-select props:
         isMulti
-        options={props.services}
-        value={selected}
+        options={props.allServices}
+        value={selectedServices}
         onChange={onChange}
         components={{
           // @ts-ignore We're failing to provide a required index prop to SortableElement
@@ -96,6 +94,11 @@ export default (props: ServiceSelectorProps) => {
         unstyled
         className="ServiceSelector"
         classNamePrefix="service-selector"
+      />
+      <input
+        type="hidden"
+        name={props.fieldName}
+        value={JSON.stringify(selectedServices.map(service => service.value))}
       />
     </div>
   )

@@ -15,7 +15,7 @@
 #
 class ModderService < ApplicationRecord
 
-  SERVICES = [
+  ALL_SERVICES = [
     { name: 'prebuilt controllers', color: '#fdb03a' },
     { name: 'diagnostics/repairs', color: '#fdb03a' },
     { name: 'phobs', color: '#fdb03a' },
@@ -31,9 +31,19 @@ class ModderService < ApplicationRecord
     { name: 'shell dyeing', color: '#fdb03a' },
     { name: 'electrical mods', color: '#fdb03a' },
     { name: 'paracords', color: '#fdb03a' },
-    { name: 'notching', color: '#fdb03a' },
-  ]
+    { name: 'notching', color: '#fdb03a' }
+  ].freeze
 
   belongs_to :modder
+
+  def self.enabled_services
+    ALL_SERVICES.reject { |service| service[:disabled] }
+  end
+
+  def self.get_service_by_slug(service_slug)
+    ALL_SERVICES.each do |service|
+      return service if service[:name].parameterize == service_slug
+    end
+  end
 
 end

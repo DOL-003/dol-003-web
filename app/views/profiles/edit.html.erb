@@ -64,8 +64,17 @@
     <div class="span-8 input-container">
       <%=
         react_component "ServiceSelector", {
-          services: ModderService::SERVICES.map { |service| { value: service[:name], label: service[:name], color: service[:color] } }
-        }
+          field_name: 'modder[services]',
+          all_services: ModderService::ALL_SERVICES.map { |service| { value: service[:name].parameterize, label: service[:name], color: service[:color] } },
+          modder_services: @modder.modder_services.map { |modder_service|
+            service = ModderService.get_service_by_slug(modder_service.service)
+            {
+              value: service[:name].parameterize,
+              label: service[:name],
+              color: service[:color]
+            }
+          }
+        }.deep_transform_keys { |key| key.to_s.camelize(:lower) }
       %>
     </div>
 

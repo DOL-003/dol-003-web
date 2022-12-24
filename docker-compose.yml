@@ -18,7 +18,6 @@ services:
       - .:/opt/rails:delegated
       - yarn_cache:/opt/yarn:delegated
       - bundle_cache:/usr/local/bundle:delegated
-      - node_modules_cache:/opt/rails/node_modules:delegated
 
   web:
     build: .
@@ -30,7 +29,6 @@ services:
       - .:/opt/rails:delegated
       - yarn_cache:/opt/yarn:delegated
       - bundle_cache:/usr/local/bundle:delegated
-      - node_modules_cache:/opt/rails/node_modules:delegated
     ports:
       - "3199:3000"
     healthcheck:

@@ -1,3 +1,6 @@
 .git
 .github
+tmp
+log
+node_modules
 config/master.key

@@ -22,6 +22,7 @@
 #
 class Modder < ApplicationRecord
   belongs_to :user
+  has_many :modder_services
 
   attribute :status, :string, default: 'active'
 
