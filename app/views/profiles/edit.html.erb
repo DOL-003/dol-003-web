@@ -53,7 +53,11 @@
     </div>
 
     <div class="span-8 input-container">
-      location UI
+      <%=
+        react_component "LocationSelector", {
+          model_name: 'modder'
+        }.deep_transform_keys { |key| key.to_s.camelize(:lower) }
+      %>
     </div>
 
     <div class="span-4 caption">

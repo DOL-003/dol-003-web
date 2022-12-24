@@ -7,6 +7,7 @@
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-google-autocomplete": "^2.7.1",
     "react-select": "^5.7.0",
     "react-sortable-hoc": "^2.0.0",
     "sass": "^1.53.0",
