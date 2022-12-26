@@ -11,7 +11,10 @@ module ApplicationHelper
   end
 
   def react_component(component, props = {})
-    render 'react_component', locals: { component: component, props: props.to_json }
+    render 'react_component', locals: {
+      component:,
+      props: props.deep_transform_keys do |key| key.to_s.camelize(:lower) end.to_json
+    }
   end
 
 end

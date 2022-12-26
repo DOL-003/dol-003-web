@@ -31,7 +31,13 @@
   </nav>
 
   <section class="span-12 location">
-    location
+    <%=
+      react_component 'ModderMap', {
+        modder_name: 'blah',
+        latitude: @modder.latitude,
+        longitude: @modder.longitude
+      }
+    %>
   </section>
 
   <section class="span-8 get-listed">

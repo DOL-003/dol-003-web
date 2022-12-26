@@ -59,7 +59,7 @@
           city: @modder.city,
           latitude: @modder.latitude,
           longitude: @modder.longitude
-        }.deep_transform_keys { |key| key.to_s.camelize(:lower) }
+        }
       %>
     </div>
 
@@ -81,7 +81,7 @@
               color: service[:color]
             }
           }
-        }.deep_transform_keys { |key| key.to_s.camelize(:lower) }
+        }
       %>
     </div>
 
