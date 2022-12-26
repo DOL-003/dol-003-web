@@ -1,74 +1,73 @@
 import "./ServiceSelector.scss"
 
-import React, {
-  MouseEventHandler,
-  useState
-} from "react"
+import React, { MouseEventHandler, useState } from "react"
 import Select, {
   components,
   MultiValueGenericProps,
   MultiValueProps,
   OnChangeValue,
   Props,
-} from "react-select";
+} from "react-select"
 import {
   SortableContainer,
   SortableContainerProps,
   SortableElement,
   SortEndHandler,
   SortableHandle,
-} from "react-sortable-hoc";
+} from "react-sortable-hoc"
 
 interface ServiceOption {
-  readonly value: string;
-  readonly label: string;
-  readonly color: string;
+  readonly value: string
+  readonly label: string
+  readonly color: string
 }
 
 function arrayMove<T>(array: readonly T[], from: number, to: number) {
-  const slicedArray = array.slice();
+  const slicedArray = array.slice()
   slicedArray.splice(
     to < 0 ? array.length + to : to,
     0,
     slicedArray.splice(from, 1)[0]
-  );
-  return slicedArray;
+  )
+  return slicedArray
 }
 
 const SortableMultiValue = SortableElement(
   (props: MultiValueProps<ServiceOption>) => {
     const onMouseDown: MouseEventHandler<HTMLDivElement> = (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-    };
-    const innerProps = { ...props.innerProps, onMouseDown };
-    return <components.MultiValue {...props} innerProps={innerProps} />;
+      e.preventDefault()
+      e.stopPropagation()
+    }
+    const innerProps = { ...props.innerProps, onMouseDown }
+    return <components.MultiValue {...props} innerProps={innerProps} />
   }
-);
+)
 
 const SortableMultiValueLabel = SortableHandle(
   (props: MultiValueGenericProps) => <components.MultiValueLabel {...props} />
-);
+)
 
 const SortableSelect = SortableContainer(Select) as React.ComponentClass<
   Props<ServiceOption, true> & SortableContainerProps
->;
+>
 
 interface ServiceSelectorProps {
   readonly allServices: ServiceOption[]
-  readonly modderServices: ServiceOption[],
+  readonly modderServices: ServiceOption[]
   readonly fieldName: string
 }
 
 export default (props: ServiceSelectorProps) => {
+  const [selectedServices, setSelectedServices] = useState<
+    readonly ServiceOption[]
+  >(props.modderServices)
 
-  const [selectedServices, setSelectedServices] = useState<readonly ServiceOption[]>(props.modderServices)
-
-  const onChange = (selectedOptions: OnChangeValue<ServiceOption, true>) => setSelectedServices(selectedOptions);
+  const onChange = (selectedOptions: OnChangeValue<ServiceOption, true>) =>
+    setSelectedServices(selectedOptions)
   const onSortEnd: SortEndHandler = ({ oldIndex, newIndex }) => {
-    const newValue = arrayMove(selectedServices, oldIndex, newIndex);
-    setSelectedServices(newValue);
-  };
+    const newValue = arrayMove(selectedServices, oldIndex, newIndex)
+    setSelectedServices(newValue)
+  }
 
   return (
     <div className="ServiceSelector">
@@ -94,13 +93,26 @@ export default (props: ServiceSelectorProps) => {
         unstyled
         className="ServiceSelector"
         classNamePrefix="service-selector"
+        styles={{
+          option: (styles, { data }) => {
+            return {
+              ...styles,
+              "--service-color": data.color,
+            }
+          },
+          multiValue: (styles, { data }) => {
+            return {
+              ...styles,
+              "--service-color": data.color,
+            }
+          },
+        }}
       />
       <input
         type="hidden"
         name={props.fieldName}
-        value={JSON.stringify(selectedServices.map(service => service.value))}
+        value={JSON.stringify(selectedServices.map((service) => service.value))}
       />
     </div>
   )
-
 }

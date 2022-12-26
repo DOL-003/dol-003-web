@@ -16,7 +16,8 @@
     <div class="services">
       <ol>
         <% @modder.modder_services.map do |service| %>
-          <li><%= ModderService::ALL_SERVICES[service.service.to_sym][:name] %></li>
+          <% svc = ModderService::ALL_SERVICES[service.service.to_sym] %>
+          <li style="--service-color: <%= svc[:color] %>"><%= svc[:name] %></li>
         <% end %>
       </ol>
     </div>

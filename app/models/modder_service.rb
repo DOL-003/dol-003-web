@@ -16,22 +16,33 @@
 class ModderService < ApplicationRecord
 
   ALL_SERVICES = {
-    'prebuilt-controllers': { name: 'prebuilt controllers', color: '#fdb03a' },
-    'diagnostics-repairs': { name: 'diagnostics/repairs', color: '#fdb03a' },
-    'phobs': { name: 'phobs', color: '#fdb03a' },
-    'snapback-modules': { name: 'snapback modules', color: '#fdb03a' },
-    'accepting-send-ins': { name: 'accepting send-ins', color: '#fdb03a' },
-    'commissions-open': { name: 'commissions open', color: '#fdb03a' },
+
+    # meta
+    'prebuilt-controllers': { name: 'prebuilt controllers', color: '#222' },
+    'accepting-send-ins': { name: 'accepting send-ins', color: '#222' },
+    'commissions-open': { name: 'commissions open', color: '#222' },
+    'diagnostics-repairs': { name: 'diagnostics/repairs', color: '#222' },
+
+    # functional/electrical
+    'phobs': { name: 'phobs', color: '#444f9a' },
+    'snapback-modules': { name: 'snapback modules', color: '#444f9a' },
+    'electrical-mods': { name: 'electrical mods', color: '#444f9a' },
+    'notching': { name: 'notching', color: '#444f9a' },
+
+    # resin
     'resin-buttons': { name: 'resin buttons', color: '#fdb03a' },
     'resin-sticks': { name: 'resin sticks', color: '#fdb03a' },
     'resin-triggers': { name: 'resin triggers', color: '#fdb03a' },
     'resin-shells': { name: 'resin shells', color: '#fdb03a' },
-    'shell-painting': { name: 'shell painting', color: '#fdb03a' },
-    'shell-tinting': { name: 'shell tinting', color: '#fdb03a' },
-    'shell-dyeing': { name: 'shell dyeing', color: '#fdb03a' },
-    'electrical-mods': { name: 'electrical mods', color: '#fdb03a' },
-    'paracords': { name: 'paracords', color: '#fdb03a' },
-    'notching': { name: 'notching', color: '#fdb03a' }
+
+    # shell art
+    'shell-painting': { name: 'shell painting', color: '#0d8b98' },
+    'shell-tinting': { name: 'shell tinting', color: '#0d8b98' },
+    'shell-dyeing': { name: 'shell dyeing', color: '#0d8b98' },
+
+    # other aesthetics
+    'paracords': { name: 'paracords', color: '#c12022' },
+
   }.freeze
 
   belongs_to :modder
