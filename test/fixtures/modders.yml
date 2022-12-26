@@ -4,8 +4,11 @@
 #
 #  id               :bigint           not null, primary key
 #  bio              :string
+#  city             :string
 #  etsy_shop        :string
 #  featured_link    :string
+#  latitude         :string
+#  longitude        :string
 #  name             :string           not null
 #  slug             :string           not null
 #  status           :string           not null

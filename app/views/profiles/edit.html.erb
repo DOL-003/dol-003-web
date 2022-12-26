@@ -55,7 +55,10 @@
     <div class="span-8 input-container">
       <%=
         react_component "LocationSelector", {
-          model_name: 'modder'
+          model_name: 'modder',
+          city: @modder.city,
+          latitude: @modder.latitude,
+          longitude: @modder.longitude
         }.deep_transform_keys { |key| key.to_s.camelize(:lower) }
       %>
     </div>

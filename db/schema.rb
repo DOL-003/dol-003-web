@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_18_220627) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_26_194242) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,6 +35,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_18_220627) do
     t.string "status", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "city"
+    t.string "latitude"
+    t.string "longitude"
     t.index ["slug"], name: "index_modders_on_slug", unique: true
     t.index ["user_id"], name: "index_modders_on_user_id"
   end

@@ -22,7 +22,7 @@ class ProfilesController < ApplicationController
 
     begin
       @modder.transaction do
-        @modder.update!(params.require(:modder).permit(:name, :bio))
+        @modder.update!(params.require(:modder).permit(:name, :bio, :city, :latitude, :longitude))
 
         @modder.modder_services.destroy_all
 
