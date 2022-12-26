@@ -39,7 +39,7 @@ export default (props: LocationSelectorProps) => {
         onPlaceSelected={handlePlaceSelected}
         defaultValue={props.city}
         options={{ fields: ["geometry.location", "formatted_address"] }}
-        onFocus={(event) => event.target.select()}
+        onFocus={(event) => setTimeout(() => event.target.select(), 10)}
       />
       <input type="hidden" name={`${props.modelName}[city]`} value={city} />
       <input

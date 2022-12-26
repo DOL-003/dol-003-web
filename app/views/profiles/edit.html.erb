@@ -13,10 +13,6 @@
 
   <div class="content grid">
 
-    <% if !@onboarding %>
-      <h2 class="span-12">General info</h2>
-    <% end %>
-
     <div class="span-4 caption">
       <%= form.label :name, 'Modder name', class: 'label large' %>
       <p class="small">The name you use as a modder. This can be a brand name or your actual name, whichever you use to advertise your modding services. You can change this later if necessary.</p>
@@ -43,7 +39,26 @@
         field_name: :bio,
         field_type: :text_area,
         label: false,
-        options: { autofocus: true, maxlength: 500, class: 'textarea height-medium', placeholder: 'I started modding controllers in 1973 and ...' }
+        options: { maxlength: 500, class: 'textarea height-medium', placeholder: 'I started modding controllers in 1973 and ...' }
+      } %>
+    </div>
+
+    <div class="span-4 caption">
+      <%= form.label :logo, 'Logo', class: 'label large' %>
+      <p class="small">Upload a logo to display by your name. Recommended minimum size: 128 x 128 pixels. Maximum 500kb.</p>
+    </div>
+
+    <div class="span-8 input-container">
+      <%=
+        @modder.logo_url
+      %>
+      <%= render 'form_field', locals: {
+        resource: @modder,
+        form: form,
+        field_name: :logo,
+        field_type: :file_field,
+        label: false,
+        options: { class: 'text-input large', placeholder: 'Drop image here' }
       } %>
     </div>
 
@@ -64,7 +79,7 @@
     </div>
 
     <div class="span-4 caption">
-      <p class="label large">Services offered<p>
+      <p class="label large">Services offered</p>
       <p class="small">Select the services you’re currently offering. This will be displayed on your profile and used to filter search results. You can update this as often as needed to reflect your current offerings.</p>
     </div>
 
@@ -84,14 +99,6 @@
         }
       %>
     </div>
-
-    <% if !@onboarding %>
-
-      <h2>Photos</h2>
-
-      <div class="span-12">Photos UI here</div>
-
-    <% end %>
 
   </div>
 

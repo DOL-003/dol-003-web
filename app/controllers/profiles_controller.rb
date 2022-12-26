@@ -23,6 +23,8 @@ class ProfilesController < ApplicationController
     begin
       @modder.transaction do
         @modder.update!(params.require(:modder).permit(:name, :bio, :city, :latitude, :longitude))
+        @modder.logo = params[:modder][:logo]
+        @modder.save!
 
         @modder.modder_services.destroy_all
 

@@ -1,13 +1,15 @@
 body.profiles.edit {
-
   .form {
-
     > .content {
       margin-top: 48px;
       grid-row-gap: 32px;
 
       .caption {
         padding-top: 15px;
+
+        p {
+          margin-top: 0;
+        }
       }
 
       .input-container {

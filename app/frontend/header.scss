@@ -1,7 +1,6 @@
 @import "./colors";
 
 header {
-
   > .content {
     display: flex;
     flex-flow: row nowrap;
@@ -56,7 +55,7 @@ header {
           visibility: visible;
           opacity: 1;
           transform: none;
-          transition: transform .2s ease-out, opacity .2s ease-out;
+          transition: transform 0.2s ease-out, opacity 0.2s ease-out;
         }
 
         &:checked ~ label > figure {
@@ -78,7 +77,8 @@ header {
         transform-origin: 32px 32px;
         transform: rotate(10deg);
         opacity: 0;
-        transition: transform .1s ease-out, opacity .1s ease-out, visibility 0s linear .1s;
+        transition: transform 0.1s ease-out, opacity 0.1s ease-out,
+          visibility 0s linear 0.1s;
       }
 
       .avatar {
@@ -91,6 +91,7 @@ header {
         opacity: 0.9;
         position: relative;
         z-index: 105;
+        background-size: cover;
 
         &:hover {
           opacity: 1;
@@ -111,19 +112,20 @@ header {
         transform-origin: calc(100% - 32px) -32px;
         transform: rotate(10deg);
         opacity: 0;
-        transition: transform .1s ease-out, opacity .1s ease-out, visibility 0s linear .1s;
+        transition: transform 0.1s ease-out, opacity 0.1s ease-out,
+          visibility 0s linear 0.1s;
 
         > li {
           margin: 0;
           padding: 0;
 
           &.name {
-            padding-left: 4px;
             margin-bottom: 12px;
+            font-weight: bold;
+            white-space: nowrap;
 
-            > p {
-              font-weight: bold;
-              white-space: nowrap;
+            a {
+              color: $black;
             }
           }
 

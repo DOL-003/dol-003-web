@@ -8,6 +8,7 @@
 #  etsy_shop        :string
 #  featured_link    :string
 #  latitude         :string
+#  logo             :string
 #  longitude        :string
 #  name             :string           not null
 #  slug             :string           not null

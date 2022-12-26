@@ -11,11 +11,11 @@
           <div class="overlay-trim"></div>
 
           <label for="user-menu-toggle">
-            <figure class="avatar"></figure>
+            <figure class="avatar" style="<%= "background-image: url(#{@modder.logo_url})" if @modder.logo.present? %>"></figure>
           </label>
 
           <ul class="overlay">
-            <li class="name"><p class="big"><%= current_modder.name %></p></li>
+            <li class="name"><%= link_to current_modder.name, modder_path(current_modder), class: 'big' %></li>
             <li><%= link_to 'Edit profile', edit_profile_path %></li>
             <li><a href="#">Account settings</a></li>
             <li><a href="#">Sign out</a></li>

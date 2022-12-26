@@ -8,6 +8,7 @@
 #  etsy_shop        :string
 #  featured_link    :string
 #  latitude         :string
+#  logo             :string
 #  longitude        :string
 #  name             :string           not null
 #  slug             :string           not null
@@ -32,8 +33,13 @@ class Modder < ApplicationRecord
   validates :name, presence: true, length: { minimum: 3, maximum: 50 }
   validates :bio, length: { maximum: 500 }
   validates :slug, presence: true, uniqueness: true
+  validates :city, presence: true
+  validates :latitude, presence: true
+  validates :longitude, presence: true
 
   before_validation :generate_slug, if: :will_save_change_to_name?
+
+  mount_uploader :logo, ModderLogoUploader
 
   def to_param
     slug
