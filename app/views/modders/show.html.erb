@@ -9,6 +9,7 @@
       <figure class="logo"></figure>
       <div>
         <h1><%= @modder.name %></h1>
+        <p class="city"><%= inline_svg_tag 'pin' %><%= @modder.city %></p>
         <p><%= @modder.bio %></p>
       </div>
     </div>

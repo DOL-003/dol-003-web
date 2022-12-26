@@ -1,7 +1,6 @@
 @import "../colors";
 
 body.modders.show {
-
   section.photos {
     height: 20vw;
     min-height: 180px;
@@ -10,7 +9,6 @@ body.modders.show {
   }
 
   section.info {
-
     .meta {
       display: flex;
 
@@ -21,6 +19,20 @@ body.modders.show {
         background-color: $platinum;
         border-radius: 64px;
         margin-left: -2px;
+      }
+
+      .city {
+        display: flex;
+        align-items: center;
+        color: $spice;
+        margin-top: 4px;
+        gap: 8px;
+
+        svg {
+          flex: none;
+          width: 16px;
+          height: 16px;
+        }
       }
 
       > div {
