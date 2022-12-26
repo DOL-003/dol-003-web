@@ -28,7 +28,7 @@ class ProfilesController < ApplicationController
 
         services = JSON.parse params[:modder][:services]
         services.each_with_index do |service, index|
-          next unless ModderService.get_service_by_slug(service).present?
+          next unless ModderService::ALL_SERVICES[service.to_sym].present?
 
           @modder.modder_services.create!({
             index:,

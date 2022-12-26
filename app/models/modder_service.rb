@@ -15,35 +15,29 @@
 #
 class ModderService < ApplicationRecord
 
-  ALL_SERVICES = [
-    { name: 'prebuilt controllers', color: '#fdb03a' },
-    { name: 'diagnostics/repairs', color: '#fdb03a' },
-    { name: 'phobs', color: '#fdb03a' },
-    { name: 'snapback modules', color: '#fdb03a' },
-    { name: 'accepting send-ins', color: '#fdb03a' },
-    { name: 'commissions open', color: '#fdb03a' },
-    { name: 'resin buttons', color: '#fdb03a' },
-    { name: 'resin sticks', color: '#fdb03a' },
-    { name: 'resin triggers', color: '#fdb03a' },
-    { name: 'resin shells', color: '#fdb03a' },
-    { name: 'shell painting', color: '#fdb03a' },
-    { name: 'shell tinting', color: '#fdb03a' },
-    { name: 'shell dyeing', color: '#fdb03a' },
-    { name: 'electrical mods', color: '#fdb03a' },
-    { name: 'paracords', color: '#fdb03a' },
-    { name: 'notching', color: '#fdb03a' }
-  ].freeze
+  ALL_SERVICES = {
+    'prebuilt-controllers': { name: 'prebuilt controllers', color: '#fdb03a' },
+    'diagnostics-repairs': { name: 'diagnostics/repairs', color: '#fdb03a' },
+    'phobs': { name: 'phobs', color: '#fdb03a' },
+    'snapback-modules': { name: 'snapback modules', color: '#fdb03a' },
+    'accepting-send-ins': { name: 'accepting send-ins', color: '#fdb03a' },
+    'commissions-open': { name: 'commissions open', color: '#fdb03a' },
+    'resin-buttons': { name: 'resin buttons', color: '#fdb03a' },
+    'resin-sticks': { name: 'resin sticks', color: '#fdb03a' },
+    'resin-triggers': { name: 'resin triggers', color: '#fdb03a' },
+    'resin-shells': { name: 'resin shells', color: '#fdb03a' },
+    'shell-painting': { name: 'shell painting', color: '#fdb03a' },
+    'shell-tinting': { name: 'shell tinting', color: '#fdb03a' },
+    'shell-dyeing': { name: 'shell dyeing', color: '#fdb03a' },
+    'electrical-mods': { name: 'electrical mods', color: '#fdb03a' },
+    'paracords': { name: 'paracords', color: '#fdb03a' },
+    'notching': { name: 'notching', color: '#fdb03a' }
+  }.freeze
 
   belongs_to :modder
 
   def self.enabled_services
-    ALL_SERVICES.reject { |service| service[:disabled] }
-  end
-
-  def self.get_service_by_slug(service_slug)
-    ALL_SERVICES.each do |service|
-      return service if service[:name].parameterize == service_slug
-    end
+    ALL_SERVICES.reject { |slug, service| service[:disabled] }
   end
 
 end

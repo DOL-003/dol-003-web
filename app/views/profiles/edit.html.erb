@@ -72,11 +72,11 @@
       <%=
         react_component "ServiceSelector", {
           field_name: 'modder[services]',
-          all_services: ModderService::ALL_SERVICES.map { |service| { value: service[:name].parameterize, label: service[:name], color: service[:color] } },
+          all_services: ModderService::ALL_SERVICES.map { |slug, service| { value: slug, label: service[:name], color: service[:color] } },
           modder_services: @modder.modder_services.map { |modder_service|
-            service = ModderService.get_service_by_slug(modder_service.service)
+            service = ModderService::ALL_SERVICES[modder_service.service.to_sym]
             {
-              value: service[:name].parameterize,
+              value: modder_service.service,
               label: service[:name],
               color: service[:color]
             }

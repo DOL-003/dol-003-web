@@ -15,14 +15,9 @@
     </div>
     <div class="services">
       <ol>
-        <li>Prebuilt controllers</li>
-        <li>Repairs</li>
-        <li>Phobs</li>
-        <li>Painting</li>
-        <li>Accepting commissions</li>
-        <li>Buttons</li>
-        <li>Snapback modules</li>
-        <li>Paracords</li>
+        <% @modder.modder_services.map do |service| %>
+          <li><%= ModderService::ALL_SERVICES[service.service.to_sym][:name] %></li>
+        <% end %>
       </ol>
     </div>
   </section>
