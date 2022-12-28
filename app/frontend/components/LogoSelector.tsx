@@ -1,9 +1,11 @@
 import "./LogoSelector.scss"
 
-import React, { useState } from "react"
+import React, { useState, ChangeEvent } from "react"
 
 import GccIcon from "@/icons/gcc.svg"
 import UploadIcon from "@/icons/upload.svg"
+
+const validFileTypes = ["image/png", "image/jpg", "image/jpeg", "image/gif"]
 
 interface LogoSelectorProps {
   readonly fieldName: string
@@ -12,12 +14,25 @@ interface LogoSelectorProps {
 
 export default (props: LogoSelectorProps) => {
   const [logoUrl, setLogoUrl] = useState(props.logoUrl)
+  const [error, setError] = useState("")
 
-  function handleLogoChange(event) {
-    const [file] = event.target.files
-    if (file) {
-      setLogoUrl(URL.createObjectURL(file))
+  function handleLogoChange(event: ChangeEvent<HTMLInputElement>) {
+    setError("")
+
+    const file = event.target.files[0]
+    if (!file) return
+
+    if (file.size > 1024 * 500) {
+      setError("Logo must be less than 500KB.")
+      return
     }
+
+    if (!validFileTypes.includes(file.type)) {
+      setError("Invalid file type. Please upload a PNG, JPG or GIF.")
+      return
+    }
+
+    setLogoUrl(URL.createObjectURL(file))
   }
 
   const figureStyle = logoUrl ? { backgroundImage: `url(${logoUrl})` } : {}
@@ -26,9 +41,11 @@ export default (props: LogoSelectorProps) => {
     <div className="LogoSelector">
       <figure style={figureStyle}>
         {!logoUrl && <GccIcon />}
+
         <div className="upload-overlay">
           <UploadIcon />
         </div>
+
         <input
           type="file"
           name={props.fieldName}
@@ -36,6 +53,8 @@ export default (props: LogoSelectorProps) => {
           title="Drop an image here to upload it, or click to choose one."
         />
       </figure>
+
+      <p className="error">{error}</p>
     </div>
   )
 }
