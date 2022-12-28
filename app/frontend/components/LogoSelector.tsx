@@ -20,9 +20,11 @@ export default (props: LogoSelectorProps) => {
     }
   }
 
+  const figureStyle = logoUrl ? { backgroundImage: `url(${logoUrl})` } : {}
+
   return (
     <div className="LogoSelector">
-      <figure style={{ backgroundImage: `url(${logoUrl})` }}>
+      <figure style={figureStyle}>
         {!logoUrl && <GccIcon />}
         <div className="upload-overlay">
           <UploadIcon />

@@ -4,12 +4,12 @@
   <% else %>
     <div class="span-8">
       <h1>Edit your profile</h1>
-      <p>Keep your information up to date to ensure you’re only contacted by players looking for what you’re currently offering.</p>
+      <p>Keep your information up to date to best represent yourself to players looking for controllers or other services.</p>
     </div>
   <% end %>
 </div>
 
-<%= form_with model: @modder, url: profile_path, html: { class: 'form' } do |form| %>
+<%= form_with model: @modder, url: profile_path, multipart: true, html: { class: 'form' } do |form| %>
 
   <div class="content grid">
 
