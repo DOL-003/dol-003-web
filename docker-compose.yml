@@ -1,6 +1,5 @@
-version: '3'
+version: "3"
 services:
-
   db:
     image: postgres:13-alpine
     environment:
@@ -10,7 +9,7 @@ services:
 
   vite:
     build: .
-    command: sh -c "yarn install --frozen-lockfile && bin/vite dev"
+    command: sh -c "yarn install --frozen-lockfile && yarn dev"
     tty: true
     ports:
       - "3036:3036"

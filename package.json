@@ -18,6 +18,7 @@
     "vite-plugin-svgr": "^2.4.0"
   },
   "scripts": {
+    "dev": "vite --host",
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
     "build:css": "sass ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
   }
