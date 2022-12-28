@@ -72,6 +72,8 @@ header {
         bottom: -8px;
         background-color: #fff;
         border-radius: 100px 100px 0 0;
+        border: 2px solid $spice;
+        border-bottom: 0;
         pointer-events: none;
         z-index: 100;
         transform-origin: 32px 32px;
@@ -103,7 +105,8 @@ header {
         right: -8px;
         top: calc(100% + 8px);
         background-color: #fff;
-        box-shadow: 0 12px 12px -16px $black, 0 4px 64px -32px $black;
+        box-shadow: 0 12px 12px -16px $black, 0 16px 32px -48px $black,
+          inset 0 0 0 2px $spice;
         list-style: none;
         margin: 0;
         padding: 20px 60px 24px 28px;
@@ -115,17 +118,27 @@ header {
         transition: transform 0.1s ease-out, opacity 0.1s ease-out,
           visibility 0s linear 0.1s;
 
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 2px;
+          height: 2px;
+          width: 60px;
+          background-color: #fff;
+        }
+
         > li {
           margin: 0;
           padding: 0;
 
           &.name {
             margin-bottom: 12px;
-            font-weight: bold;
             white-space: nowrap;
 
             a {
               color: $black;
+              font-weight: bold;
             }
           }
 
@@ -134,6 +147,7 @@ header {
             white-space: nowrap;
             padding: 4px;
             line-height: 1;
+            font-weight: 500;
           }
 
           & + li {
