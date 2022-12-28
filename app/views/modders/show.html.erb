@@ -6,7 +6,11 @@
 
   <section class="span-8 info">
     <div class="meta">
-      <figure class="logo" style="<%= "background-image: url(#{@modder.logo_url})" if @modder.logo.present? %>"></figure>
+      <figure class="logo" style="<%= "background-image: url(#{@modder.logo_url})" if @modder.logo.present? %>">
+        <% if @modder.logo.blank? %>
+          <%= inline_svg_tag 'gcc.svg' %>
+        <% end %>
+      </figure>
       <div>
         <h1><%= @modder.name %></h1>
         <p class="city"><%= inline_svg_tag 'pin' %><%= @modder.city %></p>

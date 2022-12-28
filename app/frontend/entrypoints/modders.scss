@@ -20,6 +20,15 @@ body.modders.show {
         border-radius: 64px;
         margin-left: -2px;
         background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: darken($platinum, 20%);
+
+        svg {
+          width: 32px;
+          height: 32px;
+        }
       }
 
       .city {
