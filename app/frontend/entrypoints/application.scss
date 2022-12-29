@@ -33,22 +33,24 @@ body.application.index {
 
   .location-search {
     margin-top: 16px;
+    display: flex;
+    gap: 16px;
 
-    > div {
-      display: flex;
-      gap: 16px;
+    .react-container {
+      flex: auto;
 
-      .react-container {
-        flex: auto;
-
-        > .text-input.large {
-          width: 100%;
-        }
-      }
-
-      .button {
-        flex: none;
+      > .text-input.large {
+        width: 100%;
       }
     }
+
+    .button {
+      flex: none;
+    }
+  }
+
+  .location-geolocator {
+    margin-top: 16px;
+    padding-left: 2px;
   }
 }
