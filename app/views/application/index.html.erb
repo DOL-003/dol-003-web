@@ -23,6 +23,19 @@
   <section class="span-4">
     <h2>Browse the <strong>map</strong></h2>
     <p>Support local makers. Find a modder near you.</p>
+    <%= form_with url: modders_path, method: 'get', html: { class: 'location-search' } do |form| %>
+      <div>
+        <%=
+          react_component "LocationSelector", {
+            model_name: 'user',
+            class: 'search',
+            autosubmit: true
+          }
+        %>
+        <%= form.submit 'Search', class: 'button' %>
+        <%= form.hidden_field 'map', value: true %>
+      </div>
+    <% end %>
   </section>
 
   <section class="span-12">

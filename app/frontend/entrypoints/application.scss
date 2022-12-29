@@ -19,7 +19,7 @@ body.application.index {
 
   .service-list {
     list-style: none;
-    margin: 16px 0 0;
+    margin: 24px 0 0;
     padding: 0;
     display: flex;
     flex-flow: row wrap;
@@ -28,6 +28,27 @@ body.application.index {
     li {
       margin: 0;
       padding: 0;
+    }
+  }
+
+  .location-search {
+    margin-top: 16px;
+
+    > div {
+      display: flex;
+      gap: 16px;
+
+      .react-container {
+        flex: auto;
+
+        > .text-input.large {
+          width: 100%;
+        }
+      }
+
+      .button {
+        flex: none;
+      }
     }
   }
 }
