@@ -1,24 +1,85 @@
 import "./PhotoManager.scss"
 
-import React, { useState } from "react"
+import React, { useState, ChangeEvent } from "react"
 import classNames from "classnames"
 
+import UploadIcon from "@/icons/upload.svg"
+
 interface Photo {
-  uuid?: string
+  uuid: string
   url: string
-  uploading?: boolean
 }
 
-export default (props) => {
-  const [open, setOpen] = useState(false)
-  const [photos, setPhotos] = useState<Photo[]>([])
+interface PhotoResult {
+  success: boolean
+  photo: Photo
+}
+
+interface PhotoManagerProps {
+  photos: Photo[]
+}
+
+const validFileTypes = ["image/png", "image/jpg", "image/jpeg", "image/gif"]
+
+export default (props: PhotoManagerProps) => {
+  const [open, setOpen] = useState<boolean>(false)
+  const [uploading, setUploading] = useState<boolean>(false)
+  const [droppable, setDroppable] = useState<boolean>(false)
+  const [error, setError] = useState<string>("")
+  const [photos, setPhotos] = useState<Photo[]>(props.photos || [])
 
   function handleOpenToggleClick() {
     setOpen(!open)
   }
 
+  function handleInputDragEnter() {
+    setDroppable(true)
+  }
+
+  function handleInputDragLeave() {
+    setDroppable(false)
+  }
+
+  async function handlePhotoSelected(event: ChangeEvent<HTMLInputElement>) {
+    if (uploading) return
+
+    setError("")
+
+    const file = event.target.files[0]
+    if (!file) return
+
+    if (file.size > 1024 * 5000) {
+      setError("Photo must be less than 5MB.")
+      return
+    }
+
+    if (!validFileTypes.includes(file.type)) {
+      setError("Invalid file type. Please upload a PNG, JPG or GIF.")
+      return
+    }
+
+    setUploading(true)
+
+    const body = new FormData()
+    body.append("photo", file)
+
+    const response = await fetch("/profile/photo", {
+      method: "POST",
+      body,
+    })
+
+    setUploading(false)
+
+    const result: PhotoResult = await response.json()
+    if (result.success) {
+      setPhotos([...photos, result.photo])
+    } else {
+      setError("Your photo could not be uploaded.")
+    }
+  }
+
   return (
-    <div className={classNames("PhotoManager", { open })}>
+    <div className={classNames("PhotoManager", { open, uploading })}>
       {(() => {
         if (open)
           return (
@@ -28,6 +89,19 @@ export default (props) => {
                 {photos.map((photo) => (
                   <div>here's a photo</div>
                 ))}
+                {photos.length < 10 && (
+                  <div className={classNames("uploader", { droppable })}>
+                    <UploadIcon />
+                    <input
+                      type="file"
+                      onChange={handlePhotoSelected}
+                      title="Drop an image here to upload it, or click to choose one."
+                      onDragEnter={handleInputDragEnter}
+                      onDragLeave={handleInputDragLeave}
+                      onDrop={handleInputDragLeave}
+                    />
+                  </div>
+                )}
               </div>
               <div className="controls">
                 <button
@@ -37,6 +111,8 @@ export default (props) => {
                 >
                   Done
                 </button>
+
+                {error && <p className="error">{error}</p>}
               </div>
             </>
           )

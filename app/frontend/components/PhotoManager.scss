@@ -23,6 +23,47 @@
     position: relative;
     height: 100%;
     z-index: 10010;
+
+    .uploader {
+      width: 280px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: $platinum;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        bottom: 24px;
+        left: 24px;
+        border: 2px dashed currentColor;
+        border-radius: 24px;
+      }
+
+      svg {
+        width: 64px;
+        height: 64px;
+      }
+
+      input {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      &:hover,
+      &.droppable {
+        color: darken($platinum, 20%);
+      }
+    }
   }
 
   > .controls {
@@ -30,6 +71,14 @@
     top: 100%;
     margin-top: 24px;
     z-index: 10010;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    .error {
+      color: $mario;
+      font-weight: 500;
+    }
   }
 
   > button.secondary {
