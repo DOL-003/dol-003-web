@@ -3,8 +3,15 @@ import "./PhotoManager.scss"
 import React, { useState } from "react"
 import classNames from "classnames"
 
+interface Photo {
+  uuid?: string
+  url: string
+  uploading?: boolean
+}
+
 export default (props) => {
   const [open, setOpen] = useState(false)
+  const [photos, setPhotos] = useState<Photo[]>([])
 
   function handleOpenToggleClick() {
     setOpen(!open)
@@ -17,7 +24,20 @@ export default (props) => {
           return (
             <>
               <div className="overlay"></div>
-              <div className="manager">i'm managing dude</div>
+              <div className="manager">
+                {photos.map((photo) => (
+                  <div>here's a photo</div>
+                ))}
+              </div>
+              <div className="controls">
+                <button
+                  type="button"
+                  className="button"
+                  onClick={handleOpenToggleClick}
+                >
+                  Done
+                </button>
+              </div>
             </>
           )
         else

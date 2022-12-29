@@ -25,6 +25,13 @@
     z-index: 10010;
   }
 
+  > .controls {
+    position: absolute;
+    top: 100%;
+    margin-top: 24px;
+    z-index: 10010;
+  }
+
   > button.secondary {
     position: absolute;
     bottom: 24px;
