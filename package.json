@@ -3,6 +3,7 @@
   "private": "true",
   "dependencies": {
     "@types/react": "^18.0.26",
+    "classnames": "^2.3.2",
     "esbuild": "^0.14.48",
     "mapbox-gl": "^2.11.1",
     "normalize.css": "^8.0.1",

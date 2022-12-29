@@ -1,6 +1,6 @@
 <div class="content grid">
 
-  <section class="span-12 photos">
+  <section class="span-12 photos <%= 'signed-in-modder' if current_modder == @modder %>">
     <% if current_modder == @modder %>
       <%=
         react_component 'PhotoManager', {
@@ -11,7 +11,6 @@
       <div class="photo-container">
         <% # TODO: @modder.photos.map do |photo| %>
       </div>
-      <button type="button" class="button small secondary">Manage photos</button>
     <% end %>
   </section>
 
