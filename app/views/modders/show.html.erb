@@ -1,7 +1,18 @@
 <div class="content grid">
 
   <section class="span-12 photos">
-    photos
+    <% if current_modder == @modder %>
+      <%=
+        react_component 'PhotoManager', {
+          # TODO: pass in photos
+        }
+      %>
+    <% else %>
+      <div class="photo-container">
+        <% # TODO: @modder.photos.map do |photo| %>
+      </div>
+      <button type="button" class="button small secondary">Manage photos</button>
+    <% end %>
   </section>
 
   <section class="span-8 info">
@@ -32,6 +43,8 @@
     <a href="#"><%= inline_svg_tag 'twitter' %> @VulpineCustoms</a>
     <a href="#"><%= inline_svg_tag 'instagram' %> VulpineCustoms</a>
     <a href="#"><%= inline_svg_tag 'email' %> hello@vulpinecustoms.com</a>
+    <p>Joined <%= @modder.updated_at.strftime('%b %Y') %></p>
+    <p>Last updated <%= time_ago_in_words(@modder.updated_at) %> ago</p>
   </nav>
 
   <section class="span-12 location">
