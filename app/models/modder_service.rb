@@ -18,10 +18,11 @@ class ModderService < ApplicationRecord
   ALL_SERVICES = {
 
     # meta
+    'full-builds': { name: 'full builds', color: '#222' },
     'prebuilt-controllers': { name: 'prebuilt controllers', color: '#222' },
+    'diagnostics-repairs': { name: 'diagnostics/repairs', color: '#222' },
     'accepting-send-ins': { name: 'accepting send-ins', color: '#222' },
     'commissions-open': { name: 'commissions open', color: '#222' },
-    'diagnostics-repairs': { name: 'diagnostics/repairs', color: '#222' },
 
     # functional/electrical
     'phobs': { name: 'phobs', color: '#444f9a' },

@@ -9,14 +9,20 @@
 
 <div class="content grid">
 
-  <section class="span-6">
-    <h2>Search by <strong>location</strong></h2>
-    <p>Current user id: <%= @user_id %></p>
+  <section class="span-8">
+    <h2>Search by <strong>service</strong></h2>
+    <ul class="service-list">
+      <% ModderService::ALL_SERVICES.map.with_index do |service| %>
+        <li>
+          <%= link_to service[1][:name], modders_path(service: service[0]), class: 'service-pill interactive', style: "--service-color: #{service[1][:color]}" %>
+        </li>
+      <% end %>
+    </ul>
   </section>
 
-  <section class="span-5">
-    <h2>Search by <strong>services</strong></h2>
-    <p>blah</p>
+  <section class="span-4">
+    <h2>Browse the <strong>map</strong></h2>
+    <p>Support local makers. Find a modder near you.</p>
   </section>
 
   <section class="span-12">
