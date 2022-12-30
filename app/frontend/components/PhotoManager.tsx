@@ -256,13 +256,15 @@ export default (props: PhotoManagerProps) => {
                   )}
                 </div>
                 <div className="toggle-container">
-                  <button
-                    type="button"
-                    className="button secondary"
-                    onClick={handleManagePhotosClick}
-                  >
-                    Manage photos
-                  </button>
+                  <figure class="frame">
+                    <button
+                      type="button"
+                      className="button secondary"
+                      onClick={handleManagePhotosClick}
+                    >
+                      Manage photos
+                    </button>
+                  </figure>
                 </div>
               </>
             )
