@@ -11,8 +11,8 @@
           <div class="overlay-trim"></div>
 
           <label for="user-menu-toggle">
-            <figure class="avatar" style="<%= "background-image: url(#{@modder.logo_url})" if @modder&.logo.present? %>">
-              <% if @modder&.logo.blank? %>
+            <figure class="avatar" style="<%= "background-image: url(#{current_modder.logo_url})" if current_modder&.logo.present? %>">
+              <% if current_modder&.logo.blank? %>
                 <%= inline_svg_tag 'gcc.svg' %>
               <% end %>
             </figure>
