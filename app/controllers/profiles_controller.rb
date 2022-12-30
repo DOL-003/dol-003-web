@@ -83,4 +83,9 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def remove_photo
+    modder_photo = ModderPhoto.find_by(modder: current_modder, uuid: params[:uuid])
+    modder_photo.destroy
+  end
+
 end

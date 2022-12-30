@@ -2,7 +2,13 @@ import "./PhotoManager.scss"
 
 import React, { useState, ChangeEvent } from "react"
 import classNames from "classnames"
-import { DndContext, DragEndEvent } from "@dnd-kit/core"
+import {
+  DndContext,
+  DragEndEvent,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core"
 import {
   horizontalListSortingStrategy,
   SortableContext,
@@ -30,12 +36,34 @@ interface PhotoManagerProps {
 
 const validFileTypes = ["image/png", "image/jpg", "image/jpeg", "image/gif"]
 
+class SmartPointerSensor extends PointerSensor {
+  static activators = [
+    {
+      eventName: "onMouseDown" as const,
+      handler: ({ nativeEvent: event }: MouseEvent) => {
+        let cur = event.target
+
+        while (cur) {
+          if (cur.dataset && cur.dataset.noDnd) {
+            return false
+          }
+          cur = cur.parentElement
+        }
+
+        return true
+      },
+    },
+  ]
+}
+
 export default (props: PhotoManagerProps) => {
   const [open, setOpen] = useState<boolean>(false)
   const [uploading, setUploading] = useState<boolean>(false)
   const [droppable, setDroppable] = useState<boolean>(false)
   const [error, setError] = useState<string>("")
   const [photos, setPhotos] = useState<Photo[]>(props.photos || [])
+
+  const sensors = useSensors(useSensor(SmartPointerSensor))
 
   function handleManagePhotosClick() {
     setOpen(true)
@@ -117,8 +145,25 @@ export default (props: PhotoManagerProps) => {
     })
   }
 
+  function handleRemovePhoto(uuid: string) {
+    setPhotos((photos) => {
+      const index = photos.findIndex((photo) => photo.uuid === uuid)
+      const modifiedPhotos = photos.slice()
+      modifiedPhotos.splice(index, 1)
+      return modifiedPhotos
+    })
+
+    fetch(`/profile/remove-photo/${uuid}`, {
+      method: "POST",
+      headers: {
+        "X-CSRF-Token": props.csrfToken,
+        "Content-Type": "application/json",
+      },
+    })
+  }
+
   return (
-    <DndContext onDragEnd={handleDragEnd}>
+    <DndContext onDragEnd={handleDragEnd} sensors={sensors}>
       <div className={classNames("PhotoManager", { open, uploading })}>
         {(() => {
           if (open)
@@ -135,6 +180,7 @@ export default (props: PhotoManagerProps) => {
                         key={photo.uuid}
                         src={photo.url}
                         uuid={photo.uuid}
+                        onRemoveClick={handleRemovePhoto}
                       />
                     ))}
                   </SortableContext>

@@ -36,6 +36,58 @@
       display: none;
     }
 
+    .SortablePhoto {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(
+          to top right,
+          rgba($black, 0%),
+          rgba($black, 0%) 80%,
+          rgba($black, 50%)
+        );
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      button {
+        appearance: none;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        color: rgba($white, 80%);
+        display: block;
+        padding: 4px;
+        margin: 0;
+        visibility: hidden;
+
+        &:hover {
+          color: $white;
+        }
+
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      &:hover {
+        &::before,
+        button {
+          visibility: visible;
+        }
+      }
+    }
+
     img {
       height: 100%;
       cursor: grab;

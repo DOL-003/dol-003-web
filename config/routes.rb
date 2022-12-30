@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resource :profile, only: [:edit, :update, :create]
   post '/profile/photo', to: 'profiles#upload_photo'
   post '/profile/photo-order', to: 'profiles#reorder_photos'
+  post '/profile/remove-photo/:uuid', to: 'profiles#remove_photo'
 
   resources :modders, only: [:index, :show]
 
