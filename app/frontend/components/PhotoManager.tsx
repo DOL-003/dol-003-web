@@ -2,7 +2,14 @@ import "./PhotoManager.scss"
 
 import React, { useState, ChangeEvent } from "react"
 import classNames from "classnames"
+import { DndContext, DragEndEvent } from "@dnd-kit/core"
+import {
+  horizontalListSortingStrategy,
+  SortableContext,
+  arrayMove,
+} from "@dnd-kit/sortable"
 
+import SortablePhoto from "./PhotoManager/SortablePhoto"
 import UploadIcon from "@/icons/upload.svg"
 import Spinner from "@/icons/spinner.svg"
 
@@ -30,8 +37,23 @@ export default (props: PhotoManagerProps) => {
   const [error, setError] = useState<string>("")
   const [photos, setPhotos] = useState<Photo[]>(props.photos || [])
 
-  function handleOpenToggleClick() {
-    setOpen(!open)
+  function handleManagePhotosClick() {
+    setOpen(true)
+  }
+
+  function handleDoneClick() {
+    setOpen(false)
+
+    fetch("/profile/photo-order", {
+      method: "POST",
+      headers: {
+        "X-CSRF-Token": props.csrfToken,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        photos: photos.map((photo) => photo.uuid),
+      }),
+    })
   }
 
   function handleInputDragEnter() {
@@ -81,66 +103,94 @@ export default (props: PhotoManagerProps) => {
     }
   }
 
-  return (
-    <div className={classNames("PhotoManager", { open, uploading })}>
-      {(() => {
-        if (open)
-          return (
-            <>
-              <div className="overlay"></div>
-              <div className="manager">
-                {photos.map((photo) => (
-                  <img key={photo.uuid} src={photo.url} />
-                ))}
-                {photos.length < 10 && (
-                  <div
-                    className={classNames("uploader", { uploading, droppable })}
-                  >
-                    {uploading ? <Spinner /> : <UploadIcon />}
-                    <input
-                      type="file"
-                      onChange={handlePhotoSelected}
-                      title="Drop an image here to upload it, or click to choose one."
-                      onDragEnter={handleInputDragEnter}
-                      onDragLeave={handleInputDragLeave}
-                      onDrop={handleInputDragLeave}
-                    />
-                  </div>
-                )}
-              </div>
-              <div className="controls">
-                <button
-                  type="button"
-                  className="button"
-                  onClick={handleOpenToggleClick}
-                >
-                  Done
-                </button>
+  function handleDragEnd(event: DragEndEvent) {
+    const { active, over } = event
 
-                {error && <p className="error">{error}</p>}
-              </div>
-            </>
-          )
-        else
-          return (
-            <>
-              <div className="gallery">
-                {photos.map((photo) => (
-                  <img key={photo.uuid} src={photo.url} />
-                ))}
-              </div>
-              <div className="toggle-container">
-                <button
-                  type="button"
-                  className="button secondary"
-                  onClick={handleOpenToggleClick}
-                >
-                  Manage photos
-                </button>
-              </div>
-            </>
-          )
-      })()}
-    </div>
+    if (!active || !over) return
+    if (active.id === over.id) return
+
+    setPhotos((photos) => {
+      const oldIndex = photos.findIndex((photo) => photo.uuid === active.id)
+      const newIndex = photos.findIndex((photo) => photo.uuid === over.id)
+
+      return arrayMove(photos, oldIndex, newIndex)
+    })
+  }
+
+  return (
+    <DndContext onDragEnd={handleDragEnd}>
+      <div className={classNames("PhotoManager", { open, uploading })}>
+        {(() => {
+          if (open)
+            return (
+              <>
+                <div className="overlay"></div>
+                <div className="manager">
+                  <SortableContext
+                    items={photos.map((photo) => photo.uuid)}
+                    strategy={horizontalListSortingStrategy}
+                  >
+                    {photos.map((photo) => (
+                      <SortablePhoto
+                        key={photo.uuid}
+                        src={photo.url}
+                        uuid={photo.uuid}
+                      />
+                    ))}
+                  </SortableContext>
+                  {photos.length < 10 && (
+                    <div
+                      className={classNames("uploader", {
+                        uploading,
+                        droppable,
+                      })}
+                    >
+                      {uploading ? <Spinner /> : <UploadIcon />}
+                      <input
+                        type="file"
+                        onChange={handlePhotoSelected}
+                        title="Drop an image here to upload it, or click to choose one."
+                        onDragEnter={handleInputDragEnter}
+                        onDragLeave={handleInputDragLeave}
+                        onDrop={handleInputDragLeave}
+                      />
+                    </div>
+                  )}
+                </div>
+                <div className="controls">
+                  <button
+                    type="button"
+                    className="button"
+                    onClick={handleDoneClick}
+                  >
+                    Done
+                  </button>
+
+                  {error && <p className="error">{error}</p>}
+                </div>
+              </>
+            )
+          else
+            return (
+              <>
+                <div className="gallery">
+                  {photos.map((photo) => (
+                    <img key={photo.uuid} src={photo.url} />
+                  ))}
+                </div>
+                <div className="toggle-container">
+                  <button
+                    type="button"
+                    className="button secondary"
+                    onClick={handleManagePhotosClick}
+                  >
+                    Manage photos
+                  </button>
+                </div>
+              </>
+            )
+        })()}
+      </div>
+    </DndContext>
   )
 }

@@ -38,6 +38,11 @@
 
     img {
       height: 100%;
+      cursor: grab;
+
+      &[aria-pressed] {
+        cursor: grabbing;
+      }
     }
 
     .uploader {
