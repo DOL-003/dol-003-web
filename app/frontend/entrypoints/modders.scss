@@ -7,6 +7,10 @@ body.modders.show {
     max-height: 280px;
     position: relative;
 
+    &.empty {
+      display: none;
+    }
+
     > .photo-container {
       width: 100vw;
       height: 100%;
@@ -110,7 +114,7 @@ body.modders.show {
     }
   }
 
-  nav.links {
+  section.sidebar {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-end;
@@ -146,6 +150,15 @@ body.modders.show {
         & + a {
           margin-top: 24px;
         }
+      }
+    }
+
+    p {
+      margin-top: 24px;
+      line-height: 1;
+
+      & + p {
+        margin-top: 16px;
       }
     }
   }

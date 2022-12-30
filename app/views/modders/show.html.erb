@@ -1,6 +1,6 @@
 <div class="content grid">
 
-  <section class="span-12 photos <%= 'signed-in-modder' if current_modder == @modder %>">
+  <section class="span-12 photos <%= 'signed-in-modder' if current_modder == @modder %> <%= 'empty' unless @modder.modder_photos.any? %>">
     <% if current_modder == @modder %>
       <%=
         react_component 'PhotoManager', {
@@ -45,14 +45,14 @@
     </div>
   </section>
 
-  <nav class="span-4 links">
+  <section class="span-4 sidebar">
     <%= link_to 'https://google.com', class: 'button' do %>Visit website<%= inline_svg_tag 'external' %><% end %>
     <a href="#"><%= inline_svg_tag 'twitter' %> @VulpineCustoms</a>
     <a href="#"><%= inline_svg_tag 'instagram' %> VulpineCustoms</a>
     <a href="#"><%= inline_svg_tag 'email' %> hello@vulpinecustoms.com</a>
-    <p>Joined <%= @modder.updated_at.strftime('%b %Y') %></p>
-    <p>Last updated <%= time_ago_in_words(@modder.updated_at) %> ago</p>
-  </nav>
+    <p class="small">Joined <%= @modder.updated_at.strftime('%b %Y') %></p>
+    <p class="small">Last updated <%= time_ago_in_words(@modder.updated_at) %> ago</p>
+  </section>
 
   <section class="span-12 location">
     <%=
