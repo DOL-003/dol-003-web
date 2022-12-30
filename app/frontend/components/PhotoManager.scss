@@ -21,11 +21,20 @@
 
   > .manager {
     position: relative;
+    width: 100vw;
     height: 100%;
     z-index: 10010;
     display: flex;
     gap: 32px;
     overflow-x: auto;
+    left: calc((100vw - 100%) / -2);
+    padding: 0 calc((100vw - 100%) / 2);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     img {
       height: 100%;
@@ -95,10 +104,20 @@
   }
 
   .gallery {
+    width: 100vw;
     height: 100%;
     display: flex;
     gap: 32px;
     overflow-x: auto;
+    position: relative;
+    left: calc((100vw - 100%) / -2);
+    padding: 0 calc((100vw - 100%) / 2);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     img {
       height: 100%;
@@ -114,7 +133,8 @@
     padding: 24px;
     pointer-events: none;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
 
     > button.secondary {
       color: #fff;
@@ -137,10 +157,10 @@
 
   .signed-in-modder:hover &:not(.open):hover .toggle-container {
     background: radial-gradient(
-      ellipse at bottom left,
-      rgba($black, 50%),
-      rgba($black, 40%) 20%,
-      rgba($black, 0%) 30%,
+      ellipse at center,
+      rgba($black, 60%),
+      rgba($black, 50%) 20%,
+      rgba($black, 0%) 70%,
       rgba($black, 0%)
     );
 
