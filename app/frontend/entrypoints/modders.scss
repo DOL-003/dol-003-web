@@ -58,13 +58,15 @@ body.modders.show {
         align-items: center;
         color: $spice;
         margin-top: 4px;
-        gap: 8px;
+        gap: 12px;
         font-weight: 500;
 
         svg {
           flex: none;
           width: 16px;
           height: 16px;
+          position: relative;
+          top: -1px;
         }
       }
 
