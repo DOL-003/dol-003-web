@@ -47,4 +47,30 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def upload_photo
+    photo_count = current_modder.modder_photos.count
+    return render json: { success: false } unless photo_count < 10
+
+    modder_photo = ModderPhoto.new({
+      modder: current_modder,
+      index: photo_count
+    })
+
+    modder_photo.photo = params[:photo]
+
+    if modder_photo.save
+      render json: {
+        success: true,
+        photo: {
+          uuid: modder_photo.uuid,
+          url: modder_photo.photo_url
+        }
+      }
+    else
+      render json: {
+        success: false
+      }
+    end
+  end
+
 end

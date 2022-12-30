@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_29_050747) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_29_235147) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "modder_photos", force: :cascade do |t|
+    t.bigint "modder_id", null: false
+    t.string "uuid", null: false
+    t.string "photo", null: false
+    t.integer "index", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["modder_id"], name: "index_modder_photos_on_modder_id"
+  end
 
   create_table "modder_services", force: :cascade do |t|
     t.bigint "modder_id", null: false

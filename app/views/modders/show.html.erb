@@ -4,12 +4,20 @@
     <% if current_modder == @modder %>
       <%=
         react_component 'PhotoManager', {
-          # TODO: pass in photos
+          photos: @modder.modder_photos.map { |modder_photo|
+            {
+              uuid: modder_photo.uuid,
+              url: modder_photo.photo_url
+            }
+          }
         }
       %>
     <% else %>
       <div class="photo-container">
-        <% # TODO: @modder.photos.map do |photo| %>
+        <% #TODO: placeholders with no photos %>
+        <% @modder.modder_photos.map do |modder_photo| %>
+          <%= image_tag modder_photo.photo_url %>
+        <% end %>
       </div>
     <% end %>
   </section>

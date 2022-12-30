@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get '/profile', to: 'profiles#show', as: :user_root
   resource :profile, only: [:edit, :update, :create]
+  post '/profile/photo', to: 'profiles#upload_photo'
 
   resources :modders, only: [:index, :show]
 

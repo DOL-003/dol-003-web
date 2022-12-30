@@ -27,6 +27,7 @@
 class Modder < ApplicationRecord
   belongs_to :user
   has_many :modder_services
+  has_many :modder_photos, -> { order(index: :asc) }
 
   attribute :status, :string, default: 'active'
 

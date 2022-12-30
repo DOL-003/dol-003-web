@@ -13,7 +13,10 @@ module ApplicationHelper
   def react_component(component, props = {})
     render 'react_component', locals: {
       component:,
-      props: props.deep_transform_keys do |key| key.to_s.camelize(:lower) end.to_json
+      props: props
+        .merge({ csrf_token: form_authenticity_token })
+        .deep_transform_keys do |key| key.to_s.camelize(:lower) end
+        .to_json
     }
   end
 
