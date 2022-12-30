@@ -18,6 +18,7 @@ import {
 import SortablePhoto from "./PhotoManager/SortablePhoto"
 import UploadIcon from "@/icons/upload.svg"
 import Spinner from "@/icons/spinner.svg"
+import GccIcon from "@/icons/gcc.svg"
 
 interface Photo {
   uuid: string
@@ -64,6 +65,12 @@ export default (props: PhotoManagerProps) => {
   const [photos, setPhotos] = useState<Photo[]>(props.photos || [])
 
   const sensors = useSensors(useSensor(SmartPointerSensor))
+
+  function getMessage() {
+    if (photos.length < 2)
+      return "Click the upload icon or drop a file on it to add photos."
+    else return "Drag and drop to reorder photos."
+  }
 
   function handleManagePhotosClick() {
     setOpen(true)
@@ -212,7 +219,9 @@ export default (props: PhotoManagerProps) => {
                     Done
                   </button>
 
-                  {error && <p className="error">{error}</p>}
+                  {(error && <p className="error">{error}</p>) || (
+                    <p>{getMessage()}</p>
+                  )}
                 </div>
               </>
             )
@@ -223,6 +232,28 @@ export default (props: PhotoManagerProps) => {
                   {photos.map((photo) => (
                     <img key={photo.uuid} src={photo.url} />
                   ))}
+                  {photos.length === 0 && (
+                    <>
+                      <figure>
+                        <GccIcon />
+                      </figure>
+                      <figure>
+                        <GccIcon />
+                      </figure>
+                      <figure>
+                        <GccIcon />
+                      </figure>
+                      <figure>
+                        <GccIcon />
+                      </figure>
+                      <figure>
+                        <GccIcon />
+                      </figure>
+                      <figure>
+                        <GccIcon />
+                      </figure>
+                    </>
+                  )}
                 </div>
                 <div className="toggle-container">
                   <button

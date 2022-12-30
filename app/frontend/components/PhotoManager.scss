@@ -38,6 +38,7 @@
 
     .SortablePhoto {
       position: relative;
+      flex: none;
 
       &::before {
         content: "";
@@ -178,6 +179,46 @@
 
     img {
       height: 100%;
+    }
+
+    figure {
+      flex: none;
+      margin: 0;
+      height: 100%;
+      background-color: lighten($platinum, 10%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $platinum;
+
+      &:nth-child(1) {
+        width: 320px;
+      }
+
+      &:nth-child(2) {
+        width: 240px;
+      }
+
+      &:nth-child(3) {
+        width: 280px;
+      }
+
+      &:nth-child(4) {
+        width: 320px;
+      }
+
+      &:nth-child(5) {
+        width: 400px;
+      }
+
+      &:nth-child(6) {
+        width: 240px;
+      }
+
+      svg {
+        width: 64px;
+        height: 64px;
+      }
     }
   }
 
