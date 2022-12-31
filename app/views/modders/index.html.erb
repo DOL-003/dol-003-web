@@ -2,7 +2,7 @@
   <h1>Modder search</h1>
 </div>
 
-<%= form_with url: modders_path, html: { class: 'form' } do |form| %>
+<%= form_with url: modders_path, method: 'get', html: { class: 'form' } do |form| %>
   <div class="content grid search-fields">
     <div class="span-8">
 
@@ -44,7 +44,7 @@
       </div>
 
       <div class="actions">
-        <%= form.submit 'Search', class: 'button' %>
+        <%= form.submit 'Search', name: nil, class: 'button' %>
       </div>
 
     </div>

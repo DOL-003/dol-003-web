@@ -2,7 +2,7 @@ class ModdersController < ApplicationController
 
   def index
     services = params[:services] || []
-    @services = services.select { |service| ModderService::ALL_SERVICES.include? service.to_sym }
+    @services = JSON.parse(services).select { |service| ModderService::ALL_SERVICES.include? service.to_sym }
     @city = params[:city]
     @latitude = params[:latitude]
     @longitude = params[:longitude]
