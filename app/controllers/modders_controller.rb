@@ -6,6 +6,8 @@ class ModdersController < ApplicationController
     @city = params[:city]
     @latitude = params[:latitude]
     @longitude = params[:longitude]
+
+    @results = true
   end
 
   def show

@@ -4,6 +4,29 @@ body.modders.index {
   .search-fields {
     margin-top: 48px;
   }
+
+  .sidebar {
+    .ServiceSelector {
+      .service-selector__control--menu-is-open,
+      .service-selector__menu {
+        width: 800px;
+      }
+    }
+
+    .LocationSelector {
+      flex-flow: column nowrap;
+      grid-gap: 8px;
+      align-items: flex-start;
+
+      .Geolocator {
+        margin: 0 0 0 2px;
+      }
+
+      .geolocation-indicator {
+        width: 100%;
+      }
+    }
+  }
 }
 
 body.modders.show {

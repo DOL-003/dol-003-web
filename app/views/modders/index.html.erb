@@ -4,7 +4,7 @@
 
 <%= form_with url: modders_path, method: 'get', html: { class: 'form' } do |form| %>
   <div class="content grid search-fields">
-    <div class="span-8">
+    <div class="span-<%= @results.present? ? '4 sidebar' : '8' %>">
 
       <div class="field">
         <label class="label">Services offered</label>
@@ -29,7 +29,7 @@
         <label class="label">Location</label>
         <%=
           react_component "LocationSelector", {
-            class: 'search large',
+            class: "search #{ @results.present? ? 'full-width' : 'large' }",
             geolocator: true,
             city: @city || "",
             latitude: @latitude || "",

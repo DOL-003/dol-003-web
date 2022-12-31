@@ -80,7 +80,7 @@ export default (props: LocationSelectorProps) => {
         <div className="geolocation-indicator">
           <input
             type="text"
-            className={`text-input large ${props.class || ""}`}
+            className={`text-input ${props.class || ""}`}
             disabled={true}
             value={loading ? "" : "Using your location"}
           />
