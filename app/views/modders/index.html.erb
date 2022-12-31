@@ -2,53 +2,59 @@
   <h1>Modder search</h1>
 </div>
 
-<%= form_with url: modders_path, method: 'get', html: { class: 'form' } do |form| %>
-  <div class="content grid search-fields">
-    <div class="span-<%= @results.present? ? '4 sidebar' : '8' %>">
+<div class="content grid search-fields">
 
-      <div class="field">
-        <label class="label">Services offered</label>
-        <%=
-          react_component "ServiceSelector", {
-            field_name: 'services',
-            all_services: ModderService.enabled_services.map { |slug, service| { value: slug, label: service[:name], color: service[:color] } },
-            selected_services: @services.map { |slug|
-              service = ModderService::ALL_SERVICES[slug.to_sym]
-              next if service.blank?
-              {
-                value: slug,
-                label: service[:name],
-                color: service[:color]
-              }
+  <%= form_with url: modders_path, method: 'get', html: { class: "form span-#{ @results_visible ? '4 sidebar' : '8' }" } do |form| %>
+
+    <div class="field">
+      <label class="label">Services offered</label>
+      <%=
+        react_component "ServiceSelector", {
+          field_name: 'services',
+          all_services: ModderService.enabled_services.map { |slug, service| { value: slug, label: service[:name], color: service[:color] } },
+          selected_services: @services.map { |slug|
+            service = ModderService::ALL_SERVICES[slug.to_sym]
+            next if service.blank?
+            {
+              value: slug,
+              label: service[:name],
+              color: service[:color]
             }
           }
-        %>
-      </div>
-
-      <div class="field">
-        <label class="label">Location</label>
-        <%=
-          react_component "LocationSelector", {
-            class: "search #{ @results.present? ? 'full-width' : 'large' }",
-            geolocator: true,
-            city: @city || "",
-            latitude: @latitude || "",
-            longitude: @longitude || ""
-          }
-        %>
-      </div>
-
-      <div class="field">
-        <%= form.label :name, 'Modder name', class: 'label' %>
-        <%= form.text_field :name, class: 'text-input xlarge search', placeholder: 'Optional' %>
-      </div>
-
-      <div class="actions">
-        <%= form.submit 'Search', name: nil, class: 'button' %>
-      </div>
-
+        }
+      %>
     </div>
-  </div>
-<% end %>
 
-<section class="results"></section>
+    <div class="field">
+      <label class="label">Location</label>
+      <%=
+        react_component "LocationSelector", {
+          class: "search #{ @results_visible ? 'full-width' : 'large' }",
+          geolocator: true,
+          city: @city || "",
+          latitude: @latitude || "",
+          longitude: @longitude || ""
+        }
+      %>
+    </div>
+
+    <div class="field">
+      <%= form.label :query, 'Modder name', class: 'label' %>
+      <%= form.text_field :query, value: @query || '', class: 'text-input xlarge search', placeholder: 'Optional' %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit 'Search', name: nil, class: 'button' %>
+    </div>
+
+  <% end %>
+
+  <% if @results_visible %>
+    <section class="results span-8">
+      <% @results.each do |modder| %>
+        modder
+      <% end %>
+    </section>
+  <% end %>
+
+</div>
