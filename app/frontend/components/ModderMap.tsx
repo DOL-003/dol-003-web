@@ -1,7 +1,7 @@
 import "./ModderMap.scss"
 
 import React, { useRef } from "react"
-import Map, { Marker } from "react-map-gl"
+import Map, { Source, Layer, Marker } from "react-map-gl"
 
 import PinIcon from "@/icons/map-pin.svg"
 
@@ -17,6 +17,7 @@ interface ModderMapProps {
     readonly longitude: string
   }[]
   readonly interactive?: boolean
+  readonly mapPinImageUrl?: string
 }
 
 export default (props: ModderMapProps) => {
@@ -24,7 +25,10 @@ export default (props: ModderMapProps) => {
 
   function handleMapLoad() {
     if (props.modders) {
-      let minLatitude, maxLatitude, minLongitude, maxLongitude
+      let minLatitude: number,
+        maxLatitude: number,
+        minLongitude: number,
+        maxLongitude: number
 
       props.modders.forEach((modder) => {
         if (!minLatitude || parseFloat(modder.latitude) < minLatitude)
@@ -40,7 +44,13 @@ export default (props: ModderMapProps) => {
       const latitudePadding = (maxLatitude - minLatitude) * 0.1
       const longitudePadding = (maxLongitude - minLongitude) * 0.1
 
-      if (map.current)
+      if (map.current) {
+        // add custom icon
+        map.current.loadImage(props.mapPinImageUrl, (error, image) => {
+          map.current.addImage("modder", image)
+        })
+
+        // pan/zoom to show all modders
         map.current.fitBounds([
           {
             lng: maxLongitude + longitudePadding,
@@ -51,6 +61,24 @@ export default (props: ModderMapProps) => {
             lat: maxLatitude + latitudePadding,
           },
         ])
+      }
+    }
+  }
+
+  function getModderGeoJson() {
+    return {
+      type: "FeatureCollection",
+      features: props.modders.map((modder) => ({
+        type: "Feature",
+        geometry: {
+          type: "Point",
+          coordinates: [modder.longitude, modder.latitude],
+        },
+        properties: {
+          name: modder.name,
+          url: modder.url,
+        },
+      })),
     }
   }
 
@@ -71,15 +99,16 @@ export default (props: ModderMapProps) => {
       >
         {(() => {
           if (props.modders)
-            return props.modders.map((modder) => (
-              <Marker
-                key={modder.slug}
-                latitude={parseFloat(modder.latitude)}
-                longitude={parseFloat(modder.longitude)}
-              >
-                <PinIcon />
-              </Marker>
-            ))
+            return (
+              <Source type="geojson" data={getModderGeoJson()}>
+                <Layer
+                  type="symbol"
+                  layout={{
+                    "icon-image": "modder",
+                  }}
+                />
+              </Source>
+            )
           else
             return (
               <Marker
