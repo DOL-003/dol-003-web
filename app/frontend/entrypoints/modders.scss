@@ -89,7 +89,7 @@ body.modders.index {
 
   .sidebar {
     margin: -24px;
-    padding: 24px;
+    padding: 24px 24px 28px;
     background-color: #eee;
     border-radius: 16px;
 
@@ -122,6 +122,42 @@ body.modders.index {
 
   section.results {
     padding-left: 48px;
+
+    .react-container-ModderMap {
+      height: 320px;
+      margin-top: -24px;
+      border-radius: 16px;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
+    }
+
+    .heading {
+      display: flex;
+      align-items: flex-end;
+      margin-top: -296px;
+      transition: margin-top 0.5s ease-in-out;
+
+      button {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+    }
+
+    &.map-visible {
+      .react-container-ModderMap {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .heading {
+        margin-top: 48px;
+      }
+    }
 
     .modder-info {
       margin-top: 32px;
@@ -225,6 +261,15 @@ body.modders.show {
       & + p {
         margin-top: 16px;
       }
+    }
+  }
+
+  section.location {
+    height: 30vw;
+    min-height: 300px;
+
+    .react-container-ModderMap {
+      height: 100%;
     }
   }
 }

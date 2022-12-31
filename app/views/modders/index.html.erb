@@ -47,12 +47,37 @@
       <%= form.submit @results_visible ? 'Update search' : 'Search', name: nil, class: 'button' %>
     </div>
 
+    <%= form.hidden_field :map, value: 0, id: 'map-input' %>
+
   <% end %>
 
   <% if @results_visible %>
-    <section class="results span-7">
+    <section class="results span-8 <%= 'map-visible' if @map %>" id="modder-search-results">
       <% if @results.any? %>
-        <h2><%= @results.length %> <%= 'result'.pluralize(@results.length) %></h2>
+
+        <%=
+          react_component 'ModderMap', {
+            latitude: @latitude,
+            longitude: @longitude,
+            interactive: true,
+            modders: @results.map { |modder|
+              {
+                url: modder_url(modder),
+                slug: modder.slug,
+                name: modder.name,
+                city: modder.city,
+                latitude: modder.latitude,
+                longitude: modder.longitude
+              }
+            }
+          }
+        %>
+
+        <div class="heading">
+          <h2><%= @results.length %> <%= 'result'.pluralize(@results.length) %></h2>
+          <button type="button" class="link" id="map-toggle"><%= inline_svg_tag 'map.svg' %><%= @map ? 'Hide' : 'Show' %> map</button>
+        </div>
+
       <% end %>
       <% @results.each do |modder| %>
 

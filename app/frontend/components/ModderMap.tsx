@@ -3,11 +3,20 @@ import "./ModderMap.scss"
 import React from "react"
 import Map, { Marker } from "react-map-gl"
 
-import MapIcon from "@/icons/map-pin.svg"
+import PinIcon from "@/icons/map-pin.svg"
 
 interface ModderMapProps {
   readonly latitude: string
   readonly longitude: string
+  readonly modders?: {
+    readonly url: string
+    readonly slug: string
+    readonly name: string
+    readonly city: string
+    readonly latitude: string
+    readonly longitude: string
+  }[]
+  readonly interactive?: boolean
 }
 
 export default (props: ModderMapProps) => {
@@ -20,17 +29,32 @@ export default (props: ModderMapProps) => {
           latitude: parseFloat(props.latitude),
           zoom: 7,
         }}
-        interactive={false}
-        style={{ width: "100%", height: "30vw", minHeight: "300px" }}
+        interactive={props.interactive || false}
+        style={{ width: "100%", height: "100%" }}
         mapStyle="mapbox://styles/mapbox/light-v11"
       >
-        <Marker
-          latitude={parseFloat(props.latitude)}
-          longitude={parseFloat(props.longitude)}
-          anchor="bottom"
-        >
-          <MapIcon />
-        </Marker>
+        {(() => {
+          if (props.modders)
+            return props.modders.map((modder) => (
+              <Marker
+                key={modder.slug}
+                latitude={parseFloat(modder.latitude)}
+                longitude={parseFloat(modder.longitude)}
+              >
+                <PinIcon />
+              </Marker>
+            ))
+          else
+            return (
+              <Marker
+                latitude={parseFloat(props.latitude)}
+                longitude={parseFloat(props.longitude)}
+                anchor="bottom"
+              >
+                <PinIcon />
+              </Marker>
+            )
+        })()}
       </Map>
     </div>
   )

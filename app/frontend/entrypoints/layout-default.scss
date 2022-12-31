@@ -31,6 +31,7 @@ body.layout-default {
       grid-template-columns: repeat(12, 1fr);
       grid-column-gap: 40px;
       grid-row-gap: 64px;
+      align-items: start;
 
       > .span-1 {
         grid-column: span 1;
