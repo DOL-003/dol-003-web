@@ -39,7 +39,17 @@ body.application.index {
     .react-container {
       flex: auto;
 
-      > .text-input.large {
+      .LocationSelector {
+        flex-flow: column nowrap;
+        grid-gap: 16px;
+        align-items: flex-start;
+
+        .Geolocator {
+          margin: 0 0 0 2px;
+        }
+      }
+
+      .text-input {
         width: 100%;
       }
     }

@@ -95,14 +95,13 @@ export default (props: LocationSelectorProps) => {
         </div>
       )) || (
         <Autocomplete
-          className={`text-input large ${props.class || ""}`}
+          className={`text-input ${props.class || ""}`}
           apiKey="AIzaSyBXONaKjG3N7wn3asMP4p0xqACCNmVG4SY"
           onPlaceSelected={handlePlaceSelected}
           defaultValue={props.city}
           options={{ fields: ["geometry.location", "formatted_address"] }}
           onFocus={(event) => setTimeout(() => event.target.select(), 10)}
           placeholder={props.placeholder || "Enter your location"}
-          ref={input}
           disabled={loading}
         />
       )}
@@ -116,6 +115,7 @@ export default (props: LocationSelectorProps) => {
         type="hidden"
         name={props.modelName ? `${props.modelName}[city]` : "city"}
         value={city}
+        ref={input}
       />
       <input
         type="hidden"

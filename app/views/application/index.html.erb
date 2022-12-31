@@ -29,19 +29,11 @@
       <%=
         react_component "LocationSelector", {
           class: 'search',
-          autosubmit: true
+          autosubmit: true,
+          geolocator: true
         }
       %>
       <%= form.submit 'Search', class: 'button' %>
-      <%= form.hidden_field 'map', value: true %>
-    <% end %>
-
-    <%= form_with url: modders_path, method: 'get', html: { class: 'location-geolocator' } do |form| %>
-      <%=
-        react_component "Geolocator", {
-          autosubmit: true
-        }
-      %>
       <%= form.hidden_field 'map', value: true %>
     <% end %>
 
