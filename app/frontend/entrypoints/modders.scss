@@ -144,6 +144,10 @@ body.modders.index {
         display: flex;
         align-items: center;
         gap: 12px;
+
+        &.hide-map {
+          display: none;
+        }
       }
     }
 
@@ -156,6 +160,14 @@ body.modders.index {
 
       .heading {
         margin-top: 48px;
+
+        button.hide-map {
+          display: inline-flex;
+        }
+
+        button.show-map {
+          display: none;
+        }
       }
     }
 

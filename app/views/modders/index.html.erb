@@ -75,7 +75,8 @@
 
         <div class="heading">
           <h2><%= @results.length %> <%= 'result'.pluralize(@results.length) %></h2>
-          <button type="button" class="link" id="map-toggle"><%= inline_svg_tag 'map.svg' %><%= @map ? 'Hide' : 'Show' %> map</button>
+          <button type="button" class="link map-toggle show-map"><%= inline_svg_tag 'map.svg' %>Show map</button>
+          <button type="button" class="link map-toggle hide-map"><%= inline_svg_tag 'map.svg' %>Hide map</button>
         </div>
 
       <% end %>
