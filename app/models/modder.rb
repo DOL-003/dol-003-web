@@ -43,7 +43,7 @@ class Modder < ApplicationRecord
   mount_uploader :logo, ModderLogoUploader
 
   scope :order_by_proximity, -> (latitude, longitude) {
-    select('*').select("|/((#{latitude} - latitude::DECIMAL) ^ 2 + (#{longitude} - longitude::DECIMAL) ^ 2) as distance").order(distance: :asc)
+    select('*').select(sanitize_sql_array(['|/((? - latitude::DECIMAL) ^ 2 + (? - longitude::DECIMAL) ^ 2) as distance', latitude, longitude])).order(distance: :asc)
   }
 
   def to_param

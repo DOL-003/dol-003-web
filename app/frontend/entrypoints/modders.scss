@@ -1,73 +1,11 @@
 @import "../colors";
 
-body.modders.index {
-  .search-fields {
-    margin-top: 48px;
-  }
-
-  .sidebar {
-    .ServiceSelector {
-      .service-selector__control--menu-is-open,
-      .service-selector__menu {
-        width: 800px;
-      }
-    }
-
-    .LocationSelector {
-      flex-flow: column nowrap;
-      grid-gap: 8px;
-      align-items: flex-start;
-
-      .Geolocator {
-        margin: 0 0 0 2px;
-      }
-
-      .geolocation-indicator {
-        width: 100%;
-      }
-    }
-  }
-}
-
-body.modders.show {
-  section.photos {
-    height: 20vw;
-    min-height: 180px;
-    max-height: 280px;
-    position: relative;
-
-    &.empty {
-      display: none;
-    }
-
-    > .photo-container {
-      width: 100vw;
-      height: 100%;
-      display: flex;
-      gap: 32px;
-      overflow-x: auto;
-      position: relative;
-      left: calc((100vw - 100%) / -2);
-      padding: 0 calc((100vw - 100%) / 2);
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-
-      &::-webkit-scrollbar {
-        display: none;
-      }
-
-      img {
-        height: 100%;
-        flex: none;
-      }
-    }
-  }
-
-  section.info {
+body.modders {
+  section.modder-info {
     .meta {
       display: flex;
 
-      > .logo {
+      .logo {
         margin: 0;
         width: 64px;
         height: 64px;
@@ -139,6 +77,104 @@ body.modders.show {
           color: var(--service-color, $platinum);
           border-radius: 32px;
         }
+      }
+    }
+  }
+}
+
+body.modders.index {
+  .search-fields {
+    margin-top: 64px;
+  }
+
+  .sidebar {
+    margin: -24px;
+    padding: 24px;
+    background-color: #eee;
+    border-radius: 16px;
+
+    .ServiceSelector {
+      .service-selector__control--menu-is-open,
+      .service-selector__menu {
+        width: 800px;
+      }
+    }
+
+    .LocationSelector {
+      flex-flow: column nowrap;
+      grid-gap: 8px;
+      align-items: flex-start;
+
+      .Geolocator {
+        margin: 0 0 0 2px;
+      }
+
+      .geolocation-indicator {
+        width: 100%;
+      }
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  section.results {
+    padding-left: 48px;
+
+    .modder-info {
+      margin-top: 32px;
+
+      .meta {
+        h3 {
+          text-transform: none;
+          letter-spacing: 0;
+        }
+
+        > div {
+          padding-top: 10px;
+        }
+      }
+
+      .services {
+        margin-top: 16px;
+        margin-left: 86px;
+      }
+    }
+  }
+}
+
+body.modders.show {
+  section.photos {
+    height: 20vw;
+    min-height: 180px;
+    max-height: 280px;
+    position: relative;
+
+    &.empty {
+      display: none;
+    }
+
+    > .photo-container {
+      width: 100vw;
+      height: 100%;
+      display: flex;
+      gap: 32px;
+      overflow-x: auto;
+      position: relative;
+      left: calc((100vw - 100%) / -2);
+      padding: 0 calc((100vw - 100%) / 2);
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      img {
+        height: 100%;
+        flex: none;
       }
     }
   }

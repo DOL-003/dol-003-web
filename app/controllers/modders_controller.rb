@@ -1,7 +1,7 @@
 class ModdersController < ApplicationController
 
   def index
-    services = params[:services] || []
+    services = params[:services] || '[]'
     @services = JSON.parse(services).select { |service| ModderService::ALL_SERVICES.include? service.to_sym }
     @city = params[:city]
     @latitude = params[:latitude]
@@ -18,6 +18,8 @@ class ModdersController < ApplicationController
 
     if @latitude.present? && @longitude.present?
       @results = @results.order_by_proximity(@latitude, @longitude)
+    else
+      @results = @results.order('random()')
     end
   end
 

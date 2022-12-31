@@ -44,15 +44,42 @@
     </div>
 
     <div class="actions">
-      <%= form.submit 'Search', name: nil, class: 'button' %>
+      <%= form.submit @results_visible ? 'Update search' : 'Search', name: nil, class: 'button' %>
     </div>
 
   <% end %>
 
   <% if @results_visible %>
-    <section class="results span-8">
+    <section class="results span-7">
+      <% if @results.any? %>
+        <h2><%= @results.length %> <%= 'result'.pluralize(@results.length) %></h2>
+      <% end %>
       <% @results.each do |modder| %>
-        modder
+
+        <section class="modder-info">
+          <div class="meta">
+            <%= link_to modder do %>
+              <figure class="logo" style="<%= "background-image: url(#{modder.logo_url})" if modder.logo.present? %>">
+                <% if modder.logo.blank? %>
+                  <%= inline_svg_tag 'gcc.svg' %>
+                <% end %>
+              </figure>
+            <% end %>
+            <div>
+              <%= link_to modder do %><h3><%= modder.name %></h3><% end %>
+              <p class="city"><%= inline_svg_tag 'pin' %><%= modder.city %></p>
+            </div>
+          </div>
+          <div class="services">
+            <ol>
+              <% modder.modder_services.map do |service| %>
+                <% svc = ModderService::ALL_SERVICES[service.service.to_sym] %>
+                <li style="--service-color: <%= svc[:color] %>"><%= svc[:name] %></li>
+              <% end %>
+            </ol>
+          </div>
+        </section>
+
       <% end %>
     </section>
   <% end %>
