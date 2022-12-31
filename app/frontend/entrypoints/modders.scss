@@ -137,7 +137,6 @@ body.modders.index {
       display: flex;
       align-items: flex-end;
       margin-top: -296px;
-      transition: margin-top 0.5s ease-in-out;
 
       button {
         margin-left: auto;
@@ -149,6 +148,10 @@ body.modders.index {
           display: none;
         }
       }
+    }
+
+    &.initialized .heading {
+      transition: margin-top 0.5s ease-in-out;
     }
 
     &.map-visible {
