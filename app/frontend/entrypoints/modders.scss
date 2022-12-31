@@ -1,5 +1,11 @@
 @import "../colors";
 
+body.modders.index {
+  .search-fields {
+    margin-top: 48px;
+  }
+}
+
 body.modders.show {
   section.photos {
     height: 20vw;

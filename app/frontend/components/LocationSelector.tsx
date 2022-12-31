@@ -3,6 +3,11 @@ import "./LocationSelector.scss"
 import React, { useState, useRef } from "react"
 import Autocomplete from "react-google-autocomplete"
 
+import Geolocator from "./Geolocator"
+import CheckIcon from "@/icons/check.svg"
+import XIcon from "@/icons/x.svg"
+import Spinner from "@/icons/spinner.svg"
+
 interface LocationSelectorProps {
   readonly modelName?: string
   readonly city?: string
@@ -11,6 +16,7 @@ interface LocationSelectorProps {
   readonly class?: string
   readonly placeholder?: string
   readonly autosubmit?: boolean
+  readonly geolocator?: boolean
 }
 
 interface PlaceResult {
@@ -27,9 +33,10 @@ export default (props: LocationSelectorProps) => {
   const [city, setCity] = useState(props.city || "")
   const [latitude, setLatitude] = useState(props.latitude || "")
   const [longitude, setLongitude] = useState(props.longitude || "")
+  const [loading, setLoading] = useState(false)
   const input = useRef<HTMLInputElement>()
 
-  const handlePlaceSelected = (place: PlaceResult) => {
+  function handlePlaceSelected(place: PlaceResult) {
     setCity(place.formatted_address)
     setLatitude(place.geometry.location.lat().toString())
     setLongitude(place.geometry.location.lng().toString())
@@ -37,18 +44,74 @@ export default (props: LocationSelectorProps) => {
       setTimeout(() => input.current.form.submit(), 10)
   }
 
+  function handleGeolocationClick() {
+    setLoading(true)
+  }
+
+  function clearGeolocation() {
+    setLatitude("")
+    setLongitude("")
+  }
+
+  function isUsingGeolocation() {
+    return !city && !!latitude && !!longitude
+  }
+
+  function shouldShowGeolocationIndicator() {
+    return loading || isUsingGeolocation()
+  }
+
+  function handleGeolocation(latitude: string, longitude: string) {
+    setLoading(false)
+    handlePlaceSelected({
+      formatted_address: "",
+      geometry: {
+        location: {
+          lat: () => parseFloat(latitude),
+          lng: () => parseFloat(longitude),
+        },
+      },
+    })
+  }
+
   return (
-    <>
-      <Autocomplete
-        className={`LocationSelector text-input large ${props.class || ""}`}
-        apiKey="AIzaSyAj_d9mLSJyQkQYNobEfqTY95bMmI2YTps"
-        onPlaceSelected={handlePlaceSelected}
-        defaultValue={props.city}
-        options={{ fields: ["geometry.location", "formatted_address"] }}
-        onFocus={(event) => setTimeout(() => event.target.select(), 10)}
-        placeholder={props.placeholder || "Enter your location"}
-        ref={input}
-      />
+    <div className="LocationSelector">
+      {(shouldShowGeolocationIndicator() && (
+        <div className="geolocation-indicator">
+          <input
+            type="text"
+            className={`text-input large ${props.class || ""}`}
+            disabled={true}
+            value={loading ? "" : "Using your location"}
+          />
+          {(loading && <Spinner className="spinner" />) || (
+            <>
+              <CheckIcon className="check-icon" />
+              <button type="button" onClick={clearGeolocation}>
+                <XIcon />
+              </button>
+            </>
+          )}
+        </div>
+      )) || (
+        <Autocomplete
+          className={`text-input large ${props.class || ""}`}
+          apiKey="AIzaSyBXONaKjG3N7wn3asMP4p0xqACCNmVG4SY"
+          onPlaceSelected={handlePlaceSelected}
+          defaultValue={props.city}
+          options={{ fields: ["geometry.location", "formatted_address"] }}
+          onFocus={(event) => setTimeout(() => event.target.select(), 10)}
+          placeholder={props.placeholder || "Enter your location"}
+          ref={input}
+          disabled={loading}
+        />
+      )}
+      {props.geolocator && (!latitude || !longitude || city) && !loading && (
+        <Geolocator
+          onLocation={handleGeolocation}
+          onClick={handleGeolocationClick}
+        />
+      )}
       <input
         type="hidden"
         name={props.modelName ? `${props.modelName}[city]` : "city"}
@@ -64,6 +127,6 @@ export default (props: LocationSelectorProps) => {
         name={props.modelName ? `${props.modelName}[longitude]` : "longitude"}
         value={longitude}
       />
-    </>
+    </div>
   )
 }

@@ -53,14 +53,14 @@ const SortableSelect = SortableContainer(Select) as React.ComponentClass<
 
 interface ServiceSelectorProps {
   readonly allServices: ServiceOption[]
-  readonly modderServices: ServiceOption[]
+  readonly selectedServices: ServiceOption[]
   readonly fieldName: string
 }
 
 export default (props: ServiceSelectorProps) => {
   const [selectedServices, setSelectedServices] = useState<
     readonly ServiceOption[]
-  >(props.modderServices)
+  >(props.selectedServices)
 
   const onChange = (selectedOptions: OnChangeValue<ServiceOption, true>) =>
     setSelectedServices(selectedOptions)

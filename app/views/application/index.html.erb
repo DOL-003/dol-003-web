@@ -14,7 +14,7 @@
     <ul class="service-list">
       <% ModderService::ALL_SERVICES.map.with_index do |service| %>
         <li>
-          <%= link_to service[1][:name], modders_path(service: service[0]), class: 'service-pill interactive', style: "--service-color: #{service[1][:color]}" %>
+          <%= link_to service[1][:name], modders_path(services: [service[0]]), class: 'service-pill interactive', style: "--service-color: #{service[1][:color]}" %>
         </li>
       <% end %>
     </ul>
@@ -39,6 +39,7 @@
     <%= form_with url: modders_path, method: 'get', html: { class: 'location-geolocator' } do |form| %>
       <%=
         react_component "Geolocator", {
+          autosubmit: true
         }
       %>
       <%= form.hidden_field 'map', value: true %>

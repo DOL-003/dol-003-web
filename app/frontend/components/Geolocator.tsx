@@ -4,18 +4,33 @@ import React, { useState, useRef } from "react"
 
 import ArrowIcon from "@/icons/nav-arrow.svg"
 
-export default () => {
+interface GeolocatorProps {
+  readonly autosubmit?: boolean
+  readonly onLocation?: (latitude: string, longitude: string) => void
+  readonly onClick?: Function
+}
+
+export default (props: GeolocatorProps) => {
   const [latitude, setLatitude] = useState("")
   const [longitude, setLongitude] = useState("")
 
   const latitudeInput = useRef<HTMLInputElement>()
 
   function handleButtonClick() {
+    if (props.onClick) props.onClick()
+
     navigator.geolocation.getCurrentPosition(
       (position: GeolocationPosition) => {
-        setLatitude(position.coords.latitude.toString())
-        setLongitude(position.coords.longitude.toString())
-        setTimeout(() => latitudeInput.current.form.submit(), 10)
+        const latitude = position.coords.latitude.toString()
+        const longitude = position.coords.longitude.toString()
+
+        setLatitude(latitude)
+        setLongitude(longitude)
+
+        if (props.onLocation) props.onLocation(latitude, longitude)
+
+        if (props.autosubmit)
+          setTimeout(() => latitudeInput.current.form.submit(), 10)
       }
     )
   }

@@ -1,0 +1,51 @@
+<div class="content">
+  <h1>Modder search</h1>
+</div>
+
+<%= form_with url: modders_path, html: { class: 'form' } do |form| %>
+  <div class="content grid search-fields">
+    <div class="span-8">
+
+      <div class="field">
+        <label class="label">Services offered</label>
+        <%=
+          react_component "ServiceSelector", {
+            field_name: 'services',
+            all_services: ModderService.enabled_services.map { |slug, service| { value: slug, label: service[:name], color: service[:color] } },
+            selected_services: @services.map { |slug|
+              service = ModderService::ALL_SERVICES[slug.to_sym]
+              next if service.blank?
+              {
+                value: slug,
+                label: service[:name],
+                color: service[:color]
+              }
+            }
+          }
+        %>
+      </div>
+
+      <div class="field">
+        <label class="label">Location</label>
+        <%=
+          react_component "LocationSelector", {
+            class: 'search',
+            geolocator: true
+          }
+        %>
+      </div>
+
+      <div class="field">
+        <%= form.label :name, 'Modder name', class: 'label' %>
+        <%= form.text_field :name, class: 'text-input xlarge search', placeholder: 'Optional' %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit 'Search', class: 'button' %>
+      </div>
+
+    </div>
+  </div>
+<% end %>
+
+<section class="results"></section>

@@ -1,7 +1,8 @@
 class ModdersController < ApplicationController
 
   def index
-    # search page idk
+    services = params[:services] || []
+    @services = services.select { |service| ModderService::ALL_SERVICES.include? service.to_sym }
   end
 
   def show
