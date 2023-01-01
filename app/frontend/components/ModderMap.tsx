@@ -1,7 +1,13 @@
 import "./ModderMap.scss"
 
 import React, { useEffect, useRef, useState } from "react"
-import Map, { Source, Layer, Marker, MapLayerMouseEvent } from "react-map-gl"
+import Map, {
+  Source,
+  Layer,
+  Marker,
+  MapLayerMouseEvent,
+  NavigationControl,
+} from "react-map-gl"
 
 import PinIcon from "@/icons/map-pin.svg"
 import { Popup } from "mapbox-gl"
@@ -163,6 +169,7 @@ export default (props: ModderMapProps) => {
           if (props.modders)
             return (
               <>
+                <NavigationControl showCompass={false} />
                 <Source
                   id="modder-data"
                   type="geojson"
