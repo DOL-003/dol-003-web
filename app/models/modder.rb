@@ -72,6 +72,42 @@ class Modder < ApplicationRecord
     slug
   end
 
+  def featured_link_url
+    return '' if featured_link.blank?
+
+    case featured_link
+    when 'website_url'
+      website_url
+    when 'etsy_shop'
+      etsy_url
+    when 'twitter_username'
+      twitter_url
+    end
+  end
+
+  def featured_link_text
+    case featured_link
+    when 'website_url'
+      'Visit website'
+    when 'etsy_shop'
+      'Etsy shop'
+    when 'twitter_username'
+      'Twitter profile'
+    end
+  end
+
+  def etsy_url
+    "https://#{etsy_shop}.etsy.com"
+  end
+
+  def twitter_url
+    "https://twitter.com/#{twitter_username}"
+  end
+
+  def formatted_twitter_username
+    twitter_username[0] == '@' ? twitter_username : "@#{twitter_username}"
+  end
+
   private
 
   def generate_slug
