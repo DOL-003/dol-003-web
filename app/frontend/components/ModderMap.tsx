@@ -22,6 +22,15 @@ interface ModderMapProps {
   readonly mapVisible?: boolean
 }
 
+let minLatitude: number,
+  maxLatitude: number,
+  minLongitude: number,
+  maxLongitude: number,
+  latitudePadding: number = 0,
+  longitudePadding: number = 0,
+  initialLatitude: number = 0,
+  initialLongitude: number = 0
+
 export default (props: ModderMapProps) => {
   const map = useRef()
   const [mapEnabled, setMapEnabled] = useState(props.mapVisible)
@@ -30,15 +39,8 @@ export default (props: ModderMapProps) => {
     document.addEventListener("map-visible", () => {
       setMapEnabled(true)
     })
-  }, [])
 
-  function handleMapLoad() {
     if (props.modders) {
-      let minLatitude: number,
-        maxLatitude: number,
-        minLongitude: number,
-        maxLongitude: number
-
       props.modders.forEach((modder) => {
         if (!minLatitude || parseFloat(modder.latitude) < minLatitude)
           minLatitude = parseFloat(modder.latitude)
@@ -48,72 +50,76 @@ export default (props: ModderMapProps) => {
           minLongitude = parseFloat(modder.longitude)
         if (!maxLongitude || parseFloat(modder.longitude) > maxLongitude)
           maxLongitude = parseFloat(modder.longitude)
+
+        initialLatitude += parseFloat(modder.latitude)
+        initialLongitude += parseFloat(modder.longitude)
       })
 
-      const latitudePadding = (maxLatitude - minLatitude) * 0.2
-      const longitudePadding = (maxLongitude - minLongitude) * 0.2
+      initialLatitude = initialLatitude / props.modders.length
+      initialLongitude = initialLongitude / props.modders.length
+      latitudePadding = (maxLatitude - minLatitude) * 0.3
+      longitudePadding = (maxLongitude - minLongitude) * 0.3
+    }
+  }, [])
 
-      if (map.current) {
-        // add custom icon
-        map.current.loadImage(props.mapPinImageUrl, (error, image) => {
-          map.current.addImage("modder", image)
-        })
+  function handleMapLoad() {
+    // stuff to do only for the multi modder map
+    if (props.modders && map.current) {
+      // add custom icon
+      map.current.loadImage(props.mapPinImageUrl, (error, image) => {
+        map.current.addImage("modder", image)
+      })
 
-        // set up click handler
-        map.current.on(
-          "click",
-          "modder-points",
-          (event: MapLayerMouseEvent) => {
-            if (event.features[0]) {
-              window.location = event.features[0].properties.url
-            }
+      // set up click handler
+      map.current.on("click", "modder-points", (event: MapLayerMouseEvent) => {
+        if (event.features[0]) {
+          window.location = event.features[0].properties.url
+        }
+      })
+
+      const modderNamePopup = new Popup({
+        closeButton: false,
+        closeOnClick: false,
+        className: "modder-name-popup",
+        anchor: "top",
+      })
+
+      // set up popup handlers
+      map.current.on(
+        "mouseenter",
+        "modder-points",
+        (event: MapLayerMouseEvent) => {
+          map.current.getCanvas().style.cursor = "pointer"
+
+          const coordinates = event.features[0].geometry.coordinates.slice()
+
+          while (Math.abs(event.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += event.lngLat.lng > coordinates[0] ? 360 : -360
           }
-        )
 
-        const modderNamePopup = new Popup({
-          closeButton: false,
-          closeOnClick: false,
-          className: "modder-name-popup",
-          anchor: "top",
-        })
+          modderNamePopup
+            .setLngLat(coordinates)
+            .setHTML(event.features[0].properties.name)
+            .addTo(map.current.getMap())
+        }
+      )
 
-        // set up popup handlers
-        map.current.on(
-          "mouseenter",
-          "modder-points",
-          (event: MapLayerMouseEvent) => {
-            map.current.getCanvas().style.cursor = "pointer"
+      map.current.on("mouseleave", "modder-points", () => {
+        map.current.getCanvas().style.cursor = ""
+        modderNamePopup.remove()
+      })
 
-            const coordinates = event.features[0].geometry.coordinates.slice()
-
-            while (Math.abs(event.lngLat.lng - coordinates[0]) > 180) {
-              coordinates[0] += event.lngLat.lng > coordinates[0] ? 360 : -360
-            }
-
-            modderNamePopup
-              .setLngLat(coordinates)
-              .setHTML(event.features[0].properties.name)
-              .addTo(map.current.getMap())
-          }
-        )
-
-        map.current.on("mouseleave", "modder-points", () => {
-          map.current.getCanvas().style.cursor = ""
-          modderNamePopup.remove()
-        })
-
-        // pan/zoom to show all modders
-        map.current.fitBounds([
-          {
-            lng: maxLongitude + longitudePadding,
-            lat: minLatitude - latitudePadding,
-          },
-          {
-            lng: minLongitude - longitudePadding,
-            lat: maxLatitude + latitudePadding,
-          },
-        ])
-      }
+      // pan/zoom to show all modders
+      map.current.fitBounds([
+        {
+          lng: maxLongitude + longitudePadding,
+          lat: minLatitude - latitudePadding,
+        },
+        {
+          lng: minLongitude - longitudePadding,
+          lat: maxLatitude + latitudePadding,
+        },
+      ])
     }
   }
 
@@ -142,8 +148,9 @@ export default (props: ModderMapProps) => {
       <Map
         mapboxAccessToken="pk.eyJ1Ijoiam1hcnF1aXMiLCJhIjoiY2xjNWI5Z25vMGFiOTNvbDduMm1xdjd6OSJ9.sIvPPG3HemKrXvtW-fVqYg"
         initialViewState={{
-          longitude: parseFloat(props.longitude) || -94.5785667,
-          latitude: parseFloat(props.latitude) || 39.0997265,
+          longitude:
+            parseFloat(props.longitude) || initialLongitude || -94.5785667,
+          latitude: parseFloat(props.latitude) || initialLatitude || 39.0997265,
           zoom: 7,
         }}
         interactive={props.interactive || false}
