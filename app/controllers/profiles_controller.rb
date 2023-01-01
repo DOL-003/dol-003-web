@@ -22,7 +22,17 @@ class ProfilesController < ApplicationController
 
     begin
       @modder.transaction do
-        @modder.update!(params.require(:modder).permit(:name, :bio, :city, :latitude, :longitude))
+        @modder.update!(params.require(:modder).permit(
+          :name,
+          :bio,
+          :city,
+          :latitude,
+          :longitude,
+          :featured_link,
+          :website_url,
+          :etsy_shop,
+          :twitter_username
+        ))
         @modder.logo = params[:modder][:logo]
         @modder.save!
 
@@ -42,7 +52,7 @@ class ProfilesController < ApplicationController
       flash[:notice] = 'Your profile was updated.'
       redirect_to user_root_path
     rescue StandardError
-      flash[:error] = "There was a problem saving your profile. #{@modder.errors.full_messages.join('. ')}"
+      flash[:error] = 'There was a problem saving your profile. See error messages below.'
       render :edit
     end
   end

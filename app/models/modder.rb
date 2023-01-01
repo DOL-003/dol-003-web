@@ -25,6 +25,13 @@
 #  index_modders_on_user_id  (user_id)
 #
 class Modder < ApplicationRecord
+
+  FEATURED_LINK_OPTIONS = [
+    ['Website', 'website_url'],
+    ['Etsy shop', 'etsy_shop'],
+    ['Twitter handle', 'twitter_username']
+  ]
+
   belongs_to :user
   has_many :modder_services
   has_many :modder_photos, -> { order(index: :asc) }
@@ -37,6 +44,21 @@ class Modder < ApplicationRecord
   validates :city, presence: true
   validates :latitude, presence: true
   validates :longitude, presence: true
+  validates :featured_link, inclusion: { in: FEATURED_LINK_OPTIONS.map { |opt| opt[1] } }
+
+  validates :website_url,
+    presence: { message: 'Featured link must be present' },
+    if: -> { featured_link == 'website_url' }
+  validates :etsy_shop,
+    presence: { message: 'Featured link must be present' },
+    if: -> { featured_link == 'etsy_shop' }
+  validates :twitter_username,
+    presence: { message: 'Featured link must be present' },
+    if: -> { featured_link == 'twitter_username' }
+
+  validates :website_url, url: { message: 'Must be a valid URL' }, allow_blank: true
+  validates :etsy_shop, length: { in: 3..50, message: 'Must be at least 3 letters' }, allow_blank: true
+  validates :twitter_username, length: { in: 2..50, message: 'Must be at least 2 letters' }, allow_blank: true
 
   before_validation :generate_slug, if: :will_save_change_to_name?
 

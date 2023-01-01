@@ -1,6 +1,7 @@
 @import "@/colors";
 
-body.profiles.edit {
+body.profiles.edit,
+body.profiles.update {
   .form {
     > .content {
       margin-top: 48px;

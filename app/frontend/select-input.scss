@@ -1,0 +1,45 @@
+@import "@/colors";
+
+.select-input-container {
+  position: relative;
+  width: fit-content;
+
+  &::after {
+    content: "";
+    width: 10px;
+    height: 6px;
+    background-color: $platinum;
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+    position: absolute;
+    top: 21px;
+    right: 16px;
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    background-color: darken($platinum, 20%);
+  }
+}
+
+.select-input {
+  appearance: none;
+  border: 0;
+  box-shadow: inset 0 0 0 2px $platinum;
+  height: 48px;
+  padding: 0 40px 1px 16px;
+  border-radius: 8px;
+  outline: 0;
+  display: block;
+  background-color: #fff;
+  max-width: 100%;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: inset 0 0 0 2px darken($platinum, 20%), 0 8px 8px -12px $black;
+  }
+
+  &:focus,
+  &:active {
+    box-shadow: inset 0 0 0 2px $spice, inset 0 2px 10px -6px $black;
+  }
+}

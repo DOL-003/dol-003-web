@@ -96,6 +96,52 @@
       %>
     </div>
 
+    <div class="span-4 caption">
+      <p class="label large">External links</p>
+      <p class="small">Link viewers to your shop and/or social media pages. All links are optional, but you must have at least one to feature on your profile.</p>
+    </div>
+
+    <div class="span-8 input-container">
+
+      <div class="field">
+        <%= form.label :featured_link, class: 'label' %>
+        <div class="select-input-container">
+          <%= form.select :featured_link, Modder::FEATURED_LINK_OPTIONS, {}, { class: 'select-input' } %>
+        </div>
+      </div>
+
+      <%= render 'form_field', locals: {
+        resource: @modder,
+        form: form,
+        field_name: :website_url,
+        field_type: :text_field,
+        error_field: :message,
+        label: 'Website',
+        options: { maxlength: 500, class: 'text-input xlarge', placeholder: 'https://your-website.com' }
+      } %>
+
+      <%= render 'form_field', locals: {
+        resource: @modder,
+        form: form,
+        field_name: :etsy_shop,
+        field_type: :text_field,
+        error_field: :message,
+        label: 'Etsy shop',
+        options: { maxlength: 50, class: 'text-input large', placeholder: 'YourShopName (not the full URL)' }
+      } %>
+
+      <%= render 'form_field', locals: {
+        resource: @modder,
+        form: form,
+        field_name: :twitter_username,
+        field_type: :text_field,
+        error_field: :message,
+        label: 'Twitter handle',
+        options: { maxlength: 50, class: 'text-input large', placeholder: '@YourTwitterHandle' }
+      } %>
+
+    </div>
+
   </div>
 
   <div class="content">

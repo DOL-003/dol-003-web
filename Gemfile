@@ -75,3 +75,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "validate_url", "~> 1.0"
