@@ -1,7 +1,7 @@
 import "./ModderMap.scss"
 
 import React, { useRef } from "react"
-import Map, { Source, Layer, Marker } from "react-map-gl"
+import Map, { Source, Layer, Marker, MapLayerMouseEvent } from "react-map-gl"
 
 import PinIcon from "@/icons/map-pin.svg"
 
@@ -50,6 +50,25 @@ export default (props: ModderMapProps) => {
           map.current.addImage("modder", image)
         })
 
+        // set up click handler
+        map.current.on(
+          "click",
+          "modder-points",
+          (event: MapLayerMouseEvent) => {
+            if (event.features[0]) {
+              window.location = event.features[0].properties.url
+            }
+          }
+        )
+
+        map.current.on("mouseenter", "modder-points", () => {
+          map.current.getCanvas().style.cursor = "pointer"
+        })
+
+        map.current.on("mouseleave", "modder-points", () => {
+          map.current.getCanvas().style.cursor = ""
+        })
+
         // pan/zoom to show all modders
         map.current.fitBounds([
           {
@@ -69,6 +88,7 @@ export default (props: ModderMapProps) => {
     return {
       type: "FeatureCollection",
       features: props.modders.map((modder) => ({
+        id: modder.slug,
         type: "Feature",
         geometry: {
           type: "Point",
@@ -100,11 +120,14 @@ export default (props: ModderMapProps) => {
         {(() => {
           if (props.modders)
             return (
-              <Source type="geojson" data={getModderGeoJson()}>
+              <Source id="modder-data" type="geojson" data={getModderGeoJson()}>
                 <Layer
+                  id="modder-points"
                   type="symbol"
                   layout={{
                     "icon-image": "modder",
+                    "icon-anchor": "bottom",
+                    "icon-size": 0.5,
                   }}
                 />
               </Source>
