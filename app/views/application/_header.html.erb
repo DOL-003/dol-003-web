@@ -22,7 +22,7 @@
             <li class="name"><%= link_to current_modder.name, modder_path(current_modder), class: 'big' %></li>
             <li><%= link_to 'Edit profile', edit_profile_path %></li>
             <li><a href="#">Account settings</a></li>
-            <li><a href="#">Sign out</a></li>
+            <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
           </ul>
 
         </li>
