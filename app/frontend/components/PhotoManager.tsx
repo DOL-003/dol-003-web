@@ -256,7 +256,7 @@ export default (props: PhotoManagerProps) => {
                   )}
                 </div>
                 <div className="toggle-container">
-                  <figure class="frame">
+                  <figure className="frame">
                     <button
                       type="button"
                       className="button secondary"

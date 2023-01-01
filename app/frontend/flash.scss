@@ -12,12 +12,13 @@
 
 .flash {
   position: absolute;
-  top: 80px;
+  top: 100px;
   left: 0;
   right: 0;
   margin: 0 auto;
   width: 90vw;
   max-width: 640px;
+  z-index: 100000;
 
   > input {
     display: none;

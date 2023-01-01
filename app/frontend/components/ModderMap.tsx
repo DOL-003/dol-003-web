@@ -1,9 +1,10 @@
 import "./ModderMap.scss"
 
-import React, { useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import Map, { Source, Layer, Marker, MapLayerMouseEvent } from "react-map-gl"
 
 import PinIcon from "@/icons/map-pin.svg"
+import { Popup } from "mapbox-gl"
 
 interface ModderMapProps {
   readonly latitude: string
@@ -18,10 +19,18 @@ interface ModderMapProps {
   }[]
   readonly interactive?: boolean
   readonly mapPinImageUrl?: string
+  readonly mapVisible?: boolean
 }
 
 export default (props: ModderMapProps) => {
   const map = useRef()
+  const [mapEnabled, setMapEnabled] = useState(props.mapVisible)
+
+  useEffect(() => {
+    document.addEventListener("map-visible", () => {
+      setMapEnabled(true)
+    })
+  }, [])
 
   function handleMapLoad() {
     if (props.modders) {
@@ -41,8 +50,8 @@ export default (props: ModderMapProps) => {
           maxLongitude = parseFloat(modder.longitude)
       })
 
-      const latitudePadding = (maxLatitude - minLatitude) * 0.1
-      const longitudePadding = (maxLongitude - minLongitude) * 0.1
+      const latitudePadding = (maxLatitude - minLatitude) * 0.2
+      const longitudePadding = (maxLongitude - minLongitude) * 0.2
 
       if (map.current) {
         // add custom icon
@@ -61,12 +70,36 @@ export default (props: ModderMapProps) => {
           }
         )
 
-        map.current.on("mouseenter", "modder-points", () => {
-          map.current.getCanvas().style.cursor = "pointer"
+        const modderNamePopup = new Popup({
+          closeButton: false,
+          closeOnClick: false,
+          className: "modder-name-popup",
+          anchor: "top",
         })
+
+        // set up popup handlers
+        map.current.on(
+          "mouseenter",
+          "modder-points",
+          (event: MapLayerMouseEvent) => {
+            map.current.getCanvas().style.cursor = "pointer"
+
+            const coordinates = event.features[0].geometry.coordinates.slice()
+
+            while (Math.abs(event.lngLat.lng - coordinates[0]) > 180) {
+              coordinates[0] += event.lngLat.lng > coordinates[0] ? 360 : -360
+            }
+
+            modderNamePopup
+              .setLngLat(coordinates)
+              .setHTML(event.features[0].properties.name)
+              .addTo(map.current.getMap())
+          }
+        )
 
         map.current.on("mouseleave", "modder-points", () => {
           map.current.getCanvas().style.cursor = ""
+          modderNamePopup.remove()
         })
 
         // pan/zoom to show all modders
@@ -102,6 +135,8 @@ export default (props: ModderMapProps) => {
     }
   }
 
+  if (mapEnabled === false) return <div className="ModderMap" />
+
   return (
     <div className="ModderMap">
       <Map
@@ -120,17 +155,24 @@ export default (props: ModderMapProps) => {
         {(() => {
           if (props.modders)
             return (
-              <Source id="modder-data" type="geojson" data={getModderGeoJson()}>
-                <Layer
-                  id="modder-points"
-                  type="symbol"
-                  layout={{
-                    "icon-image": "modder",
-                    "icon-anchor": "bottom",
-                    "icon-size": 0.5,
-                  }}
-                />
-              </Source>
+              <>
+                <Source
+                  id="modder-data"
+                  type="geojson"
+                  data={getModderGeoJson()}
+                  cluster={true}
+                >
+                  <Layer
+                    id="modder-points"
+                    type="symbol"
+                    layout={{
+                      "icon-image": "modder",
+                      "icon-anchor": "bottom",
+                      "icon-size": 0.5,
+                    }}
+                  />
+                </Source>
+              </>
             )
           else
             return (

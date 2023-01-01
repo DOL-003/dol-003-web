@@ -1,3 +1,5 @@
+@import "@/colors";
+
 .ModderMap {
   width: 100%;
   height: 100%;
@@ -5,5 +7,24 @@
   .mapboxgl-marker svg {
     width: 48px;
     height: 48px;
+  }
+
+  .modder-name-popup {
+    .mapboxgl-popup-tip {
+      display: none;
+    }
+
+    .mapboxgl-popup-content {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 0 8px;
+      margin-top: 4px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      font: 12px source-code-pro, monospace;
+      color: $black;
+      box-shadow: inset 0 0 0 1px $platinum, 0 8px 8px -12px $black;
+    }
   }
 }
