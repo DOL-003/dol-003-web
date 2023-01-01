@@ -12,20 +12,71 @@ import Map, {
 import PinIcon from "@/icons/map-pin.svg"
 import { Popup } from "mapbox-gl"
 
+interface Modder {
+  readonly url: string
+  readonly slug: string
+  readonly name: string
+  readonly city: string
+  readonly latitude: string
+  readonly longitude: string
+}
+
 interface ModderMapProps {
   readonly latitude: string
   readonly longitude: string
-  readonly modders?: {
-    readonly url: string
-    readonly slug: string
-    readonly name: string
-    readonly city: string
-    readonly latitude: string
-    readonly longitude: string
-  }[]
+  readonly modders?: Modder[]
   readonly interactive?: boolean
   readonly mapPinImageUrl?: string
   readonly mapVisible?: boolean
+}
+
+const modderSplayProximityThreshold = 0.01
+const modderSplayDistance = 0.01
+let splayedModders: Modder[]
+
+function splayModders(modders: Modder[]) {
+  if (splayedModders) return splayedModders
+
+  const modderGroups = []
+  for (let i = 0; i < modders.length; i++) {
+    modderGroups[i] = [i]
+    for (let j = i; j < modders.length; j++) {
+      if (modders[i].slug === modders[j].slug) continue
+
+      if (
+        Math.abs(
+          parseFloat(modders[j].latitude) - parseFloat(modders[i].latitude)
+        ) < modderSplayProximityThreshold &&
+        Math.abs(
+          parseFloat(modders[j].longitude) - parseFloat(modders[j].longitude)
+        ) < modderSplayProximityThreshold
+      ) {
+        modderGroups[i] = modderGroups[i].concat([j])
+      }
+    }
+  }
+
+  const moddersCopy = modders.slice()
+  for (let i = 0; i < modderGroups.length; i++) {
+    if (modderGroups[i].length === 1) continue
+
+    const originLatitude = parseFloat(modders[modderGroups[i][0]].latitude)
+    const originLongitude = parseFloat(modders[modderGroups[i][0]].longitude)
+    const angle = (2 * Math.PI) / modderGroups[i].length
+
+    for (let j = 0; j < modderGroups[i].length; j++) {
+      moddersCopy[modderGroups[i][j]].longitude = (
+        originLongitude +
+        modderSplayDistance * Math.cos(j * angle)
+      ).toString()
+      moddersCopy[modderGroups[i][j]].latitude = (
+        originLatitude +
+        modderSplayDistance * Math.sin(j * angle)
+      ).toString()
+    }
+  }
+
+  return (splayedModders = moddersCopy)
 }
 
 let minLatitude: number,
@@ -41,13 +92,15 @@ export default (props: ModderMapProps) => {
   const map = useRef()
   const [mapEnabled, setMapEnabled] = useState(props.mapVisible)
 
+  const modders = props.modders ? splayModders(props.modders) : null
+
   useEffect(() => {
     document.addEventListener("map-visible", () => {
       setMapEnabled(true)
     })
 
-    if (props.modders) {
-      props.modders.forEach((modder) => {
+    if (modders) {
+      modders.forEach((modder) => {
         if (!minLatitude || parseFloat(modder.latitude) < minLatitude)
           minLatitude = parseFloat(modder.latitude)
         if (!maxLatitude || parseFloat(modder.latitude) > maxLatitude)
@@ -61,8 +114,8 @@ export default (props: ModderMapProps) => {
         initialLongitude += parseFloat(modder.longitude)
       })
 
-      initialLatitude = initialLatitude / props.modders.length
-      initialLongitude = initialLongitude / props.modders.length
+      initialLatitude = initialLatitude / modders.length
+      initialLongitude = initialLongitude / modders.length
       latitudePadding = (maxLatitude - minLatitude) * 0.3
       longitudePadding = (maxLongitude - minLongitude) * 0.3
     }
@@ -70,7 +123,7 @@ export default (props: ModderMapProps) => {
 
   function handleMapLoad() {
     // stuff to do only for the multi modder map
-    if (props.modders && map.current) {
+    if (modders && map.current) {
       // add custom icon
       map.current.loadImage(props.mapPinImageUrl, (error, image) => {
         map.current.addImage("modder", image)
@@ -132,7 +185,7 @@ export default (props: ModderMapProps) => {
   function getModderGeoJson() {
     return {
       type: "FeatureCollection",
-      features: props.modders.map((modder) => ({
+      features: splayModders(props.modders).map((modder) => ({
         id: modder.slug,
         type: "Feature",
         geometry: {
@@ -166,7 +219,7 @@ export default (props: ModderMapProps) => {
         onLoad={handleMapLoad}
       >
         {(() => {
-          if (props.modders)
+          if (modders)
             return (
               <>
                 <NavigationControl showCompass={false} />
@@ -179,10 +232,28 @@ export default (props: ModderMapProps) => {
                   <Layer
                     id="modder-points"
                     type="symbol"
+                    filter={["!=", "cluster", true]}
                     layout={{
                       "icon-image": "modder",
                       "icon-anchor": "bottom",
                       "icon-size": 0.5,
+                    }}
+                  />
+                  <Layer
+                    id="modder-clusters"
+                    type="circle"
+                    filter={["==", "cluster", true]}
+                    paint={{
+                      "circle-radius": 24,
+                      "circle-color": "#fdb03a",
+                    }}
+                  />
+                  <Layer
+                    id="modder-cluster-text"
+                    type="symbol"
+                    filter={["==", "cluster", true]}
+                    layout={{
+                      "text-field": ["get", "point_count"],
                     }}
                   />
                 </Source>
