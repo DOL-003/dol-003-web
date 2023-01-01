@@ -14,7 +14,7 @@
     <ul class="service-list">
       <% ModderService::ALL_SERVICES.map.with_index do |service| %>
         <li>
-          <%= link_to service[1][:name], modders_path(services: [service[0]]), class: 'service-pill interactive', style: "--service-color: #{service[1][:color]}" %>
+          <%= link_to service[1][:name], modders_path(services: [service[0]].to_json), class: 'service-pill interactive', style: "--service-color: #{service[1][:color]}" %>
         </li>
       <% end %>
     </ul>

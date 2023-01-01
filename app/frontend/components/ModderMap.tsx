@@ -199,16 +199,19 @@ export default (props: ModderMapProps) => {
       })
 
       // pan/zoom to show all modders
-      map.current.fitBounds([
-        {
-          lng: maxLongitude + longitudePadding,
-          lat: minLatitude - latitudePadding,
-        },
-        {
-          lng: minLongitude - longitudePadding,
-          lat: maxLatitude + latitudePadding,
-        },
-      ])
+      map.current.fitBounds(
+        [
+          {
+            lng: maxLongitude + longitudePadding,
+            lat: minLatitude - latitudePadding,
+          },
+          {
+            lng: minLongitude - longitudePadding,
+            lat: maxLatitude + latitudePadding,
+          },
+        ],
+        { maxZoom: 8 }
+      )
     }
   }
 
