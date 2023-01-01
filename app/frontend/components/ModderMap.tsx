@@ -129,12 +129,34 @@ export default (props: ModderMapProps) => {
         map.current.addImage("modder", image)
       })
 
-      // set up click handler
+      // set up modder click handler
       map.current.on("click", "modder-points", (event: MapLayerMouseEvent) => {
         if (event.features[0]) {
           window.location = event.features[0].properties.url
         }
       })
+
+      // set up cluster click handler
+      map.current.on(
+        "click",
+        "modder-clusters",
+        (event: MapLayerMouseEvent) => {
+          const feature = event.features[0]
+          map.current
+            .getSource("modder-data")
+            .getClusterExpansionZoom(
+              feature.properties.cluster_id,
+              (error, zoom) => {
+                if (error) return
+
+                map.current.easeTo({
+                  center: feature.geometry.coordinates,
+                  zoom,
+                })
+              }
+            )
+        }
+      )
 
       const modderNamePopup = new Popup({
         closeButton: false,
@@ -166,6 +188,14 @@ export default (props: ModderMapProps) => {
       map.current.on("mouseleave", "modder-points", () => {
         map.current.getCanvas().style.cursor = ""
         modderNamePopup.remove()
+      })
+
+      map.current.on("mouseenter", "modder-clusters", () => {
+        map.current.getCanvas().style.cursor = "pointer"
+      })
+
+      map.current.on("mouseleave", "modder-clusters", () => {
+        map.current.getCanvas().style.cursor = ""
       })
 
       // pan/zoom to show all modders
