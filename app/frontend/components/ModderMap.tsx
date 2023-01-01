@@ -100,7 +100,11 @@ export default (props: ModderMapProps) => {
     })
 
     if (modders) {
-      modders.forEach((modder) => {
+      const currentPosition =
+        props.latitude && props.longitude
+          ? [{ latitude: props.latitude, longitude: props.longitude }]
+          : []
+      modders.concat(currentPosition).forEach((modder) => {
         if (!minLatitude || parseFloat(modder.latitude) < minLatitude)
           minLatitude = parseFloat(modder.latitude)
         if (!maxLatitude || parseFloat(modder.latitude) > maxLatitude)
