@@ -40,7 +40,7 @@
 
     <div class="field">
       <%= form.label :query, 'Modder name', class: 'label' %>
-      <%= form.text_field :query, value: @query || '', class: 'text-input xlarge search', placeholder: 'Optional' %>
+      <%= form.text_field :query, value: @query || '', class: 'text-input xlarge search', placeholder: 'Optional', autocomplete: 'off' %>
     </div>
 
     <div class="actions">
