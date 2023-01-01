@@ -19,6 +19,7 @@ interface Modder {
   readonly city: string
   readonly latitude: string
   readonly longitude: string
+  grouped?: boolean
 }
 
 interface ModderMapProps {
@@ -40,6 +41,10 @@ function splayModders(modders: Modder[]) {
   const modderGroups = []
   for (let i = 0; i < modders.length; i++) {
     modderGroups[i] = [i]
+
+    if (modders[i].grouped) continue
+    modders[i].grouped = true
+
     for (let j = i; j < modders.length; j++) {
       if (modders[i].slug === modders[j].slug) continue
 
@@ -52,6 +57,7 @@ function splayModders(modders: Modder[]) {
         ) < modderSplayProximityThreshold
       ) {
         modderGroups[i] = modderGroups[i].concat([j])
+        modders[j].grouped = true
       }
     }
   }
