@@ -21,6 +21,7 @@
 #
 # Indexes
 #
+#  index_modders_on_name     (name) USING gin
 #  index_modders_on_slug     (slug) UNIQUE
 #  index_modders_on_user_id  (user_id)
 #
@@ -66,6 +67,12 @@ class Modder < ApplicationRecord
 
   scope :order_by_proximity, -> (latitude, longitude) {
     select('*').select(sanitize_sql_array(['|/((? - latitude::DECIMAL) ^ 2 + (? - longitude::DECIMAL) ^ 2) as distance', latitude, longitude])).order(distance: :asc)
+  }
+
+  scope :name_similar_to, ->(query) {
+    quoted_query = ActiveRecord::Base.connection.quote_string(query)
+    where('name % :query', query:).
+      order(Arel.sql("similarity(name, '#{quoted_query}') desc"))
   }
 
   def to_param
