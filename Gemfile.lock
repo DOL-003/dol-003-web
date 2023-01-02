@@ -274,6 +274,11 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sentry-rails (5.7.0)
+      railties (>= 5.0)
+      sentry-ruby (~> 5.7.0)
+    sentry-ruby (5.7.0)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
     solargraph (0.48.0)
       backport (~> 1.2)
       benchmark
@@ -357,6 +362,8 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.3)
   selenium-webdriver
+  sentry-rails
+  sentry-ruby
   solargraph
   sprockets-rails
   tzinfo-data
