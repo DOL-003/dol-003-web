@@ -16,6 +16,8 @@
 #
 class UserInvitation < ApplicationRecord
 
+  include Rails.application.routes.url_helpers
+
   STATUS_UNCLAIMED = 'unclaimed'.freeze
   STATUS_CLAIMED = 'claimed'.freeze
 
@@ -29,7 +31,7 @@ class UserInvitation < ApplicationRecord
   end
 
   def registration_url
-    new_user_registration_path(invitation_token: claim_token)
+    new_user_registration_url(invitation_token: claim_token, host: 'https://dol-003.info')
   end
 
 end
