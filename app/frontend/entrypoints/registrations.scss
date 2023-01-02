@@ -1,9 +1,17 @@
-body.registrations {
+@import "@/colors";
 
+body.registrations {
   main {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
+  }
+
+  .notice {
+    padding: 24px 28px 28px;
+    margin: -24px -28px 32px;
+    background-color: lighten($spice, 30%);
+    border-radius: 24px;
   }
 }

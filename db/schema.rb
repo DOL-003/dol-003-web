@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_01_203543) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_01_233712) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
+
+  create_table "modder_invitations", force: :cascade do |t|
+    t.bigint "modder_id"
+    t.string "claim_token"
+    t.string "status", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["claim_token"], name: "index_modder_invitations_on_claim_token"
+    t.index ["modder_id"], name: "index_modder_invitations_on_modder_id"
+  end
 
   create_table "modder_photos", force: :cascade do |t|
     t.bigint "modder_id", null: false

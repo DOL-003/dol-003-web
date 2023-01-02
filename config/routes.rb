@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    confirmations: 'authentication/confirmations',
+    passwords: 'authentication/passwords',
+    registrations: 'authentication/registrations',
+    sessions: 'authentication/sessions',
+  }
 
   root 'application#index'
 

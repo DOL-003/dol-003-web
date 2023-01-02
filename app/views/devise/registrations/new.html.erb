@@ -4,35 +4,35 @@
 
     <h2>Get listed</h2>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form' }) do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form' }) do |form| %>
 
       <%= render 'form_field', locals: {
         resource: resource,
-        form: f,
+        form: form,
         field_name: :email,
         field_type: :email_field,
-        options: { autofocus: true, autocomplete: 'email', class: 'text-input large' }
+        options: { autofocus: true, autocomplete: 'email', class: 'text-input large', disabled: !@allow_register }
       } %>
 
       <%= render 'form_field', locals: {
         resource: resource,
-        form: f,
+        form: form,
         field_name: :password,
         field_type: :password_field,
-        options: { autocomplete: 'new-password', class: 'text-input large' }
+        options: { autocomplete: 'new-password', class: 'text-input large', disabled: !@allow_register }
       } %>
 
       <%= render 'form_field', locals: {
         resource: resource,
-        form: f,
+        form: form,
         field_name: :password_confirmation,
         label: 'Confirm password',
         field_type: :password_field,
-        options: { autocomplete: 'new-password', class: 'text-input large' }
+        options: { autocomplete: 'new-password', class: 'text-input large', disabled: !@allow_register }
       } %>
 
       <div class="actions">
-        <%= f.submit 'Sign up', class: 'button' %>
+        <%= form.submit 'Sign up', class: 'button', disabled: !@allow_register %>
         <%= link_to 'Sign in', new_session_path(resource_name) %><br />
       </div>
 
@@ -41,8 +41,17 @@
   </section>
 
   <section class="span-6">
+
+    <% if !@allow_register %>
+      <div class="notice">
+        <p class="big">DOL-003.info is in private beta.</p>
+        <p>Modder registration is currently by invitation only. We’re planning to open sign-ups to the public soon — stay tuned!</p>
+      </div>
+    <% end %>
+
     <p class="big">Register as a modder and get found by people looking for your services.</p>
     <p>Note that modder content is regularly monitored and subject to removal at any time by the DOL-003 team. Anyone found impersonating a modder, posting or linking to inappropriate content, or taking other actions that are deemed to violate the standards of the community may be subject to permanent suspension without warning.</p>
+
   </section>
 
 </div>

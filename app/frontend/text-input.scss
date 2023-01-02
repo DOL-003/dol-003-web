@@ -37,9 +37,10 @@
   }
 
   &:disabled {
-    background-color: transparent;
+    background-color: lighten($platinum, 20%);
     box-shadow: inset 0 0 0 2px $platinum;
     color: $panasonic;
+    cursor: not-allowed;
   }
 
   &::placeholder {
