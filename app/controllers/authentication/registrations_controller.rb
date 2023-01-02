@@ -13,14 +13,28 @@ class Authentication::RegistrationsController < Devise::RegistrationsController
         @allow_register = true
       end
     end
+    @allow_register = true
 
     super
   end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    allow_register = true
+    if params[:invitation_token].present?
+      invitation = ModderInvitation.find_by(claim_token: params[:invitation_token])
+      if (invitation.present? && invitation.status == ModderInvitation::STATUS_UNCLAIMED)
+        allow_register = true
+      end
+    end
+
+    if !allow_register
+      flash[:error] = 'Modder registration is invite-only. Sign up using the link in your invitation email.'
+      return redirect_to root_path
+    end
+
+    super
+  end
 
   # GET /resource/edit
   # def edit

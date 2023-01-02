@@ -36,6 +36,8 @@
         <%= link_to 'Sign in', new_session_path(resource_name) %><br />
       </div>
 
+      <%= hidden_field_tag :invitation_token, params[:invitation_token] %>
+
     <% end %>
 
   </section>
@@ -45,7 +47,7 @@
     <% if !@allow_register %>
       <div class="notice">
         <p class="big">DOL-003.info is in private beta.</p>
-        <p>Modder registration is currently by invitation only. We’re planning to open sign-ups to the public soon — stay tuned!</p>
+        <p>Modder registration is currently by invitation only. If you’ve been invited, click on the link in your invitation email. Otherwise, we’re planning to open sign-ups to the public soon — stay tuned!</p>
       </div>
     <% end %>
 

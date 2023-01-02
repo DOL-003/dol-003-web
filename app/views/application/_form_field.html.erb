@@ -6,7 +6,7 @@
     <%= locals[:form].label locals[:field_name], class: 'label' %>
   <% end %>
   <%= locals[:form].send locals[:field_type], locals[:field_name], locals[:options] %>
-  <% errors.each do |error| %>
-    <p class="error-message"><%= locals[:error_field].present? ? error.send(locals[:error_field]) : error.full_message %>.</p>
+  <% if errors.any? %>
+    <p class="error-message"><%= locals[:error_field].present? ? errors.first.send(locals[:error_field]) : errors.first.full_message %>.</p>
   <% end %>
 </div>
