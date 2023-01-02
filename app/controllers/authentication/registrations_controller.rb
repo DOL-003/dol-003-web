@@ -8,22 +8,22 @@ class Authentication::RegistrationsController < Devise::RegistrationsController
   def new
     @allow_register = false
     if params[:invitation_token].present?
-      invitation = ModderInvitation.find_by(claim_token: params[:invitation_token])
-      if (invitation.present? && invitation.status == ModderInvitation::STATUS_UNCLAIMED)
+      invitation = UserInvitation.find_by(claim_token: params[:invitation_token])
+      if (invitation.present? && invitation.status == UserInvitation::STATUS_UNCLAIMED)
         @allow_register = true
       end
     end
-    @allow_register = true
 
     super
   end
 
   # POST /resource
   def create
-    allow_register = true
+    allow_register = false
+    invitation = nil
     if params[:invitation_token].present?
-      invitation = ModderInvitation.find_by(claim_token: params[:invitation_token])
-      if (invitation.present? && invitation.status == ModderInvitation::STATUS_UNCLAIMED)
+      invitation = UserInvitation.find_by(claim_token: params[:invitation_token])
+      if (invitation.present? && invitation.status == UserInvitation::STATUS_UNCLAIMED)
         allow_register = true
       end
     end
@@ -34,6 +34,12 @@ class Authentication::RegistrationsController < Devise::RegistrationsController
     end
 
     super
+
+    if resource.persisted? && invitation.present?
+      invitation.status = UserInvitation::STATUS_CLAIMED
+      invitation.user = resource
+      invitation.save
+    end
   end
 
   # GET /resource/edit
