@@ -77,3 +77,5 @@ group :test do
 end
 
 gem "validate_url", "~> 1.0"
+
+gem "fog-aws", "~> 3.15"
