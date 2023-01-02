@@ -204,7 +204,7 @@ body.modders.show {
     max-height: 280px;
     position: relative;
 
-    &.empty {
+    &.empty:not(.signed-in-modder) {
       display: none;
     }
 
