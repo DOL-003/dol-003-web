@@ -22,8 +22,8 @@ export default (props: LogoSelectorProps) => {
     const file = event.target.files[0]
     if (!file) return
 
-    if (file.size > 1024 * 1000) {
-      setError("Logo must be less than 1MB.")
+    if (file.size > 1024 * 5000) {
+      setError("Logo must be less than 5MB.")
       return
     }
 

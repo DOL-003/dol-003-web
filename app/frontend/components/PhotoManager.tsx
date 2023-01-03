@@ -109,8 +109,8 @@ export default (props: PhotoManagerProps) => {
     const file = event.target.files[0]
     if (!file) return
 
-    if (file.size > 1024 * 5000) {
-      setError("Photo must be less than 5MB.")
+    if (file.size > 1024 * 10000) {
+      setError("Photo must be less than 10MB.")
       return
     }
 
