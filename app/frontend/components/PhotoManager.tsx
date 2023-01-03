@@ -234,7 +234,12 @@ export default (props: PhotoManagerProps) => {
               <>
                 <div className="gallery">
                   {photos.map((photo) => (
-                    <img key={photo.uuid} src={photo.url} />
+                    <img
+                      key={photo.uuid}
+                      src={photo.url}
+                      width={photo.width}
+                      height={photo.height}
+                    />
                   ))}
                   {photos.length === 0 && (
                     <>
