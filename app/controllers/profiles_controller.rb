@@ -49,6 +49,8 @@ class ProfilesController < ApplicationController
         end
       end
 
+      AdminMailer.with(modder: @modder).new_modder.deliver_later
+
       flash[:notice] = 'Your profile was updated.'
       redirect_to user_root_path
     rescue StandardError

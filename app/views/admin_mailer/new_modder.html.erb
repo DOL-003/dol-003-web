@@ -1,0 +1,7 @@
+<p>A new modder has registered!</p>
+
+<p>
+  Name: <%= @modder.name %><br>
+  Email: <%= @modder.user.email %><br>
+  <%= link_to 'Modder profile', modder_url(@modder) %>
+</p>
