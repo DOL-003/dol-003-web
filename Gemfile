@@ -82,3 +82,5 @@ gem 'fog-aws', '~> 3.15'
 
 gem 'sentry-ruby'
 gem 'sentry-rails'
+
+gem 'mini_magick'

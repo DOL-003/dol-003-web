@@ -27,6 +27,7 @@
     display: flex;
     gap: 32px;
     overflow-x: auto;
+    overflow-y: hidden;
     left: calc((100vw - 100%) / -2);
     padding: 0 calc((100vw - 100%) / 2);
     -ms-overflow-style: none;

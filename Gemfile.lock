@@ -355,6 +355,7 @@ DEPENDENCIES
   inline_svg
   jbuilder
   lograge
+  mini_magick
   pg (~> 1.1)
   pry
   pry-byebug

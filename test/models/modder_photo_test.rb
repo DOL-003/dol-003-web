@@ -3,9 +3,11 @@
 # Table name: modder_photos
 #
 #  id         :bigint           not null, primary key
+#  height     :integer
 #  index      :integer          not null
 #  photo      :string           not null
 #  uuid       :string           not null
+#  width      :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  modder_id  :bigint           not null
