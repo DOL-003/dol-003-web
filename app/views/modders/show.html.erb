@@ -32,7 +32,7 @@
       </figure>
       <div>
         <h1><%= @modder.name %></h1>
-        <p class="city"><%= inline_svg_tag 'pin' %><%= @modder.city %></p>
+        <p class="city"><%= inline_svg_tag 'pin.svg' %><%= @modder.city %></p>
         <p><%= @modder.bio %></p>
       </div>
     </div>
@@ -47,18 +47,18 @@
   </section>
 
   <section class="span-4 sidebar">
-    <%= link_to @modder.featured_link_url, target: '_blank', class: 'button' do %><%= @modder.featured_link_text %><%= inline_svg_tag 'external' %><% end %>
+    <%= link_to @modder.featured_link_url, target: '_blank', class: 'button' do %><%= @modder.featured_link_text %><%= inline_svg_tag 'external.svg' %><% end %>
 
     <% if @modder.website_url.present? && @modder.featured_link != 'website_url' %>
-      <%= link_to @modder.website_url, target: '_blank' do %><%= inline_svg_tag 'link' %><%= URI.parse(@modder.website_url).host %><% end %>
+      <%= link_to @modder.website_url, target: '_blank' do %><%= inline_svg_tag 'link.svg' %><%= URI.parse(@modder.website_url).host %><% end %>
     <% end %>
 
     <% if @modder.etsy_shop.present? && @modder.featured_link != 'etsy_shop' %>
-      <%= link_to @modder.etsy_url, target: '_blank' do %><%= inline_svg_tag 'etsy' %><%= @modder.etsy_shop %><% end %>
+      <%= link_to @modder.etsy_url, target: '_blank' do %><%= inline_svg_tag 'etsy.svg' %><%= @modder.etsy_shop %><% end %>
     <% end %>
 
     <% if @modder.twitter_username.present? && @modder.featured_link != 'twitter_username' %>
-      <%= link_to @modder.twitter_url, target: '_blank' do %><%= inline_svg_tag 'twitter' %><%= @modder.formatted_twitter_username %><% end %>
+      <%= link_to @modder.twitter_url, target: '_blank' do %><%= inline_svg_tag 'twitter.svg' %><%= @modder.formatted_twitter_username %><% end %>
     <% end %>
 
     <p class="small">Joined <%= @modder.updated_at.strftime('%b %Y') %></p>
