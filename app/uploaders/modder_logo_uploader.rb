@@ -47,7 +47,19 @@ class ModderLogoUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
 
+  def filename
+    "#{secure_token}.#{file.extension}" if original_filename.present?
+  end
+
   def content_type_allowlist
     /image\//
   end
+
+  private
+
+  def secure_token
+    var = :"@#{mounted_as}_secure_token"
+    model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.urlsafe_base64(20))
+  end
+
 end
