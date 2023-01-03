@@ -14,6 +14,7 @@
 #  slug             :string           not null
 #  status           :string           not null
 #  twitter_username :string
+#  uuid             :string
 #  website_url      :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
@@ -62,6 +63,10 @@ class Modder < ApplicationRecord
   validates :twitter_username, length: { in: 2..50, message: 'Must be at least 2 letters' }, allow_blank: true
 
   before_validation :generate_slug, if: :will_save_change_to_name?
+
+  before_create do |modder|
+    modder.uuid ||= SecureRandom.urlsafe_base64(20)
+  end
 
   mount_uploader :logo, ModderLogoUploader
 

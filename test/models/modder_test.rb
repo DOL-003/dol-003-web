@@ -14,6 +14,7 @@
 #  slug             :string           not null
 #  status           :string           not null
 #  twitter_username :string
+#  uuid             :string
 #  website_url      :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
