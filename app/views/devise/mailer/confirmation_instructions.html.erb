@@ -1,5 +1,5 @@
-<p>Welcome <%= @email %>!</p>
+<p>Thanks for registering as a modder on <%= link_to 'DOL-003.info', root_url %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>Click the button to confirm your account and start setting up your profile!</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to 'Confirm account', confirmation_url(@resource, confirmation_token: @token), class: 'button' %></p>
