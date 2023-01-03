@@ -38,6 +38,8 @@
 
       <%= hidden_field_tag :invitation_token, params[:invitation_token] %>
 
+      <p class="agreement small">By signing up, you certify that you have read and agreed to the <%= link_to 'Terms of Service', terms_path %>, <%= link_to 'Privacy Policy', privacy_path %>, and <%= link_to 'House Rules', rules_path %>.</p>
+
     <% end %>
 
   </section>

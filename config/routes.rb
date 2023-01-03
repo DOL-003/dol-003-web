@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get '/about', to: 'application#about'
   get '/terms', to: 'application#terms'
+  get '/rules', to: 'application#rules'
+  get '/privacy', to: 'application#privacy_policy'
 
   get '/profile', to: 'profiles#show', as: :user_root
   resource :profile, only: [:edit, :update, :create]

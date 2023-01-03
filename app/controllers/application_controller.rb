@@ -13,6 +13,15 @@ class ApplicationController < ActionController::Base
   def about
   end
 
+  def terms
+  end
+
+  def rules
+  end
+
+  def privacy_policy
+  end
+
   protected
 
   def current_modder

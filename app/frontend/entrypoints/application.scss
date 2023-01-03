@@ -65,7 +65,10 @@ body.application.index {
   }
 }
 
-body.application.about {
+body.application.about,
+body.application.terms,
+body.application.privacy_policy,
+body.application.rules {
   h1 {
     margin-top: 80px;
   }
