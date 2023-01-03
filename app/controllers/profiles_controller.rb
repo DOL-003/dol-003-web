@@ -74,8 +74,8 @@ class ProfilesController < ApplicationController
         photo: {
           uuid: modder_photo.uuid,
           url: modder_photo.photo.thumb.url,
-          width: modder_photo.width,
-          height: modder_photo.height
+          width: modder_photo.thumb_display_width,
+          height: modder_photo.thumb_display_height
         }
       }
     else
