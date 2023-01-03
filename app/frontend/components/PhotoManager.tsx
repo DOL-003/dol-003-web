@@ -23,6 +23,8 @@ import GccIcon from "@/icons/gcc.svg"
 interface Photo {
   uuid: string
   url: string
+  width: number
+  height: number
 }
 
 interface PhotoResult {
@@ -186,6 +188,8 @@ export default (props: PhotoManagerProps) => {
                       <SortablePhoto
                         key={photo.uuid}
                         src={photo.url}
+                        width={photo.width}
+                        height={photo.height}
                         uuid={photo.uuid}
                         onRemoveClick={handleRemovePhoto}
                       />

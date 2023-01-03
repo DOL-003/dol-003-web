@@ -8,6 +8,8 @@ interface SortablePhotoProps {
   readonly src: string
   readonly uuid: string
   readonly onRemoveClick: (uuid: string) => void
+  readonly width: number
+  readonly height: number
 }
 
 export default (props: SortablePhotoProps) => {
@@ -31,7 +33,7 @@ export default (props: SortablePhotoProps) => {
       {...attributes}
       {...listeners}
     >
-      <img src={props.src} />
+      <img src={props.src} width={props.width} height={props.height} />
       <button data-no-dnd="true" type="button" onClick={handleRemoveClick}>
         <XIcon />
       </button>
