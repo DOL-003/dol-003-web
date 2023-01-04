@@ -21,6 +21,8 @@
     <%= vite_typescript_tag controller_name %>
     <%= vite_stylesheet_tag "#{controller_name}.scss" %>
 
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "f76ccfadce1746ebb0f7d5c9060a3f5d"}'></script>
+
   </head>
 
   <body class="<%= controller_name %> <%= action_name %> layout-<%= current_layout %>">
