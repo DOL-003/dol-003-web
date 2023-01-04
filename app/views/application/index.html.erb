@@ -39,9 +39,18 @@
 
   </section>
 
+  <% #TODO: if total > 3 %>
   <section class="span-12">
     <h2>Featured modders</h2>
-    <p>blah</p>
+    <% Modder.vetted.random(3).has_photos.each do |modder| %>
+      <div>
+        <%= link_to modder do %>
+          <figure class="featured-photo" style="background-image: url(<%= modder.modder_photos.first.photo.thumb.url %>)"></figure>
+        <% end %>
+        <h3><%= link_to modder.name, modder %></h3>
+        <p><%= modder.bio %></p>
+      </div>
+    <% end %>
   </section>
 
   <%= render 'get_listed' %>

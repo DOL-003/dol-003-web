@@ -15,6 +15,7 @@
 #  status           :string           not null
 #  twitter_username :string
 #  uuid             :string
+#  vetting_status   :string
 #  website_url      :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
@@ -22,9 +23,10 @@
 #
 # Indexes
 #
-#  index_modders_on_name     (name) USING gin
-#  index_modders_on_slug     (slug) UNIQUE
-#  index_modders_on_user_id  (user_id)
+#  index_modders_on_name            (name) USING gin
+#  index_modders_on_slug            (slug) UNIQUE
+#  index_modders_on_user_id         (user_id)
+#  index_modders_on_vetting_status  (vetting_status)
 #
 class Modder < ApplicationRecord
 
@@ -33,6 +35,9 @@ class Modder < ApplicationRecord
     ['Etsy shop', 'etsy_shop'],
     ['Twitter handle', 'twitter_username']
   ]
+
+  VETTING_STATUS_VETTED = 'vetted'
+  VETTING_STATUS_REJECTED = 'rejected'
 
   belongs_to :user
   has_many :modder_services
@@ -46,6 +51,7 @@ class Modder < ApplicationRecord
   validates :city, presence: true
   validates :latitude, presence: true
   validates :longitude, presence: true
+  validates :vetting_status, inclusion: { in: [VETTING_STATUS_VETTED, VETTING_STATUS_REJECTED] }, allow_blank: true
   validates :featured_link, inclusion: { in: FEATURED_LINK_OPTIONS.map { |opt| opt[1] } }
 
   validates :website_url,
@@ -79,6 +85,10 @@ class Modder < ApplicationRecord
     where('name % :query', query:).
       order(Arel.sql("similarity(name, '#{quoted_query}') desc"))
   }
+
+  scope :vetted, -> { where(vetting_status: VETTING_STATUS_VETTED) }
+  scope :random, -> (limit) { order('random()').limit(limit) }
+  scope :has_photos, -> { joins(:modder_photos).where.not(modder_photos: { id: nil }).uniq }
 
   def to_param
     slug
