@@ -12,15 +12,19 @@ class ApplicationController < ActionController::Base
   end
 
   def about
+    @title = 'About'
   end
 
   def terms
+    @title = 'Terms of Service'
   end
 
   def rules
+    @title = 'House Rules'
   end
 
   def privacy_policy
+    @title = 'Priacy Policy'
   end
 
   protected

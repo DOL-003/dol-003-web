@@ -6,6 +6,7 @@ class Authentication::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
+    @title = 'Modder registration'
     @allow_register = false
     if params[:invitation_token].present?
       invitation = UserInvitation.find_by(claim_token: params[:invitation_token])
@@ -19,6 +20,7 @@ class Authentication::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
+    @title = 'Modder registration'
     allow_register = false
     invitation = nil
     if params[:invitation_token].present?

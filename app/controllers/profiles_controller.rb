@@ -10,6 +10,7 @@ class ProfilesController < ApplicationController
   def edit
     @modder = current_modder || Modder.new(user: current_user)
     @onboarding = !@modder.persisted?
+    @title = @onboarding ? 'Create profile' : 'Edit profile'
   end
 
   def create
@@ -55,6 +56,7 @@ class ProfilesController < ApplicationController
       redirect_to user_root_path
     rescue StandardError
       flash[:error] = 'There was a problem saving your profile. See error messages below.'
+      @title = @onboarding ? 'Create profile' : 'Edit profile'
       render :edit
     end
   end

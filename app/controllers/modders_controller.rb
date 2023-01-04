@@ -1,6 +1,8 @@
 class ModdersController < ApplicationController
 
   def index
+    @title = 'Modder search'
+
     services = params[:services] || '[]'
     @services = JSON.parse(services).select { |service| ModderService::ALL_SERVICES.include? service.to_sym }
     @city = params[:city]
@@ -28,6 +30,7 @@ class ModdersController < ApplicationController
 
   def show
     @modder = Modder.find_by(slug: params[:id]) or not_found
+    @title = @modder.name
   end
 
 end
