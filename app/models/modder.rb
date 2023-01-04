@@ -88,10 +88,14 @@ class Modder < ApplicationRecord
 
   scope :vetted, -> { where(vetting_status: VETTING_STATUS_VETTED) }
   scope :random, -> (limit) { order('random()').limit(limit) }
-  scope :has_photos, -> { joins(:modder_photos).where.not(modder_photos: { id: nil }).uniq }
+  scope :has_photos, -> { where.associated(:modder_photos).group(:id) }
 
   def to_param
     slug
+  end
+
+  def self.featured_modders
+    vetted.has_photos.random(3)
   end
 
   def featured_link_url

@@ -10,6 +10,11 @@ export default defineConfig({
     svgr({
       exportAsDefault: true,
     }),
-    FullReload(["config/routes.rb", "app/views/**/*", "app/controllers/**/*"]),
+    FullReload([
+      "config/routes.rb",
+      "app/views/**/*",
+      "app/controllers/**/*",
+      "app/models/**/*",
+    ]),
   ],
 })

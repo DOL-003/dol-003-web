@@ -63,6 +63,37 @@ body.application.index {
     margin-top: 16px;
     padding-left: 2px;
   }
+
+  .featured-modders {
+    margin-top: 16px;
+    display: flex;
+    gap: 40px;
+
+    > div {
+      flex: auto;
+      display: flex;
+      flex-flow: column nowrap;
+
+      figure {
+        height: 280px;
+        margin: 0;
+        background-size: cover;
+        background-position: center;
+      }
+
+      h3 {
+        text-transform: none;
+        margin-top: 16px;
+      }
+
+      p {
+        margin-top: 8px;
+        max-height: 72px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
 }
 
 body.application.about,

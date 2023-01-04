@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 
   def index
     @user_id = current_user&.id
+    @featured_modders = Modder.featured_modders
   end
 
   def ping
