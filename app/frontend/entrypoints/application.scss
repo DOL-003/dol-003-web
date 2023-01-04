@@ -70,7 +70,7 @@ body.application.index {
     gap: 40px;
 
     > div {
-      flex: auto;
+      flex: 1 0 0;
       display: flex;
       flex-flow: column nowrap;
 
