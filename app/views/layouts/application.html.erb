@@ -3,11 +3,21 @@
 
   <head>
 
-    <title>Controllers</title>
+    <title><%= page_title %></title>
+    <meta name="description" content="DOL-003.info is a repository of GameCube controller information and a directory of controller modders.">
+    <meta property="og:description" content="DOL-003.info is a repository of GameCube controller information and a directory of controller modders.">
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <link rel="canonical" href="<%= canonical_link %>">
+    <link property="og:url" content="<%= canonical_link %>">
+    <link property="og:site_name" content="DOL-003.info">
+    <meta property="og:title" content="<%= page_title %>">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="<%= request.base_url %>/images/logo-large.png">
 
     <link rel="shortcut icon" href="/favicon.png">
     <link rel="stylesheet" href="https://use.typekit.net/uju8khj.css">

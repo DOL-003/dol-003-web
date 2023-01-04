@@ -20,4 +20,12 @@ module ApplicationHelper
     }
   end
 
+  def page_title
+    @title.present? ? "#{@title} • DOL-003.info" : 'DOL-003.info: The GameCube controller modder directory'
+  end
+
+  def canonical_link
+    url_for only_path: false, protocol: 'https'
+  end
+
 end
