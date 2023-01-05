@@ -104,6 +104,16 @@ p {
   }
 }
 
+ol {
+  li {
+    line-height: 1.5;
+
+    & + li {
+      margin-top: 0.5em;
+    }
+  }
+}
+
 strong {
   color: $spice;
 }
