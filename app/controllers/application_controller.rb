@@ -35,4 +35,8 @@ class ApplicationController < ActionController::Base
     Modder.find_by(user: current_user)
   end
 
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
+  end
+
 end

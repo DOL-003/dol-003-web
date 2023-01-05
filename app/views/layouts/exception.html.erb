@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <title>Error • DOL-003</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="stylesheet" href="https://use.typekit.net/uju8khj.css">
+
+    <style>
+
+      body {
+        margin: 0;
+        padding: 64px 0 0;
+        background-color: #faf9f7;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        gap: 40px;
+        font-family: source-code-pro, monospace;
+        font-size: 16px;
+        font-weight: 400;
+        font-style: normal;
+        color: #211f21;
+      }
+
+      main {
+        flex: none;
+        width: 100%;
+        max-width: 600px;
+        background-color: #fff;
+        border-radius: 24px;
+        border: 2px solid #b8bfbf;
+        padding: 24px 28px 28px;
+      }
+
+      h1 {
+
+      }
+
+      a {
+        text-decoration: none;
+        color: $indigo;
+        font-weight: bold;
+      }
+
+      a:hover {
+        color: lighten($indigo, 15%);
+      }
+
+      h1, h2, h3, p {
+        margin: 0;
+      }
+
+      h1 + p,
+      p + p {
+        margin-top: 1em;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+    <img src="/images/logo.png" width="104" height="25">
+    <main>
+      <%= yield %>
+    </main>
+  </body>
+
+</html>
