@@ -11,6 +11,15 @@
 
     <style>
 
+      *,
+      ::before,
+      ::after,
+      ::placeholder {
+        box-sizing: inherit;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
       body {
         margin: 0;
         padding: 64px 0 0;
@@ -24,6 +33,7 @@
         font-weight: 400;
         font-style: normal;
         color: #211f21;
+        box-sizing: border-box;
       }
 
       main {
@@ -36,18 +46,24 @@
         padding: 24px 28px 28px;
       }
 
+      @media (max-width: 800px) {
+        main {
+          max-width: 90vw;
+        }
+      }
+
       h1 {
 
       }
 
       a {
         text-decoration: none;
-        color: $indigo;
+        color: #444f9a;
         font-weight: bold;
       }
 
       a:hover {
-        color: lighten($indigo, 15%);
+        color: #6c77be;
       }
 
       h1, h2, h3, p {
@@ -57,6 +73,11 @@
       h1 + p,
       p + p {
         margin-top: 1em;
+      }
+
+      p.big {
+        font-size: 18px;
+        font-weight: 500;
       }
 
     </style>
