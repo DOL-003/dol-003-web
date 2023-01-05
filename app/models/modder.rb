@@ -144,6 +144,14 @@ class Modder < ApplicationRecord
     twitter_username[0] == '@' ? twitter_username : "@#{twitter_username}"
   end
 
+  def active?
+    status == STATUS_ACTIVE
+  end
+
+  def inactive?
+    !active?
+  end
+
   private
 
   def generate_slug

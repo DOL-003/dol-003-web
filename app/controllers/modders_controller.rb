@@ -30,6 +30,7 @@ class ModdersController < ApplicationController
 
   def show
     @modder = Modder.find_by(slug: params[:id]) or not_found
+    return not_found if @modder.inactive? && @modder != current_modder
     @title = @modder.name
   end
 
