@@ -12,7 +12,7 @@ class ModdersController < ApplicationController
     @map = params[:map] == '1'
 
     @results_visible = @services.present? || (@latitude.present? && @longitude.present?)
-    @results = Modder.all
+    @results = Modder.active
 
     if @services.present?
       eligible_modders = ModderService.where(service: @services).group(:modder_id).having('count(modder_id) = ?', @services.count).count.keys
