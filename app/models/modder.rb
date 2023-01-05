@@ -36,6 +36,15 @@ class Modder < ApplicationRecord
     ['Twitter handle', 'twitter_username']
   ]
 
+  STATUS_ACTIVE = 'active'
+  STATUS_INACTIVE = 'inactive'
+  STATUS_BANNED = 'banned'
+
+  STATUS_OPTIONS = [
+    ['Active', STATUS_ACTIVE],
+    ['Inactive', STATUS_INACTIVE]
+  ]
+
   VETTING_STATUS_VETTED = 'vetted'
   VETTING_STATUS_REJECTED = 'rejected'
 
@@ -44,6 +53,7 @@ class Modder < ApplicationRecord
   has_many :modder_photos, -> { order(index: :asc) }
 
   attribute :status, :string, default: 'active'
+  validates :status, inclusion: { in: [STATUS_ACTIVE, STATUS_INACTIVE, STATUS_BANNED] }
 
   validates :name, presence: true, length: { minimum: 3, maximum: 50 }
   validates :bio, length: { maximum: 500 }

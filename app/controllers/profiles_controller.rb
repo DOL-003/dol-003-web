@@ -34,6 +34,7 @@ class ProfilesController < ApplicationController
           :etsy_shop,
           :twitter_username
         ))
+        @modder.status = params[:modder][:status] if params[:modder][:status].in? [Modder::STATUS_ACTIVE, Modder::STATUS_INACTIVE]
         @modder.logo = params[:modder][:logo]
         @modder.save!
 
