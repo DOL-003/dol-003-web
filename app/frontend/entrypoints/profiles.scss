@@ -1,3 +1,4 @@
+@import "@/breakpoints";
 @import "@/colors";
 
 body.profiles.edit,
@@ -17,6 +18,10 @@ body.profiles.update {
 
       .input-container {
         padding-left: 48px;
+
+        @include small {
+          padding-left: 0;
+        }
       }
     }
   }

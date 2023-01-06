@@ -1,3 +1,4 @@
+@import "@/breakpoints";
 @import "@/colors";
 
 body.registrations {
@@ -14,6 +15,11 @@ body.registrations {
     background-color: lighten($spice, 30%);
     border-radius: 24px;
     box-shadow: inset 0 0 0 2px $spice;
+
+    @include small {
+      border-radius: 0;
+      margin-top: 0;
+    }
   }
 
   .agreement {
