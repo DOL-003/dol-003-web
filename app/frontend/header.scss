@@ -19,20 +19,82 @@ header {
       color: $spice;
     }
 
-    > .menu {
+    #menu-toggle-button {
+      color: $indigo;
+      margin: 0 0 0 auto;
+      padding: 4px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      display: none;
+
+      &:hover {
+        color: lighten($indigo, 15%);
+      }
+
+      @include small {
+        display: flex;
+      }
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    .menu {
       margin: 0 0 0 auto;
       list-style: none;
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
+      padding: 0;
+
+      @include small {
+        position: fixed;
+        margin: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $indigo;
+        flex-flow: column nowrap;
+        justify-content: center;
+        visibility: hidden;
+        z-index: 10000;
+      }
 
       > li {
         margin: 0;
         position: relative;
 
-        &.user-menu {
-          width: 48px;
-          height: 48px;
+        @include small {
+          text-align: center;
+        }
+
+        &.close {
+          position: absolute;
+          top: 32px;
+          right: 32px;
+          display: none;
+          margin: 0;
+
+          @include small {
+            display: block;
+          }
+
+          label {
+            border: 0;
+            color: $white;
+            padding: 4px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            cursor: pointer;
+
+            &:hover {
+              color: $spice;
+            }
+          }
         }
 
         > a {
@@ -41,11 +103,40 @@ header {
           letter-spacing: 1px;
           font-weight: bold;
           white-space: nowrap;
+
+          @include small {
+            font-size: 32px;
+            color: $white;
+
+            &:hover {
+              color: $spice;
+            }
+          }
         }
 
         + li {
           margin-left: 32px;
+
+          @include small {
+            margin-left: 0;
+            margin-top: 16px;
+          }
         }
+      }
+    }
+
+    #menu-toggle:checked ~ .menu {
+      visibility: visible;
+    }
+
+    .user-menu {
+      width: 48px;
+      height: 48px;
+      margin-left: 24px;
+      position: relative;
+
+      @include small {
+        margin-left: 16px;
       }
 
       input[type="checkbox"] {

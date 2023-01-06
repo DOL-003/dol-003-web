@@ -42,7 +42,7 @@ body.layout-default {
       grid-row-gap: 64px;
       align-items: start;
 
-      @include small {
+      @include medium {
         grid-template-columns: 1fr;
       }
 
@@ -94,7 +94,7 @@ body.layout-default {
         grid-column: span 12;
       }
 
-      @include small {
+      @include medium {
         > .span-1,
         > .span-2,
         > .span-3,

@@ -1,34 +1,42 @@
 <header>
   <div class="content">
+
     <a href="/" class="logo">DOL-003</a>
+
+    <label for="menu-toggle" id="menu-toggle-button"><%= inline_svg_tag 'menu.svg' %></label>
+    <input type="checkbox" id="menu-toggle">
     <ul class="menu">
       <li><a href="/modders">Find a modder</a></li>
-      <% if current_modder.present? %>
-        <li class="user-menu">
-
-          <input type="checkbox" id="user-menu-toggle">
-
-          <div class="overlay-trim"></div>
-
-          <label for="user-menu-toggle">
-            <figure class="avatar" style="<%= "background-image: url(#{current_modder.logo_url})" if current_modder&.logo.present? %>">
-              <% if current_modder&.logo.blank? %>
-                <%= inline_svg_tag 'gcc.svg' %>
-              <% end %>
-            </figure>
-          </label>
-
-          <ul class="overlay">
-            <li class="name"><%= link_to current_modder.name, modder_path(current_modder), class: 'big' %></li>
-            <li><%= link_to 'Edit profile', edit_profile_path %></li>
-            <li><a href="#">Account settings</a></li>
-            <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
-          </ul>
-
-        </li>
-      <% elsif !user_signed_in? %>
+      <% if !user_signed_in? %>
         <li><%= link_to 'Get listed', new_user_registration_path %></li>
       <% end %>
+      <li class="close"><label for="menu-toggle" id="menu-close"><%= inline_svg_tag 'x.svg' %></label></li>
     </ul>
+
+    <% if current_modder.present? %>
+      <div class="user-menu">
+
+        <input type="checkbox" id="user-menu-toggle">
+
+        <div class="overlay-trim"></div>
+
+        <label for="user-menu-toggle">
+          <figure class="avatar" style="<%= "background-image: url(#{current_modder.logo_url})" if current_modder&.logo.present? %>">
+            <% if current_modder&.logo.blank? %>
+              <%= inline_svg_tag 'gcc.svg' %>
+            <% end %>
+          </figure>
+        </label>
+
+        <ul class="overlay">
+          <li class="name"><%= link_to current_modder.name, modder_path(current_modder), class: 'big' %></li>
+          <li><%= link_to 'Edit profile', edit_profile_path %></li>
+          <li><a href="#">Account settings</a></li>
+          <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+        </ul>
+
+      </div>
+    <% end %>
+
   </div>
 </header>
