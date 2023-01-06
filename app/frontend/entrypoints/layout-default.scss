@@ -1,5 +1,6 @@
-@import "../header";
-@import "../footer";
+@import "@/breakpoints";
+@import "@/header";
+@import "@/footer";
 
 body.layout-default {
   display: flex;
@@ -22,8 +23,16 @@ body.layout-default {
     max-width: 1200px;
     margin: 0 auto;
 
-    @media (max-width: 1280px) {
+    @include large() {
       max-width: 94vw;
+    }
+
+    @include medium() {
+      max-width: 92vw;
+    }
+
+    @include small() {
+      max-width: 90vw;
     }
 
     &.grid {
@@ -32,6 +41,10 @@ body.layout-default {
       grid-column-gap: 40px;
       grid-row-gap: 64px;
       align-items: start;
+
+      @include small {
+        grid-template-columns: 1fr;
+      }
 
       > .span-1 {
         grid-column: span 1;
@@ -79,6 +92,23 @@ body.layout-default {
 
       > .span-12 {
         grid-column: span 12;
+      }
+
+      @include small {
+        > .span-1,
+        > .span-2,
+        > .span-3,
+        > .span-4,
+        > .span-5,
+        > .span-6,
+        > .span-7,
+        > .span-8,
+        > .span-9,
+        > .span-10,
+        > .span-11,
+        > .span-12 {
+          grid-column: 1 / span 1;
+        }
       }
     }
   }
