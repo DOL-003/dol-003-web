@@ -12,12 +12,6 @@
     display: flex;
     align-items: center;
 
-    span {
-      @include small {
-        display: none;
-      }
-    }
-
     svg {
       width: 16px;
       height: 16px;

@@ -1,3 +1,4 @@
+@import "@/breakpoints";
 @import "@/colors";
 @import "@/service-pill";
 
@@ -38,6 +39,10 @@
       padding: 0 20px 0 16px;
       cursor: grab;
 
+      @include small {
+        padding: 0 10px;
+      }
+
       &:hover {
         color: var(--service-color, $platinum);
         background-color: #fff;
@@ -51,6 +56,10 @@
         left: 8px;
         color: $platinum;
         cursor: pointer;
+
+        @include small {
+          left: 4px;
+        }
 
         svg {
           width: 15px;
@@ -110,6 +119,10 @@
 .service-selector__multi-value {
   @extend .service-pill;
   padding: 0 20px 0 16px;
+
+  @include small {
+    padding: 0 14px 0 10px;
+  }
 
   .service-selector__multi-value__remove {
     position: relative;

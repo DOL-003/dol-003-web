@@ -1,9 +1,20 @@
+@import "@/breakpoints";
 @import "@/colors";
 
 .LocationSelector {
   display: flex;
   gap: 24px;
   align-items: center;
+
+  @include small {
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    gap: 12px;
+
+    .Geolocator {
+      margin-left: 2px;
+    }
+  }
 
   .geolocation-indicator {
     position: relative;
