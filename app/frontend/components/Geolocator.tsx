@@ -39,7 +39,7 @@ export default (props: GeolocatorProps) => {
     <div className="Geolocator">
       <button type="button" onClick={handleButtonClick} className="link">
         <ArrowIcon />
-        Use my location
+        <span>Use my location</span>
       </button>
       <input
         type="hidden"

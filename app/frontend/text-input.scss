@@ -1,4 +1,5 @@
-@import "./colors";
+@import "@/breakpoints";
+@import "@/colors";
 
 .text-input {
   border: 0;
@@ -18,10 +19,18 @@
 
   &.large {
     width: 360px;
+
+    @include small {
+      width: 100%;
+    }
   }
 
   &.xlarge {
     width: 480px;
+
+    @include small {
+      width: 100%;
+    }
   }
 
   &.full-width {
