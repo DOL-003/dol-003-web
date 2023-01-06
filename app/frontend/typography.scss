@@ -1,3 +1,5 @@
+@import "@/breakpoints";
+
 body {
   font-family: source-code-pro, monospace;
   font-size: 16px;
@@ -65,16 +67,28 @@ h3 {
 
 h1 {
   font-size: 36px;
+
+  @include small {
+    font-size: 24px;
+  }
 }
 
 h2 {
   font-size: 24px;
+
+  @include small {
+    font-size: 20px;
+  }
 }
 
 h3 {
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
+
+  @include small {
+    font-size: 18px;
+  }
 }
 
 p {

@@ -1,3 +1,5 @@
+@import "@/breakpoints";
+
 .service-pill {
   display: flex;
   align-items: center;
@@ -12,6 +14,12 @@
   box-shadow: inset 0 0 0 2px var(--service-color, $platinum);
   color: var(--service-color, $platinum);
   border-radius: 32px;
+
+  @include small {
+    padding: 0 10px;
+    height: 24px;
+    letter-spacing: 0;
+  }
 
   &:hover {
     color: var(--service-color, $platinum);

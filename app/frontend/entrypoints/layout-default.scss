@@ -16,6 +16,10 @@ body.layout-default {
   > main {
     flex: auto;
     padding: 64px 0 96px;
+
+    @include small {
+      padding: 32px 0 64px;
+    }
   }
 
   .content {
@@ -44,6 +48,14 @@ body.layout-default {
 
       @include medium {
         grid-template-columns: 1fr;
+      }
+
+      @include small {
+        grid-row-gap: 32px;
+      }
+
+      > * {
+        min-width: 0;
       }
 
       > .span-1 {
