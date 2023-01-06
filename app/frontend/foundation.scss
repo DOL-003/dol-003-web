@@ -1,3 +1,5 @@
+@import "@/breakpoints";
+
 *,
 ::before,
 ::after,
@@ -14,12 +16,20 @@
 
 html {
   min-height: 100vh;
+
+  @include small {
+    overflow-x: hidden;
+  }
 }
 
 body {
   box-sizing: border-box;
   min-height: 100vh;
   background-color: $pearl;
+
+  @include small {
+    overflow-x: hidden;
+  }
 }
 
 img {
