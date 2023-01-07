@@ -44,6 +44,10 @@ class ModderService < ApplicationRecord
     # other aesthetics
     'paracords': { name: 'paracords', color: '#c12022' },
 
+    # other
+    'parts': { name: 'parts', color: '#6d6b6b' },
+    'tools': { name: 'tools', color: '#6d6b6b' }
+
   }.freeze
 
   belongs_to :modder
