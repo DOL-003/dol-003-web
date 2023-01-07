@@ -32,6 +32,7 @@ class ModdersController < ApplicationController
     @modder = Modder.find_by(slug: params[:id]) or not_found
     return not_found if @modder.inactive? && @modder != current_modder
     @title = @modder.name
+    @description = "#{@modder.name}’s profile on DOL-003.info, a directory of GameCube controller modders."
   end
 
 end
