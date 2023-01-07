@@ -34,4 +34,8 @@ class UserInvitation < ApplicationRecord
     new_user_registration_url(invitation_token: claim_token, host: 'https://dol-003.info')
   end
 
+  def send_email(email)
+    UserMailer.with(email:, invitation_token: claim_token).invitation.deliver_later
+  end
+
 end
