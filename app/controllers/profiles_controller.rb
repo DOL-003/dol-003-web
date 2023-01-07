@@ -51,7 +51,7 @@ class ProfilesController < ApplicationController
         end
       end
 
-      AdminMailer.with(modder: @modder).new_modder.deliver_later
+      AdminMailer.with(modder: @modder).new_modder.deliver_later if @onboarding
 
       flash[:notice] = 'Your profile was updated.'
       redirect_to user_root_path
