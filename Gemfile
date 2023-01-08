@@ -84,3 +84,6 @@ gem 'sentry-ruby'
 gem 'sentry-rails'
 
 gem 'mini_magick'
+
+gem 'front_matter_parser'
+gem 'commonmarker'
