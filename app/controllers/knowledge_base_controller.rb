@@ -4,6 +4,8 @@ class KnowledgeBaseController < ApplicationController
   @@pages = {}
 
   def show
+    return not_found unless flag_enabled? :knowledge_base
+
     page = page_data(params[:path] || 'index')
     return not_found if page.blank?
 
