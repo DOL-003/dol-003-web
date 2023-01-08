@@ -6,6 +6,11 @@ class Flag
 
     return false unless flags[flag].present?
 
+    # Boolean on/off
+    if flags[flag].in? [true, false]
+      return flags[flag]
+    end
+
     # Random session-based bucketing
     if flags[flag].is_a? Numeric
       return false unless params[:session_id].present?
@@ -45,7 +50,7 @@ class Flag
   def self.flags
     return @@flags if @@flags.present?
 
-    @@flags = YAML.load(File.read('./app/lib/flags.yml')).deep_symbolize_keys.freeze
+    @@flags = YAML.load(File.read("./app/lib/flags/#{Rails.env}.yml")).deep_symbolize_keys.freeze
   end
 
 end

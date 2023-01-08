@@ -6,7 +6,10 @@
     <label for="menu-toggle" id="menu-toggle-button"><%= inline_svg_tag 'menu.svg' %></label>
     <input type="checkbox" id="menu-toggle">
     <ul class="menu">
-      <li><a href="/modders">Find a modder</a></li>
+      <% if flag_enabled? :knowledge_base %>
+        <li><%= link_to 'Knowledge base', knowledge_base_path %></li>
+      <% end %>
+      <li><%= link_to 'Find a modder', modders_path %></li>
       <% if !user_signed_in? %>
         <li><%= link_to 'Get listed', new_user_registration_path %></li>
       <% end %>
