@@ -39,4 +39,8 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError.new('Not Found')
   end
 
+  def flag_enabled?(flag)
+    Flag.enabled?(flag, user: current_user, session_id: session.id)
+  end
+
 end

@@ -32,4 +32,8 @@ module ApplicationHelper
     url_for only_path: false, protocol: 'https'
   end
 
+  def flag_enabled?(flag)
+    Flag.enabled?(flag, user: current_user, session_id: session.id)
+  end
+
 end
