@@ -1,34 +1,51 @@
 class Flag
 
-  FLAGS = {
-
-    knowledge_base: [1, 2, 3, 4, 5, 6]
-
-  }.freeze
+  @@flags = nil
 
   def self.enabled?(flag, params = {})
-    return false unless FLAGS[flag].present?
 
-    # Random bucketing
-    if FLAGS[flag].is_a? Numeric
+    return false unless flags[flag].present?
+
+    # Random session-based bucketing
+    if flags[flag].is_a? Numeric
       return false unless params[:session_id].present?
 
-      return params[:session_id].sum % 100 < FLAGS[flag]
+      return params[:session_id].to_s.sum % 100 < flags[flag]
     end
 
     # User list
-    if FLAGS[flag].is_a? Array
+    if flags[flag].is_a? Array
       return false unless params[:user].present?
 
-      return params[:user].id.in? FLAGS[flag]
+      return params[:user].id.in? flags[flag]
     end
 
     # Advanced settings
-    if FLAGS[flag].is_a? Hash
-      # TODO
+    if flags[flag].is_a? Hash
+
+      if flags[flag][:users].present?
+        if params[:user].present? && params[:user].in?(flags[flag][:users])
+          return true
+        end
+      end
+
+      if flags[flag][:percentage].present?
+        if params[:session_id].present? && (params[:session_id].to_s.sum % 100) < flags[flag][:percentage]
+          return true
+        end
+      end
+
     end
 
     false
+  end
+
+  private
+
+  def self.flags
+    return @@flags if @@flags.present?
+
+    @@flags = YAML.load(File.read('./app/lib/flags.yml')).deep_symbolize_keys.freeze
   end
 
 end
