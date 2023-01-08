@@ -29,7 +29,8 @@ class KnowledgeBaseController < ApplicationController
       title: page['title'],
       description: page['description'],
       content: CommonMarker.render_html(page.content, [
-        :DEFAULT
+        :DEFAULT,
+        :SMART
       ]).html_safe
     }
   end
