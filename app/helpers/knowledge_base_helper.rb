@@ -1,6 +1,6 @@
 module KnowledgeBaseHelper
 
-  def menu_tree(tree, path = '')
+  def menu_tree(tree, path = '/kb')
     tree = tree.collect
     render 'menu_tree', locals: {
       tree: tree.collect do |title, item|

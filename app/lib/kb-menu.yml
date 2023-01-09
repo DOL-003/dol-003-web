@@ -1,5 +1,21 @@
 Introduction: index
-Triggers:
-  path: triggers
-  Lubing: lubing
-  Spring trimming: spring-trimming
+
+Troubleshooting:
+  path: troubleshooting
+  Common controller issues and solutions: common-issues
+
+Shopping for a controller: shopping-guide
+
+Mod information:
+  path: mods
+
+  Trigger mods:
+    path: triggers
+    Lubing: lubing
+    Spring trimming and that sort of thing: spring-trimming
+
+  Stickboxes:
+    path: stickboxes
+    Lubing: lubing
+
+Related sites & resources: links

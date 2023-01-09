@@ -35,7 +35,7 @@ class KnowledgeBaseController < ApplicationController
   end
 
   def menu_data
-    return @@menu if @@menu.present?
+    return @@menu if @@menu.present? && !Rails.env.development?
 
     @@menu = YAML.load(File.read('./app/lib/kb-menu.yml')).deep_symbolize_keys.freeze
   end

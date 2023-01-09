@@ -1,16 +1,13 @@
 <div class="content grid">
-  <div class="sidebar span-4">
+  <div class="sidebar span-3">
     <h3>Knowledge Base</h3>
-
-    <ul>
-      <%= menu_tree @menu %>
-    </ul>
+    <%= menu_tree @menu %>
   </div>
-  <div class="page span-8">
+  <section class="page span-9">
     <h1><%= @title %></h1>
     <% if @description.present? %>
       <p class="big"><%= @description %></p>
     <% end %>
     <%= @content %>
-  </div>
+  </section>
 </div>
