@@ -7,15 +7,76 @@ body.knowledge_base.show {
     margin: -24px;
     padding: 24px 24px 28px;
     border-radius: 16px;
+    position: relative;
 
-    h3 {
-      margin-bottom: 24px;
+    @include small {
+      border-radius: 0;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    > label {
+      display: block;
+      position: absolute;
+      top: 22px;
+      right: 24px;
+      padding: 4px;
+      color: $indigo;
+      cursor: pointer;
+
+      &:hover {
+        color: lighten($indigo, 15%);
+      }
+
+      svg {
+        width: 16px;
+        height: 16px;
+
+        &.close {
+          display: none;
+        }
+      }
+    }
+
+    #kb-menu-toggle:checked ~ #kb-menu-toggle-label {
+      > .open {
+        display: none;
+      }
+
+      > .close {
+        display: block;
+      }
+    }
+
+    #kb-menu-toggle-small:checked ~ #kb-menu-toggle-small-label {
+      > .open {
+        display: none;
+      }
+
+      > .close {
+        display: block;
+      }
+    }
+
+    #kb-menu-toggle-small-label {
+      display: none;
+
+      @include medium {
+        display: block;
+      }
+    }
+
+    > ul {
+      margin-top: 24px !important;
     }
 
     ul {
       margin: 0;
       padding: 0;
       list-style: none;
+      display: none;
 
       li {
         margin: 0;
@@ -35,7 +96,7 @@ body.knowledge_base.show {
           display: block;
           position: absolute;
           top: -2px;
-          right: 0px;
+          right: 0;
           padding: 4px;
           color: $indigo;
           cursor: pointer;
@@ -80,12 +141,24 @@ body.knowledge_base.show {
         }
       }
     }
+
+    @media (min-width: 961px) {
+      #kb-menu-toggle:checked ~ ul {
+        display: block;
+      }
+    }
+
+    @include medium {
+      #kb-menu-toggle-small:checked ~ ul {
+        display: block;
+      }
+    }
   }
 
   section.page {
     padding-left: 48px;
 
-    @include small {
+    @include medium {
       padding-left: 0;
       margin-top: 24px;
     }
