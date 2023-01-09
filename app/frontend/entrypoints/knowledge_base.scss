@@ -23,6 +23,10 @@ body.knowledge_base.show {
         line-height: 1.3;
         position: relative;
 
+        a.current {
+          color: $black;
+        }
+
         input {
           display: none;
         }

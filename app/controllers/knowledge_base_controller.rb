@@ -14,6 +14,7 @@ class KnowledgeBaseController < ApplicationController
     @description = page[:description]
     @content = page[:content]
     @menu = menu_data
+    @current_path = "/kb/#{params[:path] || 'index'}"
   end
 
   private
@@ -22,7 +23,7 @@ class KnowledgeBaseController < ApplicationController
     return @@pages[path] if @@pages[path].present? && !Rails.env.development?
 
     filepath = "#{File.expand_path(File.join(CONTENT_DIR, path))}.md"
-    return nil unless filepath.start_with? CONTENT_DIR
+    return nil unless filepath.starts_with? CONTENT_DIR
     return nil unless File.file? filepath
 
     page = FrontMatterParser::Parser.parse_file(filepath)
