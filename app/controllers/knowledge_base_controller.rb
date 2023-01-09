@@ -2,6 +2,7 @@ class KnowledgeBaseController < ApplicationController
 
   CONTENT_DIR = File.join(File.expand_path('.'), 'app/views/knowledge_base/content')
   @@pages = {}
+  @@menu = {}
 
   def show
     return not_found unless flag_enabled? :knowledge_base
@@ -12,6 +13,7 @@ class KnowledgeBaseController < ApplicationController
     @title = page[:title]
     @description = page[:description]
     @content = page[:content]
+    @menu = menu_data
   end
 
   private
@@ -28,11 +30,14 @@ class KnowledgeBaseController < ApplicationController
     @@pages[path] = {
       title: page['title'],
       description: page['description'],
-      content: CommonMarker.render_html(page.content, [
-        :DEFAULT,
-        :SMART
-      ]).html_safe
+      content: Kramdown::Document.new(page.content).to_html.html_safe
     }
+  end
+
+  def menu_data
+    return @@menu if @@menu.present?
+
+    @@menu = YAML.load(File.read('./app/lib/kb-menu.yml')).deep_symbolize_keys.freeze
   end
 
 end
