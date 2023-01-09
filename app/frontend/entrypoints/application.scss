@@ -25,6 +25,10 @@ body.application.index {
     flex-flow: row wrap;
     gap: 12px;
 
+    @include small {
+      gap: 8px;
+    }
+
     li {
       margin: 0;
       padding: 0;
