@@ -21,11 +21,54 @@ body.knowledge_base.show {
         margin: 0;
         padding: 0;
         line-height: 1.3;
+        position: relative;
+
+        input {
+          display: none;
+        }
+
+        label {
+          display: block;
+          position: absolute;
+          top: -2px;
+          right: 0px;
+          padding: 4px;
+          color: $indigo;
+          cursor: pointer;
+
+          &:hover {
+            color: lighten($indigo, 15%);
+          }
+
+          svg {
+            width: 16px;
+            height: 16px;
+
+            &.close {
+              display: none;
+            }
+          }
+        }
+
+        input:checked ~ label svg {
+          &.open {
+            display: none;
+          }
+
+          &.close {
+            display: block;
+          }
+        }
 
         ul {
           margin: 14px 0 20px 4px;
           padding: 2px 0 0 16px;
           border-left: 2px solid $platinum;
+          display: none;
+        }
+
+        input:checked ~ ul {
+          display: block;
         }
 
         & + li {
