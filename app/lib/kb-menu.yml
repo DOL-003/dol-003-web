@@ -1,15 +1,18 @@
 Introduction: index
 
-Controller & parts info:
+Parts:
   path: parts
 
+  Analog sticks:
+    path: sticks
+    Thumbsticks: thumbsticks
+    Stickboxes: stickboxes
+    Potentiometers: pots
+  Boards: boards
   Buttons: buttons
   Cables: cables
-  Potentiometers: pots
   Shells: shells
   Silicone pads: pads
-  Stickboxes: stickboxes
-  Sticks: sticks
   Triggers: triggers
 
 Guides:
@@ -54,3 +57,5 @@ Mods:
     Mouseclick Z: mouseclick
 
 Related sites & resources: links
+
+Glossary: glossary

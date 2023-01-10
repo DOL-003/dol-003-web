@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       icon.id = null
       link.appendChild(icon)
       link.href = `#${heading.id}`
+      link.classList.add("section-anchor")
       heading.appendChild(link)
     })
 })

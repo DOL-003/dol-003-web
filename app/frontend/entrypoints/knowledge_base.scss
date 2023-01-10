@@ -164,10 +164,9 @@ body.knowledge_base.show {
       margin-left: -24px;
       padding-left: 24px;
 
-      > a {
+      > .section-anchor {
         position: absolute;
         left: -12px;
-        top: 2px;
         display: flex;
         padding: 4px;
         visibility: hidden;
@@ -190,6 +189,26 @@ body.knowledge_base.show {
 
       &:hover > a {
         visibility: visible;
+      }
+    }
+
+    h2 > .section-anchor {
+      top: 2px;
+    }
+
+    h3 > .section-anchor {
+      top: 0;
+    }
+
+    ul {
+      padding-left: 24px;
+
+      li {
+        padding-left: 8px;
+      }
+
+      li + li {
+        margin-top: 8px;
       }
     }
 
