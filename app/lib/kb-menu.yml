@@ -1,21 +1,56 @@
 Introduction: index
 
-Troubleshooting:
-  path: troubleshooting
-  Common controller issues and solutions: common-issues
+Controller & parts info:
+  path: parts
 
-Shopping for a controller: shopping-guide
+  Buttons: buttons
+  Cables: cables
+  Potentiometers: pots
+  Shells: shells
+  Silicone pads: pads
+  Stickboxes: stickboxes
+  Sticks: sticks
+  Triggers: triggers
 
-Mod information:
+Guides:
+  path: guides
+  Controller troubleshooting: troubleshooting
+  Controller shopping: controller-shopping
+
+Mods:
   path: mods
+
+  Cable mods:
+    path: cables
+    Aviator cables: aviator
+    Detachable cables: detachable
+    Paracords: paracords
+
+  LED mods: led
+  Notches: notches
+
+  Pad perforation: pad-perforation
+
+  Snapback & heartbeat modules: snapback
+
+  Stickbox mods:
+    path: stickboxes
+    Aftermarket springs: springs
+    Stickbox lubing: lubing
 
   Trigger mods:
     path: triggers
-    Lubing: lubing
-    Spring trimming and that sort of thing: spring-trimming
+    Digital triggers: digital
+    Ergo triggers: ergo
+    Lubed triggers: lube
+    Keyswitch/MX triggers: mx
+    PTFE stabilization: stabilization
+    Spring mods: springs
+    Trigger plugs: plugs
 
-  Stickboxes:
-    path: stickboxes
-    Lubing: lubing
+  Z button mods:
+    path: z
+    Tactile Z: tactile
+    Mouseclick Z: mouseclick
 
 Related sites & resources: links
