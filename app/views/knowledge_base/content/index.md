@@ -9,4 +9,4 @@ Knowledge Base content is meant for anyone interested in GCC modding, whether yo
 
 ## Contributing
 
-This entire website is [open source](https://github.com/jmarquis/dol-003.info){:target="\_blank"}, and contributions are welcome! DOL-003.info is intended to be a community resource, so if you have ideas for making it better, join us in [Discord](https://discord.gg/HwtPU7tkCT){:target="\_blank"} and let us know!
+This entire website is [open source](https://github.com/jmarquis/controllers){:target="\_blank"}, and contributions are welcome! DOL-003.info is intended to be a community resource, so if you have ideas for making it better, join us in [Discord](https://discord.gg/HwtPU7tkCT){:target="\_blank"} and let us know!
