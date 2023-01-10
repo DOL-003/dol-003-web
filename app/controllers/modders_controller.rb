@@ -3,8 +3,15 @@ class ModdersController < ApplicationController
   def index
     @title = 'Modder search'
 
-    services = params[:services] || '[]'
-    @services = JSON.parse(services).select { |service| ModderService::ALL_SERVICES.include? service.to_sym }
+    @services = []
+    if params[:services].present?
+      @services = params[:services].split(',')
+    elsif params[:service].present?
+      @services = [params[:service]]
+    end
+
+    @services = @services.select { |service| ModderService::ALL_SERVICES.include? service.to_sym }
+
     @city = params[:city]
     @latitude = params[:latitude]
     @longitude = params[:longitude]

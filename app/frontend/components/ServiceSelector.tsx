@@ -55,6 +55,7 @@ interface ServiceSelectorProps {
   readonly allServices: ServiceOption[]
   readonly selectedServices: ServiceOption[]
   readonly fieldName: string
+  readonly commaDelimited?: boolean
 }
 
 export default (props: ServiceSelectorProps) => {
@@ -111,7 +112,11 @@ export default (props: ServiceSelectorProps) => {
       <input
         type="hidden"
         name={props.fieldName}
-        value={JSON.stringify(selectedServices.map((service) => service.value))}
+        value={
+          props.commaDelimited
+            ? selectedServices.map((service) => service.value).join(",")
+            : JSON.stringify(selectedServices.map((service) => service.value))
+        }
       />
     </div>
   )

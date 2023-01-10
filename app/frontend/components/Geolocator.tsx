@@ -24,10 +24,11 @@ export default (props: GeolocatorProps) => {
         const latitude = position.coords.latitude.toString()
         const longitude = position.coords.longitude.toString()
 
-        setLatitude(latitude)
-        setLongitude(longitude)
-
         if (props.onLocation) props.onLocation(latitude, longitude)
+        else {
+          setLatitude(latitude)
+          setLongitude(longitude)
+        }
 
         if (props.autosubmit)
           setTimeout(() => latitudeInput.current.form.submit(), 10)
@@ -41,13 +42,17 @@ export default (props: GeolocatorProps) => {
         <ArrowIcon />
         Use my location
       </button>
-      <input
-        type="hidden"
-        name="latitude"
-        value={latitude}
-        ref={latitudeInput}
-      />
-      <input type="hidden" name="longitude" value={longitude} />
+      {!props.onLocation && (
+        <>
+          <input
+            type="hidden"
+            name="latitude"
+            value={latitude}
+            ref={latitudeInput}
+          />
+          <input type="hidden" name="longitude" value={longitude} />
+        </>
+      )}
     </div>
   )
 }
