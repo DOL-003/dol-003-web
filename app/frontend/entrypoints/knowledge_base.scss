@@ -177,6 +177,10 @@ body.knowledge_base.show {
           color: $panasonic;
         }
 
+        @include medium {
+          display: none;
+        }
+
         > svg {
           width: 16px;
           height: 16px;
