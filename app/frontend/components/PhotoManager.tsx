@@ -29,7 +29,7 @@ export interface Photo {
 
 interface PhotoResult {
   success: boolean
-  photo: Photo
+  photo?: Photo
 }
 
 interface PhotoManagerProps {
@@ -121,7 +121,7 @@ export default (props: PhotoManagerProps) => {
 
     // Now upload each one.
     for (let i = 0; i < files.length; i++) {
-      if (photos.length >= 10) {
+      if (photos.length + 1 + i > 10) {
         setError("Maximum of 10 photos can be uploaded.")
         return
       }
@@ -141,12 +141,16 @@ export default (props: PhotoManagerProps) => {
     body.append("photo", file)
     body.append("authenticity_token", props.csrfToken)
 
-    const response = await fetch("/profile/photo", {
-      method: "POST",
-      body,
-    })
+    let result: PhotoResult = { success: false }
+    try {
+      const response = await fetch("/profile/photo", {
+        method: "POST",
+        body,
+      })
 
-    const result: PhotoResult = await response.json()
+      result = await response.json()
+    } catch (e) {}
+
     if (result.success) {
       setPhotos((photos) => {
         const index = photos.findIndex((photo) => photo.uuid === tempUuid)
@@ -156,6 +160,10 @@ export default (props: PhotoManagerProps) => {
           .concat(photos.slice(index + 1))
       })
     } else {
+      setPhotos((photos) => {
+        const index = photos.findIndex((photo) => photo.uuid === tempUuid)
+        return photos.slice(0, index).concat(photos.slice(index + 1))
+      })
       setError("Your photo could not be uploaded.")
     }
   }
