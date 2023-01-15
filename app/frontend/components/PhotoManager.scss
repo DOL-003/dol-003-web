@@ -41,6 +41,15 @@
       position: relative;
       flex: none;
 
+      &.uploading {
+        width: 280px;
+        height: 100%;
+        background-color: $crystal;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
       &::before {
         content: "";
         position: absolute;
@@ -82,7 +91,13 @@
         }
       }
 
-      &:hover {
+      .spinner {
+        width: 48px;
+        height: 48px;
+        color: $platinum;
+      }
+
+      &:not(.uploading):hover {
         &::before,
         button {
           visibility: visible;
@@ -135,14 +150,9 @@
         cursor: pointer;
       }
 
-      &:not(.uploading):hover,
-      &:not(.uploading).droppable {
+      &:hover,
+      &.droppable {
         color: darken($platinum, 20%);
-      }
-
-      &.uploading > input {
-        pointer-events: none;
-        cursor: default;
       }
     }
   }

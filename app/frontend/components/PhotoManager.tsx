@@ -16,15 +16,15 @@ import {
 } from "@dnd-kit/sortable"
 
 import SortablePhoto from "./PhotoManager/SortablePhoto"
-import UploadIcon from "@/icons/upload.svg"
-import Spinner from "@/icons/spinner.svg"
 import GccIcon from "@/icons/gcc.svg"
+import UploadIcon from "@/icons/upload.svg"
 
-interface Photo {
+export interface Photo {
   uuid: string
-  url: string
-  width: number
-  height: number
+  url?: string
+  width?: number
+  height?: number
+  uploading?: boolean
 }
 
 interface PhotoResult {
@@ -61,7 +61,6 @@ class SmartPointerSensor extends PointerSensor {
 
 export default (props: PhotoManagerProps) => {
   const [open, setOpen] = useState<boolean>(false)
-  const [uploading, setUploading] = useState<boolean>(false)
   const [droppable, setDroppable] = useState<boolean>(false)
   const [error, setError] = useState<string>("")
   const [photos, setPhotos] = useState<Photo[]>(props.photos || [])
@@ -102,24 +101,41 @@ export default (props: PhotoManagerProps) => {
   }
 
   async function handlePhotoSelected(event: ChangeEvent<HTMLInputElement>) {
-    if (uploading) return
-
     setError("")
 
-    const file = event.target.files[0]
-    if (!file) return
+    const files = event.target.files
+    if (!files || !files.length) return
 
-    if (file.size > 1024 * 10000) {
-      setError("Photo must be less than 10MB.")
-      return
+    // Validate all files first.
+    for (let i = 0; i < files.length; i++) {
+      if (files[i].size > 1024 * 10000) {
+        setError("Photos must be less than 10MB each.")
+        return
+      }
+
+      if (!validFileTypes.includes(files[i].type)) {
+        setError("Only PNG, JPG and GIF files allowed.")
+        return
+      }
     }
 
-    if (!validFileTypes.includes(file.type)) {
-      setError("Invalid file type. Please upload a PNG, JPG or GIF.")
-      return
-    }
+    // Now upload each one.
+    for (let i = 0; i < files.length; i++) {
+      if (photos.length >= 10) {
+        setError("Maximum of 10 photos can be uploaded.")
+        return
+      }
 
-    setUploading(true)
+      uploadPhoto(files[i])
+    }
+  }
+
+  async function uploadPhoto(file: File) {
+    const tempUuid = `uploading-photo-${(Math.random() + 1)
+      .toString(36)
+      .substring(7)}`
+
+    setPhotos((photos) => [...photos, { uuid: tempUuid, uploading: true }])
 
     const body = new FormData()
     body.append("photo", file)
@@ -130,11 +146,15 @@ export default (props: PhotoManagerProps) => {
       body,
     })
 
-    setUploading(false)
-
     const result: PhotoResult = await response.json()
     if (result.success) {
-      setPhotos([...photos, result.photo])
+      setPhotos((photos) => {
+        const index = photos.findIndex((photo) => photo.uuid === tempUuid)
+        return photos
+          .slice(0, index)
+          .concat([result.photo])
+          .concat(photos.slice(index + 1))
+      })
     } else {
       setError("Your photo could not be uploaded.")
     }
@@ -173,7 +193,11 @@ export default (props: PhotoManagerProps) => {
 
   return (
     <DndContext onDragEnd={handleDragEnd} sensors={sensors}>
-      <div className={classNames("PhotoManager", { open, uploading })}>
+      <div
+        className={classNames("PhotoManager", {
+          open,
+        })}
+      >
         {(() => {
           if (open)
             return (
@@ -187,10 +211,7 @@ export default (props: PhotoManagerProps) => {
                     {photos.map((photo) => (
                       <SortablePhoto
                         key={photo.uuid}
-                        src={photo.url}
-                        width={photo.width}
-                        height={photo.height}
-                        uuid={photo.uuid}
+                        photo={photo}
                         onRemoveClick={handleRemovePhoto}
                       />
                     ))}
@@ -198,13 +219,13 @@ export default (props: PhotoManagerProps) => {
                   {photos.length < 10 && (
                     <div
                       className={classNames("uploader", {
-                        uploading,
                         droppable,
                       })}
                     >
-                      {uploading ? <Spinner /> : <UploadIcon />}
+                      <UploadIcon />
                       <input
                         type="file"
+                        multiple={true}
                         onChange={handlePhotoSelected}
                         title="Drop an image here to upload it, or click to choose one."
                         onDragEnter={handleInputDragEnter}

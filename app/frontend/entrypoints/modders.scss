@@ -84,7 +84,7 @@ body.modders.index {
   .sidebar {
     margin: -24px;
     padding: 24px 24px 28px;
-    background-color: #eee;
+    background-color: $crystal;
     border-radius: 16px;
 
     @include small {
@@ -130,7 +130,7 @@ body.modders.index {
       height: 320px;
       margin-top: -24px;
       border-radius: 16px;
-      border: 2px solid #eee;
+      border: 2px solid $crystal;
       overflow: hidden;
       opacity: 0;
       visibility: hidden;
