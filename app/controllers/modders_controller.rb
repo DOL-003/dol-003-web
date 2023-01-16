@@ -5,7 +5,11 @@ class ModdersController < ApplicationController
 
     @services = []
     if params[:services].present?
-      @services = params[:services].split(',')
+      if params[:services].is_a? Array
+        @services = params[:services]
+      elsif params[:services].is_a? String
+        @services = params[:services].split(',')
+      end
     elsif params[:service].present?
       @services = [params[:service]]
     end
