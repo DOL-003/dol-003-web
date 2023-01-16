@@ -14,7 +14,7 @@
   <div class="content grid">
 
     <div class="span-4 caption">
-      <%= form.label :name, 'Modder name', class: 'label large' %>
+      <%= form.label :name, 'Modder name', class: 'label large' %> <i class="required" title="Required">*</i>
       <p class="small">The name you use as a modder. This can be a brand name or your actual name, whichever you use to advertise your modding services. You can change this later if necessary.</p>
     </div>
     <div class="span-8 input-container">
@@ -58,7 +58,7 @@
     </div>
 
     <div class="span-4 caption">
-      <p class="label large">Location</p>
+      <p class="label large">Location <i title="Required" class="required">*</i></p>
       <p class="small">Specify where you’re located so nearby players can find you.</p>
     </div>
 
@@ -72,6 +72,10 @@
           longitude: @modder.longitude
         }
       %>
+
+      <% if @modder.errors[:latitude].present? %>
+        <p class="error-message">You must choose a location.</p>
+      <% end %>
     </div>
 
     <div class="span-4 caption">
@@ -97,7 +101,7 @@
     </div>
 
     <div class="span-4 caption">
-      <p class="label large">External links</p>
+      <p class="label large">External links <i class="required" title="Required">*</i></p>
       <p class="small">Link viewers to your shop and/or social media pages. All links are optional, but you must have at least one to feature on your profile.</p>
     </div>
 

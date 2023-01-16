@@ -24,13 +24,6 @@
       }
     }
 
-    .error-message {
-      font-size: 14px;
-      font-weight: 500;
-      color: $mario;
-      margin: 4px 0 0;
-    }
-
     & + .field {
       margin-top: 16px;
     }
@@ -38,6 +31,19 @@
     & + .actions {
       margin-top: 32px;
     }
+  }
+
+  .error-message {
+    font-size: 14px;
+    font-weight: 500;
+    color: $mario;
+    margin: 4px 0 0;
+  }
+
+  .required {
+    font-weight: bold;
+    font-style: normal;
+    color: $spice;
   }
 
   .label {
