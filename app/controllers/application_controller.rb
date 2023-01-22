@@ -43,4 +43,8 @@ class ApplicationController < ActionController::Base
     Flag.enabled?(flag, user: current_user, session_id: session.id)
   end
 
+  def redirect_if_signed_in(path = nil)
+    redirect_to (path || root_path) if user_signed_in?
+  end
+
 end

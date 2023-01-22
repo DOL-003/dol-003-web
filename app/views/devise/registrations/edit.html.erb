@@ -1,43 +1,86 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="content grid">
+  <div class="span-8">
+    <h1>Account settings</h1>
+    <p>Change your email address or password, or close your account.</p>
+  </div>
+</div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form' }) do |form| %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="content grid">
+
+    <div class="span-4 caption">
+      <%= form.label :email, 'Email address', class: 'label large' %>
+      <p class="small">If you change your email address, you will need to confirm the new one before the change is effective.</p>
+    </div>
+
+    <div class="span-8 input-container">
+
+      <%= render 'form_field', locals: {
+        resource: resource,
+        form: form,
+        field_name: :email,
+        field_type: :email_field,
+        label: false,
+        options: { class: 'text-input xlarge', autocomplete: 'email', placeholder: 'you@domain.com' }
+      } %>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p class="small">Pending confirmation: <%= resource.unconfirmed_email %></p>
+      <% end %>
+
+    </div>
+
+    <div class="span-4 caption">
+      <p class="label large">Change password</p>
+      <p class="small">Leave these fields blank if you don’t want to change your password.</p>
+    </div>
+
+    <div class="span-8 input-container">
+      <%= render 'form_field', locals: {
+        resource: resource,
+        form: form,
+        field_name: :password,
+        field_type: :password_field,
+        options: { class: 'text-input large', autocomplete: 'new-password' }
+      } %>
+      <%= render 'form_field', locals: {
+        resource: resource,
+        form: form,
+        field_name: :password_confirmation,
+        field_type: :password_field,
+        options: { class: 'text-input large', autocomplete: 'new-password' }
+      } %>
+    </div>
+
+    <div class="span-4 caption">
+      <%= form.label :current_password, class: 'label large' %>
+      <p class="small">Your current password is required to save changes.</p>
+    </div>
+
+    <div class="span-8 input-container">
+      <%= render 'form_field', locals: {
+        resource: resource,
+        form: form,
+        field_name: :current_password,
+        field_type: :password_field,
+        label: false,
+        options: { class: 'text-input large', autocomplete: 'current-password' }
+      } %>
+    </div>
+
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+  <div class="content">
+    <%= form.submit 'Save', class: 'button' %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
 <% end %>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<section class="close-account content grid">
+  <div class="span-8">
+    <h2>Close account</h2>
+    <p>Permanently delete your account. This action is not reversible.</p>
+    <p><%= button_to 'Close my account', registration_path(resource_name), data: { confirm: 'Are you sure you’d like to close your account? This cannot be undone.' }, method: :delete, class: 'button secondary' %></p>
+  </div>
+</section>

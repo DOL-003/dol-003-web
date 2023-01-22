@@ -7,10 +7,10 @@ class Authentication::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     @title = 'Modder registration'
-    @allow_register = false
+    @allow_register = flag_enabled? :open_registration
     if params[:invitation_token].present?
       invitation = UserInvitation.find_by(claim_token: params[:invitation_token])
-      if (invitation.present? && invitation.status == UserInvitation::STATUS_UNCLAIMED)
+      if invitation.present? && invitation.status == UserInvitation::STATUS_UNCLAIMED
         @allow_register = true
       end
     end
@@ -21,16 +21,16 @@ class Authentication::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     @title = 'Modder registration'
-    allow_register = false
+    @allow_register = flag_enabled? :open_registration
     invitation = nil
     if params[:invitation_token].present?
       invitation = UserInvitation.find_by(claim_token: params[:invitation_token])
-      if (invitation.present? && invitation.status == UserInvitation::STATUS_UNCLAIMED)
-        allow_register = true
+      if invitation.present? && invitation.status == UserInvitation::STATUS_UNCLAIMED
+        @allow_register = true
       end
     end
 
-    if !allow_register
+    if !@allow_register
       flash[:error] = 'Modder registration is invite-only. Sign up using the link in your invitation email.'
       return redirect_to root_path
     end
@@ -89,4 +89,8 @@ class Authentication::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  def after_update_path_for(resource)
+    edit_user_registration_path
+  end
 end

@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Authentication::ConfirmationsController < Devise::ConfirmationsController
+
+  before_action :redirect_if_signed_in
+
   # GET /resource/confirmation/new
   # def new
   #   super

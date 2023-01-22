@@ -1,7 +1,8 @@
 @import "@/breakpoints";
 @import "@/colors";
 
-body.registrations {
+body.registrations.new,
+body.registrations.create {
   main {
     display: flex;
     flex-flow: row nowrap;
@@ -25,5 +26,35 @@ body.registrations {
   .agreement {
     width: 360px;
     margin-top: 32px;
+  }
+}
+
+body.registrations.edit,
+body.registrations.update {
+  .form {
+    > .content {
+      margin-top: 48px;
+      grid-row-gap: 48px;
+
+      .caption {
+        padding-top: 15px;
+
+        p {
+          margin-top: 0;
+        }
+      }
+
+      .input-container {
+        padding-left: 48px;
+
+        @include small {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  .close-account {
+    margin-top: 64px;
   }
 }

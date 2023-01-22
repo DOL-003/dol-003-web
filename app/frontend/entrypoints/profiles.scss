@@ -15,6 +15,10 @@ body.profiles.create {
         p {
           margin-top: 0;
         }
+
+        .field_with_errors {
+          display: inline-block;
+        }
       }
 
       .input-container {
