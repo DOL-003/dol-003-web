@@ -30,7 +30,8 @@ body.registrations.create {
 }
 
 body.registrations.edit,
-body.registrations.update {
+body.registrations.update,
+body.registrations.destroy {
   .form {
     > .content {
       margin-top: 48px;

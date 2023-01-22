@@ -82,7 +82,18 @@
 <section class="close-account content grid">
   <div class="span-8">
     <h2>Close account</h2>
-    <p>Permanently delete your account. This action is not reversible.</p>
-    <p><%= button_to 'Close my account', registration_path(resource_name), data: { confirm: 'Are you sure you’d like to close your account? This cannot be undone.' }, method: :delete, class: 'button secondary' %></p>
+    <p>Enter your password and click the button below to permanently delete your account. This action is not reversible.</p>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :delete, class: 'form' }) do |form| %>
+      <%= render 'form_field', locals: {
+        resource: resource,
+        form: form,
+        field_name: :password,
+        field_type: :password_field,
+        options: { class: 'text-input large', autocomplete: 'current-password' }
+      } %>
+      <div class="actions">
+        <%= form.submit 'Close account', class: 'button secondary' %>
+      </div>
+    <% end %>
   </div>
 </section>
