@@ -42,6 +42,7 @@
         form: form,
         field_name: :password,
         field_type: :password_field,
+        label: 'New password',
         options: { class: 'text-input large', autocomplete: 'new-password' }
       } %>
       <%= render 'form_field', locals: {
@@ -49,6 +50,7 @@
         form: form,
         field_name: :password_confirmation,
         field_type: :password_field,
+        label: 'New password confirmation',
         options: { class: 'text-input large', autocomplete: 'new-password' }
       } %>
     </div>
