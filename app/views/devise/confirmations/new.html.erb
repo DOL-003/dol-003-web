@@ -1,16 +1,26 @@
-<h2>Resend confirmation instructions</h2>
+<div class="content grid">
+  <section class="span-8">
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <h2>Confirm account</h2>
+    <p>Enter your email address to resend account confirmation instructions.</p>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
-  </div>
+    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: 'form' }) do |form| %>
 
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
+      <%= render 'form_field', locals: {
+        resource: resource,
+        form: form,
+        field_name: :email,
+        field_type: :email_field,
+        label: 'Email address',
+        options: { autofocus: true, autocomplete: 'email', class: 'text-input large' }
+      } %>
 
-<%= render "devise/shared/links" %>
+      <div class="actions">
+        <%= form.submit 'Submit', class: 'button' %>
+        <%= link_to 'Sign in', new_user_session_path %>
+      </div>
+
+    <% end %>
+
+  </section>
+</div>

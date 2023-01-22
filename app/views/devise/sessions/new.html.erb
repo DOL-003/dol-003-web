@@ -31,7 +31,10 @@
         <%= f.hidden_field :remember_me, value: true %>
       <% end %>
 
-      <p class="addendum small"><%= link_to 'Forgot your password?', new_user_password_path %></p>
+      <p class="addendum small">
+        <%= link_to 'Forgot your password?', new_user_password_path %><br>
+        <%= link_to 'Resend confirmation instructions', new_user_confirmation_path %>
+      </p>
 
     <% end %>
 

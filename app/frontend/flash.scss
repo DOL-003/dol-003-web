@@ -103,5 +103,9 @@
     & + p {
       margin-top: 8px;
     }
+
+    & ~ div {
+      margin-top: 16px;
+    }
   }
 }
