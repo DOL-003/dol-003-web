@@ -1,48 +1,57 @@
 Introduction: index
 
-Parts:
-  path: parts
-
-  Analog sticks:
-    path: sticks
-    Thumbsticks: thumbsticks
-    Stickboxes: stickboxes
-    Potentiometers: pots
-  Boards: boards
-  Buttons: buttons
-  Cables: cables
-  Shells: shells
-  Silicone pads: pads
-  Triggers: triggers
-
-Guides:
+General guides:
   path: guides
   Controller troubleshooting: troubleshooting
   Controller shopping: controller-shopping
 
-Mods:
-  path: mods
+separator-1:
 
-  Cable mods:
-    path: cables
+Analog sticks:
+  path: sticks
+  Potentiometers: pots
+  Stickboxes: stickboxes
+  Snapback: snapback
+  Thumbsticks: thumbsticks
+  Mods:
+    path: mods
+    Aftermarket springs: springs
+    Snapback modules: snapback
+    Stickbox lubing: lubing
+
+Boards: boards
+
+Buttons:
+  path: buttons
+  Mods:
+    path: mods
+    Tactile Z: tactile
+    Mouseclick Z: mouseclick
+
+Cables:
+  path: cables
+  Mods:
+    path: mods
     Aviator cables: aviator
     Detachable cables: detachable
     Paracords: paracords
 
-  LED mods: led
-  Notches: notches
+Shells:
+  path: shells
+  Mods:
+    path: mods
+    Notches: notches
 
-  Pad perforation: pad-perforation
+Silicone pads:
+  path: pads
+  Mods:
+    path: mods
+    Pad perforation: pad-perforation
 
-  Snapback & heartbeat modules: snapback
-
-  Stickbox mods:
-    path: stickboxes
-    Aftermarket springs: springs
-    Stickbox lubing: lubing
-
-  Trigger mods:
-    path: triggers
+Triggers:
+  path: triggers
+  Mods:
+    path: mods
     Digital triggers: digital
     Ergo triggers: ergo
     Lubed triggers: lube
@@ -51,10 +60,7 @@ Mods:
     Spring mods: springs
     Trigger plugs: plugs
 
-  Z button mods:
-    path: z
-    Tactile Z: tactile
-    Mouseclick Z: mouseclick
+separator-2:
 
 Related sites & resources: links
 
