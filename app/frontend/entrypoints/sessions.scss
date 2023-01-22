@@ -1,9 +1,13 @@
 body.sessions {
-
   main {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
+  }
+
+  .addendum {
+    width: 360px;
+    margin-top: 32px;
   }
 }
