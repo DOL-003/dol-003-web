@@ -8,7 +8,11 @@
     </div>
 
     <div class="span-6 sign-in-link">
-      <%= link_to 'Modder sign in', new_user_session_path, class: 'button secondary' %>
+      <% if user_signed_in? %>
+        <%= inline_svg_tag 'plug.svg' %>
+      <% else %>
+        <%= link_to 'Modder sign in', new_user_session_path, class: 'button secondary' %>
+      <% end %>
     </div>
 
   </div>

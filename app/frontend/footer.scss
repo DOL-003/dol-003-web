@@ -1,4 +1,5 @@
 @import "@/breakpoints";
+@import "@/colors";
 
 footer {
   background-color: $black;
@@ -8,6 +9,7 @@ footer {
   .sign-in-link {
     display: flex;
     justify-content: flex-end;
+    color: $spice;
 
     @include small {
       justify-content: center;
@@ -15,6 +17,11 @@ footer {
 
     .button {
       margin-right: -2px;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
     }
   }
 }
