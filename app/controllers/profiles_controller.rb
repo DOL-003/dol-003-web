@@ -94,6 +94,7 @@ class ProfilesController < ApplicationController
     ModderPhoto.transaction do
       params[:photos].each_with_index do |uuid, index|
         modder_photo = ModderPhoto.find_by(modder: current_modder, uuid:)
+        next if modder_photo.blank?
         modder_photo.index = index
         modder_photo.save!
       end
