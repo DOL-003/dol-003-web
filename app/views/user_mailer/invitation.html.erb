@@ -1,6 +1,6 @@
-<p>You’ve been invited to join DOL-003.info, a directory of GameCube controller modders.</p>
+<p><%= link_to @inviter_modder.name, @inviter_modder %> has invited you to join DOL-003.info, a directory of GameCube controller modders and artists.</p>
 
-<p>This is your unique invitation link. Click to sign up and set up your modder profile.</p>
+<p>This is your unique invitation link. Click to sign up and set up your profile.</p>
 
 <p><%= link_to 'Sign up now →', new_user_registration_url(invitation_token: @invitation_token), class: 'button' %></p>
 

@@ -32,4 +32,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :trackable, :confirmable
 
   validates :password, length: { minimum: 6 }, allow_blank: true
+
+  has_one :modder
 end

@@ -24,7 +24,8 @@ class UserInvitation < ApplicationRecord
   STATUS_UNCLAIMED = 'unclaimed'.freeze
   STATUS_CLAIMED = 'claimed'.freeze
 
-  belongs_to :user, optional: true
+  belongs_to :invitee_user, class_name: User.name, optional: true
+  belongs_to :inviter_user, class_name: User.name, optional: true
 
   validates :status, inclusion: { in: [STATUS_UNCLAIMED, STATUS_CLAIMED] }
 
@@ -37,8 +38,8 @@ class UserInvitation < ApplicationRecord
     new_user_registration_url(invitation_token: claim_token, host: 'https://dol-003.info')
   end
 
-  def send_email(email)
-    UserMailer.with(email:, invitation_token: claim_token).invitation.deliver_later
+  def send_email
+    UserMailer.with(email:, inviter_user_id: inviter_user.id, invitation_token: claim_token).invitation.deliver_later
   end
 
 end
