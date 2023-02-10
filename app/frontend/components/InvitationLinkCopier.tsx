@@ -8,9 +8,10 @@ interface InvitationLinkCopierProps {
 }
 
 export default (props: InvitationLinkCopierProps) => {
+  const [inviteLink, setInviteLink] = useState()
   const [inviteLinkCopied, setInviteLinkCopied] = useState(false)
 
-  async function copyInvitationLink() {
+  async function getInviteLink() {
     const response = await fetch(props.invitationsPath, {
       headers: {
         "X-CSRF-Token": props.csrfToken,
@@ -22,28 +23,52 @@ export default (props: InvitationLinkCopierProps) => {
     const data = await response.json()
 
     if (data.success) {
-      navigator.clipboard.writeText(data.invitation_url)
-      setInviteLinkCopied(true)
+      setInviteLink(data.invitation_url)
 
-      document.querySelector("#available-invitations").innerHTML =
-        data.available_invitations === 1
-          ? "1 invitations"
-          : `${data.available_invitations} invitations`
-
-      setTimeout(() => setInviteLinkCopied(false), 10000)
+      if (data.available_invitations !== null) {
+        document.querySelector("#available-invitations").innerHTML =
+          data.available_invitations === 1
+            ? "1 invitations"
+            : `${data.available_invitations} invitations`
+      }
     }
+  }
+
+  function copyInviteLink() {
+    navigator.clipboard.writeText(inviteLink)
+    setInviteLinkCopied(true)
+
+    setTimeout(() => {
+      setInviteLinkCopied(false)
+      setInviteLink(null)
+    }, 10000)
   }
 
   return (
     <div>
-      <button
-        type="button"
-        className="button"
-        onClick={copyInvitationLink}
-        disabled={inviteLinkCopied}
-      >
-        {inviteLinkCopied ? "Invitation link copied" : "Copy invitation link"}
-      </button>
+      {inviteLink ? (
+        <>
+          <input
+            type="text"
+            value={inviteLink}
+            disabled={true}
+            className="text-input xlarge"
+          />
+          <br />
+          <button
+            type="button"
+            className="button"
+            disabled={inviteLinkCopied}
+            onClick={copyInviteLink}
+          >
+            {inviteLinkCopied ? "Copied" : "Copy link"}
+          </button>
+        </>
+      ) : (
+        <button type="button" className="button" onClick={getInviteLink}>
+          {inviteLinkCopied ? "Invitation link copied" : "Generate invite link"}
+        </button>
+      )}
     </div>
   )
 }
