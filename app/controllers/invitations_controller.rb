@@ -4,12 +4,13 @@ class InvitationsController < ApplicationController
 
   def new
     @available_invitations = available_invitations
+    @unlimited_invitations = flag_enabled?(:unlimited_invitations)
   end
 
   def create
     return redirect_to new_invitation_path if params[:email].blank?
 
-    unless available_invitations.positive?
+    unless available_invitations.positive? || flag_enabled?(:unlimited_invitations)
       flash[:error] = 'You do not currently have any invitations. Try again later.'
       return redirect_to new_invitation_path
     end
