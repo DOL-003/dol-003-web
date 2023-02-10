@@ -10,7 +10,7 @@
 
     <% if @unlimited_invitations || @available_invitations.positive? %>
       <p>You currently have <strong id="available-invitations"><%= @unlimited_invitations ? 'unlimited invitations' : pluralize(@available_invitations, 'invitation') %></strong>.</p>
-      <p>To invite someone, you can provide their email address and we’ll send them an email with a link to sign up, or you can copy an invite link to give someone.</p>
+      <p>To invite someone, you can provide their email address and we’ll send them an email with a link to sign up, or you can copy an invite link to give someone. Each invite link can only be used once.</p>
     <% end %>
   </section>
 
