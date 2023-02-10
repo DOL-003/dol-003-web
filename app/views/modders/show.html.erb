@@ -33,7 +33,7 @@
       <div>
         <h1><%= @modder.name %></h1>
         <p class="city"><%= inline_svg_tag 'pin.svg' %><%= @modder.city %></p>
-        <p><%= @modder.bio %></p>
+        <%= format_bio(@modder.bio) %>
       </div>
     </div>
     <div class="services">

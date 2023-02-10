@@ -56,7 +56,7 @@ class Modder < ApplicationRecord
   validates :status, inclusion: { in: [STATUS_ACTIVE, STATUS_INACTIVE, STATUS_BANNED] }
 
   validates :name, presence: true, length: { minimum: 3, maximum: 50 }
-  validates :bio, length: { maximum: 500 }
+  validates :bio, length: { maximum: 1000 }
   validates :slug, presence: true, uniqueness: true
   validates :city, presence: true
   validates :latitude, presence: true
