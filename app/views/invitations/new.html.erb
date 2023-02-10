@@ -10,7 +10,14 @@
 
     <% if @available_invitations.positive? || @unlimited_invitations %>
       <p>You currently have <strong><%= @unlimited_invitations ? 'unlimited invitations' : pluralize(@available_invitations, 'invitation') %></strong>.</p>
-      <p>To invite someone, simply provide their email address and we’ll send them an email with a link to sign up.</p>
+      <p>To invite someone, you can provide their email address and we’ll send them an email with a link to sign up, or you can copy an invite link to give someone.</p>
+    <% end %>
+  </section>
+
+  <% if @available_invitations.positive? || @unlimited_invitations %>
+    <section class="span-8">
+      <h2>Invite by email</h2>
+
       <%= form_with url: invitations_path, html: { method: :post, class: 'form' } do |form| %>
 
         <div class="field">
@@ -23,8 +30,15 @@
         </div>
 
       <% end %>
-    <% else %>
+    </section>
+
+    <section class="span-8">
+      <h2>Invite with link</h2>
+      <p>React component here</p>
+    </section>
+  <% else %>
+    <section class="span-8">
       <p>You do not currently have any invitations available. Check back later to invite more people.</p>
-    <% end %>
-  </section>
+    </section>
+  <% end %>
 </div>
