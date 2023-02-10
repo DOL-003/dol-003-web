@@ -8,23 +8,44 @@ class InvitationsController < ApplicationController
   end
 
   def create
-    return redirect_to new_invitation_path if params[:email].blank?
+    respond_to do |format|
 
-    unless available_invitations.positive? || flag_enabled?(:unlimited_invitations)
-      flash[:error] = 'You do not currently have any invitations. Try again later.'
-      return redirect_to new_invitation_path
+      format.html do
+        return redirect_to new_invitation_path if params[:email].blank?
+
+        unless available_invitations.positive? || flag_enabled?(:unlimited_invitations)
+          flash[:error] = 'You do not currently have any invitations. Try again later.'
+          return redirect_to new_invitation_path
+        end
+
+        invitation = UserInvitation.new
+        invitation.inviter_user = current_user
+        invitation.email = params[:email]
+        invitation.save!
+
+        invitation.send_email
+        flash[:notice] = 'Invitation sent!'
+        redirect_to new_invitation_path
+      end
+
+      format.json do
+        unless available_invitations.positive? || flag_enabled?(:unlimited_invitations)
+          return render json: {
+            success: false
+          }
+        end
+
+        invitation = UserInvitation.new
+        invitation.inviter_user = current_user
+        invitation.save!
+
+        render json: {
+          success: true,
+          invitation_url: invitation.registration_url
+        }
+      end
+
     end
-
-    invitation = UserInvitation.new
-    invitation.inviter_user = current_user
-    invitation.email = params[:email]
-    invitation.save!
-
-    invitation.send_email
-
-    flash[:notice] = 'Invitation sent!'
-
-    redirect_to new_invitation_path
   end
 
   private

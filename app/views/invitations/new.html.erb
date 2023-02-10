@@ -34,7 +34,17 @@
 
     <section class="span-8">
       <h2>Invite with link</h2>
-      <p>React component here</p>
+      <% unless @unlimited_invitations %>
+        <p>Clicking this button will immediately use one of your available invitations.</p>
+      <% end %>
+      <p>
+        <%=
+          react_component 'InvitationLinkCopier', {
+            invitations_path:,
+            csrf_token: form_authenticity_token
+          }
+        %>
+      </p>
     </section>
   <% else %>
     <section class="span-8">
