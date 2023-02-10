@@ -1,10 +1,13 @@
 class InvitationsController < ApplicationController
 
+  INVITES_PER_MONTH = 5
+
   before_action :authenticate_user!
 
   def new
     @available_invitations = available_invitations
     @unlimited_invitations = flag_enabled?(:unlimited_invitations)
+    @invites_per_month = INVITES_PER_MONTH
   end
 
   def create
@@ -13,7 +16,7 @@ class InvitationsController < ApplicationController
       format.html do
         return redirect_to new_invitation_path if params[:email].blank?
 
-        unless available_invitations.positive? || flag_enabled?(:unlimited_invitations)
+        unless flag_enabled?(:unlimited_invitations) || available_invitations.positive?
           flash[:error] = 'You do not currently have any invitations. Try again later.'
           return redirect_to new_invitation_path
         end
@@ -29,7 +32,7 @@ class InvitationsController < ApplicationController
       end
 
       format.json do
-        unless available_invitations.positive? || flag_enabled?(:unlimited_invitations)
+        unless flag_enabled?(:unlimited_invitations) || available_invitations.positive?
           return render json: {
             success: false
           }
@@ -41,7 +44,8 @@ class InvitationsController < ApplicationController
 
         render json: {
           success: true,
-          invitation_url: invitation.registration_url
+          invitation_url: invitation.registration_url,
+          available_invitations:
         }
       end
 
@@ -51,8 +55,9 @@ class InvitationsController < ApplicationController
   private
 
   def available_invitations
+    return nil if flag_enabled?(:unlimited_invitations)
     invites_in_last_30_days = UserInvitation.where(inviter_user: current_user).where('created_at > ?', 30.days.ago).count
-    5 - invites_in_last_30_days
+    INVITES_PER_MONTH - invites_in_last_30_days
   end
 
 end

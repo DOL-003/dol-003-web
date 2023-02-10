@@ -24,6 +24,13 @@ export default (props: InvitationLinkCopierProps) => {
     if (data.success) {
       navigator.clipboard.writeText(data.invitation_url)
       setInviteLinkCopied(true)
+
+      document.querySelector("#available-invitations").innerHTML =
+        data.available_invitations === 1
+          ? "1 invitations"
+          : `${data.available_invitations} invitations`
+
+      setTimeout(() => setInviteLinkCopied(false), 10000)
     }
   }
 

@@ -5,16 +5,16 @@
     <% if @unlimited_invitations %>
       <p class="big">DOL-003.info is currently an invite-only service. As a member, you can other modders or artists to join.</p>
     <% else %>
-      <p class="big">DOL-003.info is currently an invite-only service. As a member, you can invite up to 5 other modders or artists every 30 days.</p>
+      <p class="big">DOL-003.info is currently an invite-only service. As a member, you can invite up to <%= @invites_per_month %> other modders or artists every 30 days.</p>
     <% end %>
 
-    <% if @available_invitations.positive? || @unlimited_invitations %>
-      <p>You currently have <strong><%= @unlimited_invitations ? 'unlimited invitations' : pluralize(@available_invitations, 'invitation') %></strong>.</p>
+    <% if @unlimited_invitations || @available_invitations.positive? %>
+      <p>You currently have <strong id="available-invitations"><%= @unlimited_invitations ? 'unlimited invitations' : pluralize(@available_invitations, 'invitation') %></strong>.</p>
       <p>To invite someone, you can provide their email address and we’ll send them an email with a link to sign up, or you can copy an invite link to give someone.</p>
     <% end %>
   </section>
 
-  <% if @available_invitations.positive? || @unlimited_invitations %>
+  <% if @unlimited_invitations || @available_invitations.positive? %>
     <section class="span-8">
       <h2>Invite by email</h2>
 
