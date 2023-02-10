@@ -1,3 +1,5 @@
+import Cookies from "js-cookie"
+
 window.addEventListener("DOMContentLoaded", () => {
   const results = document.querySelector("#modder-search-results")
   if (results) results.classList.toggle("initialized")
@@ -12,4 +14,12 @@ window.addEventListener("DOMContentLoaded", () => {
         document.dispatchEvent(new Event("map-visible"))
     })
   })
+
+  const serviceVisibilityToggle = document.querySelector("#services-visible")
+  if (serviceVisibilityToggle) {
+    serviceVisibilityToggle.addEventListener("change", () => {
+      document.querySelector("#modder-search-results").style.setProperty("--service-display", serviceVisibilityToggle.checked ? "block" : "none")
+      Cookies.set("services_visible", serviceVisibilityToggle.checked ? 1 : 0)
+    })
+  }
 })

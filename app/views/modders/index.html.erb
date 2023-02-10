@@ -1,13 +1,10 @@
 <div class="content">
   <h1>Modder search</h1>
-  <% if !@results_visible %>
-    <p class="big">Find modders by the services they offer, by location, or by name.</p>
-  <% end %>
 </div>
 
 <div class="content grid search-fields">
 
-  <%= form_with url: modders_path, method: 'get', html: { class: "form span-#{ @results_visible ? '4 sidebar' : '8' }" } do |form| %>
+  <%= form_with url: modders_path, method: 'get', html: { class: "form span-4 sidebar" } do |form| %>
 
     <div class="field">
       <label class="label">Services offered</label>
@@ -33,7 +30,7 @@
       <label class="label">Location</label>
       <%=
         react_component "LocationSelector", {
-          class: "search #{ @results_visible ? 'full-width' : 'large' }",
+          class: "search full-width",
           geolocator: true,
           city: @city || "",
           latitude: @latitude || "",
@@ -47,80 +44,86 @@
       <%= form.text_field :query, value: @query || '', class: 'text-input xlarge search', placeholder: 'Optional', autocomplete: 'off' %>
     </div>
 
+    <div class="field">
+      <div class="checkbox">
+        <input type="checkbox" id="services-visible" <%= @services_visible ? 'checked' : '' %>>
+        <%= inline_svg_tag 'check.svg' %>
+        <label for="services-visible">Show services offered</label>
+      </div>
+    </div>
+
     <div class="actions">
-      <%= form.submit @results_visible ? 'Update search' : 'Search', name: nil, class: 'button' %>
+      <%= form.submit 'Update search', name: nil, class: 'button' %>
     </div>
 
     <%= form.hidden_field :map, value: 0, id: 'map-input' %>
 
   <% end %>
 
-  <% if @results_visible %>
-    <section class="results span-8 <%= 'map-visible' if @map %>" id="modder-search-results">
+  <section class="results span-8 <%= 'map-visible' if @map %>" id="modder-search-results" style="--service-display: <%= @services_visible ? 'block' : 'none' %>;">
 
-      <% if @results.empty? %>
+    <% if @results.empty? %>
 
-        <h2>No results</h2>
-        <p>Refine your search criteria and try again.</p>
+      <h2>No results</h2>
+      <p>Refine your search criteria and try again.</p>
 
-      <% else %>
+    <% else %>
 
-        <%=
-          react_component 'ModderMap', {
-            latitude: @latitude,
-            longitude: @longitude,
-            interactive: true,
-            map_pin_image_url: image_url('map-pin.png'),
-            map_visible: @map,
-            modders: @results.map { |modder|
-              {
-                url: modder_url(modder),
-                slug: modder.slug,
-                name: modder.name,
-                city: modder.city,
-                latitude: modder.latitude,
-                longitude: modder.longitude
-              }
+      <%=
+        react_component 'ModderMap', {
+          latitude: @latitude,
+          longitude: @longitude,
+          interactive: true,
+          map_pin_image_url: image_url('map-pin.png'),
+          map_visible: @map,
+          modders: @results.map { |modder|
+            {
+              url: modder_url(modder),
+              slug: modder.slug,
+              name: modder.name,
+              city: modder.city,
+              latitude: modder.latitude,
+              longitude: modder.longitude
             }
           }
-        %>
+        }
+      %>
 
-        <div class="heading">
-          <h2><%= @results.length %> <%= 'result'.pluralize(@results.length) %></h2>
-          <button type="button" class="link map-toggle show-map"><%= inline_svg_tag 'map.svg' %>Show map</button>
-          <button type="button" class="link map-toggle hide-map"><%= inline_svg_tag 'map.svg' %>Hide map</button>
-        </div>
+      <div class="heading">
+        <h2><%= @results.length %> <%= 'result'.pluralize(@results.length) %></h2>
+        <button type="button" class="link map-toggle show-map"><%= inline_svg_tag 'map.svg' %>Show map</button>
+        <button type="button" class="link map-toggle hide-map"><%= inline_svg_tag 'map.svg' %>Hide map</button>
+      </div>
 
-      <% end %>
+    <% end %>
 
-      <% @results.each do |modder| %>
+    <% @results.each do |modder| %>
 
-        <section class="modder-info">
-          <div class="meta">
-            <%= link_to modder do %>
-              <figure class="logo" style="<%= "background-image: url(#{modder.logo_url})" if modder.logo.present? %>">
-                <% if modder.logo.blank? %>
-                  <%= inline_svg_tag 'gcc.svg' %>
-                <% end %>
-              </figure>
-            <% end %>
-            <div>
-              <h3><%= link_to modder.name, modder %></h3>
-              <p class="city"><%= inline_svg_tag 'pin.svg' %><%= modder.city %></p>
-            </div>
-          </div>
-          <div class="services">
-            <ol>
-              <% modder.modder_services.map do |service| %>
-                <% svc = ModderService::ALL_SERVICES[service.service.to_sym] %>
-                <li class="service-pill" style="--service-color: <%= svc[:color] %>"><%= svc[:name] %></li>
+      <section class="modder-info">
+        <div class="meta">
+          <%= link_to modder do %>
+            <figure class="logo" style="<%= "background-image: url(#{modder.logo_url})" if modder.logo.present? %>">
+              <% if modder.logo.blank? %>
+                <%= inline_svg_tag 'gcc.svg' %>
               <% end %>
-            </ol>
+            </figure>
+          <% end %>
+          <div>
+            <h3><%= link_to modder.name, modder %></h3>
+            <p class="city"><%= inline_svg_tag 'pin.svg' %><%= modder.city %></p>
           </div>
-        </section>
+        </div>
+        <div class="services">
+          <ol>
+            <% modder.modder_services.map do |service| %>
+              <% svc = ModderService::ALL_SERVICES[service.service.to_sym] %>
+              <li class="service-pill" style="--service-color: <%= svc[:color] %>"><%= svc[:name] %></li>
+            <% end %>
+          </ol>
+        </div>
+      </section>
 
-      <% end %>
-    </section>
-  <% end %>
+    <% end %>
+  </section>
 
 </div>

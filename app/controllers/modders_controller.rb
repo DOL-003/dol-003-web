@@ -21,8 +21,8 @@ class ModdersController < ApplicationController
     @longitude = params[:longitude]
     @query = params[:query]
     @map = params[:map] == '1' || (@latitude.present? && @longitude.present?)
+    @services_visible = cookies[:services_visible] != '0'
 
-    @results_visible = @services.present? || (@latitude.present? && @longitude.present?) || @query.present?
     @results = Modder.active
 
     if @services.present?

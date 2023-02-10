@@ -205,6 +205,7 @@ body.modders.index {
       }
 
       .services {
+        display: var(--service-display, block);
         margin-top: 16px;
         margin-left: 86px;
       }

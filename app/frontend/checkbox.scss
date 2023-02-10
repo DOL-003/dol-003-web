@@ -1,0 +1,37 @@
+@import "@/colors";
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  input[type="checkbox"] {
+    appearance: none;
+    width: 23px;
+    height: 23px;
+    border: 2px solid $platinum;
+    border-radius: 4px;
+    background-color: $white;
+    margin-right: 12px;
+    cursor: pointer;
+
+    &:checked {
+      border-color: $spice;
+      background-color: $spice;
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 16px;
+    height: 16px;
+    color: $white;
+  }
+
+  label {
+    cursor: pointer;
+    margin-top: 2px;
+  }
+}
