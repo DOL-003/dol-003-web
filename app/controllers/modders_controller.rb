@@ -22,7 +22,7 @@ class ModdersController < ApplicationController
     @query = params[:query]
     @map = params[:map] == '1' || (@latitude.present? && @longitude.present?)
 
-    @results_visible = @services.present? || (@latitude.present? && @longitude.present?)
+    @results_visible = @services.present? || (@latitude.present? && @longitude.present?) || @query.present?
     @results = Modder.active
 
     if @services.present?
