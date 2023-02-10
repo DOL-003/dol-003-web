@@ -30,7 +30,7 @@ class InvitationsController < ApplicationController
 
   def available_invitations
     invites_in_last_30_days = UserInvitation.where(inviter_user: current_user).where('created_at > ?', 30.days.ago).count
-    3 - invites_in_last_30_days
+    5 - invites_in_last_30_days
   end
 
 end
