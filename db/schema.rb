@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_03_175112) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_10_043720) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -61,13 +61,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_03_175112) do
   end
 
   create_table "user_invitations", force: :cascade do |t|
-    t.bigint "user_id"
+    t.bigint "invitee_user_id"
     t.string "claim_token"
     t.string "status", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "inviter_user_id"
+    t.string "email"
     t.index ["claim_token"], name: "index_user_invitations_on_claim_token"
-    t.index ["user_id"], name: "index_user_invitations_on_user_id"
+    t.index ["invitee_user_id"], name: "index_user_invitations_on_invitee_user_id"
+    t.index ["inviter_user_id"], name: "index_user_invitations_on_inviter_user_id"
   end
 
   create_table "users", force: :cascade do |t|

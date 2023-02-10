@@ -39,7 +39,7 @@ class Authentication::RegistrationsController < Devise::RegistrationsController
 
     if resource.persisted? && invitation.present?
       invitation.status = UserInvitation::STATUS_CLAIMED
-      invitation.user = resource
+      invitation.invitee_user = resource
       invitation.save
     end
   end
