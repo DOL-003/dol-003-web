@@ -271,6 +271,7 @@ export default (props: ModderMapProps) => {
                   type="geojson"
                   data={getModderGeoJson()}
                   cluster={true}
+                  clusterRadius={35}
                 >
                   <Layer
                     id="modder-points"
@@ -280,6 +281,7 @@ export default (props: ModderMapProps) => {
                       "icon-image": "modder",
                       "icon-anchor": "bottom",
                       "icon-size": 0.5,
+                      "icon-allow-overlap": true,
                     }}
                   />
                   <Layer
