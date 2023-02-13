@@ -7,7 +7,7 @@
   <%= form_with url: modders_path, method: 'get', html: { class: "form span-4 sidebar" } do |form| %>
 
     <div class="field">
-      <label class="label">Services offered</label>
+      <label class="label">Tags</label>
       <%=
         react_component "ServiceSelector", {
           field_name: 'services',
@@ -48,7 +48,7 @@
       <div class="checkbox">
         <input type="checkbox" id="services-visible" <%= @services_visible ? 'checked' : '' %>>
         <%= inline_svg_tag 'check.svg' %>
-        <label for="services-visible">Show services offered</label>
+        <label for="services-visible">Show tags in results</label>
       </div>
     </div>
 

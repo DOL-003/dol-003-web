@@ -33,6 +33,8 @@ class ModderService < ApplicationRecord
     # resin
     'resin-buttons': { name: 'resin buttons', color: '#fdb03a' },
     'resin-sticks': { name: 'resin sticks', color: '#fdb03a' },
+    'rubber-capped-sticks': { name: 'rubber-capped sticks', color: '#fdb03a' },
+    'full-resin-sticks': { name: 'full resin sticks', color: '#fdb03a' },
     'resin-triggers': { name: 'resin triggers', color: '#fdb03a' },
     'resin-shells': { name: 'resin shells', color: '#fdb03a' },
 
@@ -45,8 +47,10 @@ class ModderService < ApplicationRecord
     'paracords': { name: 'paracords', color: '#c12022' },
 
     # other
-    'parts': { name: 'parts', color: '#6d6b6b' },
-    'tools': { name: 'tools', color: '#6d6b6b' }
+    'parts': { name: 'replacement parts', color: '#6d6b6b' },
+    'tools': { name: 'modding tools', color: '#6d6b6b' },
+    'procon': { name: 'procons', color: '#6d6b6b' },
+    'rectangle-controllers': { name: 'rectangle controllers', color: '#6d6b6b' }
 
   }.freeze
 

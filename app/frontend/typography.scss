@@ -13,6 +13,7 @@ a,
   text-decoration: none;
   color: $indigo;
   font-weight: bold;
+  cursor: pointer;
 
   &:hover {
     color: lighten($indigo, 15%);
