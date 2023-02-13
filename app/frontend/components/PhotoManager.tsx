@@ -108,8 +108,8 @@ export default (props: PhotoManagerProps) => {
 
     // Validate all files first.
     for (let i = 0; i < files.length; i++) {
-      if (files[i].size > 1024 * 10000) {
-        setError("Photos must be less than 10MB each.")
+      if (files[i].size > 1024 * 25000) {
+        setError("Photos must be less than 25MB each.")
         return
       }
 
@@ -149,7 +149,7 @@ export default (props: PhotoManagerProps) => {
       })
 
       result = await response.json()
-    } catch (e) {}
+    } catch (e) { }
 
     if (result.success) {
       setPhotos((photos) => {
