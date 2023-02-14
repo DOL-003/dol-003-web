@@ -110,19 +110,52 @@ export default (props: ModderMapProps) => {
         props.latitude && props.longitude
           ? [{ latitude: props.latitude, longitude: props.longitude }]
           : []
-      modders.concat(currentPosition).forEach((modder) => {
-        if (!minLatitude || parseFloat(modder.latitude) < minLatitude)
-          minLatitude = parseFloat(modder.latitude)
-        if (!maxLatitude || parseFloat(modder.latitude) > maxLatitude)
-          maxLatitude = parseFloat(modder.latitude)
-        if (!minLongitude || parseFloat(modder.longitude) < minLongitude)
-          minLongitude = parseFloat(modder.longitude)
-        if (!maxLongitude || parseFloat(modder.longitude) > maxLongitude)
-          maxLongitude = parseFloat(modder.longitude)
+      const sortedModders = currentPosition[0]
+        ? modders.sort((a, b) => {
+          const distanceA = Math.sqrt(
+            Math.pow(
+              parseFloat(currentPosition[0].latitude) -
+              parseFloat(a.latitude),
+              2
+            ) +
+            Math.pow(
+              parseFloat(currentPosition[0].longitude) -
+              parseFloat(a.longitude),
+              2
+            )
+          )
+          const distanceB = Math.sqrt(
+            Math.pow(
+              parseFloat(currentPosition[0].latitude) -
+              parseFloat(b.latitude),
+              2
+            ) +
+            Math.pow(
+              parseFloat(currentPosition[0].longitude) -
+              parseFloat(b.longitude),
+              2
+            )
+          )
+          return distanceA - distanceB
+        })
+        : modders
 
-        initialLatitude += parseFloat(modder.latitude)
-        initialLongitude += parseFloat(modder.longitude)
-      })
+      sortedModders
+        .slice(0, 5)
+        .concat(currentPosition)
+        .forEach((modder) => {
+          if (!minLatitude || parseFloat(modder.latitude) < minLatitude)
+            minLatitude = parseFloat(modder.latitude)
+          if (!maxLatitude || parseFloat(modder.latitude) > maxLatitude)
+            maxLatitude = parseFloat(modder.latitude)
+          if (!minLongitude || parseFloat(modder.longitude) < minLongitude)
+            minLongitude = parseFloat(modder.longitude)
+          if (!maxLongitude || parseFloat(modder.longitude) > maxLongitude)
+            maxLongitude = parseFloat(modder.longitude)
+
+          initialLatitude += parseFloat(modder.latitude)
+          initialLongitude += parseFloat(modder.longitude)
+        })
 
       initialLatitude = initialLatitude / modders.length
       initialLongitude = initialLongitude / modders.length
