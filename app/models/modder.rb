@@ -98,6 +98,7 @@ class Modder < ApplicationRecord
 
   scope :vetted, -> { where(vetting_status: VETTING_STATUS_VETTED) }
   scope :random, -> (limit) { order('random()').limit(limit) }
+  scope :has_logo, -> { where('logo is not null') }
   scope :has_photos, -> { where.associated(:modder_photos).group(:id) }
   scope :active, -> { where(status: STATUS_ACTIVE) }
 
@@ -106,7 +107,7 @@ class Modder < ApplicationRecord
   end
 
   def self.featured_modders
-    active.vetted.has_photos.random(3)
+    active.vetted.has_logo.has_photos.random(3)
   end
 
   def featured_link_url
