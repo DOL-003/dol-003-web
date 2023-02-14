@@ -87,7 +87,7 @@ body.application.index {
       display: flex;
       flex-flow: column nowrap;
 
-      figure {
+      .featured-photo {
         height: 280px;
         margin: 0;
         background-size: cover;
@@ -97,6 +97,33 @@ body.application.index {
       h3 {
         text-transform: none;
         margin-top: 16px;
+
+        > a {
+          display: inline-flex;
+          gap: 16px;
+          align-items: center;
+
+          .logo {
+            flex: none;
+            margin: 0;
+            width: 48px;
+            height: 48px;
+            background-color: $platinum;
+            border-radius: 48px;
+            margin-left: -1px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: darken($platinum, 20%);
+
+            svg {
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
       }
     }
   }
