@@ -7,7 +7,7 @@
           photos: @modder.modder_photos.map { |modder_photo|
             {
               uuid: modder_photo.uuid,
-              url: modder_photo.photo_url,
+              url: modder_photo.photo.thumb.url,
               width: modder_photo.thumb_display_width,
               height: modder_photo.thumb_display_height
             }
@@ -17,7 +17,7 @@
     <% else %>
       <div class="photo-container">
         <% @modder.modder_photos.map do |modder_photo| %>
-          <%= image_tag modder_photo.photo_url, width: modder_photo.thumb_display_width, height: modder_photo.thumb_display_height %>
+          <%= image_tag modder_photo.photo.thumb.url, width: modder_photo.thumb_display_width, height: modder_photo.thumb_display_height %>
         <% end %>
       </div>
     <% end %>

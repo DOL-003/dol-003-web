@@ -23,7 +23,6 @@ class ModderPhotoUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   process resize_to_limit: [2400, 2400]
-  process convert: 'jpg'
 
   # def scale(width, height)
   #   # do something
