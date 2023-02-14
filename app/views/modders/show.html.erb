@@ -63,6 +63,8 @@
 
     <p class="small">Joined <%= @modder.updated_at.strftime('%b %Y') %></p>
     <p class="small">Last updated <%= time_ago_in_words(@modder.updated_at) %> ago</p>
+
+    <p class="small"><%= link_to 'Report this modder', report_modder_path %></p>
   </section>
 
   <section class="span-12 location">

@@ -21,7 +21,12 @@ Rails.application.routes.draw do
   post 'profile/photo-order', to: 'profiles#reorder_photos'
   post 'profile/remove-photo/:uuid', to: 'profiles#remove_photo'
 
-  resources :modders, only: [:index, :show]
+  resources :modders, only: [:index, :show] do
+    member do
+      get 'report', to: 'modders#new_report'
+      post 'report', to: 'modders#create_report'
+    end
+  end
   resources :invitations, only: [:new, :create]
 
   get 'kb(/*path)', to: 'knowledge_base#show', as: :knowledge_base

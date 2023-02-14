@@ -46,4 +46,25 @@ class ModdersController < ApplicationController
     @description = "#{@modder.name}’s profile on DOL-003.info, a directory of GameCube controller modders."
   end
 
+  def new_report
+    @modder = Modder.find_by(slug: params[:id]) or not_found
+    return not_found if @modder.inactive? && @modder != current_modder
+    @title = 'Report modder'
+  end
+
+  def create_report
+    @modder = Modder.find_by(slug: params[:id]) or not_found
+    return not_found if @modder.inactive? && @modder != current_modder
+
+    unless params[:email].present? && params[:details].present?
+      flash[:error] = 'Please fill out all fields.'
+      return redirect_to report_modder_path
+    end
+
+    AdminMailer.with(modder_id: @modder.id, email: params[:email], details: params[:details]).report_modder.deliver_later
+
+    flash[:notice] = 'Report submitted.'
+    redirect_to root_path
+  end
+
 end
