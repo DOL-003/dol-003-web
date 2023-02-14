@@ -23,6 +23,7 @@ class ModderPhotoUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   process resize_to_limit: [2400, 2400]
+  process convert: 'jpg'
 
   # def scale(width, height)
   #   # do something
@@ -43,7 +44,7 @@ class ModderPhotoUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   def filename
-    "#{secure_token}.#{file.extension}" if original_filename.present?
+    "#{secure_token}.jpg" if original_filename.present?
   end
 
   def content_type_allowlist
