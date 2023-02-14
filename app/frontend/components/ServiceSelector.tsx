@@ -6,6 +6,7 @@ import Select, {
   MultiValueGenericProps,
   MultiValueProps,
   OnChangeValue,
+  OptionProps,
   Props,
 } from "react-select"
 import {
@@ -20,6 +21,7 @@ interface ServiceOption {
   readonly value: string
   readonly label: string
   readonly color: string
+  readonly solid?: boolean
 }
 
 function arrayMove<T>(array: readonly T[], from: number, to: number) {
@@ -39,7 +41,15 @@ const SortableMultiValue = SortableElement(
       e.stopPropagation()
     }
     const innerProps = { ...props.innerProps, onMouseDown }
-    return <components.MultiValue {...props} innerProps={innerProps} />
+    const className =
+      (props.className || "") + (props.data.solid ? " solid" : "")
+    return (
+      <components.MultiValue
+        {...props}
+        innerProps={innerProps}
+        className={className}
+      />
+    )
   }
 )
 
@@ -50,6 +60,17 @@ const SortableMultiValueLabel = SortableHandle(
 const SortableSelect = SortableContainer(Select) as React.ComponentClass<
   Props<ServiceOption, true> & SortableContainerProps
 >
+
+const ServiceOptionComponent = (props: OptionProps<ServiceOption>) => {
+  const innerProps = {
+    ...props.innerProps,
+    className:
+      (props.innerProps.className ||
+        props.className ||
+        "service-selector__option") + (props.data.solid ? " solid" : ""),
+  }
+  return <components.Option {...props} innerProps={innerProps} />
+}
 
 interface ServiceSelectorProps {
   readonly allServices: ServiceOption[]
@@ -89,6 +110,7 @@ export default (props: ServiceSelectorProps) => {
           // @ts-ignore We're failing to provide a required index prop to SortableElement
           MultiValue: SortableMultiValue,
           MultiValueLabel: SortableMultiValueLabel,
+          Option: ServiceOptionComponent,
         }}
         closeMenuOnSelect={false}
         unstyled

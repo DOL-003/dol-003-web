@@ -40,7 +40,7 @@
       <ol>
         <% @modder.modder_services.map do |service| %>
           <% svc = ModderService::ALL_SERVICES[service.service.to_sym] %>
-          <li class="service-pill" style="--service-color: <%= svc[:color] %>"><%= svc[:name] %></li>
+          <li class="service-pill<%= ' solid' if svc[:solid] %>" style="--service-color: <%= svc[:color] %>"><%= svc[:name] %></li>
         <% end %>
       </ol>
     </div>

@@ -32,6 +32,11 @@ module ApplicationHelper
     url_for only_path: false, protocol: 'https'
   end
 
+  def service_link(service)
+    classes = "service-pill interactive #{service[1][:solid] ? 'solid' : ''}"
+    link_to service[1][:name], modders_path(service: service[0]), class: classes, style: "--service-color: #{service[1][:color]}"
+  end
+
   def flag_enabled?(flag)
     Flag.enabled?(flag, user: current_user, session_id: session.id)
   end

@@ -18,11 +18,11 @@ class ModderService < ApplicationRecord
   ALL_SERVICES = {
 
     # meta
-    'full-builds': { name: 'full builds', color: '#222' },
-    'prebuilt-controllers': { name: 'prebuilt controllers', color: '#222' },
-    'diagnostics-repairs': { name: 'diagnostics/repairs', color: '#222' },
-    'accepting-send-ins': { name: 'accepting send-ins', color: '#222' },
-    'commissions-open': { name: 'commissions open', color: '#222' },
+    'full-builds': { name: 'full builds', color: '#6d6b6b', solid: true },
+    'prebuilt-controllers': { name: 'prebuilt controllers', color: '#6d6b6b', solid: true },
+    'diagnostics-repairs': { name: 'diagnostics/repairs', color: '#6d6b6b', solid: true },
+    'accepting-send-ins': { name: 'accepting send-ins', color: '#6d6b6b', solid: true },
+    'commissions-open': { name: 'commissions open', color: '#fdb03a', solid: true },
 
     # functional/electrical
     'phobs': { name: 'phobs', color: '#444f9a' },
@@ -47,10 +47,10 @@ class ModderService < ApplicationRecord
     'paracords': { name: 'paracords', color: '#c12022' },
 
     # other
-    'parts': { name: 'replacement parts', color: '#6d6b6b' },
-    'tools': { name: 'modding tools', color: '#6d6b6b' },
-    'procon': { name: 'procons', color: '#6d6b6b' },
-    'rectangle-controllers': { name: 'rectangle controllers', color: '#6d6b6b' }
+    'parts': { name: 'replacement parts', color: '#211f21' },
+    'tools': { name: 'modding tools', color: '#211f21' },
+    'procon': { name: 'procons', color: '#211f21' },
+    'rectangle-controllers': { name: 'rectangle controllers', color: '#211f21' }
 
   }.freeze
 
