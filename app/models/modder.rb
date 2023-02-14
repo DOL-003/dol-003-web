@@ -130,7 +130,7 @@ class Modder < ApplicationRecord
     when 'etsy_shop'
       'Etsy shop'
     when 'twitter_username'
-      'Twitter profile'
+      formatted_twitter_username
     end
   end
 
