@@ -135,7 +135,7 @@ class Modder < ApplicationRecord
   end
 
   def etsy_url
-    "https://#{etsy_shop}.etsy.com"
+    etsy_shop[0..3] == 'http' ? etsy_shop : "https://#{etsy_shop}.etsy.com"
   end
 
   def twitter_url
