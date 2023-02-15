@@ -2,7 +2,9 @@
 
   <section class="span-8">
     <h1>Invite people to DOL-003.info</h1>
-    <% if @unlimited_invitations %>
+    <% if flag_enabled? :open_registration %>
+      <p class="big">Any GameCube controller modder or artist can get listed on DOL-003.info. As a member, you can also invite others to join.</p>
+    <% elsif @unlimited_invitations %>
       <p class="big">DOL-003.info is currently an invite-only service. As a member, you can invite other modders or artists to join.</p>
     <% else %>
       <p class="big">DOL-003.info is currently an invite-only service. As a member, you can invite up to <%= @invites_per_month %> other modders or artists every 30 days.</p>
@@ -15,7 +17,7 @@
   </section>
 
   <% if @unlimited_invitations || @available_invitations.positive? %>
-    <section class="span-8">
+    <section class="span-5">
       <h2>Invite by email</h2>
 
       <%= form_with url: invitations_path, html: { method: :post, class: 'form' } do |form| %>
@@ -32,7 +34,7 @@
       <% end %>
     </section>
 
-    <section class="span-8">
+    <section class="span-5">
       <h2>Invite with link</h2>
       <% unless @unlimited_invitations %>
         <p>Clicking this button will immediately use one of your available invitations.</p>
