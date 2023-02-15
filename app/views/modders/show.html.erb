@@ -60,7 +60,7 @@
     <% end %>
 
     <% if @modder.etsy_shop.present? && @modder.featured_link != 'etsy_shop' %>
-      <%= link_to @modder.etsy_url, target: '_blank' do %><%= inline_svg_tag 'etsy.svg' %><%= @modder.etsy_shop %><% end %>
+      <%= link_to @modder.etsy_url, target: '_blank' do %><%= inline_svg_tag 'etsy.svg' %><%= @modder.etsy_shop_name %><% end %>
     <% end %>
 
     <% if @modder.twitter_username.present? && @modder.featured_link != 'twitter_username' %>

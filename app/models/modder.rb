@@ -135,7 +135,19 @@ class Modder < ApplicationRecord
   end
 
   def etsy_url
-    etsy_shop[0..3] == 'http' ? etsy_shop : "https://#{etsy_shop}.etsy.com"
+    "https://#{etsy_shop_name}.etsy.com"
+  end
+
+  def etsy_shop_name
+    subdirectory_match = etsy_shop.match /(?:https?:\/\/)?(?:www\.)?etsy\.com\/shop\/([^\/]+)/
+    subdomain_match = etsy_shop.match /(?:https?:\/\/)?([^.]+)\.etsy\.com/
+    if subdirectory_match.present?
+      subdirectory_match[1]
+    elsif subdomain_match.present?
+      subdomain_match[1]
+    else
+      etsy_shop
+    end
   end
 
   def twitter_url
