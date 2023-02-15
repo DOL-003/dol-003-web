@@ -11,14 +11,15 @@
       <%=
         react_component "ServiceSelector", {
           field_name: 'services',
-          all_services: ModderService.enabled_services.map { |slug, service| { value: slug, label: service[:name], color: service[:color] } },
+          all_services: ModderService.enabled_services.map { |slug, service| { value: slug, label: service[:name], color: service[:color], solid: service[:solid].present? } },
           selected_services: @services.map { |slug|
             service = ModderService::ALL_SERVICES[slug.to_sym]
             next if service.blank?
             {
               value: slug,
               label: service[:name],
-              color: service[:color]
+              color: service[:color],
+              solid: service[:solid].present?
             }
           },
           comma_delimited: true
