@@ -1,9 +1,9 @@
 <div class="content grid">
   <section class="span-8">
-    <h1>Report modder</h1>
-    <p class="big">If you notice a modder in violation of our <%= link_to 'House Rules', rules_path %>, use this form to report the violation so the DOL-003.info team can review and address the situation.</p>
+    <h1>Report profile</h1>
+    <p class="big">If you notice a profile in violation of our <%= link_to 'House Rules', rules_path %>, use this form to report the violation so the DOL-003.info team can review and address the situation.</p>
     <p>You are reporting <%= link_to @modder.name, @modder %>.</p>
-    <p>Please include as much detail as possible to help illustrate how this member is violating our policies. If you are reporting intellectual property theft, copyright infringement, impersonation or related issues, include links or other evidence that will help expedite our review.</p>
+    <p>Please include as much detail as possible to help illustrate how this profile is violating our policies. If you are reporting intellectual property theft, copyright infringement, impersonation or related issues, include links or other evidence that will help expedite our review.</p>
     <p>Alternatively, <a href="https://discord.gg/HwtPU7tkCT" target="_blank">join us on Discord</a> and message an admin to discuss the situation.</p>
     <%= form_with path: report_modder_path, class: 'form' do |form| %>
       <div class="field">
