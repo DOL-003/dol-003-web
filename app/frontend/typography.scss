@@ -45,6 +45,7 @@ p,
 ol,
 ul {
   margin: 0;
+  word-wrap: break-word;
 
   & + h1,
   & + h2,
