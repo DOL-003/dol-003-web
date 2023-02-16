@@ -2,24 +2,26 @@
 #
 # Table name: modders
 #
-#  id               :bigint           not null, primary key
-#  bio              :string
-#  city             :string
-#  etsy_shop        :string
-#  featured_link    :string
-#  latitude         :string
-#  logo             :string
-#  longitude        :string
-#  name             :string           not null
-#  slug             :string           not null
-#  status           :string           not null
-#  twitter_username :string
-#  uuid             :string
-#  vetting_status   :string
-#  website_url      :string
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  user_id          :bigint           not null
+#  id                 :bigint           not null, primary key
+#  bio                :string
+#  city               :string
+#  discord_username   :string
+#  etsy_shop          :string
+#  featured_link      :string
+#  instagram_username :string
+#  latitude           :string
+#  logo               :string
+#  longitude          :string
+#  name               :string           not null
+#  slug               :string           not null
+#  status             :string           not null
+#  twitter_username   :string
+#  uuid               :string
+#  vetting_status     :string
+#  website_url        :string
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  user_id            :bigint           not null
 #
 # Indexes
 #

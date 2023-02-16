@@ -2,24 +2,26 @@
 #
 # Table name: modders
 #
-#  id               :bigint           not null, primary key
-#  bio              :string
-#  city             :string
-#  etsy_shop        :string
-#  featured_link    :string
-#  latitude         :string
-#  logo             :string
-#  longitude        :string
-#  name             :string           not null
-#  slug             :string           not null
-#  status           :string           not null
-#  twitter_username :string
-#  uuid             :string
-#  vetting_status   :string
-#  website_url      :string
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  user_id          :bigint           not null
+#  id                 :bigint           not null, primary key
+#  bio                :string
+#  city               :string
+#  discord_username   :string
+#  etsy_shop          :string
+#  featured_link      :string
+#  instagram_username :string
+#  latitude           :string
+#  logo               :string
+#  longitude          :string
+#  name               :string           not null
+#  slug               :string           not null
+#  status             :string           not null
+#  twitter_username   :string
+#  uuid               :string
+#  vetting_status     :string
+#  website_url        :string
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  user_id            :bigint           not null
 #
 # Indexes
 #
@@ -33,7 +35,9 @@ class Modder < ApplicationRecord
   FEATURED_LINK_OPTIONS = [
     ['Website', 'website_url'],
     ['Etsy shop', 'etsy_shop'],
-    ['Twitter handle', 'twitter_username']
+    ['Twitter handle', 'twitter_username'],
+    ['Instagram handle', 'instagram_username'],
+    ['Discord username', 'discord_username']
   ]
 
   STATUS_ACTIVE = 'active'
@@ -73,10 +77,18 @@ class Modder < ApplicationRecord
   validates :twitter_username,
     presence: { message: 'Featured link must be present' },
     if: -> { featured_link == 'twitter_username' }
+  validates :instagram_username,
+    presence: { message: 'Featured link must be present' },
+    if: -> { featured_link == 'instagram_username' }
+  validates :discord_username,
+    presence: { message: 'Featured link must be present' },
+    if: -> { featured_link == 'discord_username' }
 
   validates :website_url, url: { message: 'Must be a valid URL' }, allow_blank: true
   validates :etsy_shop, length: { in: 3..50, message: 'Must be at least 3 letters' }, allow_blank: true
-  validates :twitter_username, length: { in: 2..50, message: 'Must be at least 2 letters' }, allow_blank: true
+  validates :twitter_username, length: { in: 2..50, message: 'Must be at least 2 characters' }, allow_blank: true
+  validates :instagram_username, length: { in: 2..50, message: 'Must be at least 2 characters' }, allow_blank: true
+  validates :discord_username, length: { in: 6..50, message: 'Must be at least 6 characters' }, allow_blank: true
 
   before_validation :generate_slug, if: :will_save_change_to_name?
 
@@ -120,6 +132,8 @@ class Modder < ApplicationRecord
       etsy_url
     when 'twitter_username'
       twitter_url
+    when 'instagram_username'
+      instagram_url
     end
   end
 
@@ -128,9 +142,13 @@ class Modder < ApplicationRecord
     when 'website_url'
       'Visit website'
     when 'etsy_shop'
-      'Etsy shop'
+      etsy_shop_name
     when 'twitter_username'
       formatted_twitter_username
+    when 'instagram_username'
+      formatted_instagram_username
+    when 'discord_username'
+      discord_username
     end
   end
 
@@ -156,6 +174,19 @@ class Modder < ApplicationRecord
 
   def formatted_twitter_username
     twitter_username[0] == '@' ? twitter_username : "@#{twitter_username}"
+  end
+
+  def instagram_url
+    "https://instagram.com/#{formatted_instagram_username}"
+  end
+
+  def formatted_instagram_username
+    url_match = instagram_username.match /(?:https?:\/\/)?(?:www\.)?instagram\.com\/([^\/?]+)/
+    if url_match.present?
+      url_match[1]
+    else
+      instagram_username
+    end
   end
 
   def active?

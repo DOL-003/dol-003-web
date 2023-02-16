@@ -18,8 +18,24 @@ window.addEventListener("DOMContentLoaded", () => {
   const serviceVisibilityToggle = document.querySelector("#services-visible")
   if (serviceVisibilityToggle) {
     serviceVisibilityToggle.addEventListener("change", () => {
-      document.querySelector("#modder-search-results").style.setProperty("--service-display", serviceVisibilityToggle.checked ? "block" : "none")
+      document
+        .querySelector("#modder-search-results")
+        .style.setProperty(
+          "--service-display",
+          serviceVisibilityToggle.checked ? "block" : "none"
+        )
       Cookies.set("services_visible", serviceVisibilityToggle.checked ? 1 : 0)
     })
   }
+
+  document.querySelectorAll(".discord-username").forEach((anchor) => {
+    anchor.addEventListener("click", (event) => {
+      const usernameElement = event.currentTarget.querySelector("span")
+      const username = usernameElement.innerText
+      if (username === "Copied!") return
+      navigator.clipboard.writeText(username)
+      usernameElement.innerText = "Copied!"
+      setTimeout(() => (usernameElement.innerText = username), 3000)
+    })
+  })
 })

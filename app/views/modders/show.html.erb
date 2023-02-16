@@ -47,12 +47,24 @@
   </section>
 
   <section class="span-4 sidebar">
-    <%= link_to @modder.featured_link_url, target: '_blank', class: 'button' do %>
-      <% if @modder.featured_link == 'twitter_username' %>
-        <%= inline_svg_tag 'twitter.svg', class: 'link-icon' %>
+    <% if @modder.featured_link == 'discord_username' %>
+      <a title="Click to copy" class="button discord-username">
+        <%= inline_svg_tag 'discord.svg', class: 'link-icon' %>
+        <span><%= @modder.discord_username %></span>
+        <%= inline_svg_tag 'copy.svg', class: 'external-icon' %>
+      </a>
+    <% else %>
+      <%= link_to @modder.featured_link_url, target: '_blank', class: 'button' do %>
+        <% if @modder.featured_link == 'twitter_username' %>
+          <%= inline_svg_tag 'twitter.svg', class: 'link-icon' %>
+        <% elsif @modder.featured_link == 'instagram_username' %>
+          <%= inline_svg_tag 'instagram.svg', class: 'link-icon' %>
+        <% elsif @modder.featured_link == 'etsy_shop' %>
+          <%= inline_svg_tag 'etsy.svg', class: 'link-icon' %>
+        <% end %>
+        <%= @modder.featured_link_text %>
+        <%= inline_svg_tag 'external.svg', class: 'external-icon' %>
       <% end %>
-      <%= @modder.featured_link_text %>
-      <%= inline_svg_tag 'external.svg', class: 'external-icon' %>
     <% end %>
 
     <% if @modder.website_url.present? && @modder.featured_link != 'website_url' %>
@@ -65,6 +77,14 @@
 
     <% if @modder.twitter_username.present? && @modder.featured_link != 'twitter_username' %>
       <%= link_to @modder.twitter_url, target: '_blank' do %><%= inline_svg_tag 'twitter.svg' %><%= @modder.formatted_twitter_username %><% end %>
+    <% end %>
+
+    <% if @modder.instagram_username.present? && @modder.featured_link != 'instagram_username' %>
+      <%= link_to @modder.instagram_url, target: '_blank' do %><%= inline_svg_tag 'instagram.svg' %><%= @modder.formatted_instagram_username %><% end %>
+    <% end %>
+
+    <% if @modder.discord_username.present? && @modder.featured_link != 'discord_username' %>
+      <a title="Click to copy" class="discord-username"><%= inline_svg_tag 'discord.svg' %><span><%= @modder.discord_username %></span></a>
     <% end %>
 
     <p class="small">Joined <%= @modder.updated_at.strftime('%b %Y') %></p>

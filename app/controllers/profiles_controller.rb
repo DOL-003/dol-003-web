@@ -32,7 +32,9 @@ class ProfilesController < ApplicationController
           :featured_link,
           :website_url,
           :etsy_shop,
-          :twitter_username
+          :twitter_username,
+          :instagram_username,
+          :discord_username
         ))
         @modder.status = params[:modder][:status] if params[:modder][:status].in? [Modder::STATUS_ACTIVE, Modder::STATUS_INACTIVE]
         @modder.logo = params[:modder][:logo]

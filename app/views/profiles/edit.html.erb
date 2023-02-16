@@ -145,6 +145,26 @@
         options: { maxlength: 50, class: 'text-input large', placeholder: '@YourTwitterHandle', autocomplete: 'off' }
       } %>
 
+      <%= render 'form_field', locals: {
+        resource: @modder,
+        form: form,
+        field_name: :instagram_username,
+        field_type: :text_field,
+        error_field: :message,
+        label: 'Instagram handle',
+        options: { maxlength: 50, class: 'text-input large', placeholder: 'YourInstagramName', autocomplete: 'off' }
+      } %>
+
+      <%= render 'form_field', locals: {
+        resource: @modder,
+        form: form,
+        field_name: :discord_username,
+        field_type: :text_field,
+        error_field: :message,
+        label: 'Discord username',
+        options: { maxlength: 50, class: 'text-input medium', placeholder: 'YourName#1234', autocomplete: 'off' }
+      } %>
+
     </div>
 
     <div class="span-4 caption">
