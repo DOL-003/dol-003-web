@@ -1,10 +1,11 @@
 module KnowledgeBaseHelper
 
-  def menu_tree(tree, path = '/kb')
+  def menu_tree(tree, path = '/kb', indent = 1)
     tree = tree.collect
     render 'menu_tree', locals: {
+      indent:,
       tree: tree.collect do |title, item|
-        if item == nil
+        if item.nil?
           'separator'
         else
           {

@@ -5,7 +5,7 @@ body.knowledge_base.show {
   .sidebar {
     background-color: $crystal;
     margin: -24px;
-    padding: 24px 24px 28px;
+    padding: 24px 12px 28px;
     border-radius: 16px;
     position: relative;
 
@@ -13,15 +13,19 @@ body.knowledge_base.show {
       border-radius: 0;
     }
 
+    h3 {
+      padding: 0 12px;
+    }
+
     input[type="checkbox"] {
       display: none;
     }
 
     > label {
-      display: block;
+      display: flex;
       position: absolute;
       top: 22px;
-      right: 24px;
+      right: 18px;
       padding: 4px;
       color: $indigo;
       cursor: pointer;
@@ -80,7 +84,7 @@ body.knowledge_base.show {
 
       li {
         margin: 0;
-        padding: 0 32px 0 0;
+        padding: 0;
         line-height: 1.3;
         position: relative;
 
@@ -88,8 +92,12 @@ body.knowledge_base.show {
           height: 40px;
           display: flex;
           align-items: center;
-          margin: 0 -24px;
+          margin: 0 -12px;
           padding: 0;
+
+          &:hover {
+            background-color: transparent;
+          }
 
           &::after {
             content: "";
@@ -99,8 +107,30 @@ body.knowledge_base.show {
           }
         }
 
-        a.current {
-          color: $black;
+        svg.page {
+          width: 16px;
+          height: 16px;
+          color: $indigo;
+          position: absolute;
+          top: 8px;
+          left: 8px;
+          pointer-events: none;
+        }
+
+        a {
+          flex: auto;
+          display: block;
+          padding: 6px 12px 6px 32px;
+
+          &:not(.current):hover {
+            color: $indigo;
+          }
+
+          &.current {
+            color: $black;
+            cursor: default;
+            pointer-events: none;
+          }
         }
 
         input {
@@ -109,20 +139,20 @@ body.knowledge_base.show {
 
         label {
           display: flex;
-          position: absolute;
-          top: -2px;
-          right: 0;
           padding: 4px;
           color: $indigo;
           cursor: pointer;
+          position: absolute;
+          left: 0;
+          top: 0;
 
           &:hover {
             color: lighten($indigo, 15%);
           }
 
           svg {
-            width: 16px;
-            height: 16px;
+            width: 24px;
+            height: 24px;
 
             &.close {
               display: none;
@@ -130,29 +160,83 @@ body.knowledge_base.show {
           }
         }
 
-        input:checked ~ label svg {
-          &.open {
-            display: none;
+        .item-container {
+          border-radius: 8px;
+          display: flex;
+          justify-content: stretch;
+
+          &:hover {
+            background-color: rgba($black, 5%);
+          }
+        }
+
+        input:checked ~ .item-container {
+          > label {
+            svg {
+              &.open {
+                display: none;
+              }
+
+              &.close {
+                display: block;
+              }
+            }
           }
 
-          &.close {
+          > ul {
             display: block;
           }
         }
 
         ul {
-          margin: 14px -32px 20px 4px;
-          padding: 2px 0 0 16px;
-          border-left: 2px solid $platinum;
+          margin: 0;
           display: none;
         }
 
         input:checked ~ ul {
           display: block;
         }
+      }
 
-        &:not(.separator) + li:not(.separator) {
-          margin-top: 12px;
+      &.indent-2 li {
+        label {
+          left: 20px;
+        }
+
+        svg.page {
+          left: 28px;
+        }
+
+        a {
+          padding-left: 52px;
+        }
+      }
+
+      &.indent-3 li {
+        label {
+          left: 40px;
+        }
+
+        svg.page {
+          left: 48px;
+        }
+
+        a {
+          padding-left: 72px;
+        }
+      }
+
+      &.indent-4 li {
+        label {
+          left: 60px;
+        }
+
+        svg.page {
+          left: 68px;
+        }
+
+        a {
+          padding-left: 92px;
         }
       }
     }
