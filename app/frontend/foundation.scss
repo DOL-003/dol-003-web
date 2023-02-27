@@ -1,5 +1,16 @@
 @import "@/breakpoints";
 
+// TODO: change this to :root
+body {
+  --foundation-background-color: var(--color-pearl);
+
+  &.supports-dark-mode {
+    @media (prefers-color-scheme: dark) {
+      --foundation-background-color: var(--color-black);
+    }
+  }
+}
+
 *,
 ::before,
 ::after,
@@ -8,6 +19,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  // TODO
   // @media (prefers-color-scheme: dark) {
   // -webkit-font-smoothing: initial;
   // -moz-osx-font-smoothing: initial;
@@ -22,7 +34,7 @@ html {
 body {
   box-sizing: border-box;
   min-height: 100vh;
-  background-color: $pearl;
+  background-color: var(--foundation-background-color);
   overflow-x: hidden;
 }
 

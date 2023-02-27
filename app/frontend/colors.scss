@@ -2,9 +2,24 @@ $white: #fff;
 $pearl: #faf9f7;
 $crystal: #eeedea;
 $black: #211f21;
+$ink: #141314;
 $platinum: #b8bfbf;
 $panasonic: #6d6b6b;
 $indigo: #444f9a;
 $spice: #fdb03a;
 $mario: #c12022;
 $emerald: #0d8b98;
+
+:root {
+  --color-white: #{$white};
+  --color-pearl: #{$pearl};
+  --color-crystal: #{$crystal};
+  --color-black: #{$black};
+  --color-ink: #{$ink};
+  --color-platinum: #{$platinum};
+  --color-panasonic: #{$panasonic};
+  --color-indigo: #{$indigo};
+  --color-spice: #{$spice};
+  --color-mario: #{$mario};
+  --color-emerald: #{$emerald};
+}

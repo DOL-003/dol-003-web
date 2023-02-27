@@ -1,15 +1,28 @@
 @import "@/breakpoints";
 @import "@/colors";
 
+body {
+  --footer-background-color: var(--color-black);
+
+  &.supports-dark-mode {
+    @media (prefers-color-scheme: dark) {
+      --footer-background-color: var(--color-ink);
+    }
+  }
+}
+
 footer {
-  background-color: $black;
+  background-color: var(--footer-background-color);
   color: $platinum;
   padding: 64px 0 72px;
+
+  a {
+    color: $spice;
+  }
 
   .sign-in-link {
     display: flex;
     justify-content: flex-end;
-    color: $spice;
 
     @include small {
       justify-content: center;
