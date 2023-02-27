@@ -8,7 +8,11 @@ default: &default
 
 development:
   <<: *default
-  database: app_development
+  host: <%= Rails.application.credentials.dig(:database, ENV.fetch('DB_CONFIG') { 'default' }.to_sym, :host) || 'db' %>
+  port: <%= Rails.application.credentials.dig(:database, ENV.fetch('DB_CONFIG') { 'default' }.to_sym, :port) || 5432 %>
+  username: <%= Rails.application.credentials.dig(:database, ENV.fetch('DB_CONFIG') { 'default' }.to_sym, :username) || 'postgres' %>
+  password: <%= Rails.application.credentials.dig(:database, ENV.fetch('DB_CONFIG') { 'default' }.to_sym, :password) || '' %>
+  database: <%= Rails.application.credentials.dig(:database, ENV.fetch('DB_CONFIG') { 'default' }.to_sym, :db_name) || 'app_development' %>
 
 test:
   <<: *default

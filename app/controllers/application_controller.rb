@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
 
+  include ReadonlyDatabaseConnection
+
   layout 'default'
 
   def index
