@@ -157,6 +157,8 @@ class Modder < ApplicationRecord
   end
 
   def etsy_shop_name
+    return '' unless etsy_shop.present?
+
     subdirectory_match = etsy_shop.match /(?:https?:\/\/)?(?:www\.)?etsy\.com\/shop\/([^\/]+)/
     subdomain_match = etsy_shop.match /(?:https?:\/\/)?([^.]+)\.etsy\.com/
     if subdirectory_match.present?
@@ -169,11 +171,20 @@ class Modder < ApplicationRecord
   end
 
   def twitter_url
-    "https://twitter.com/#{twitter_username}"
+    "https://twitter.com/#{formatted_twitter_username}"
   end
 
-  def formatted_twitter_username
-    twitter_username[0] == '@' ? twitter_username : "@#{twitter_username}"
+  def formatted_twitter_username(at: true)
+    return '' unless twitter_username.present?
+
+    prefix = at ? '@' : ''
+    url_match = twitter_username.match /(?:https?:\/\/)?(?:www\.)?twitter\.com\/([^\/?]+)/
+    if url_match.present?
+      "#{prefix}#{url_match[1]}"
+    else
+      username = twitter_username[0] == '@' ? twitter_username[1..] : twitter_username
+      "#{prefix}#{username}"
+    end
   end
 
   def instagram_url
@@ -181,6 +192,8 @@ class Modder < ApplicationRecord
   end
 
   def formatted_instagram_username
+    return '' unless instagram_username.present?
+
     url_match = instagram_username.match /(?:https?:\/\/)?(?:www\.)?instagram\.com\/([^\/?]+)/
     if url_match.present?
       url_match[1]
