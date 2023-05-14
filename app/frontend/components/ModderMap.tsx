@@ -290,7 +290,11 @@ export default (props: ModderMapProps) => {
         }}
         interactive={props.interactive || false}
         style={{ width: "100%", height: "100%" }}
-        mapStyle="mapbox://styles/mapbox/light-v11"
+        mapStyle={
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "mapbox://styles/mapbox/dark-v11"
+            : "mapbox://styles/mapbox/light-v11"
+        }
         ref={map}
         onLoad={handleMapLoad}
       >
