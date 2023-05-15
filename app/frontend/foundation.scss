@@ -1,15 +1,5 @@
 @import "@/breakpoints";
-
-// TODO: change this to :root
-body {
-  --foundation-background-color: var(--color-pearl);
-
-  &.supports-dark-mode {
-    @media (prefers-color-scheme: dark) {
-      --foundation-background-color: var(--color-black);
-    }
-  }
-}
+@import "@/dark";
 
 *,
 ::before,
@@ -34,8 +24,12 @@ html {
 body {
   box-sizing: border-box;
   min-height: 100vh;
-  background-color: var(--foundation-background-color);
+  background-color: var(--color-pearl);
   overflow-x: hidden;
+
+  @include dark {
+    background-color: var(--color-black);
+  }
 }
 
 img,

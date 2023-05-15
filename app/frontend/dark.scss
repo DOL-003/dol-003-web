@@ -1,7 +1,6 @@
 @mixin dark {
   // TODO: remove this body wrapper after flag is removed
-  &.supports-dark-mode,
-  body.supports-dark-mode & {
+  html.supports-dark-mode & {
     @media (prefers-color-scheme: dark) {
       @content;
     }

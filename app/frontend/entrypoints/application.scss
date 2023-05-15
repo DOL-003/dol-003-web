@@ -1,5 +1,6 @@
 @import "@/breakpoints";
 @import "@/colors";
+@import "@/dark";
 
 body.application.index {
   main {
@@ -11,8 +12,13 @@ body.application.index {
   }
 
   header .logo {
-    color: $indigo;
-    box-shadow: inset 0 0 0 3px $indigo;
+    color: var(--color-indigo);
+    box-shadow: inset 0 0 0 3px var(--color-indigo);
+
+    @include dark {
+      color: var(--color-spice);
+      box-shadow: inset 0 0 0 3px var(--color-spice);
+    }
   }
 
   .intro {
@@ -23,6 +29,20 @@ body.application.index {
 
     @include small {
       padding-top: 140px;
+    }
+
+    &:not(.dark) {
+      @include dark {
+        display: none;
+      }
+    }
+
+    &.dark {
+      display: none;
+
+      @include dark {
+        display: block;
+      }
     }
   }
 

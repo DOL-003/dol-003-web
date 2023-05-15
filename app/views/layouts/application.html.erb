@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="<%= 'supports-dark-mode' if flag_enabled? :dark_mode %>">
 
   <head>
 
@@ -38,7 +38,7 @@
 
   </head>
 
-  <body class="<%= controller_name %> <%= action_name %> layout-<%= current_layout %> <%= 'supports-dark-mode' if flag_enabled? :dark_mode %>">
+  <body class="<%= controller_name %> <%= action_name %> layout-<%= current_layout %>">
     <%= content_for?(:content) ? yield(:content) : yield %>
   </body>
 
