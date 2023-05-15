@@ -6,7 +6,11 @@ $ink: #141314;
 $platinum: #b8bfbf;
 $panasonic: #6d6b6b;
 $indigo: #444f9a;
+$indigo-light: #5a69cc;
+$indigo-dark: #2d3466;
 $spice: #fdb03a;
+$spice-light: #ffc873;
+$spice-dark: #cc8e2f;
 $mario: #c12022;
 $emerald: #0d8b98;
 
@@ -19,7 +23,11 @@ $emerald: #0d8b98;
   --color-platinum: #{$platinum};
   --color-panasonic: #{$panasonic};
   --color-indigo: #{$indigo};
+  --color-indigo-light: #{$indigo-light};
+  --color-indigo-dark: #{$indigo-dark};
   --color-spice: #{$spice};
+  --color-spice-light: #{$spice-light};
+  --color-spice-dark: #{$spice-dark};
   --color-mario: #{$mario};
   --color-emerald: #{$emerald};
 }

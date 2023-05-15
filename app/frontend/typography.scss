@@ -1,38 +1,35 @@
 @import "@/breakpoints";
-
-// TODO: change this to :root
-body {
-  --typography-text-color: var(--color-black);
-  --typography-link-color: var(--color-indigo);
-  --typography-highlight-color: var(--color-spice);
-
-  &.supports-dark-mode {
-    @media (prefers-color-scheme: dark) {
-      --typography-text-color: var(--color-crystal);
-      --typography-link-color: var(--color-spice);
-      --typography-highlight-color: var(--color-indigo);
-    }
-  }
-}
+@import "@/dark";
 
 body {
   font-family: source-code-pro, monospace;
   font-size: 16px;
   font-weight: 400;
   font-style: normal;
-  color: var(--typography-text-color);
+  color: var(--color-black);
+
+  @include dark {
+    color: var(--color-crystal);
+  }
 }
 
 a,
 .link {
   text-decoration: none;
-  color: var(--typography-link-color);
+  color: var(--color-indigo);
   font-weight: bold;
   cursor: pointer;
-  opacity: 0.9;
+
+  @include dark {
+    color: var(--color-spice);
+  }
 
   &:hover {
-    opacity: 1;
+    color: var(--color-indigo-light);
+
+    @include dark {
+      color: var(--color-spice-light);
+    }
   }
 
   &.big {
@@ -139,5 +136,9 @@ ol {
 }
 
 strong {
-  color: var(--typography-highlight-color);
+  color: var(--color-spice);
+
+  @include dark {
+    color: var(--color-indigo);
+  }
 }
