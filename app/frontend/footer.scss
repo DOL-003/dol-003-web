@@ -1,20 +1,15 @@
 @import "@/breakpoints";
 @import "@/colors";
-
-body {
-  --footer-background-color: var(--color-black);
-
-  &.supports-dark-mode {
-    @media (prefers-color-scheme: dark) {
-      --footer-background-color: var(--color-ink);
-    }
-  }
-}
+@import "@/dark";
 
 footer {
-  background-color: var(--footer-background-color);
+  background-color: var(--color-black);
   color: $platinum;
   padding: 64px 0 72px;
+
+  @include dark {
+    background-color: var(--color-ink);
+  }
 
   a {
     color: $spice;
