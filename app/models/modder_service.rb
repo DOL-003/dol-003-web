@@ -22,13 +22,13 @@ class ModderService < ApplicationRecord
     'prebuilt-controllers': { name: 'prebuilt controllers', color: '#6d6b6b', solid: true },
     'diagnostics-repairs': { name: 'diagnostics/repairs', color: '#6d6b6b', solid: true },
     'accepting-send-ins': { name: 'accepting send-ins', color: '#6d6b6b', solid: true },
-    'commissions-open': { name: 'commissions open', color: '#fdb03a', solid: true },
+    'commissions-open': { name: 'commissions open', color: '#fdb03a', color_dark: '#444f9a', solid: true },
 
     # functional/electrical
-    'phobs': { name: 'phobs', color: '#444f9a' },
-    'snapback-modules': { name: 'snapback modules', color: '#444f9a' },
-    'electrical-mods': { name: 'electrical mods', color: '#444f9a' },
-    'notching': { name: 'notching', color: '#444f9a' },
+    'phobs': { name: 'phobs', color: '#444f9a', color_dark: '#5a69cc' },
+    'snapback-modules': { name: 'snapback modules', color: '#444f9a', color_dark: '#5a69cc' },
+    'electrical-mods': { name: 'electrical mods', color: '#444f9a', color_dark: '#5a69cc' },
+    'notching': { name: 'notching', color: '#444f9a', color_dark: '#5a69cc' },
 
     # resin
     'resin-buttons': { name: 'resin buttons', color: '#fdb03a' },
@@ -47,10 +47,10 @@ class ModderService < ApplicationRecord
     'paracords': { name: 'paracords', color: '#c12022' },
 
     # other
-    'parts': { name: 'replacement parts', color: '#211f21' },
-    'tools': { name: 'modding tools', color: '#211f21' },
-    'procon': { name: 'procons', color: '#211f21' },
-    'rectangle-controllers': { name: 'rectangle controllers', color: '#211f21' }
+    'parts': { name: 'replacement parts', color: '#211f21', color_dark: '#b8bfbf' },
+    'tools': { name: 'modding tools', color: '#211f21', color_dark: '#b8bfbf' },
+    'procon': { name: 'procons', color: '#211f21', color_dark: '#b8bfbf' },
+    'rectangle-controllers': { name: 'rectangle controllers', color: '#211f21', color_dark: '#b8bfbf' }
 
   }.freeze
 

@@ -139,6 +139,6 @@ strong {
   color: var(--color-spice);
 
   @include dark {
-    color: var(--color-indigo);
+    color: var(--color-indigo-light);
   }
 }

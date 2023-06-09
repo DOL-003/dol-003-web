@@ -1,4 +1,5 @@
 @import "@/breakpoints";
+@import "@/dark";
 
 .service-pill {
   display: flex;
@@ -12,12 +13,22 @@
   letter-spacing: 1px;
   line-height: 1;
   box-shadow: inset 0 0 0 2px var(--service-color, $platinum);
-  color: var(--service-color, $platinum);
+  color: var(--service-color, $platinum) !important;
   border-radius: 32px;
+
+  @include dark {
+    box-shadow: inset 0 0 0 2px var(--service-color-dark, $platinum);
+    color: var(--service-color-dark, $platinum) !important;
+  }
 
   &.solid {
     background-color: var(--service-color, $black);
-    color: $white;
+    color: $white !important;
+
+    @include dark {
+      background-color: var(--service-color-dark, $black);
+      color: $white !important;
+    }
   }
 
   @include small {
@@ -27,14 +38,26 @@
   }
 
   &.interactive:hover {
-    color: var(--service-color, $platinum);
-    background-color: #fff;
+    color: var(--service-color, $platinum) !important;
+    background-color: var(--color-white);
     box-shadow: inset 0 0 0 2px var(--service-color, $platinum),
       0 8px 8px -12px $black;
 
+    @include dark {
+      color: var(--service-color-dark, $platinum) !important;
+      background-color: rgba(#fff, 10%);
+      box-shadow: inset 0 0 0 2px var(--service-color-dark, $platinum),
+        0 8px 8px -12px $black;
+    }
+
     &.solid {
       background-color: var(--service-color, $black);
-      color: $white;
+      color: $white !important;
+
+      @include dark {
+        background-color: var(--service-color-dark, $black);
+        color: $white !important;
+      }
     }
   }
 }

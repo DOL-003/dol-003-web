@@ -34,7 +34,8 @@ module ApplicationHelper
 
   def service_link(service)
     classes = "service-pill interactive #{service[1][:solid] ? 'solid' : ''}"
-    link_to service[1][:name], modders_path(service: service[0]), class: classes, style: "--service-color: #{service[1][:color]}"
+    style = "--service-color: #{service[1][:color]}; --service-color-dark: #{service[1][:color_dark] || service[1][:color]}"
+    link_to service[1][:name], modders_path(service: service[0]), class: classes, style:
   end
 
   def flag_enabled?(flag)
