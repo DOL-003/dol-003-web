@@ -102,6 +102,10 @@ body.application.index {
     display: flex;
     gap: 40px;
 
+    @include small {
+      flex-flow: column nowrap;
+    }
+
     > div {
       flex: 1 0 0;
       display: flex;
