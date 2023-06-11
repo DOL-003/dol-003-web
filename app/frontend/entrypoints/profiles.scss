@@ -14,6 +14,10 @@ body.profiles.create {
 
         p {
           margin-top: 0;
+
+          &:not(.label) + p {
+            margin-top: 12px;
+          }
         }
 
         .field_with_errors {
