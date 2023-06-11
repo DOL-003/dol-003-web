@@ -150,6 +150,10 @@ body.modders.index {
       visibility: hidden;
       transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
 
+      @include dark {
+        border-color: $panasonic;
+      }
+
       @include small {
         margin-top: 0;
       }
