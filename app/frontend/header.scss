@@ -1,4 +1,5 @@
-@import "./colors";
+@import "@/colors";
+@import "@/dark";
 
 header {
   > .content {
@@ -162,9 +163,9 @@ header {
         left: -12px;
         right: -12px;
         bottom: -8px;
-        background-color: #fff;
+        background-color: var(--color-white);
         border-radius: 100px 100px 0 0;
-        border: 2px solid $spice;
+        border: 2px solid var(--color-spice);
         border-bottom: 0;
         pointer-events: none;
         z-index: 100;
@@ -173,6 +174,11 @@ header {
         opacity: 0;
         transition: transform 0.1s ease-out, opacity 0.1s ease-out,
           visibility 0s linear 0.1s;
+
+        @include dark {
+          background-color: var(--color-smoke);
+          border-color: var(--color-panasonic);
+        }
       }
 
       .avatar {
@@ -180,7 +186,7 @@ header {
         width: 48px;
         height: 48px;
         border-radius: 48px;
-        background-color: $platinum;
+        background-color: var(--color-platinum);
         cursor: pointer;
         opacity: 0.9;
         position: relative;
@@ -206,9 +212,10 @@ header {
         position: absolute;
         right: -12px;
         top: calc(100% + 8px);
-        background-color: #fff;
-        box-shadow: 0 12px 12px -16px $black, 0 16px 32px -48px $black,
-          inset 0 0 0 2px $spice;
+        background-color: var(--color-white);
+        box-shadow: 0 12px 12px -16px var(--color-black),
+          0 16px 32px -48px var(--color-black),
+          inset 0 0 0 2px var(--color-spice);
         list-style: none;
         margin: 0;
         padding: 20px 60px 24px 28px;
@@ -220,6 +227,13 @@ header {
         transition: transform 0.1s ease-out, opacity 0.1s ease-out,
           visibility 0s linear 0.1s;
 
+        @include dark {
+          background-color: var(--color-smoke);
+          box-shadow: 0 12px 12px -16px var(--color-ink),
+            0 16px 32px -48px var(--color-ink),
+            inset 0 0 0 2px var(--color-panasonic);
+        }
+
         &::after {
           content: "";
           position: absolute;
@@ -227,7 +241,11 @@ header {
           right: 2px;
           height: 2px;
           width: 68px;
-          background-color: #fff;
+          background-color: var(--color-white);
+
+          @include dark {
+            background-color: var(--color-smoke);
+          }
         }
 
         > li {
@@ -239,8 +257,12 @@ header {
             white-space: nowrap;
 
             a {
-              color: $black;
+              color: var(--color-black);
               font-weight: bold;
+
+              @include dark {
+                color: var(--color-crystal);
+              }
             }
           }
 
