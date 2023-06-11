@@ -1,5 +1,6 @@
 @import "@/breakpoints";
 @import "@/colors";
+@import "@/dark";
 
 body.modders {
   section.modder-info {
@@ -91,6 +92,14 @@ body.modders.index {
     padding: 24px 24px 28px;
     background-color: $crystal;
     border-radius: 16px;
+
+    @include dark {
+      background-color: var(--color-smoke);
+
+      .text-input {
+        background-color: var(--color-black);
+      }
+    }
 
     @include small {
       border-radius: 0;
