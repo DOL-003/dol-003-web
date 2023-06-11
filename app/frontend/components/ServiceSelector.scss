@@ -1,25 +1,38 @@
 @import "@/breakpoints";
 @import "@/colors";
 @import "@/service-pill";
+@import "@/dark";
 
 .ServiceSelector {
   .service-selector__control {
     min-height: 64px;
-    box-shadow: inset 0 0 0 2px $platinum;
+    box-shadow: inset 0 0 0 2px var(--color-platinum);
     padding: 16px;
     border-radius: 8px;
-    background-color: #fff;
+    background-color: var(--color-white);
     cursor: pointer;
     transition: none;
 
+    @include dark {
+      background-color: var(--color-smoke);
+      box-shadow: inset 0 0 0 2px var(--color-panasonic);
+    }
+
     &:hover {
-      box-shadow: inset 0 0 0 2px darken($platinum, 20%), 0 8px 8px -12px $black;
+      box-shadow: inset 0 0 0 2px darken($platinum, 20%),
+        0 8px 8px -12px var(--color-black);
+
+      @include dark {
+        box-shadow: inset 0 0 0 2px var(--color-platinum),
+          0 8px 8px -12px var(--color-ink);
+      }
     }
 
     &:focus,
     &--is-focused,
     &--is-focused:hover {
-      box-shadow: inset 0 0 0 2px $spice, inset 0 2px 10px -6px $black;
+      box-shadow: inset 0 0 0 2px var(--color-spice),
+        inset 0 2px 10px -6px var(--color-black) !important;
     }
 
     &--menu-is-open {
@@ -27,7 +40,7 @@
     }
 
     .service-selector__placeholder {
-      color: $platinum;
+      color: var(--color-platinum);
     }
 
     .service-selector__value-container {
@@ -39,19 +52,41 @@
       padding: 0 20px 0 16px;
       cursor: grab;
 
+      &.solid {
+        background-color: var(--service-color, $black);
+        color: $white !important;
+
+        @include dark {
+          background-color: var(--service-color-dark, $black);
+          color: $white !important;
+        }
+      }
+
       @include small {
         padding: 0 10px;
       }
 
       &:hover {
-        color: var(--service-color, $platinum);
-        background-color: #fff;
+        color: var(--service-color, $platinum) !important;
+        background-color: var(--color-white);
         box-shadow: inset 0 0 0 2px var(--service-color, $platinum),
-          0 8px 8px -12px $black !important;
+          0 8px 8px -12px $black;
+
+        @include dark {
+          color: var(--service-color-dark, $platinum) !important;
+          background-color: var(--color-smoke);
+          box-shadow: inset 0 0 0 2px var(--service-color-dark, $platinum),
+            0 8px 8px -12px $black;
+        }
 
         &.solid {
-          color: $white;
-          background-color: var(--service-color, $platinum);
+          background-color: var(--service-color, $black);
+          color: $white !important;
+
+          @include dark {
+            background-color: var(--service-color-dark, $black);
+            color: $white !important;
+          }
         }
       }
 
@@ -59,7 +94,7 @@
         position: relative;
         top: -1px;
         left: 8px;
-        color: $platinum;
+        color: var(--color-platinum);
         cursor: pointer;
 
         @include small {
@@ -73,12 +108,16 @@
 
         &:hover {
           color: darken($platinum, 20%);
+
+          @include dark {
+            color: var(--color-crystal);
+          }
         }
       }
     }
 
     .service-selector__indicators {
-      color: $platinum;
+      color: var(--color-platinum);
       margin-left: 16px;
 
       .service-selector__indicator {
@@ -96,9 +135,13 @@
   .service-selector__menu {
     padding: 16px;
     border-radius: 0 0 8px 8px;
-    box-shadow: inset 0 0 0 2px $spice;
+    box-shadow: inset 0 0 0 2px var(--color-spice);
     margin-top: -2px;
-    background-color: #fff;
+    background-color: var(--color-white);
+
+    @include dark {
+      background-color: var(--color-smoke);
+    }
 
     .service-selector__menu-list {
       display: flex;
@@ -112,14 +155,26 @@
       cursor: pointer;
 
       &:hover {
-        color: var(--service-color, $platinum);
-        background-color: #fff;
+        color: var(--service-color, $platinum) !important;
+        background-color: var(--color-white);
         box-shadow: inset 0 0 0 2px var(--service-color, $platinum),
-          0 8px 8px -12px $black !important;
+          0 8px 8px -12px $black;
+
+        @include dark {
+          color: var(--service-color-dark, $platinum) !important;
+          background-color: var(--color-smoke);
+          box-shadow: inset 0 0 0 2px var(--service-color-dark, $platinum),
+            0 8px 8px -12px $black;
+        }
 
         &.solid {
-          color: $white;
-          background-color: var(--service-color, $platinum);
+          background-color: var(--service-color, $black);
+          color: $white !important;
+
+          @include dark {
+            background-color: var(--service-color-dark, $black);
+            color: $white !important;
+          }
         }
       }
     }

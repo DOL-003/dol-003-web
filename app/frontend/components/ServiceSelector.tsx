@@ -21,6 +21,7 @@ interface ServiceOption {
   readonly value: string
   readonly label: string
   readonly color: string
+  readonly colorDark: string
   readonly solid?: boolean
 }
 
@@ -121,12 +122,14 @@ export default (props: ServiceSelectorProps) => {
             return {
               ...styles,
               "--service-color": data.color,
+              "--service-color-dark": data.colorDark,
             }
           },
           multiValue: (styles, { data }) => {
             return {
               ...styles,
               "--service-color": data.color,
+              "--service-color-dark": data.colorDark,
             }
           },
         }}
