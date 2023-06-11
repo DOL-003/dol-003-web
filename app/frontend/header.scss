@@ -29,6 +29,10 @@ header {
       cursor: pointer;
       display: none;
 
+      @include dark {
+        color: var(--color-spice);
+      }
+
       &:hover {
         color: lighten($indigo, 15%);
       }
