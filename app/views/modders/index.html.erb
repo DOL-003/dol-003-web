@@ -112,7 +112,13 @@
           <% end %>
           <div>
             <h3><%= link_to modder.name, modder %></h3>
-            <p class="city"><%= inline_svg_tag 'pin.svg' %><%= modder.city %></p>
+            <p class="city">
+              <%= inline_svg_tag 'pin.svg' %>
+              <%= modder.city %>
+              <% if modder.vetted? %>
+                <%= link_to vetting_path, class: 'vetted', title: 'This modder has been vetted by an administrator. Click for more information.' do %><%= inline_svg_tag 'check.svg' %>Vetted<% end %>
+              <% end %>
+            </p>
           </div>
         </div>
         <div class="services">

@@ -17,6 +17,10 @@ class ApplicationController < ActionController::Base
     @title = 'About'
   end
 
+  def vetting
+    @title = 'Modder vetting'
+  end
+
   def terms
     @title = 'Terms of Service'
   end

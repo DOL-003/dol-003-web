@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'ping', to: 'application#ping'
 
   get 'about', to: 'application#about'
+  get 'vetting', to: 'application#vetting'
   get 'terms', to: 'application#terms'
   get 'rules', to: 'application#rules'
   get 'privacy', to: 'application#privacy_policy'

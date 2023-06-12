@@ -210,6 +210,10 @@ class Modder < ApplicationRecord
     !active?
   end
 
+  def vetted?
+    vetting_status == VETTING_STATUS_VETTED
+  end
+
   private
 
   def generate_slug
