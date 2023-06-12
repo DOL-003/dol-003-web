@@ -9,15 +9,15 @@
     appearance: none;
     width: 23px;
     height: 23px;
-    border: 2px solid $platinum;
+    border: 2px solid var(--color-platinum);
     border-radius: 4px;
-    background-color: $white;
+    background-color: var(--color-white);
     margin-right: 12px;
     cursor: pointer;
 
     &:checked {
-      border-color: $spice;
-      background-color: $spice;
+      border-color: var(--color-spice);
+      background-color: var(--color-spice);
     }
   }
 
@@ -27,7 +27,8 @@
     left: 4px;
     width: 16px;
     height: 16px;
-    color: $white;
+    color: var(--color-white);
+    pointer-events: none;
   }
 
   label {
