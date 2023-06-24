@@ -6,6 +6,7 @@ body.modders {
   section.modder-info {
     .meta {
       display: flex;
+      position: relative;
 
       .logo {
         flex: none;
@@ -65,6 +66,17 @@ body.modders {
 
           @include dark {
             background-color: var(--color-indigo);
+          }
+
+          @include medium {
+            position: absolute;
+            left: 40px;
+            width: 24px;
+            font-size: 0;
+            padding-left: 8px;
+            bottom: 0;
+            margin: 0 24px 0 0;
+            pointer-events: none;
           }
 
           svg {
@@ -255,6 +267,10 @@ body.modders.index {
         display: var(--service-display, block);
         margin-top: 16px;
         margin-left: 86px;
+
+        @include medium {
+          margin-left: 0;
+        }
       }
     }
   }
