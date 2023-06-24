@@ -189,12 +189,16 @@ body.knowledge_base.show {
         }
 
         ul {
-          margin: 0;
+          margin: 2px 0 0;
           display: none;
         }
 
         input:checked ~ ul {
           display: block;
+        }
+
+        & + li {
+          margin-top: 2px;
         }
       }
 
@@ -262,6 +266,7 @@ body.knowledge_base.show {
       position: relative;
       margin-left: -24px;
       padding-left: 24px;
+      clear: both;
 
       > .section-anchor {
         position: absolute;
@@ -308,6 +313,20 @@ body.knowledge_base.show {
 
       li + li {
         margin-top: 8px;
+      }
+    }
+
+    aside {
+      float: right;
+      max-width: 25%;
+      margin: -24px 0 24px 48px;
+
+      img {
+        width: 100%;
+      }
+
+      p {
+        font-size: 14px;
       }
     }
 

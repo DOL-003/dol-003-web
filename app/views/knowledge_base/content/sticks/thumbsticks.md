@@ -3,6 +3,13 @@ title: Thumbsticks
 description: The upper-most part of the analog stick assembly.
 ---
 
+<!--
+<aside>
+  <img src="./images/oem-thumbsticks.png">
+  <p>An OEM thumbstick and C-stick</p>
+</aside>
+-->
+
 The primary thumbstick on the left side of the controller is a medium to light gray ABS plastic with a circle-textured rubber cap. The C-stick is yellow ABS plastic with a rubber cap imprinted with the letter "C".
 
 ## Replacements
@@ -15,6 +22,13 @@ There is no consistent source for standalone OEM sticks, new or used, except for
 - Modders occasionally sell overstock
 
 ### Other good options
+
+<!--
+<aside>
+  <img src="./images/spicy-sticks.png">
+  <p>Spicy sticks, a popular replacement stick design made from resin (and optionally capped with rubber)</p>
+</aside>
+-->
 
 Thumbsticks from certain other Nintendo controllers are compatible with GCC stickboxes, and some players even prefer the alternate feel they have.
 
