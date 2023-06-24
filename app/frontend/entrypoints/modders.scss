@@ -70,11 +70,11 @@ body.modders {
 
           @include medium {
             position: absolute;
+            top: 40px;
             left: 40px;
             width: 24px;
             font-size: 0;
             padding-left: 8px;
-            bottom: 0;
             margin: 0 24px 0 0;
             pointer-events: none;
           }
