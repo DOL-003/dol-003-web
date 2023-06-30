@@ -297,11 +297,11 @@ body.knowledge_base.show {
     }
 
     h2 > .section-anchor {
-      top: 2px;
+      top: 1px;
     }
 
     h3 > .section-anchor {
-      top: 0;
+      top: -1px;
     }
 
     ul {
