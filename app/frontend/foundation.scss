@@ -18,14 +18,12 @@
 
 html {
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
 body {
   box-sizing: border-box;
   min-height: 100vh;
   background-color: var(--color-pearl);
-  overflow-x: hidden;
 
   @include dark {
     background-color: var(--color-black);

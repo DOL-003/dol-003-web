@@ -3,84 +3,18 @@
 
 body.knowledge_base.show {
   .sidebar {
-    background-color: $crystal;
-    margin: -24px;
-    padding: 24px 12px 28px;
-    border-radius: 16px;
-    position: relative;
+    position: sticky;
+    top: 20px;
+    bottom: 20px;
 
     @include small {
       border-radius: 0;
     }
 
-    h3 {
-      padding: 0 12px;
-    }
-
-    input[type="checkbox"] {
-      display: none;
-    }
-
-    > label {
-      display: flex;
-      position: absolute;
-      top: 22px;
-      right: 18px;
-      padding: 4px;
-      color: $indigo;
-      cursor: pointer;
-
-      &:hover {
-        color: lighten($indigo, 15%);
-      }
-
-      svg {
-        width: 16px;
-        height: 16px;
-
-        &.close {
-          display: none;
-        }
-      }
-    }
-
-    #kb-menu-toggle:checked ~ #kb-menu-toggle-label {
-      > .open {
-        display: none;
-      }
-
-      > .close {
-        display: block;
-      }
-    }
-
-    #kb-menu-toggle-small:checked ~ #kb-menu-toggle-small-label {
-      > .open {
-        display: none;
-      }
-
-      > .close {
-        display: block;
-      }
-    }
-
-    #kb-menu-toggle-small-label {
-      display: none;
-
-      @include medium {
-        display: block;
-      }
-    }
-
-    > ul {
-      margin-top: 24px !important;
-    }
-
     ul {
-      margin: 0;
+      margin: 4px -8px 0;
       padding: 0;
       list-style: none;
-      display: none;
 
       li {
         margin: 0;
@@ -89,21 +23,12 @@ body.knowledge_base.show {
         position: relative;
 
         &.separator {
-          height: 40px;
+          height: 16px;
           display: flex;
-          align-items: center;
-          margin: 0 -12px;
           padding: 0;
 
           &:hover {
             background-color: transparent;
-          }
-
-          &::after {
-            content: "";
-            height: 1px;
-            width: 100%;
-            background-color: rgba($indigo, 20%);
           }
         }
 
@@ -242,18 +167,6 @@ body.knowledge_base.show {
         a {
           padding-left: 92px;
         }
-      }
-    }
-
-    @media (min-width: 961px) {
-      #kb-menu-toggle:checked ~ ul {
-        display: block;
-      }
-    }
-
-    @include medium {
-      #kb-menu-toggle-small:checked ~ ul {
-        display: block;
       }
     }
   }

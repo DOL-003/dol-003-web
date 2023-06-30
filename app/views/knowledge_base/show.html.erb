@@ -1,19 +1,5 @@
 <div class="content grid">
   <div class="sidebar span-3">
-    <h3>Knowledge Base</h3>
-
-    <input type="checkbox" id="kb-menu-toggle" checked>
-    <label id="kb-menu-toggle-label" for="kb-menu-toggle">
-      <%= inline_svg_tag 'plus.svg', class: 'open' %>
-      <%= inline_svg_tag 'minus.svg', class: 'close' %>
-    </label>
-
-    <input type="checkbox" id="kb-menu-toggle-small">
-    <label id="kb-menu-toggle-small-label" for="kb-menu-toggle-small">
-      <%= inline_svg_tag 'plus.svg', class: 'open' %>
-      <%= inline_svg_tag 'minus.svg', class: 'close' %>
-    </label>
-
     <%= menu_tree @menu %>
   </div>
   <section class="page span-9">
