@@ -1,6 +1,6 @@
-module KnowledgeBaseHelper
+module CompendiumHelper
 
-  def menu_tree(tree, path = '/kb', indent = 1)
+  def menu_tree(tree, path = '/compendium', indent = 1)
     tree = tree.collect
     render 'menu_tree', locals: {
       indent:,

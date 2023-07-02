@@ -6,8 +6,8 @@
     <label for="menu-toggle" id="menu-toggle-button"><%= inline_svg_tag 'menu.svg' %></label>
     <input type="checkbox" id="menu-toggle">
     <ul class="menu">
-      <% if flag_enabled? :knowledge_base %>
-        <li><%= link_to 'Knowledge base', knowledge_base_path %></li>
+      <% if flag_enabled? :compendium %>
+        <li><%= link_to 'GCC Compendium', compendium_path %></li>
       <% end %>
       <li><%= link_to 'Find a modder', modders_path %></li>
       <% if !user_signed_in? %>

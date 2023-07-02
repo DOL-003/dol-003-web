@@ -30,6 +30,6 @@ Rails.application.routes.draw do
   end
   resources :invitations, only: [:new, :create]
 
-  get 'kb(/*path)', to: 'knowledge_base#show', as: :knowledge_base
+  get 'compendium(/*path)', to: 'compendium#show', as: :compendium
 
 end

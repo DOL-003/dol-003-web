@@ -1,11 +1,11 @@
-class KnowledgeBaseController < ApplicationController
+class CompendiumController < ApplicationController
 
-  CONTENT_DIR = File.join(File.expand_path('.'), 'app/views/knowledge_base/content')
+  CONTENT_DIR = File.join(File.expand_path('.'), 'app/views/compendium/content')
   @@pages = {}
   @@menu = {}
 
   def show
-    return not_found unless flag_enabled? :knowledge_base
+    return not_found unless flag_enabled? :compendium
 
     page = page_data(params[:path] || 'index')
     return not_found if page.blank?
@@ -14,7 +14,7 @@ class KnowledgeBaseController < ApplicationController
     @description = page[:description]
     @content = page[:content]
     @menu = menu_data
-    @current_path = "/kb/#{params[:path] || 'index'}"
+    @current_path = "/compendium/#{params[:path] || 'index'}"
   end
 
   private
@@ -38,7 +38,7 @@ class KnowledgeBaseController < ApplicationController
   def menu_data
     return @@menu if @@menu.present? && !Rails.env.development?
 
-    @@menu = YAML.load(File.read('./app/lib/kb-menu.yml')).deep_symbolize_keys.freeze
+    @@menu = YAML.load(File.read('./app/lib/compendium-menu.yml')).deep_symbolize_keys.freeze
   end
 
 end
