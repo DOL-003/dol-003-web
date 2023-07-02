@@ -4,11 +4,16 @@
 body.knowledge_base.show {
   .sidebar {
     position: sticky;
-    top: 20px;
-    bottom: 20px;
+    top: 40px;
+    bottom: 40px;
 
     @include small {
       border-radius: 0;
+    }
+
+    h3 {
+      margin: 12px 0 24px;
+      color: var(--color-panasonic);
     }
 
     ul {
