@@ -1,5 +1,6 @@
 @import "@/breakpoints";
 @import "@/colors";
+@import "@/dark";
 
 body.compendium.show {
   .sidebar {
@@ -14,6 +15,10 @@ body.compendium.show {
     h3 {
       margin: 8px 0 24px;
       color: var(--color-panasonic);
+
+      @include dark {
+        color: var(--color-platinum);
+      }
     }
 
     ul {
@@ -40,11 +45,23 @@ body.compendium.show {
         svg.page {
           width: 16px;
           height: 16px;
-          color: $indigo;
+          color: var(--color-indigo);
           position: absolute;
           top: 8px;
           left: 8px;
           pointer-events: none;
+
+          @include dark {
+            color: var(--color-spice);
+          }
+        }
+
+        &.current > .item-container > svg.page {
+          color: var(--color-black);
+
+          @include dark {
+            color: var(--color-white);
+          }
         }
 
         a {
@@ -53,13 +70,21 @@ body.compendium.show {
           padding: 6px 12px 6px 32px;
 
           &:not(.current):hover {
-            color: $indigo;
+            color: var(--color-indigo);
+
+            @include dark {
+              color: var(--color-spice);
+            }
           }
 
           &.current {
-            color: $black;
+            color: var(--color-black);
             cursor: default;
             pointer-events: none;
+
+            @include dark {
+              color: var(--color-white);
+            }
           }
         }
 
@@ -70,14 +95,22 @@ body.compendium.show {
         label {
           display: flex;
           padding: 4px;
-          color: $indigo;
+          color: var(--color-indigo);
           cursor: pointer;
           position: absolute;
           left: 0;
           top: 0;
 
+          @include dark {
+            color: var(--color-spice);
+          }
+
           &:hover {
-            color: lighten($indigo, 15%);
+            color: var(--color-indigo-light);
+
+            @include dark {
+              color: var(--color-spice-light);
+            }
           }
 
           svg {
@@ -96,7 +129,11 @@ body.compendium.show {
           justify-content: stretch;
 
           &:hover {
-            background-color: rgba($black, 5%);
+            background-color: var(--color-crystal);
+
+            @include dark {
+              background-color: var(--color-smoke);
+            }
           }
         }
 
