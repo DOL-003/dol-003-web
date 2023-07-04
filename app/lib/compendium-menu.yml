@@ -11,7 +11,6 @@ Analog sticks:
   path: sticks
   Potentiometers: pots
   Stickboxes: stickboxes
-  Snapback: snapback
   Thumbsticks: thumbsticks
   Mods:
     path: mods
