@@ -10,7 +10,7 @@ body.compendium.show {
 
     @include medium {
       position: static;
-      margin-bottom: -64px;
+      margin-bottom: -24px;
     }
 
     > input {
@@ -37,7 +37,7 @@ body.compendium.show {
       align-items: center;
       justify-content: center;
       padding: 4px;
-      margin: -5px 0 -4px -8px;
+      margin: -7px 0 -4px -8px;
       cursor: pointer;
 
       @include medium {
@@ -333,6 +333,12 @@ body.compendium.show {
       float: right;
       max-width: 25%;
       margin: -24px 0 36px 48px;
+
+      @include small {
+        float: none;
+        margin: 24px auto;
+        max-width: 80%;
+      }
 
       a:first-child {
         display: block;
