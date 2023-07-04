@@ -3,12 +3,12 @@ title: Thumbsticks
 description: The upper-most part of the analog stick assembly.
 ---
 
-<!--
 <aside>
-  <img src="./images/oem-thumbsticks.png">
+  <a href="./images/oem-thumbsticks.jpg">
+    <img src="./images/oem-thumbsticks-thumb.jpg">
+  </a>
   <p>An OEM thumbstick and C-stick</p>
 </aside>
--->
 
 The primary thumbstick on the left side of the controller is a medium to light gray ABS plastic with a circle-textured rubber cap. The C-stick is yellow ABS plastic with a rubber cap imprinted with the letter "C".
 

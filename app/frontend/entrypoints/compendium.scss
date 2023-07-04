@@ -239,11 +239,16 @@ body.compendium.show {
       max-width: 25%;
       margin: -24px 0 24px 48px;
 
+      a:first-child {
+        display: block;
+      }
+
       img {
         width: 100%;
       }
 
       p {
+        margin-top: 8px;
         font-size: 14px;
       }
     }
