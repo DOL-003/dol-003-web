@@ -3,6 +3,13 @@ title: Stickboxes
 description: The mechanical component of the analog stick assembly.
 ---
 
+<aside>
+  <a href="./images/t3-stickbox.jpg">
+    <img src="./images/t3-stickbox-thumb.jpg">
+  </a>
+  <p>An OEM T3 stickbox.</p>
+</aside>
+
 The stickbox is the mechanism that lets you smoothly move an analog stick around, and returns it to center when pressure is released.
 
 ## Variants
@@ -30,3 +37,19 @@ No third-party stickboxes have been found which compare to T3s, and they are gen
 The main problem encountered with stickboxes is wear, which impacts how well the stick returns to center. As a stickbox wears, a physical dead zone develops in the center where the stick feels loose, and in severe cases can cause misinputs.
 
 There is a common misconception that this wear is caused by weakened springs, but it's actually due to the breakdown of the plastic components inside the stickbox assembly. This wear is unavoidable and unrepairable, and typically a stickbox is replaced once the looseness becomes noticeable.
+
+## Replacements
+
+There is no consistent source for OEM stickboxes other than other Nintendo controllers. Third-party stickboxes are not recommended.
+
+- **Other Nintendo-made GameCube controllers** always have OEM stickboxes, but make sure the controller you're harvesting from is a compatible variant. See this [Stickbox Variant Guide](https://gccontrollerlibrary.com/guides/){:target="\_blank"} (toward the bottom of the page) for which stamps on the back of the controller indicate which revision it contains.
+- **Wii Classic Controllers** (both the normal and Pro variants) contain T3 stickboxes, and are often in good condition since these controllers are rarely used heavily compared to most GCCs.
+- **Wii Nunchucks** contain a mix of T2 and T3 stickboxes. It is more common to find T3 Nunchucks in Europe, and T2 Nunchucks elsewhere.
+
+There have been various community efforts over the years to produce a T3-like stickbox, generally via some kind of 3D printing, but due to the tiny tolerances and high durability needed, no community-made stickboxes have proven viable so far.
+
+## Modifications
+
+[Cleaning and lubing stickboxes](/compendium/sticks/mods/lubing) is a common practice to make the stickbox action smoother.
+
+[Replacing the stickbox spring](/compendium/sticks/mods/springs) is often done to change the feel of the resistance provided by the stickbox.
