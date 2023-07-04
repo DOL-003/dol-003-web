@@ -8,17 +8,71 @@ body.compendium.show {
     top: 40px;
     bottom: 40px;
 
-    @include small {
-      border-radius: 0;
+    @include medium {
+      position: static;
+      margin-bottom: -64px;
+    }
+
+    > input {
+      display: none;
     }
 
     h3 {
       margin: 8px 0 24px;
       color: var(--color-panasonic);
+      display: flex;
 
       @include dark {
         color: var(--color-platinum);
       }
+
+      @include medium {
+        margin-top: 0;
+      }
+    }
+
+    .sidebar-menu-toggle-label {
+      display: none;
+      flex: none;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+      margin: -5px 0 -4px -8px;
+      cursor: pointer;
+
+      @include medium {
+        display: flex;
+      }
+
+      svg {
+        width: 24px;
+        height: 24px;
+
+        &.close {
+          display: none;
+        }
+      }
+    }
+
+    .sidebar-menu-toggle:checked ~ h3 .sidebar-menu-toggle-label {
+      svg.close {
+        display: block;
+      }
+
+      svg.open {
+        display: none;
+      }
+    }
+
+    > ul {
+      @include medium {
+        display: none;
+        margin-bottom: 64px !important;
+      }
+    }
+
+    .sidebar-menu-toggle:checked ~ ul {
+      display: block;
     }
 
     ul {
@@ -216,6 +270,10 @@ body.compendium.show {
   section.page {
     padding-left: 48px;
 
+    @include medium {
+      padding-left: 0;
+    }
+
     h2,
     h3 {
       position: relative;
@@ -288,11 +346,6 @@ body.compendium.show {
         margin-top: 8px;
         font-size: 14px;
       }
-    }
-
-    @include medium {
-      padding-left: 0;
-      margin-top: 24px;
     }
   }
 
