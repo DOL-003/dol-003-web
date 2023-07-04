@@ -16,19 +16,19 @@ The primary thumbstick on the left side of the controller is a medium to light g
 
 There is no consistent source for standalone OEM sticks, new or used, except for other GCCs. Resin sticks are a popular alternative, especially because they can be made in practically any color, with or without OEM-like rubber caps.
 
-### OEM
+### Where to get OEM sticks
 
 - Other GameCube controllers
 - Modders occasionally sell overstock
 
 ### Other good options
 
-<!--
 <aside>
-  <img src="./images/spicy-sticks.png">
-  <p>Spicy sticks, a popular replacement stick design made from resin (and optionally capped with rubber)</p>
+  <a href="./images/dafunk-sticks.jpg">
+    <img src="./images/dafunk-sticks-thumb.jpg">
+  </a>
+  <p>Rubber-capped resin sticks by DaFunkGaming.</p>
 </aside>
--->
 
 Thumbsticks from certain other Nintendo controllers are compatible with GCC stickboxes, and some players even prefer the alternate feel they have.
 

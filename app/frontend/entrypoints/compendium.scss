@@ -184,7 +184,7 @@ body.compendium.show {
       position: relative;
       margin-left: -24px;
       padding-left: 24px;
-      clear: both;
+      // clear: both;
 
       > .section-anchor {
         position: absolute;
@@ -237,7 +237,7 @@ body.compendium.show {
     aside {
       float: right;
       max-width: 25%;
-      margin: -24px 0 24px 48px;
+      margin: -24px 0 36px 48px;
 
       a:first-child {
         display: block;
