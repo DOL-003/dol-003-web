@@ -38,7 +38,7 @@ The main problem encountered with stickboxes is wear, which impacts how well the
 
 There is a common misconception that this wear is caused by weakened springs, but in reality it's caused by the breakdown of the plastic components inside the stickbox assembly.
 
-## Repair
+## Repairs
 
 Stickbox wear is unavoidable and unrepairable, and typically a stickbox is replaced once the looseness becomes noticeable.
 

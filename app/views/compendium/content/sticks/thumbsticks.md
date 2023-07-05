@@ -14,7 +14,11 @@ The primary thumbstick on the left side of the controller is a medium to light g
 
 ## Common issues
 
-The most common issue with thumbsticks is wear. Over time, the ridges on the rubber cap typically wear away due to friction, and sometimes even tear or completely come off with excessive use. It is possible, though somewhat difficult, to replace the rubber cap, but usually the entire stick is replaced.
+The most common issue with thumbsticks is wear. Over time, the ridges on the rubber cap typically wear away due to friction, and sometimes even tear or completely come off with excessive use.
+
+## Repairs
+
+It is possible, though somewhat difficult, to replace a worn rubber cap, but usually the entire stick is replaced instead.
 
 ## Replacements
 
