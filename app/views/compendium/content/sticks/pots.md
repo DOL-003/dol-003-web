@@ -1,6 +1,6 @@
 ---
 title: Stickbox potentiometers
-description: The electrical component of the analog stick assembly.
+subtitle: The electrical component of the analog stick assembly.
 ---
 
 Two potentiometers are responsible for translating the position of a stickbox into values that the GCC processor can interpret as X and Y coordinates.

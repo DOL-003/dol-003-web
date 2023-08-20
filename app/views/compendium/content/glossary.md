@@ -1,6 +1,6 @@
 ---
 title: Glossary
-description: Definitions of common terms and abbreviations related to GameCube controllers.
+subtitle: Definitions of common terms and abbreviations related to GameCube controllers.
 ---
 
 **Drift**: Unintentional analog input resulting from a potentiometer not registering a return to neutral

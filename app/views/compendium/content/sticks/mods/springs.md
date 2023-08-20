@@ -1,6 +1,6 @@
 ---
 title: Aftermarket stickbox springs
-description: Swap out the stock stickbox springs with alternatives to change the feel of the resistance.
+subtitle: Swap out the stock stickbox springs with alternatives to change the feel of the resistance.
 ---
 
 The stock stickbox springs tend to feel stiff to many players, and also often provide uneven resistance in different directions due to the non-uniform design of the spring. Replacing the spring can solve either or both of these issues.

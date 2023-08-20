@@ -11,7 +11,7 @@ class CompendiumController < ApplicationController
     return not_found if page.blank?
 
     @title = page[:title]
-    @description = page[:description]
+    @subtitle = page[:subtitle]
     @content = page[:content]
     @menu = menu_data
     @current_path = "/compendium/#{params[:path] || 'index'}"
@@ -25,14 +25,28 @@ class CompendiumController < ApplicationController
     filepath = "#{File.expand_path(File.join(CONTENT_DIR, path))}.md"
     return nil unless filepath.starts_with? CONTENT_DIR
     return nil unless File.file? filepath
-
     page = FrontMatterParser::Parser.parse_file(filepath)
 
     @@pages[path] = {
       title: page['title'],
-      description: page['description'],
-      content: Kramdown::Document.new(page.content).to_html.html_safe
+      subtitle: page['subtitle'],
+      content: page['auto'].present? ? auto_page(path, filepath) : Kramdown::Document.new(page.content).to_html.html_safe
     }
+  end
+
+  def auto_page(path, filepath)
+    subpages = []
+    dirpath = filepath.gsub(/\.md$/, '')
+    Dir.each_child(dirpath) do |filename|
+      page = FrontMatterParser::Parser.parse_file(File.expand_path(File.join(dirpath, filename)))
+      next if page.blank?
+      subpages << {
+        path: File.join(path, filename.gsub(/\.md$/, '')),
+        title: page['title'],
+        subtitle: page['subtitle']
+      }
+    end
+    render_to_string 'auto_page', layout: false, locals: { subpages: subpages.sort_by { |subpage| subpage[:title] } }
   end
 
   def menu_data

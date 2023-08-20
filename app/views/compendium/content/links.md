@@ -1,6 +1,6 @@
 ---
 title: Related sites & resources
-description: Places to find more information and get help with GCC modding.
+subtitle: Places to find more information and get help with GCC modding.
 ---
 
 Note: DOL-003.info is not expressly affiliated with any of the following sites or people.
