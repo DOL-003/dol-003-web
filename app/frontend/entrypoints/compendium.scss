@@ -76,7 +76,7 @@ body.compendium.show {
     }
 
     ul {
-      margin: 4px -8px 0;
+      margin: 4px 0 0;
       padding: 0;
       list-style: none;
 
@@ -90,51 +90,19 @@ body.compendium.show {
           height: 16px;
           display: flex;
           padding: 0;
-
-          &:hover {
-            background-color: transparent;
-          }
-        }
-
-        svg.page {
-          width: 16px;
-          height: 16px;
-          color: var(--color-indigo);
-          position: absolute;
-          top: 8px;
-          left: 8px;
-          pointer-events: none;
-
-          @include dark {
-            color: var(--color-spice);
-          }
-        }
-
-        &.current > .item-container > svg.page {
-          color: var(--color-black);
-
-          @include dark {
-            color: var(--color-white);
-          }
         }
 
         a {
           flex: auto;
           display: block;
-          padding: 6px 12px 6px 32px;
-
-          &:not(.current):hover {
-            color: var(--color-indigo);
-
-            @include dark {
-              color: var(--color-spice);
-            }
-          }
+          padding: 6px 48px 6px 0;
+          font-weight: 500;
 
           &.current {
             color: var(--color-black);
             cursor: default;
             pointer-events: none;
+            font-weight: 700;
 
             @include dark {
               color: var(--color-white);
@@ -148,12 +116,15 @@ body.compendium.show {
 
         label {
           display: flex;
-          padding: 4px;
+          width: 32px;
+          height: 32px;
           color: var(--color-indigo);
           cursor: pointer;
           position: absolute;
-          left: 0;
+          right: 0;
           top: 0;
+          align-items: center;
+          justify-content: center;
 
           @include dark {
             color: var(--color-spice);
@@ -168,8 +139,8 @@ body.compendium.show {
           }
 
           svg {
-            width: 24px;
-            height: 24px;
+            width: 12px;
+            height: 12px;
 
             &.close {
               display: none;
@@ -181,14 +152,6 @@ body.compendium.show {
           border-radius: 8px;
           display: flex;
           justify-content: stretch;
-
-          &:hover {
-            background-color: var(--color-crystal);
-
-            @include dark {
-              background-color: var(--color-smoke);
-            }
-          }
         }
 
         input:checked ~ .item-container {
@@ -210,58 +173,49 @@ body.compendium.show {
         }
 
         ul {
-          margin: 2px 0 0;
+          margin: 2px 0 6px;
           display: none;
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 4px;
+            left: 0;
+            bottom: 4px;
+            width: 2px;
+            background-color: var(--color-crystal);
+          }
         }
 
         input:checked ~ ul {
           display: block;
         }
-
-        & + li {
-          margin-top: 2px;
-        }
       }
 
       &.indent-2 li {
-        label {
-          left: 20px;
-        }
-
-        svg.page {
-          left: 28px;
-        }
-
         a {
-          padding-left: 52px;
+          padding-left: 16px;
         }
       }
 
-      &.indent-3 li {
-        label {
-          left: 40px;
+      &.indent-3 {
+        &::before {
+          left: 16px;
         }
 
-        svg.page {
-          left: 48px;
-        }
-
-        a {
-          padding-left: 72px;
+        li a {
+          padding-left: 32px;
         }
       }
 
-      &.indent-4 li {
-        label {
-          left: 60px;
+      &.indent-4 {
+        &::before {
+          left: 32px;
         }
 
-        svg.page {
-          left: 68px;
-        }
-
-        a {
-          padding-left: 92px;
+        li a {
+          padding-left: 48px;
         }
       }
     }

@@ -1,11 +1,15 @@
 ---
 title: Introduction
-description: The GCC Compendium is a curated collection of information and links related to GameCube controller (GCC) modding.
+description: The GCC Compendium is a curated collection of information and links related to GameCube controller (GCC) repair and modding.
 ---
 
 ## Who this is for
 
 Compendium content is meant for anyone interested in GCC modding, whether you're shopping for a controller or modding one yourself. You will find a mix of high-level overviews and recommendations, and in-depth technical information and tutorials.
+
+## Where to start
+
+If you're new to GCC modding, the [mod index](/compendium/mods) is a good place to get an idea of what mods are out there. The [glossary](/compendium/glossary) will also be useful to familiarize yourself with GCC terminology.
 
 ## Contributing
 

@@ -8,15 +8,13 @@
           <%= check_box_tag "menu-toggle-#{item[:path].parameterize}", 'a', path_matches?(item[:path], @current_path) %>
         <% end %>
         <div class="item-container">
+          <%= link_to item[:title], item[:path], class: path_matches?(item[:path], @current_path, complete_match: true) ? 'current' : '' %>
           <% if item[:children].present? %>
             <label for="menu-toggle-<%= item[:path].parameterize %>">
-              <%= inline_svg_tag 'caret-right.svg', class: 'open' %>
-              <%= inline_svg_tag 'caret-down.svg', class: 'close' %>
+              <%= inline_svg_tag 'caret-right-2.svg', class: 'open' %>
+              <%= inline_svg_tag 'caret-down-2.svg', class: 'close' %>
             </label>
-          <% else %>
-            <%= inline_svg_tag 'page.svg', class: 'page' %>
           <% end %>
-          <%= link_to item[:title], item[:path], class: path_matches?(item[:path], @current_path, complete_match: true) ? 'current' : '' %>
         </div>
         <% if item[:children].present? %>
           <%= menu_tree(item[:children], item[:path], locals[:indent] + 1) %>
