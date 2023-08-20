@@ -1,5 +1,6 @@
 ---
 title: Aftermarket stickbox springs
+label: Aftermarket springs
 subtitle: Swap out the stock stickbox springs with alternatives to change the feel of the resistance.
 ---
 

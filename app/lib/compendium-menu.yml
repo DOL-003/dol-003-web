@@ -1,62 +1,55 @@
-Introduction: index
+index: Introduction
 
-General guides:
-  path: guides
-  Controller troubleshooting: troubleshooting
-  Controller shopping: controller-shopping
+guides:
+  label: General guides
+  troubleshooting: Controller troubleshooting
+  controller-shopping: Controller shopping (for players)
+  used-controller-shopping: Controller shopping (for modders)
 
 separator-1:
 
-Analog sticks:
-  path: sticks
-  Potentiometers: pots
-  Stickboxes: stickboxes
-  Thumbsticks: thumbsticks
-  Mods:
-    path: mods
-    Aftermarket springs: springs
-    Snapback modules: snapback
-    Stickbox lubing: lubing
+sticks:
+  label: Analog sticks
+  pots: Potentiometers
+  stickboxes: Stickboxes
+  thumbsticks: Thumbsticks
+  mods:
+    auto: true
+    springs: Aftermarket springs
+    snapback: Snapback modules
+    lubing: Stickbox lubing
 
-Boards: boards
+boards: Boards
 
-Buttons:
-  path: buttons
-  Mods:
-    path: mods
-    Tactile Z: tactile
-    Mouseclick Z: mouseclick
-    Pad perforation: pad-perforation
+buttons:
+  mods:
+    tactile-z: Tactile Z
+    mouseclick-z: Mouse-click Z
+    pad-perforation: Pad perforation
 
-Cables:
-  path: cables
-  Mods:
-    path: mods
-    Aviator cables: aviator
-    Detachable cables: detachable
-    Paracords: paracords
+cables:
+  mods:
+    aviator: Aviator cables
+    detachable: Detachable cables
+    paracords: Paracords
 
-Shells:
-  path: shells
-  Mods:
-    path: mods
-    Notches: notches
+shells:
+  mods:
+    notches: Notches
 
-Triggers:
-  path: triggers
-  Mods:
-    path: mods
-    Digital triggers: digital
-    Ergo triggers: ergo
-    Lubed triggers: lube
-    Keyswitch/MX triggers: mx
-    PTFE stabilization: stabilization
-    Spring mods: springs
-    Trigger plugs: plugs
-    Pad perforation: pad-perforation
+triggers:
+  mods:
+    digital: Digital triggers
+    ergo: Ergo triggers
+    lube: Lubed triggers
+    mx: Keyswitch/MX triggers
+    stabilization: PTFE stabilization
+    springs: Spring mods
+    plugs: Trigger plugs
+    pad-perforation: Pad perforation
 
 separator-2:
 
-Mod index: mods
-Glossary: glossary
-Related sites & resources: links
+mods: Mod index
+glossary: Glossary
+links: Related sites & resources

@@ -1,20 +1,9 @@
 module CompendiumHelper
 
   def menu_tree(tree, path = '/compendium', indent = 1)
-    tree = tree.collect
     render 'menu_tree', locals: {
       indent:,
-      tree: tree.collect do |title, item|
-        if item.nil?
-          'separator'
-        else
-          {
-            title:,
-            path: item.is_a?(String) ? File.join(path, item) : File.join(path, item[:path]),
-            children: item.is_a?(Hash) ? item.except(:path) : nil
-          }
-        end
-      end
+      tree:
     }
   end
 
