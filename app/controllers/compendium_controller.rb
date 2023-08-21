@@ -70,7 +70,8 @@ class CompendiumController < ApplicationController
   def generate_nav_item(path)
     return 'separator' if path == '---'
 
-    filepath = File.expand_path(File.join(CONTENT_DIR, path)).gsub(/\.md$/, '')
+    path = path.gsub(/\.md$/, '')
+    filepath = File.expand_path(File.join(CONTENT_DIR, path))
     dir = File.directory?(filepath)
     page = FrontMatterParser::Parser.parse_file(dir ? File.join(filepath, 'index.md') : "#{filepath}.md")
 

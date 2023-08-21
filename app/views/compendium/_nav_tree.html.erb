@@ -5,10 +5,10 @@
     <% else %>
       <li class="<%= 'current' if path_matches?(item[:path], @current_path) %> <%= 'has-children' if item[:children].present? %>">
         <% if item[:children].present? %>
-          <%= check_box_tag "menu-toggle-#{item[:path].parameterize}", 'a', path_matches?(item[:path], @current_path) %>
+          <%= check_box_tag "menu-toggle-#{item[:path].parameterize}", 'a', path_matches?(compendium_path(item[:path]), @current_path) %>
         <% end %>
         <div class="item-container">
-          <%= link_to item[:label], item[:path], class: path_matches?(item[:path], @current_path, complete_match: true) ? 'current' : '' %>
+          <%= link_to item[:label], compendium_path(item[:path]), class: path_matches?(compendium_path(item[:path]), @current_path, complete_match: true) ? 'current' : '' %>
           <% if item[:children].present? %>
             <label for="menu-toggle-<%= item[:path].parameterize %>">
               <%= inline_svg_tag 'caret-right-2.svg', class: 'open' %>
