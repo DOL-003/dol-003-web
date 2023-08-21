@@ -185,6 +185,10 @@ body.compendium.show {
             bottom: 4px;
             width: 2px;
             background-color: var(--color-crystal);
+
+            @include dark {
+              background-color: var(--color-smoke);
+            }
           }
         }
 
