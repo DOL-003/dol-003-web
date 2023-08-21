@@ -2,7 +2,7 @@ class CompendiumController < ApplicationController
 
   CONTENT_DIR = File.join(File.expand_path('.'), 'app/views/compendium/content')
   @@pages = {}
-  @@menu = {}
+  @@nav = {}
 
   def show
     return not_found unless flag_enabled? :compendium
@@ -13,7 +13,7 @@ class CompendiumController < ApplicationController
     @title = page[:title]
     @subtitle = page[:subtitle]
     @content = page[:content]
-    @menu = menu_data
+    @nav = nav
     @current_path = "/compendium/#{params[:path] || 'index'}"
   end
 
@@ -57,56 +57,38 @@ class CompendiumController < ApplicationController
     render_to_string 'auto_page', layout: false, locals: { subpages: subpages.sort_by { |subpage| subpage[:title] } }
   end
 
-  def menu_data
-    return @@menu if @@menu.present? && !Rails.env.development?
+  def nav
+    return @@nav if @@nav.present? && !Rails.env.development?
 
-    menu = YAML.load(File.read('./app/lib/compendium-menu.yml')).deep_symbolize_keys.freeze
+    nav_data = YAML.load(File.read('./app/lib/compendium-nav.yml')).deep_symbolize_keys.freeze
 
-    @@menu = parse_item(menu, '/compendium')
+    @@nav = nav_data[:pages].reduce([]) do |nav_items, path|
+      nav_items << generate_nav_item(path)
+    end
   end
 
-  def parse_item(item, path)
-    return item unless item.is_a?(Hash)
+  def generate_nav_item(path)
+    return 'separator' if path == '---'
 
-    item.reduce([]) do |data, (slug, subitem)|
-      subitem_data = {
-        path: File.join(path, slug.to_s)
-      }
+    filepath = File.expand_path(File.join(CONTENT_DIR, path)).gsub(/\.md$/, '')
+    dir = File.directory?(filepath)
+    page = FrontMatterParser::Parser.parse_file(dir ? File.join(filepath, 'index.md') : "#{filepath}.md")
 
-      if subitem.nil?
-        subitem_data = {
-          separator: true
-        }
-      elsif subitem.is_a?(String)
-        subitem_data[:label] = subitem
-      elsif subitem.is_a?(Hash)
-        if subitem[:label].blank?
-          begin
-            page = FrontMatterParser::Parser.parse_file(File.expand_path(File.join(CONTENT_DIR, subitem_data[:path].gsub(/^\/compendium/, ''), 'index.md')))
-            subitem_data[:label] = page['label'] || page['title']
-          rescue
-            subitem_data[:label] = '(blank)'
-          end
-        else
-          subitem_data[:label] = subitem[:label]
-        end
+    nav_item = {
+      dir:,
+      path:,
+      label: page['label'] || page['title'] || '(blank)',
+    }
 
-        if subitem[:auto]
-          children_data = {}
-          Dir.each_child(File.expand_path(File.join(CONTENT_DIR, subitem_data[:path].gsub(/^\/compendium/, '')))) do |filename|
-            next if filename == 'index.md'
-            page = FrontMatterParser::Parser.parse_file(File.expand_path(File.join(CONTENT_DIR, subitem_data[:path].gsub(/^\/compendium/, ''), filename)))
-            children_data[filename.gsub(/\.md$/, '')] = page['label'] || page['title']
-          end
-          subitem_data[:children] = parse_item(children_data.sort_by { |slug, title| title }.to_h, File.join(path, slug.to_s))
-        else
-          subitem_data[:children] = parse_item(subitem.except(:auto, :label), File.join(path, slug.to_s))
-        end
-      end
-
-      data << subitem_data
-      data
+    if dir
+      nav_item[:children] = Dir.each_child(filepath).map do |filename|
+        next if filename == 'index.md'
+        generate_nav_item(File.join(path, filename))
+      end.compact.sort_by { |item| "#{item[:dir]} #{item[:label]}" }
     end
+
+    nav_item
+
   end
 
 end

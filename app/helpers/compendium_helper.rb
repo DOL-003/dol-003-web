@@ -1,7 +1,7 @@
 module CompendiumHelper
 
-  def menu_tree(tree, path = '/compendium', indent = 1)
-    render 'menu_tree', locals: {
+  def nav_tree(tree, path = '/compendium', indent = 1)
+    render 'nav_tree', locals: {
       indent:,
       tree:
     }

@@ -1,6 +1,6 @@
 <ul class="indent-<%= locals[:indent] %>">
   <% locals[:tree].each do |item| %>
-    <% if item[:separator] %>
+    <% if item == 'separator' %>
       <li class="separator"></li>
     <% else %>
       <li class="<%= 'current' if path_matches?(item[:path], @current_path) %> <%= 'has-children' if item[:children].present? %>">
@@ -17,7 +17,7 @@
           <% end %>
         </div>
         <% if item[:children].present? %>
-          <%= menu_tree(item[:children], item[:path], locals[:indent] + 1) %>
+          <%= nav_tree(item[:children], item[:path], locals[:indent] + 1) %>
         <% end %>
       </li>
     <% end %>

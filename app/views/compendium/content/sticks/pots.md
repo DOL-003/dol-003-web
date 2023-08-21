@@ -1,4 +1,5 @@
 ---
+label: Potentiometers
 title: Stickbox potentiometers
 subtitle: The electrical component of the analog stick assembly.
 ---
