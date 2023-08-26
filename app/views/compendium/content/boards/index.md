@@ -30,7 +30,7 @@ The first well-known aftermarket motherboard was the Goomwave, which features ho
 
 ### PhobGCC
 
-The PhobGCC project consists of an open-source PCB design paired with open-source firmware, designed to be fabricated, assembled and flashed by anyone. It replaces the OEM [stickbox potentiometers](/compendium/sticks/pots) with magnets and Hall effect sensors, and supports many customizable settings like stick calibration, built-in [snapback](/compendium/sticks/stickboxes#common-issues) filtering, button swaps, [digital trigger](/compendium/triggers/mods/digital) emulation, and much more.
+The PhobGCC project consists of an open-source PCB design paired with open-source firmware, designed to be fabricated, assembled and flashed by anyone. It replaces the OEM [stickbox potentiometers](/compendium/sticks/pots) with magnets and Hall effect sensors, and supports many customizable settings like stick calibration, built-in [snapback](/compendium/sticks/stickboxes#common-issues) filtering, software [button swaps](/compendium/boards/mods/button-swaps), [digital trigger](/compendium/triggers/mods/digital) emulation, and much more.
 
 Learn more at the [official PhobGCC docs](https://github.com/PhobGCC/PhobGCC-doc){:target="\_blank"}.
 
