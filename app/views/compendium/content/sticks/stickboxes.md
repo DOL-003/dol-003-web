@@ -14,7 +14,7 @@ The stickbox is the mechanism that lets you smoothly move an analog stick around
 
 ## Variants
 
-There are three iterations of stickboxes found in GCCs, as well as stickboxes made by third parties.
+There are three iterations of stickboxes that correspond with the three [motherboard revisions](/compendium/boards#oem-variants), as well as stickboxes made by third parties.
 
 ### T1
 

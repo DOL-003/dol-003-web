@@ -6,7 +6,7 @@ The **motherboard** is a PCB that serves as the core of a GCC's internals. It co
 
 ## OEM variants
 
-There have been several major revisions of the motherboard that correspond with the [stickbox variants](/compendium/sticks/stickboxes#variants).
+There have been three major revisions of the motherboard that correspond with the three [stickbox variants](/compendium/sticks/stickboxes#variants).
 
 ### T1
 
@@ -34,6 +34,20 @@ The PhobGCC project consists of an open-source PCB design paired with open-sourc
 
 Learn more at the [official PhobGCC docs](https://github.com/PhobGCC/PhobGCC-doc){:target="\_blank"}.
 
-## Common issues
+## Common issues & repairs
 
-## Repairs
+Motherboards tend to be very durable compared to other components since they have no moving parts, but they can exhibit some issues over time.
+
+### Cracks
+
+Boards can exhibit hairline cracks that break traces, causing electrical issues such as various components no longer working. This typically only happens as a result of serious impacts, such as controller spikes or drops. To find cracks, you can flex the board slightly to make them more visible.
+
+Broken traces can theoretically be scraped up and bridged with solder, but generally a cracked board is considered beyond repair.
+
+### Lifted pads
+
+Through-hole soldering pads can sometimes be damaged or lifted from excessive or improper soldering. In these cases, the trace can be scraped up and connected to the pin with some solder and/or a wire, but given the loss of structural integrity, it is usually preferable to replace the board.
+
+### Corroded button contacts
+
+The copper button contacts can stop working, usually due to corrosion. For mild cases, this can sometimes be gently scrubbed off and cleaned with IPA. For X and Y, the corroded contacts can optionally be bridged to the other button to preserve jump functionality in Smash. In other cases, the board needs to be replaced.
