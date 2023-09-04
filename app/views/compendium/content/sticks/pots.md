@@ -6,15 +6,17 @@ subtitle: The electrical component of the analog stick assembly.
 
 Two potentiometers are responsible for translating the position of a stickbox into values that the GCC processor can interpret as X and Y coordinates.
 
-## Common issues
+## Common issues & repairs
+
+### PODE
 
 As a potentiometer wears, it usually develops Potentiometer Oddity Degradation Effect (PODE). PODE is when a potentiometer no longer accurately reports the position of the stick, particularly during movement, which often results in missed inputs.
 
-Potentiometers can also develop drift, which is similar to PODE but manifests as incorrect non-zero values when the stick is at the center/neutral position.
+Since PODE is caused by the carbon components within the potentiometer wearing out, it cannot feasibly be repaired. Generally, the potentiometers are replaced to fix PODE.
 
-## Repairs
+### Drift
 
-Potentiometer issues cannot generally be repaired because they are caused by the carbon components wearing out.
+Potentiometers can also develop drift, which is similar to PODE but manifests as incorrect non-zero values when the stick is at the center/neutral position. Similarly, drift generally cannot be fixed without replacing the affected potentiometers.
 
 It is possible to [clean a potentiometer](https://www.youtube.com/watch?v=lPJ2ST9vTfQ){:target="\_blank"} by unclipping it, removing the wiper, and gently applying isopropyl alcohol. However, this generally will not fix issues caused by wear.
 

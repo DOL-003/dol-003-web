@@ -1,6 +1,6 @@
 ---
 title: Introduction
-subtitle: The GCC Compendium is a curated collection of information and links related to GameCube controller (GCC) repair and modding.
+subtitle: The Compendium is a curated collection of information and links related to GameCube controller (GCC) repair and modding.
 ---
 
 ## Who this is for

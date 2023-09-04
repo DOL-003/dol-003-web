@@ -32,15 +32,17 @@ A major all-plastic redesign that lasts much longer than the earlier variants. I
 
 No third-party stickboxes have been found which compare to T3s, and they are generally seen as inferior to OEM stickboxes and not worth buying or using.
 
-## Common issues
+## Common issues & repairs
 
-The main problem encountered with stickboxes is wear, which impacts how well the stick returns to center. As a stickbox wears, a physical dead zone develops in the center where the stick feels loose, and in severe cases can cause misinputs.
+### Looseness
 
-There is a common misconception that this wear is caused by weakened springs, but in reality it's caused by the breakdown of the plastic components inside the stickbox assembly.
-
-## Repairs
+The main problem encountered with stickboxes is wear, which impacts how well the stick returns to center. As a stickbox wears, a physical dead zone develops in the center where the stick feels loose, and in severe cases can cause misinputs. There is a common misconception that this wear is caused by weakened springs, but in reality it's caused by the breakdown of the plastic components inside the stickbox assembly.
 
 Stickbox wear is unavoidable and unrepairable, and typically a stickbox is replaced once the looseness becomes noticeable.
+
+### Snapback
+
+Because stickboxes use springs to return the stick to center and thumbsticks add some weight to the end of the stick, inertia can cause an overshoot past center when releasing the stick. This results in a brief oscillation of the stick before it settles back at the center point, which can cause misinputs even on brand new stock GCCs. [Snapback capacitors/modules](/compendium/sticks/mods/snapback) are the standard solution to filtering out these inputs at the electrical level, and some aftermarket boards like [PhobGCC](/compendium/boards#phobgcc) have snapback filtering built in.
 
 ## Replacements
 

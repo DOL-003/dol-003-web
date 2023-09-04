@@ -7,7 +7,7 @@
     <input type="checkbox" id="menu-toggle">
     <ul class="menu">
       <% if flag_enabled? :compendium %>
-        <li><%= link_to 'GCC Compendium', compendium_path %></li>
+        <li><%= link_to 'Compendium', compendium_path %></li>
       <% end %>
       <li><%= link_to 'Find a modder', modders_path %></li>
       <% if !user_signed_in? %>
