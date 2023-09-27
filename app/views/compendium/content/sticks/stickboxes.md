@@ -42,7 +42,7 @@ Stickbox wear is unavoidable and unrepairable, and typically a stickbox is repla
 
 ### Snapback
 
-Because stickboxes use springs to return the stick to center and thumbsticks add some weight to the end of the stick, inertia can cause an overshoot past center when releasing the stick. This results in a brief oscillation of the stick before it settles back at the center point, which can cause misinputs even on brand new stock GCCs. [Snapback capacitors/modules](/compendium/sticks/mods/snapback) are the standard solution to filtering out these inputs at the electrical level, and some aftermarket boards like [PhobGCC](/compendium/boards#phobgcc) have snapback filtering built in.
+Because stickboxes use springs to return the stick to center and thumbsticks add some weight to the end of the stick, inertia can cause an overshoot past center when releasing the stick. This results in a brief oscillation of the stick before it settles back at the center point, which can cause misinputs even on brand new stock GCCs. [Snapback capacitors/modules](/compendium/sticks/mods/snapback) are the standard solution to filtering out these inputs at the electrical level, and some aftermarket boards like [PhobGCC](/compendium/boards#phobgcc) have software-based snapback filtering built in.
 
 ## Replacements
 
