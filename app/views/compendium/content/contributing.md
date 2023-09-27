@@ -33,8 +33,8 @@ Component pages should cover, in roughly this order:
 Each component page with mods should have a subpage called **Mods**, with a subpage for each mod. Mod pages should cover, in roughly this order:
 
 - What does this mod accomplish?
-- What parts are needed? (title: **Parts**)
-- How do you do the mod? (title: **Procedure**)
+- What parts are needed/available? (title: **Parts**)
+- How do you do the mod? (title: **Process**)
 - What are some guides for this mod? (title: **Guides**)
 
 Captioned photos are encouraged for all pages and subsections, especially to illustrate examples of different components and mods.
