@@ -45,3 +45,7 @@ There is no known source for OEM button pads other than GCCs. Some third-party o
 - Battle Beaver sells popular [replacement pads](https://battlebeavercustoms.com/products/battle-beaver-gamecube-contact-pads){:target="\_blank"}, though some have found their longevity to be much lower than that of OEM pads.
 
 - eXtremeRate includes silicone pads with [their GameCube shells](https://extremerate.com/collections/nintendo-gamecube-shells){:target="_blank"}.
+
+## Resources
+
+The [GCC Library Internals Guide](https://gccontrollerlibrary.com/guides/gamecube-controller-internals-guide/){:target="\_blank"} contains information about button variations and the evolution of the OEM button pad design over the years.
