@@ -88,7 +88,7 @@ class Modder < ApplicationRecord
   validates :etsy_shop, length: { in: 3..50, message: 'Must be at least 3 letters' }, allow_blank: true
   validates :twitter_username, length: { in: 2..50, message: 'Must be at least 2 characters' }, allow_blank: true
   validates :instagram_username, length: { in: 2..50, message: 'Must be at least 2 characters' }, allow_blank: true
-  validates :discord_username, length: { in: 6..50, message: 'Must be at least 6 characters' }, allow_blank: true
+  validates :discord_username, length: { in: 2..32, message: 'Must be at least 2 characters' }, allow_blank: true
 
   before_validation :generate_slug, if: :will_save_change_to_name?
 
