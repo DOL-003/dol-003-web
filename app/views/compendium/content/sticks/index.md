@@ -3,7 +3,7 @@ title: Analog sticks
 subtitle: "The GameCube controller has two analog sticks: the primary one on the left, and the C-stick on the right."
 ---
 
-Each analog stick assembly is made up of three primary parts: the physical thumbstick, the stickbox, and the potentiometers. It's important to know the differences between these three parts, and which types of issues are caused by each part.
+Each **analog stick** assembly is made up of three primary parts: the physical thumbstick, the stickbox, and the potentiometers. It's important to know the differences between these three parts, and which types of issues are caused by each part.
 
 ## [Thumbstick](sticks/thumbsticks)
 

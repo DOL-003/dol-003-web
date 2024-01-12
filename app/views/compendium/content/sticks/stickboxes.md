@@ -10,7 +10,7 @@ subtitle: The mechanical component of the analog stick assembly.
   <p>An OEM T3 stickbox.</p>
 </aside>
 
-The stickbox is the mechanism that lets you smoothly move an analog stick around, and returns it to center when pressure is released.
+The **stickbox** is the mechanism that lets you smoothly move an analog stick around, and returns it to center when pressure is released.
 
 ## Variants
 

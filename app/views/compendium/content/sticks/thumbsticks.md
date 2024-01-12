@@ -10,7 +10,7 @@ subtitle: The upper-most part of the analog stick assembly.
   <p>An OEM thumbstick and C-stick</p>
 </aside>
 
-The primary thumbstick on the left side of the controller is a medium to light gray ABS plastic with a circle-textured rubber cap. The C-stick is yellow ABS plastic with a rubber cap imprinted with the letter "C".
+The **primary thumbstick** on the left side of the controller is a medium to light gray ABS plastic with a circle-textured rubber cap. The **C-stick** is yellow ABS plastic with a rubber cap imprinted with the letter "C".
 
 ## Common issues & repairs
 
