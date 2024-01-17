@@ -37,6 +37,7 @@
 
     &--menu-is-open {
       border-radius: 8px 8px 0 0;
+      z-index: 1000;
     }
 
     .service-selector__placeholder {
