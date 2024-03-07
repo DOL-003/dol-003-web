@@ -50,7 +50,7 @@ class CompendiumController < ApplicationController
       next if page.blank?
       subpages << {
         path: File.join(path, filename.gsub(/\.md$/, '')),
-        title: page['title'],
+        title: page['label'] || page['title'],
         subtitle: page['subtitle']
       }
     end

@@ -9,7 +9,7 @@ Compendium content is meant for anyone interested in GCC modding, whether you're
 
 ## Where to start
 
-The [mod index & glossary](/compendium/mods) is a good place to get an idea of what mods are out there, and to familiarize yourself with GCC terminology.
+The [mod index & glossary](/compendium/glossary) is a good place to get an idea of what mods are out there, and to familiarize yourself with GCC terminology.
 
 There are also several [general guides](/compendium/guides) with recommendations for common stuff like controller shopping and troubleshooting.
 
