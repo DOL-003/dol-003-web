@@ -33,7 +33,11 @@ Rails.application.routes.draw do
   post 'profile/photo-order', to: 'profiles#reorder_photos'
   post 'profile/remove-photo/:uuid', to: 'profiles#remove_photo'
 
-  resources :profiles, only: [:new, :edit, :update, :create]
+  # Admin stuff
+  resources :profiles, only: [:new, :update, :create]
+  get 'profiles/:id/edit', to: 'profiles#edit', as: 'admin_edit_profile'
+  patch 'profiles/:id', to: 'profiles#update', as: 'admin_update_profile'
+  put 'profiles/:id', to: 'profiles#update'
 
   resources :modders, only: [:index, :show] do
     member do

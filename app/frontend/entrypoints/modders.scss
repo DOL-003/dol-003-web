@@ -277,6 +277,21 @@ body.modders.index {
 }
 
 body.modders.show {
+  nav.admin-toolbar {
+    padding: 16px 24px 18px;
+    border: 2px solid $platinum;
+    border-radius: 16px;
+    background-color: $crystal;
+    display: flex;
+    background-color: hsl(hue($emerald), saturation($emerald), 80%);
+    border-color: hsl(hue($emerald), saturation($emerald), 60%);
+    color: hsl(hue($emerald), saturation($emerald), 20%);
+
+    > * + * {
+      margin-left: 24px;
+    }
+  }
+
   section.unclaimed-notice {
     padding: 16px 24px 18px;
     border: 2px solid $platinum;

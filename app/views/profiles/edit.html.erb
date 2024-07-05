@@ -1,6 +1,10 @@
 <div class="content grid">
   <% if @modder.user != current_user %>
-    <h2 class="span-12">Create a new profile</h2>
+    <% if @onboarding %>
+      <h2 class="span-12">Create a new profile</h2>
+    <% else %>
+      <h2 class="span-12">Edit profile</h2>
+    <% end %>
   <% elsif @onboarding %>
     <h2 class="span-12">Welcome! Tell us a little about yourself.</h2>
   <% else %>
@@ -11,7 +15,7 @@
   <% end %>
 </div>
 
-<%= form_with model: @modder, url: profile_path, multipart: true, html: { class: 'form' } do |form| %>
+<%= form_with model: @modder, url: @form_submit_path, multipart: true, html: { class: 'form' } do |form| %>
 
   <% if @modder.user != current_user %>
     <%= form.hidden_field :unclaimed, value: true %>

@@ -15,11 +15,14 @@ class ProfilesController < ApplicationController
     if params[:new].present?
       authenticate_admin!
       @modder = Modder.new
+      @form_submit_path = profiles_path
     elsif params[:id].present?
       authenticate_admin!
-      @modder = Modder.find(params[:id])
+      @modder = Modder.find_by(slug: params[:id])
+      @form_submit_path = admin_update_profile_path(@modder)
     else
       @modder = current_modder || Modder.new(user: current_user)
+      @form_submit_path = profile_path
     end
 
     @onboarding = !@modder.persisted?
@@ -31,12 +34,12 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    if params.require(:modder).permit(:unclaimed).present?
+    if params[:id].present?
+      authenticate_admin!
+      @modder = Modder.find_by(slug: params[:id])
+    elsif params.require(:modder).permit(:unclaimed).present?
       authenticate_admin!
       @modder = Modder.new
-    elsif params[:id].present?
-      authenticate_admin!
-      @modder = Modder.find(params[:id])
     else
       @modder = current_modder || Modder.new(user: current_user)
     end
@@ -78,7 +81,7 @@ class ProfilesController < ApplicationController
       AdminMailer.with(modder: @modder).new_modder.deliver_later if @modder.user.present? && @onboarding
 
       flash[:notice] = 'Your profile was updated.'
-      redirect_to user_root_path
+      redirect_to modder_path(@modder)
     rescue StandardError
       flash[:error] = 'There was a problem saving your profile. See error messages below.'
       @title = @onboarding ? 'Create profile' : 'Edit profile'
