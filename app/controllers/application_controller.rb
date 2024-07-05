@@ -45,6 +45,10 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError.new('Not Found')
   end
 
+  def authenticate_admin!
+    redirect_to root_path unless current_user.admin?
+  end
+
   def flag_enabled?(flag)
     Flag.enabled?(flag, user: current_user, session_id: session.id)
   end

@@ -7,8 +7,21 @@ class ProfilesController < ApplicationController
     redirect_to modder_path(current_modder)
   end
 
+  def new
+    redirect_to edit_profile_path(new: true)
+  end
+
   def edit
-    @modder = current_modder || Modder.new(user: current_user)
+    if params[:new].present?
+      authenticate_admin!
+      @modder = Modder.new
+    elsif params[:id].present?
+      authenticate_admin!
+      @modder = Modder.find(params[:id])
+    else
+      @modder = current_modder || Modder.new(user: current_user)
+    end
+
     @onboarding = !@modder.persisted?
     @title = @onboarding ? 'Create profile' : 'Edit profile'
   end
@@ -18,7 +31,16 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @modder = current_modder || Modder.new(user: current_user)
+    if params.require(:modder).permit(:unclaimed).present?
+      authenticate_admin!
+      @modder = Modder.new
+    elsif params[:id].present?
+      authenticate_admin!
+      @modder = Modder.find(params[:id])
+    else
+      @modder = current_modder || Modder.new(user: current_user)
+    end
+
     @onboarding = !@modder.persisted?
 
     begin
@@ -53,7 +75,7 @@ class ProfilesController < ApplicationController
         end
       end
 
-      AdminMailer.with(modder: @modder).new_modder.deliver_later if @onboarding
+      AdminMailer.with(modder: @modder).new_modder.deliver_later if @modder.user.present? && @onboarding
 
       flash[:notice] = 'Your profile was updated.'
       redirect_to user_root_path

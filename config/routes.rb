@@ -33,6 +33,8 @@ Rails.application.routes.draw do
   post 'profile/photo-order', to: 'profiles#reorder_photos'
   post 'profile/remove-photo/:uuid', to: 'profiles#remove_photo'
 
+  resources :profiles, only: [:new, :edit, :update, :create]
+
   resources :modders, only: [:index, :show] do
     member do
       get 'report', to: 'modders#new_report'
