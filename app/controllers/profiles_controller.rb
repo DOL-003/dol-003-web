@@ -25,6 +25,7 @@ class ProfilesController < ApplicationController
       @form_submit_path = profile_path
     end
 
+    @is_admin = current_user.admin?
     @onboarding = !@modder.persisted?
     @title = @onboarding ? 'Create profile' : 'Edit profile'
   end
@@ -48,6 +49,7 @@ class ProfilesController < ApplicationController
 
     begin
       @modder.transaction do
+
         @modder.update!(params.require(:modder).permit(
           :name,
           :bio,
@@ -61,6 +63,11 @@ class ProfilesController < ApplicationController
           :instagram_username,
           :discord_username
         ))
+
+        if current_user.admin?
+          @modder.update!(params.require(:modder).permit(:vetting_status))
+        end
+
         @modder.status = params[:modder][:status] if params[:modder][:status].in? [Modder::STATUS_ACTIVE, Modder::STATUS_INACTIVE]
         @modder.logo = params[:modder][:logo]
         @modder.save!
@@ -76,6 +83,7 @@ class ProfilesController < ApplicationController
             service:
           })
         end
+
       end
 
       AdminMailer.with(modder: @modder).new_modder.deliver_later if @modder.user.present? && @onboarding

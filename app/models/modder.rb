@@ -52,6 +52,12 @@ class Modder < ApplicationRecord
   VETTING_STATUS_VETTED = 'vetted'
   VETTING_STATUS_REJECTED = 'rejected'
 
+  VETTING_STATUS_OPTIONS = [
+    ['Vetted', VETTING_STATUS_VETTED],
+    ['Rejected', VETTING_STATUS_REJECTED],
+    ['None', nil]
+  ]
+
   belongs_to :user, optional: true
   has_many :modder_services
   has_many :modder_photos, -> { order(index: :asc) }

@@ -192,6 +192,21 @@
       </div>
     </div>
 
+    <% if @is_admin %>
+      <div class="span-4 caption">
+        <%= form.label :vetting_status, 'Vetting status', class: 'label large' %>
+        <p class="small">Whether this modder is vetted.</p>
+      </div>
+
+      <div class="span-8 input-container">
+        <div class="field">
+          <div class="select-input-container">
+            <%= form.select :vetting_status, Modder::VETTING_STATUS_OPTIONS, {}, { class: 'select-input' } %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
   </div>
 
   <div class="content">
