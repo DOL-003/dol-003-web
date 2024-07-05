@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+
+  namespace :admin do
+    resources :modders
+    resources :modder_photos
+    resources :modder_services
+    resources :users
+    resources :user_invitations
+
+    root to: 'modders#index'
+  end
+
   devise_for :users, controllers: {
     confirmations: 'authentication/confirmations',
     passwords: 'authentication/passwords',

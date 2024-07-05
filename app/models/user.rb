@@ -10,6 +10,7 @@
 #  current_sign_in_ip     :string
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
+#  is_admin               :boolean          default(FALSE)
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :string
 #  remember_created_at    :datetime
@@ -34,4 +35,8 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, allow_blank: true
 
   has_one :modder
+
+  def admin?
+    is_admin == true
+  end
 end
