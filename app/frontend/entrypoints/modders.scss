@@ -277,6 +277,30 @@ body.modders.index {
 }
 
 body.modders.show {
+  section.unclaimed-notice {
+    padding: 16px 24px 18px;
+    border: 2px solid $platinum;
+    border-radius: 16px;
+    background-color: $crystal;
+    display: flex;
+
+    > figure {
+      flex: none;
+      margin: 8px 0 0;
+
+      > svg {
+        color: $platinum;
+        width: 24px;
+        height: auto;
+      }
+    }
+
+    > div {
+      flex: auto;
+      margin-left: 24px;
+    }
+  }
+
   section.photos {
     height: 280px;
     position: relative;

@@ -1,5 +1,15 @@
 <div class="content grid">
 
+  <% if @modder.unclaimed? %>
+    <section class="span-12 unclaimed-notice">
+      <figure><%= inline_svg_tag 'info.svg' %></figure>
+      <div>
+        <p>This profile has not been claimed by the modder and may have inaccuracies. For the most up-to-date info, contact this modder directly.</p>
+        <p>Is this you? <a href="#">Claim this profile</a></p>
+      </div>
+    </section>
+  <% end %>
+
   <section class="span-12 photos <%= 'signed-in-modder' if current_modder == @modder %> <%= 'empty' unless @modder.modder_photos.any? %>">
     <% if current_modder == @modder %>
       <%=

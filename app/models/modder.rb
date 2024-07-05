@@ -21,7 +21,7 @@
 #  website_url        :string
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
-#  user_id            :bigint           not null
+#  user_id            :bigint
 #
 # Indexes
 #
@@ -52,7 +52,7 @@ class Modder < ApplicationRecord
   VETTING_STATUS_VETTED = 'vetted'
   VETTING_STATUS_REJECTED = 'rejected'
 
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :modder_services
   has_many :modder_photos, -> { order(index: :asc) }
 
@@ -212,6 +212,10 @@ class Modder < ApplicationRecord
 
   def vetted?
     vetting_status == VETTING_STATUS_VETTED
+  end
+
+  def unclaimed?
+    user_id.blank?
   end
 
   private

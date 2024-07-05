@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_16_015406) do
+ActiveRecord::Schema[7.0].define(version: 2024_07_05_191810) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -37,7 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_16_015406) do
   end
 
   create_table "modders", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.string "name", null: false
     t.string "slug", null: false
     t.string "bio"
