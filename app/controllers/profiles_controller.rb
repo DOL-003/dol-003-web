@@ -38,6 +38,7 @@ class ProfilesController < ApplicationController
     if params[:id].present?
       authenticate_admin!
       @modder = Modder.find_by(slug: params[:id])
+      @modder.record_timestamps = false
     elsif params.require(:modder).permit(:unclaimed).present?
       authenticate_admin!
       @modder = Modder.new
