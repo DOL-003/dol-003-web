@@ -71,12 +71,12 @@
   }
 
   .modder-selector__menu-list {
-    padding: 4px 0;
+    padding: 8px 0;
   }
 
   .modder-selector__option {
     display: flex;
-    padding: 4px 8px;
+    padding: 8px 12px;
     align-items: center;
     cursor: pointer;
 
@@ -88,7 +88,7 @@
 
     > .logo {
       flex: none;
-      margin: 0 8px 0 0;
+      margin: 0 10px 0 0;
       width: 40px;
       height: 40px;
       background-color: $platinum;
@@ -104,6 +104,13 @@
         width: 24px;
         height: 24px;
       }
+    }
+
+    > span {
+      flex: auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 }

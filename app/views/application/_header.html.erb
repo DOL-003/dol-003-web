@@ -20,7 +20,7 @@
         <li class="modder-selector">
           <%=
             react_component 'ModderSelector', {
-              modders: Modder.all.map do |modder|
+              modders: Modder.active.map do |modder|
                 {
                   name: modder.name,
                   logo_url: modder.logo.present? ? modder.logo_url : nil,

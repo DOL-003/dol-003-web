@@ -54,7 +54,7 @@ const Option = (props: OptionProps<ModderOption>) => {
       >
         {!props.data.logoUrl && <GccIcon />}
       </figure>
-      {props.data.label}
+      <span>{props.data.label}</span>
     </div>
   )
 }
