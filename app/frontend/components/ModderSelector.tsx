@@ -34,10 +34,15 @@ const Control = (props: ControlProps) => {
 const Option = (props: OptionProps<ModderOptionProps>) => {
   return (
     <div {...props.innerProps} className="modder-selector__option">
-      <figure>
-        {(props.data.logoUrl && <img src={props.data.logoUrl} />) || (
-          <GccIcon />
-        )}
+      <figure
+        className="logo"
+        style={{
+          backgroundImage: props.data.logoUrl
+            ? `url(${props.data.logoUrl})`
+            : null,
+        }}
+      >
+        {!props.data.logoUrl && <GccIcon />}
       </figure>
       {props.data.label}
     </div>
@@ -57,6 +62,13 @@ export default (props: ModderSelectorProps) => {
       components={{ Control, Option }}
       classNamePrefix="modder-selector"
       className="ModderSelector"
+      captureMenuScroll={true}
+      closeMenuOnSelect={false}
+      controlShouldRenderValue={false}
+      escapeClearsValue={true}
+      openMenuOnFocus={false}
+      openMenuOnClick={false}
+      tabSelectsValue={false}
     />
   )
 }

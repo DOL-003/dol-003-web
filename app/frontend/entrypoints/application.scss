@@ -11,7 +11,7 @@ body.application.index {
     grid-row-gap: 64px;
   }
 
-  header .logo {
+  header > .content > .logo {
     color: var(--color-indigo);
     box-shadow: inset 0 0 0 3px var(--color-indigo);
 
