@@ -2,6 +2,7 @@ import "./ModderSelector.scss"
 
 import React from "react"
 import Select, { ControlProps, OptionProps, components } from "react-select"
+import classNames from "classnames"
 
 import GccIcon from "@/icons/gcc.svg"
 import SearchIcon from "@/icons/search.svg"
@@ -33,7 +34,12 @@ const Control = (props: ControlProps) => {
 
 const Option = (props: OptionProps<ModderOptionProps>) => {
   return (
-    <div {...props.innerProps} className="modder-selector__option">
+    <div
+      {...props.innerProps}
+      className={classNames(props.className, "modder-selector__option", {
+        "modder-selector__option--is-focused": props.isFocused,
+      })}
+    >
       <figure
         className="logo"
         style={{
@@ -69,6 +75,9 @@ export default (props: ModderSelectorProps) => {
       openMenuOnFocus={false}
       openMenuOnClick={false}
       tabSelectsValue={false}
+      isClearable={false}
+      backspaceRemovesValue={false}
+      noOptionsMessage={() => null}
     />
   )
 }
