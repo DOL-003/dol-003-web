@@ -24,10 +24,10 @@ interface ModderOptionProps {
 
 const Control = (props: ControlProps) => {
   return (
-    <>
+    <components.Control {...props}>
       <SearchIcon />
-      <components.Control {...props} />
-    </>
+      {props.children}
+    </components.Control>
   )
 }
 
