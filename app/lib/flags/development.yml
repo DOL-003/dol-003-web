@@ -2,3 +2,4 @@ compendium: true
 open_registration: true
 unlimited_invitations: false
 dark_mode: true
+jump_to_modder: true

@@ -6,6 +6,21 @@
     <label for="menu-toggle" id="menu-toggle-button"><%= inline_svg_tag 'menu.svg' %></label>
     <input type="checkbox" id="menu-toggle">
     <ul class="menu">
+      <% if flag_enabled? :jump_to_modder %>
+        <li>
+          <%=
+            react_component 'ModderSelector', {
+              modders: Modder.all.map do |modder|
+                {
+                  name: modder.name,
+                  logo_url: modder.logo.present? ? modder.logo_url : nil,
+                  link: modder_path(modder)
+                }
+              end
+            }
+          %>
+        </li>
+      <% end %>
       <% if flag_enabled? :compendium %>
         <li><%= link_to 'Compendium', compendium_path %></li>
       <% end %>

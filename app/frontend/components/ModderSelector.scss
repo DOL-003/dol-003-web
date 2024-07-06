@@ -1,0 +1,33 @@
+@import "@/colors";
+
+.ModderSelector {
+  position: relative;
+
+  > svg {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: 20px;
+    height: 20px;
+    color: $indigo-light;
+  }
+
+  .modder-selector__control {
+    height: 48px;
+    box-shadow: inset 0 0 0 2px $indigo-light;
+    padding: 0 24px 1px 48px;
+    border-radius: 48px;
+
+    .modder-selector__indicators {
+      display: none;
+    }
+
+    .modder-selector__placeholder {
+      color: $panasonic;
+    }
+  }
+
+  .modder-selector__option {
+    background-color: orange;
+  }
+}
