@@ -17,10 +17,14 @@ interface ModderSelectorProps {
   ]
 }
 
-interface ModderOptionProps {
+interface ModderOption {
   readonly value: string
   readonly label: string
   readonly logoUrl: string
+}
+
+const handleOptionSelected = (option: ModderOption) => {
+  window.location.href = option.value
 }
 
 const Control = (props: ControlProps) => {
@@ -32,7 +36,7 @@ const Control = (props: ControlProps) => {
   )
 }
 
-const Option = (props: OptionProps<ModderOptionProps>) => {
+const Option = (props: OptionProps<ModderOption>) => {
   return (
     <div
       {...props.innerProps}
@@ -77,7 +81,8 @@ export default (props: ModderSelectorProps) => {
       tabSelectsValue={false}
       isClearable={false}
       backspaceRemovesValue={false}
-      noOptionsMessage={() => null}
+      noOptionsMessage={() => "No results"}
+      onChange={handleOptionSelected}
     />
   )
 }
