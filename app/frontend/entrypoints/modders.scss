@@ -256,6 +256,7 @@ body.modders.index {
 
       > .photos {
         position: relative;
+        margin-top: 64px;
 
         &::after {
           content: "";
@@ -310,10 +311,6 @@ body.modders.index {
         @include medium {
           margin-left: 0;
         }
-      }
-
-      & + .modder-info {
-        margin-top: 48px;
       }
     }
   }
