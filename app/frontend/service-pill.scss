@@ -37,16 +37,24 @@
     letter-spacing: 0;
   }
 
+  &.small {
+    padding: 0 10px;
+    height: 24px;
+    letter-spacing: 0;
+  }
+
   &.interactive:hover {
     color: var(--service-color, $platinum) !important;
     background-color: var(--color-white);
-    box-shadow: inset 0 0 0 2px var(--service-color, $platinum),
+    box-shadow:
+      inset 0 0 0 2px var(--service-color, $platinum),
       0 8px 8px -12px $black;
 
     @include dark {
       color: var(--service-color-dark, $platinum) !important;
       background-color: var(--color-smoke);
-      box-shadow: inset 0 0 0 2px var(--service-color-dark, $platinum),
+      box-shadow:
+        inset 0 0 0 2px var(--service-color-dark, $platinum),
         0 8px 8px -12px $black;
     }
 

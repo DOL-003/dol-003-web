@@ -125,7 +125,7 @@
           <ol>
             <% modder.modder_services.map do |service| %>
               <% svc = ModderService::ALL_SERVICES[service.service.to_sym] %>
-              <li class="service-pill<%= ' solid' if svc[:solid] %>" style="--service-color: <%= svc[:color] %>; --service-color-dark: <%= svc[:color_dark] || svc[:color] %>;"><%= svc[:name] %></li>
+              <li class="service-pill small<%= ' solid' if svc[:solid] %>" style="--service-color: <%= svc[:color] %>; --service-color-dark: <%= svc[:color_dark] || svc[:color] %>;"><%= svc[:name] %></li>
             <% end %>
           </ol>
         </div>
