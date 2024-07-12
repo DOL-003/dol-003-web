@@ -287,6 +287,12 @@ body.modders.index {
           flex-flow: row nowrap;
           gap: 16px;
           overflow: auto;
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
         }
       }
 
