@@ -32,13 +32,15 @@
   }
 
   @include small {
-    padding: 0 10px;
+    font-size: 13px;
+    padding: 1px 10px 0;
     height: 24px;
     letter-spacing: 0;
   }
 
   &.small {
-    padding: 0 10px;
+    font-size: 13px;
+    padding: 1px 10px 0;
     height: 24px;
     letter-spacing: 0;
   }
