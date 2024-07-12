@@ -102,6 +102,15 @@
     <% @results.each do |modder| %>
 
       <section class="modder-info">
+        <% if modder.modder_photos.any? %>
+          <div class="photos">
+            <div class="photo-container">
+              <% modder.modder_photos.map do |modder_photo| %>
+                <%= image_tag modder_photo.photo.thumb.url, width: modder_photo.thumb_display_width / 2, height: modder_photo.thumb_display_height / 2 %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
         <div class="meta">
           <%= link_to modder do %>
             <figure class="logo" style="<%= "background-image: url(#{modder.logo_url})" if modder.logo.present? %>">

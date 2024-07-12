@@ -189,7 +189,9 @@ body.modders.index {
       overflow: hidden;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
+      transition:
+        opacity 0.5s ease-in-out,
+        visibility 0s linear 0.5s;
 
       @include dark {
         border-color: $panasonic;
@@ -252,7 +254,44 @@ body.modders.index {
     .modder-info {
       margin-top: 32px;
 
+      > .photos {
+        position: relative;
+
+        &::after {
+          content: "";
+          z-index: 10;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: 100px;
+          pointer-events: none;
+          background: linear-gradient(
+            to right,
+            transparent,
+            var(--color-pearl)
+          );
+
+          @include dark {
+            background: linear-gradient(
+              to right,
+              transparent,
+              var(--color-black)
+            );
+          }
+        }
+
+        .photo-container {
+          display: flex;
+          flex-flow: row nowrap;
+          gap: 16px;
+          overflow: auto;
+        }
+      }
+
       .meta {
+        margin-top: 24px;
+
         h3 {
           text-transform: none;
           letter-spacing: 0;
@@ -271,6 +310,10 @@ body.modders.index {
         @include medium {
           margin-left: 0;
         }
+      }
+
+      & + .modder-info {
+        margin-top: 48px;
       }
     }
   }
