@@ -1,0 +1,9 @@
+build:
+  docker:
+    web: Dockerfile.production
+  config:
+    RAILS_ENV: production
+release:
+  image: web
+  command:
+    - ./deployment-tasks.sh
