@@ -20,8 +20,4 @@ test:
 
 production:
   <<: *default
-  host: <%= Rails.application.credentials.dig(:database, :host) %>
-  port: <%= Rails.application.credentials.dig(:database, :port) %>
-  username: <%= Rails.application.credentials.dig(:database, :username) %>
-  password: <%= Rails.application.credentials.dig(:database, :password) %>
-  database: <%= Rails.application.credentials.dig(:database, :db_name) %>
+  url: <%= ENV['DATABASE_URL'] %>
