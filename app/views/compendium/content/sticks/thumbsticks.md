@@ -4,8 +4,8 @@ subtitle: The upper-most part of the analog stick assembly.
 ---
 
 <aside>
-  <a href="./images/oem-thumbsticks.jpg">
-    <img src="./images/oem-thumbsticks-thumb.jpg">
+  <a href="/compendium/sticks/images/oem-thumbsticks.jpg">
+    <img src="/compendium/sticks/images/oem-thumbsticks-thumb.jpg">
   </a>
   <p>An OEM thumbstick and C-stick</p>
 </aside>
@@ -30,8 +30,8 @@ There is no consistent source for standalone OEM sticks, new or used, except for
 ### Other good stick options
 
 <aside>
-  <a href="./images/dafunk-sticks.jpg">
-    <img src="./images/dafunk-sticks-thumb.jpg">
+  <a href="/compendium/sticks/images/dafunk-sticks.jpg">
+    <img src="/compendium/sticks/images/dafunk-sticks-thumb.jpg">
   </a>
   <p>Rubber-capped resin sticks by DaFunkGaming.</p>
 </aside>

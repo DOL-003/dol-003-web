@@ -4,8 +4,8 @@ subtitle: The mechanical component of the analog stick assembly.
 ---
 
 <aside>
-  <a href="./images/t3-stickbox.jpg">
-    <img src="./images/t3-stickbox-thumb.jpg">
+  <a href="/compendium/sticks/images/t3-stickbox.jpg">
+    <img src="/compendium/sticks/images/t3-stickbox-thumb.jpg">
   </a>
   <p>An OEM T3 stickbox.</p>
 </aside>

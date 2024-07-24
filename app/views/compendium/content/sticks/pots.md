@@ -4,7 +4,7 @@ title: Stickbox potentiometers
 subtitle: The electrical component of the analog stick assembly.
 ---
 
-Two **potentiometers** are responsible for translating the position of each [stickbox](stickboxes) into values that the GCC processor can interpret as X and Y coordinates.
+Two **potentiometers** are responsible for translating the position of each [stickbox](/compendium/sticks/stickboxes) into values that the GCC processor can interpret as X and Y coordinates.
 
 ## Common issues & repairs
 
@@ -34,4 +34,4 @@ Third-party potentiometers are not recommended.
 
 ## Modifications
 
-[Snapback modules](./mods/snapback) attach capacitors to the potentiometer leads to filter out unintentional inputs caused by snapback.
+[Snapback modules](/compendium/sticks/mods/snapback) attach capacitors to the potentiometer leads to filter out unintentional inputs caused by snapback.
