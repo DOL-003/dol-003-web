@@ -13,6 +13,8 @@ class CompendiumController < ApplicationController
     @title = page[:title]
     @subtitle = page[:subtitle]
     @content = page[:content]
+    @stub = page[:stub]
+    @path = page[:path]
     @nav = nav
     @current_path = "/compendium/#{params[:path] || 'index'}"
   end
@@ -37,7 +39,9 @@ class CompendiumController < ApplicationController
     @@pages[path] = {
       title: page['title'],
       subtitle: page['subtitle'],
-      content: page['auto'].present? ? auto_page(path, filepath) : Kramdown::Document.new(page.content).to_html.html_safe
+      content: page['auto'].present? ? auto_page(path, filepath) : Kramdown::Document.new(page.content).to_html.html_safe,
+      stub: page['stub'].present?,
+      path: index_filepath.present? ? "#{path}/index.md" : "#{path}.md"
     }
   end
 
