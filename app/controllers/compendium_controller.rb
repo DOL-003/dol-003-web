@@ -26,7 +26,7 @@ class CompendiumController < ApplicationController
     return nil unless filepath.starts_with? CONTENT_DIR
 
     index_filepath = nil
-    if !File.file? filepath
+    unless File.file? filepath
       index_filepath = File.expand_path(File.join(CONTENT_DIR, path, 'index.md'))
       return nil unless index_filepath.starts_with? CONTENT_DIR
       return nil unless File.file? index_filepath
@@ -60,7 +60,7 @@ class CompendiumController < ApplicationController
   def nav
     return @@nav if @@nav.present? && !Rails.env.development?
 
-    nav_data = YAML.load(File.read('./app/lib/compendium-nav.yml')).deep_symbolize_keys.freeze
+    nav_data = YAML.load_file('./app/lib/compendium-nav.yml').deep_symbolize_keys.freeze
 
     @@nav = nav_data[:pages].reduce([]) do |nav_items, path|
       nav_items << generate_nav_item(path)
@@ -78,7 +78,7 @@ class CompendiumController < ApplicationController
     nav_item = {
       dir:,
       path:,
-      label: page['label'] || page['title'] || '(blank)',
+      label: page['label'] || page['title'] || '(blank)'
     }
 
     if dir

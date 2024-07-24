@@ -136,6 +136,7 @@ GEM
     erubi (1.13.0)
     excon (0.111.0)
     ffi (1.17.0-aarch64-linux-musl)
+    ffi (1.17.0-arm64-darwin)
     fog-aws (3.24.0)
       fog-core (~> 2.1)
       fog-json (~> 1.1)
@@ -230,6 +231,8 @@ GEM
       net-protocol
     nio4r (2.7.3)
     nokogiri (1.16.6-aarch64-linux)
+      racc (~> 1.4)
+    nokogiri (1.16.6-arm64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.25.1)
@@ -410,6 +413,7 @@ GEM
 
 PLATFORMS
   aarch64-linux-musl
+  arm64-darwin-23
 
 DEPENDENCIES
   administrate
