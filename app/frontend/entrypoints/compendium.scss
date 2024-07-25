@@ -287,15 +287,27 @@ body.compendium.show {
       }
     }
 
-    ul {
-      padding-left: 24px;
+    ul,
+    ol {
+      padding-left: 40px;
 
       li {
-        padding-left: 8px;
+        ul,
+        ol {
+          margin: 12px 0 18px;
+        }
       }
 
       li + li {
         margin-top: 8px;
+      }
+    }
+
+    ul {
+      padding-left: 28px;
+
+      li {
+        padding-left: 8px;
       }
     }
 
