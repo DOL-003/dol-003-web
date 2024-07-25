@@ -20,6 +20,23 @@ Here are some general guidelines for pull requests:
 
 ## Content guidelines
 
+- Do not use first person language.
+- Use an objective tone and characterize the basis of all subjective recommendations.
+  - For instance, "Many community members recommend..." or "The general consensus of most modders..."
+- Speak in present tense unless describing specific historical or upcoming events. The Compendium is meant to represent the current state of GCC modding.
+- Do not use hyperbolic language.
+- Use American English standards for spelling and grammar by default.
+
+### Organization
+
+With specific exceptions, each top-level page should be a **component page** describing a component or group of components of a GameCube controller.
+
+A component page may describe subcomponents within the page, or split subcomponent information out into subpages if the amount of detail warrants it. For instance, the [buttons](/compendium/buttons) page describes all buttons inline since there isn't much to say about them, but the [analog sticks](/compendium/sticks) page has subpages for each different part of the analog stick assembly since each subcomponent has a large amount of related information.
+
+Each mod should be covered by its own **mod page** nested under a **Mods** page under the relevant component.
+
+### Pages
+
 Every page should be explanatory in tone, and generally go from more general to more detailed information.
 
 Component pages should cover, in roughly this order:
@@ -30,12 +47,15 @@ Component pages should cover, in roughly this order:
 - Where can you source replacements of this component? (title: **Replacements**)
 - What are some common mods related to this component? (title: **Modifications**)
 
-Each component page with mods should have a subpage called **Mods**, with a subpage for each mod. Mod pages should cover, in roughly this order:
+Mod pages should cover, in roughly this order:
 
 - What does this mod accomplish?
+- What are some variations of this mod? (if any)
 - What parts are needed/available? (title: **Parts**)
 - How do you do the mod? (title: **Process**)
 - What are some guides for this mod? (title: **Guides**)
+
+Incomplete pages that do not follow this structure should be marked as stubs.
 
 Captioned photos are encouraged for all pages and subsections, especially to illustrate examples of different components and mods.
 
