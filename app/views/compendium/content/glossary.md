@@ -13,6 +13,8 @@ subtitle: Definitions of common mods, terms and abbreviations related to GameCub
 
 [Phob / PhobGCC](/compendium/boards#phobgcc): An open-source aftermarket GameCube motherboard
 
+[PODE](/compendium/sticks/pots#pode): Potentiometer Oddity Degradation Effect
+
 **Pots**: [Potentiometers](/compendium/sticks/pots)
 
 **Snapback**: Unintentional analog input resulting from an analog stick "snapping back" past the center/neutral coordinates
