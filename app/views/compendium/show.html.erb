@@ -17,7 +17,7 @@
     <% end %>
     <% if @stub %>
       <p class="stub-notice">
-        This page does not currently meet our <a href="/compendium/contributing#content-guidelines">content guidelines</a>, and is incomplete and may be missing key information. Want to help improve it? <a href="https://discord.gg/HwtPU7tkCT" target="_blank">Join us on Discord</a> and edit <%= link_to "this page's source on GitHub", "https://github.com/jmarquis/controllers/edit/main/app/views/compendium/content/#{@path}" %>.
+        This page does not currently follow our <a href="/compendium/contributing#content-guidelines">content guidelines</a>, and may be incomplete or missing key information. Want to help improve it? <%= link_to "Edit this page on GitHub", "https://github.com/jmarquis/controllers/edit/main/app/views/compendium/content/#{@path}" %> (and make sure to <a href="https://discord.gg/HwtPU7tkCT" target="_blank">join us on Discord</a> to discuss!)
       </p>
     <% end %>
     <%= @content %>
