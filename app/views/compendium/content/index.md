@@ -13,4 +13,4 @@ The [glossary](/compendium/glossary) is a good place to familiarize yourself wit
 
 ## Contributing
 
-This entire website is [open source](https://github.com/jmarquis/controllers){:target="\_blank"}, and contributions are welcome! This is intended to be a community resource, so if you have ideas for making it better, join us in [Discord](https://discord.gg/HwtPU7tkCT){:target="\_blank"} and let us know!
+This entire website is [open source](https://github.com/jmarquis/controllers){:target="\_blank"}, and contributions are welcome! The Compendium is intended to be a community resource, so if you have ideas for making it better, join us in [Discord](https://discord.gg/HwtPU7tkCT){:target="\_blank"} and let us know!

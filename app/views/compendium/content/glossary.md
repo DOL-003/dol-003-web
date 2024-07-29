@@ -1,6 +1,6 @@
 ---
-title: Mod index & glossary
-subtitle: Definitions of common mods, terms and abbreviations related to GameCube controllers.
+title: Glossary
+subtitle: Definitions of common terms and abbreviations related to GameCube controllers.
 ---
 
 **Drift**: Unintentional analog input resulting from a potentiometer not registering a return to neutral
