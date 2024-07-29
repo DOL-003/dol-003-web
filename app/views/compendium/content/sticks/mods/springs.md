@@ -19,6 +19,6 @@ There are two popular options for the replacement spring:
 
 There are no known sources for these springs other than McMaster-Carr.
 
-## Guides
+## Resources
 
 The original [FIRES SLICKbox guide](https://firescc.com/mod-guides#/fires-slickbox){:target="\_blank"} is a great walkthrough with lots of photos, no matter which spring you decide to try.

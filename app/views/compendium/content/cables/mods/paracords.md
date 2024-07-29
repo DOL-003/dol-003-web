@@ -31,7 +31,7 @@ There are many methods for making paracord cables, but generally the process is 
 1. **Reattach the pins** to the connector.
 1. **Solder** the connector to the controller.
 
-## Guides
+## Resources
 
 - [Courtdate's paracorded cable guide](https://imgur.com/gallery/courtdates-paracorded-cable-guide-WsDmxOD){:target="\_blank"}
 - [Goomy's paracord tutorial](https://www.youtube.com/watch?v=x16St7md1ss){:target="\_blank"}

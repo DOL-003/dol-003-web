@@ -5,6 +5,6 @@ subtitle: Silicone button pads can be perforated to decrease the force needed to
 stub: true
 ---
 
-## Guides
+## Resources
 
-[Kadano's video guide](https://www.youtube.com/watch?v=tL3zzBMGPaY){:target="\_blank"}
+- [Kadano's video guide](https://www.youtube.com/watch?v=tL3zzBMGPaY){:target=""}

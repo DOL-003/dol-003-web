@@ -11,7 +11,7 @@ Melee tournament rulesets generally allow this mod, as long as the controller ha
 
 ## Parts
 
-Only basic soldering supplies and small-gauge wires are required. Additionally, Kadano sells a toggleable button remap module on [his shop](https://kadano.biz){:target="_blank"}.
+Only basic soldering supplies and small-gauge wires are required. Additionally, Kadano sells a toggleable button remap module on [his shop](https://kadano.biz){:target="\_blank"}.
 
 ## Process
 
@@ -19,6 +19,6 @@ On an OEM controller, this mod is fairly challenging. The chip pins correspondin
 
 The [PhobGCC](/compendium/boards#phobgcc) firmware has built-in software support to swap either the Z, L or R inputs with either the X or Y inputs, without requiring any hardware modifications.
 
-## Guides
+## Resources
 
-- [Video guide](https://www.youtube.com/watch?v=pXkwwkJsQvo){:target="_blank"} by Mitch Cairns
+- [Video guide](https://www.youtube.com/watch?v=pXkwwkJsQvo){:target="\_blank"} by Mitch Cairns

@@ -9,17 +9,17 @@ Both Tactile Z switches and[mouse-click](/compendium/buttons/mods/mouseclick) sw
 
 ## Parts
 
-Technically, any switch that can be made to fit can theoretically work, but these are some of the more common choices. Note that some switches require manual modification to fit OEM boards.
+Any switch that can be made to fit can theoretically work, but these are some of the more common choices. Note that some switches require manual modification to fit OEM boards.
 
 - Trigger switches from the Wii Classic Controller (sometimes called "OEM Tactile Z") — lighter resistance
 - [Omron B3F-3120](https://www.digikey.com/en/products/detail/omron-electronics-inc-emc-div/B3F-3120/38364){:target="\_blank"} — medium resistance, requires modification
 - [Omron B3F-3122](https://www.digikey.com/en/products/detail/omron-electronics-inc-emc-div/B3F-3122/90406){:target="\_blank"} — heavy resistance, requires modification
-- Generic switch available from [Beta Buttons](https://www.abxyg.cc/product/tac-z){:target="\_blank"}
+- [Generic switch](https://www.abxyg.cc/product/tac-z){:target="\_blank"} available from [Beta Buttons](/modders/beta-buttons){:target="\_blank"}
 
 ## Process
 
 The general process is as simple as desoldering the stock switch and soldering in the replacement switch. For certain switches like the Omron ones, modification to the legs of the switch is necessary (see guide).
 
-## Guides
+## Resources
 
 - The [FIRES Tactile Z Button guide](https://firescc.com/mod-guides#/tactile-z){:target="\_blank"} covers the swap as well as the modification needed for the Omron switches.

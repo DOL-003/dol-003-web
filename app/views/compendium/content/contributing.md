@@ -53,7 +53,7 @@ Mod pages should cover, in roughly this order:
 - What are some variations of this mod? (if any)
 - What parts are needed/available? (title: **Parts**)
 - How do you do the mod? (title: **Process**)
-- What are some guides for this mod? (title: **Guides**)
+- What are some guides or other resources for this mod? (title: **Resources**)
 
 Incomplete pages that do not follow this structure should be marked as stubs.
 

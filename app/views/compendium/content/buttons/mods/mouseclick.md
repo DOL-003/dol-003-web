@@ -27,6 +27,6 @@ For triggers, the trigger assembly is modified or replaced by a custom part that
 
 The [PhobGCC](/boards#phobgcc) board has face button contacts and trigger contacts specially designed for soldering the D2LS switches to. For OEM controllers, button pad traces need to be manually exposed to use as solder points.
 
-## Guides
+## Resources
 
-- This popular [mouse click guide](https://docs.google.com/document/d/1YkUPjrc_Hsnei26CaTdg-Ubucog0JvAj6t0Ued8Bybc){:target=>"_blank"} includes parts links, photos and recommendations for all three places you might want to install mouse-click switches.
+- This popular [mouse click guide](https://docs.google.com/document/d/1YkUPjrc_Hsnei26CaTdg-Ubucog0JvAj6t0Ued8Bybc){:target=>"\_blank"} includes parts links, photos and recommendations for all three places you might want to install mouse-click switches.
