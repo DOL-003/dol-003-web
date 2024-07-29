@@ -1,6 +1,6 @@
 ---
 title: Introduction
-subtitle: The Compendium is a curated collection of information and links related to GameCube controller (GCC) repair and modding.
+subtitle: The Compendium is a curated collection of information and links related to GameCube controller (GCC) modding and repair.
 ---
 
 ## Who this is for
@@ -9,10 +9,8 @@ Compendium content is meant for anyone interested in GCC modding, whether you're
 
 ## Where to start
 
-The [mod index & glossary](/compendium/glossary) is a good place to get an idea of what mods are out there, and to familiarize yourself with GCC terminology.
-
-There are also several [general guides](/compendium/guides) with recommendations for common stuff like controller shopping and troubleshooting.
+The [glossary](/compendium/glossary) is a good place to familiarize yourself with GCC terminology. Otherwise, browse various components and related mods using the menu.
 
 ## Contributing
 
-This entire website is [open source](https://github.com/jmarquis/controllers){:target="\_blank"}, and contributions are welcome! DOL-003.info is intended to be a community resource, so if you have ideas for making it better, join us in [Discord](https://discord.gg/HwtPU7tkCT){:target="\_blank"} and let us know!
+This entire website is [open source](https://github.com/jmarquis/controllers){:target="\_blank"}, and contributions are welcome! This is intended to be a community resource, so if you have ideas for making it better, join us in [Discord](https://discord.gg/HwtPU7tkCT){:target="\_blank"} and let us know!

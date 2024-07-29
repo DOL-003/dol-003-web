@@ -1,6 +1,6 @@
 ---
-title: Button dyeing
-subtitle: Dye OEM buttons different colors.
+title: Shell dyeing
+subtitle: Dye a shell different colors to give it a different look.
 stub: true
 ---
 
