@@ -34,9 +34,9 @@ Finally, apply some plastic polish to a microfiber cloth and buff the surface fo
 ### Using power tools
 
 <aside>
-  <a href="/assets/compendium/polishing.mp4">
+  <a href="/static/compendium/polishing.mp4">
     <video autoplay loop>
-      <source src="/assets/compendium/polishing.mp4" />
+      <source src="/static/compendium/polishing.mp4" />
     </video>
   </a>
   <p>Polishing a balded OEM A button with a polishing pad and cordless drill</p>

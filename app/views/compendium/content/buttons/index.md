@@ -4,8 +4,8 @@ subtitle: The GameCube controller has 6 standalone buttons and a 4-way D-pad.
 ---
 
 <aside style="margin-top: 16px">
-  <a href="./buttons/images/oem-buttons.jpg">
-    <img src="./buttons/images/oem-buttons-thumb.jpg">
+  <a href="/static/compendium/oem-buttons.jpg">
+    <img src="/static/compendium/oem-buttons-thumb.jpg">
   </a>
   <p>A standard set of OEM buttons.</p>
 </aside>

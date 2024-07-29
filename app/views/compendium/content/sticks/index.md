@@ -8,8 +8,8 @@ Each **analog stick** assembly is made up of three primary parts: the physical t
 ## [Thumbstick](sticks/thumbsticks)
 
 <aside>
-  <a href="./sticks/images/oem-thumbsticks.jpg">
-    <img src="./sticks/images/oem-thumbsticks-thumb.jpg">
+  <a href="/static/compendium/oem-thumbsticks.jpg">
+    <img src="/static/compendium/oem-thumbsticks-thumb.jpg">
   </a>
   <p>An OEM thumbstick and C-stick</p>
 </aside>
@@ -19,8 +19,8 @@ The part of the stick your fingers touch. As a thumbstick wears, the rubber cap 
 ## [Stickbox](sticks/stickboxes)
 
 <aside>
-  <a href="./sticks/images/t3-stickbox.jpg">
-    <img src="./sticks/images/t3-stickbox-thumb.jpg">
+  <a href="/static/compendium/t3-stickbox.jpg">
+    <img src="/static/compendium/t3-stickbox-thumb.jpg">
   </a>
   <p>An OEM T3 stickbox</p>
 </aside>
