@@ -12,6 +12,13 @@ Swapping the spring is a relatively quick mod on a T3 stickbox, and is not recom
 
 ## Parts
 
+<aside>
+  <a href="/static/compendium/smalley-l1.jpg">
+    <img src="/static/compendium/smalley-l1-thumb.jpg">
+  </a>
+  <p>A Smalley L1 spring and a 0.03" washer/shim</p>
+</aside>
+
 There are two popular options for the replacement spring:
 
 - The [Smalley L1](https://www.mcmaster.com/1561T1/){:target="\_blank"} spring used in the SLICKbox mod provides more even resistance across different directions due to its flat ends. It must be paired with a shim to provide enough resistance to reliably return the GCC analog stick to center, but even so it provides noticeably less tension than the stock spring. Different shim sizes provide different amounts of tension according to preference.

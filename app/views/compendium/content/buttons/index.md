@@ -3,7 +3,7 @@ title: Buttons
 subtitle: The GameCube controller has 6 standalone buttons and a 4-way D-pad.
 ---
 
-<aside style="margin-top: 16px">
+<aside class="no-offset">
   <a href="/static/compendium/oem-buttons.jpg">
     <img src="/static/compendium/oem-buttons-thumb.jpg">
   </a>
@@ -39,6 +39,13 @@ Many players appreciate the smoother look of bald buttons. Some players also pre
 - Various sellers on AliExpress and similar marketplaces sell inexpensive low-quality plastic buttons in various colors, commonly called "China buttons" (reflecting their manufacturing origin).
 
 ### Button pads
+
+<aside>
+  <a href="/static/compendium/oem-button-pads.jpg">
+    <img src="/static/compendium/oem-button-pads-thumb.jpg">
+  </a>
+  <p>A set of OEM button pads.</p>
+</aside>
 
 There is no known source for OEM button pads other than GCCs. Some third-party options exist, but are generally considered varying degrees of inferior to OEM pads.
 

@@ -4,6 +4,13 @@ subtitle: Remove the letters and round the corners of OEM buttons to give them a
 stub: true
 ---
 
+<aside class="no-offset">
+  <a href="/static/compendium/bald-buttons.jpg">
+    <img src="/static/compendium/bald-buttons-thumb.jpg">
+  </a>
+  <p>A Smalley L1 spring and a 0.03" washer/shim</p>
+</aside>
+
 **Bald buttons** are buttons with no inset letters and rounded corners. The process of creating bald buttons is called **balding**. Typically the A, B, X and Y buttons are balded, and optionally the Z and Start buttons, and sometimes the D-pad.
 
 There are two primary methods for balding: sanding OEM buttons, which is the primary method covered here; or [using extra silicone](#the-alternative-silicone-drip-method) to bald molds for [resin casting](/compendium/buttons/mods/resin).
@@ -39,7 +46,7 @@ Finally, apply some plastic polish to a microfiber cloth and buff the surface fo
       <source src="/static/compendium/polishing.mp4" />
     </video>
   </a>
-  <p>Polishing a balded OEM A button with a polishing pad and cordless drill</p>
+  <p>Polishing a balded OEM A button with a polishing pad and cordless drill.</p>
 </aside>
 
 If you have a random orbital buffer, you can use it for sanding and polishing instead of doing it by hand, except for sanding the edges of the X, Y and Z buttons — since these buttons aren't round, rotational sanding doesn't really work on the edges, and manual sanding is still required. You can also optionally use a power drill and an appropriately-sized bit to hold your button and add some additional rotation.
@@ -49,6 +56,13 @@ Attach the 800-grit sandpaper to a padded sanding buffer pad and place the buffe
 After going up through the grits like the manual process, switch to a cutting pad with your polish (or polishes) of choice, followed by a polishing pad and finally a finishing pad. Since this part of the process uses softer pads that the button can sink into a little more, you can usually get away with no manual touch-up even on the X, Y and Z buttons. Wash with soapy water and dry using a microfiber cloth.
 
 ## The alternative "silicone drip" method
+
+<aside>
+  <a href="/static/compendium/bald-resin-buttons.jpg">
+    <img src="/static/compendium/bald-resin-buttons-thumb.jpg">
+  </a>
+  <p>Bald resin buttons created by <a href="/modders/nojonsmods" target="_blank">NoJonsMods</a> using the silicone drip method.</p>
+</aside>
 
 After creating silicone molds of OEM buttons to use for [resin casting](/compendium/buttons/mods/resin), mix up some more silicone and drip it into each mold until it covers the letter. Gently tilt the molds in each direction to get some silicone in the corners to round the button edges as well. Lay the molds flat so the additional silicone can set evenly.
 

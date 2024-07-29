@@ -9,6 +9,13 @@ Both Tactile Z switches and[mouse-click](/compendium/buttons/mods/mouseclick) sw
 
 ## Parts
 
+<aside>
+  <a href="/static/compendium/omron-tactile-z.jpg">
+    <img src="/static/compendium/omron-tactile-z-thumb.jpg">
+  </a>
+  <p>An Omron B3F-3120 tactile switch.</p>
+</aside>
+
 Any switch that can be made to fit can theoretically work, but these are some of the more common choices. Note that some switches require manual modification to fit OEM boards.
 
 - Trigger switches from the Wii Classic Controller (sometimes called "OEM Tactile Z") — lighter resistance

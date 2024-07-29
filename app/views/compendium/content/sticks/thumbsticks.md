@@ -30,8 +30,8 @@ There is no consistent source for standalone OEM sticks, new or used, except for
 ### Other good stick options
 
 <aside>
-  <a href="/compendium/sticks/images/dafunk-sticks.jpg">
-    <img src="/compendium/sticks/images/dafunk-sticks-thumb.jpg">
+  <a href="/static/compendium/dafunk-sticks.jpg">
+    <img src="/static/compendium/dafunk-sticks-thumb.jpg">
   </a>
   <p>Rubber-capped resin sticks by DaFunkGaming.</p>
 </aside>
