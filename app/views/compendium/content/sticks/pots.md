@@ -30,6 +30,8 @@ Used potentiometers can be harvested from other Nintendo controllers, but be war
 - **Wii Classic Controllers** (and the Pro variant)
 - **Wii Nunchucks**
 
+Some modders sell extra potentiometers, usually on sites like Etsy.
+
 Third-party potentiometers are not recommended.
 
 ## Modifications
