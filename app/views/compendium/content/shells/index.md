@@ -33,11 +33,15 @@ Nintendo has produced about two dozen different shell designs since the release 
 - Smash 4 White
 - Smash Ultimate
 
-All shells share an identical shape and size, though tolerances have shifted very subtly over the years which results in shells from different controller generations sometimes not fitting together completely flush.
+All shells share an identical shape and size, though tolerances have shifted very subtly over the years. Because of this, shells from different controller generations sometimes don't fit together completely flush.
+
+Most OEM shells are uncoated and the color is the color of the underlying plastic. However, some shells (notably Platinum, Pearl White and Crystal White) are painted, resulting in a slightly different feel. Unfortunately, the paint is not protected by clear coat or any other protectant, so it tends to wear off easily with normal use.
+
+Smash Ultimate shells are the most recent design produced, and have a slightly more textured finish than past shells.
 
 ## Common issues & repairs
 
-Shells often accumulate wear & tear from use, and there's typically not much that can be done about scratches, scuffs, dents or other damage. Some marks can be removed with a magic eraser.
+Shells often accumulate wear & tear from use, and there's typically not much that can be done about scratches, scuffs, dents or other damage. Some marks can be removed with a magic eraser. Shells with a worn finish are often considered good candidates for [painting](/compendium/shells/mods/painting).
 
 Over-tightening screws can easily lead to screw posts breaking off the top shell. Sometimes these can be superglued back into place, though durability takes a big hit, so the problem is often ignored or the shell is replaced.
 

@@ -1,4 +1,4 @@
 ---
-title: Replacement trigger springs
-label: Replacement springs
+title: Reduced trigger spring tension
+label: Reduced spring tension
 ---
