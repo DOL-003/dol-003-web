@@ -50,7 +50,8 @@ Rails.application.routes.draw do
   get 'compendium(/*path)', to: 'compendium#show', as: :compendium
 
   constraints subdomain: 'compendium' do
-    get '(/*path)', to: redirect { |path_params| "/compendium/#{path_params.path}" }
+    get '/', to: redirect('/compendium')
+    get '*path', to: redirect { |path_params| "/compendium/#{path_params[:path]}" }
   end
 
 end
