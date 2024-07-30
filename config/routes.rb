@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     confirmations: 'authentication/confirmations',
     passwords: 'authentication/passwords',
     registrations: 'authentication/registrations',
-    sessions: 'authentication/sessions',
+    sessions: 'authentication/sessions'
   }
 
   root 'application#index'
@@ -28,25 +28,29 @@ Rails.application.routes.draw do
   get 'privacy', to: 'application#privacy_policy'
 
   get 'profile', to: 'profiles#show', as: :user_root
-  resource :profile, only: [:edit, :update, :create]
+  resource :profile, only: %i[edit update create]
   post 'profile/photo', to: 'profiles#upload_photo'
   post 'profile/photo-order', to: 'profiles#reorder_photos'
   post 'profile/remove-photo/:uuid', to: 'profiles#remove_photo'
 
   # Admin stuff
-  resources :profiles, only: [:new, :update, :create]
+  resources :profiles, only: %i[new update create]
   get 'profiles/:id/edit', to: 'profiles#edit', as: 'admin_edit_profile'
   patch 'profiles/:id', to: 'profiles#update', as: 'admin_update_profile'
   put 'profiles/:id', to: 'profiles#update'
 
-  resources :modders, only: [:index, :show] do
+  resources :modders, only: %i[index show] do
     member do
       get 'report', to: 'modders#new_report'
       post 'report', to: 'modders#create_report'
     end
   end
-  resources :invitations, only: [:new, :create]
+  resources :invitations, only: %i[new create]
 
   get 'compendium(/*path)', to: 'compendium#show', as: :compendium
+
+  constraints subdomain: 'compendium' do
+    get '(/*path)', to: redirect { |path_params| "/compendium/#{path_params.path}" }
+  end
 
 end
