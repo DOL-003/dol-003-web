@@ -4,8 +4,8 @@ subtitle: The upper-most part of the analog stick assembly.
 ---
 
 <aside>
-  <a href="/compendium/sticks/images/oem-thumbsticks.jpg">
-    <img src="/compendium/sticks/images/oem-thumbsticks-thumb.jpg">
+  <a href="/static/compendium/oem-thumbsticks.jpg">
+    <img src="/static/compendium/oem-thumbsticks-thumb.jpg">
   </a>
   <p>An OEM thumbstick and C-stick</p>
 </aside>
