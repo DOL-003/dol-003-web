@@ -1,6 +1,6 @@
 class CompendiumController < ApplicationController
 
-  CONTENT_DIR = File.join(File.expand_path('.'), 'app/views/compendium/content')
+  CONTENT_DIR = File.join(File.expand_path('.'), 'lib/compendium')
   @@pages = {}
   @@nav = {}
 
