@@ -1,5 +1,6 @@
 ---
-title: Resin buttons
+title: Resin casting buttons
+label: Resin casting
 subtitle: Cast custom GCC buttons in resin with different colors and designs.
 stub: true
 ---

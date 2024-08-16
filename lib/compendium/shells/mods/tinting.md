@@ -1,5 +1,6 @@
 ---
 title: Shell tinting
+label: Tinting
 subtitle: Spray paint the inside of a clear shell to give it a splash of color.
 stub: true
 ---

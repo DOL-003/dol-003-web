@@ -1,5 +1,6 @@
 ---
-title: Resin thumbsticks
+title: Resin casting thumbsticks
+label: Resin casting
 subtitle: Cast custom GCC sticks in resin with different colors and designs.
 stub: true
 ---

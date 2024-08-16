@@ -1,5 +1,6 @@
 ---
-title: Resin triggers
+label: Resin casting
+title: Resin casting triggers
 subtitle: Cast custom GCC triggers in resin with different colors and designs.
 stub: true
 ---

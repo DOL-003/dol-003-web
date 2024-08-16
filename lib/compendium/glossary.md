@@ -5,6 +5,8 @@ subtitle: Definitions of common terms and abbreviations related to GameCube cont
 
 **Drift**: Unintentional analog input resulting from a potentiometer not registering a return to neutral
 
+**Gate**: The octagonal opening in the shell for the [analog stick](/compendium/sticks)
+
 **GCC**: GameCube controller
 
 [Goomwave](/compendium/boards#goomwave): A proprietary aftermarket GameCube motherboard

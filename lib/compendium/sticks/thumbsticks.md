@@ -18,6 +18,8 @@ The most common issue with thumbsticks is wear. Over time, the ridges on the rub
 
 It is possible, though somewhat difficult, to replace a worn rubber cap, but usually the entire stick is replaced instead.
 
+### Loose fitting stick
+
 ## Replacements
 
 There is no consistent source for standalone OEM sticks, new or used, except for other GCCs. Resin sticks are a popular alternative, especially because they can be made in practically any color, with or without OEM-like rubber caps.

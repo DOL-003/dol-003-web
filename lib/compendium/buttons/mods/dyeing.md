@@ -1,5 +1,6 @@
 ---
 title: Button dyeing
+label: Dyeing
 subtitle: Dye OEM buttons different colors.
 stub: true
 ---

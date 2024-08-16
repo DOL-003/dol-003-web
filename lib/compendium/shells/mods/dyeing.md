@@ -1,5 +1,6 @@
 ---
 title: Shell dyeing
+label: Dyeing
 subtitle: Dye a shell to give it a different hue.
 stub: true
 ---

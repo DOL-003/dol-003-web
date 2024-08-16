@@ -1,3 +1,4 @@
 ---
-title: Lubed triggers
+title: Trigger lubing
+label: Lubing
 ---
