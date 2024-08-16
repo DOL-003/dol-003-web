@@ -38,7 +38,7 @@ class CompendiumController < ApplicationController
 
     @@pages[path] = {
       title: RubyPants.new(page['title']).to_html.html_safe,
-      subtitle: RubyPants.new(page['subtitle']).to_html.html_safe,
+      subtitle: page['subtitle'].present? ? RubyPants.new(page['subtitle']).to_html.html_safe : nil,
       content: page['auto'].present? ? auto_page(path, filepath) : Kramdown::Document.new(page.content).to_html.html_safe,
       stub: page['stub'].present?,
       path: index_filepath.present? ? "#{path}/index.md" : "#{path}.md"
