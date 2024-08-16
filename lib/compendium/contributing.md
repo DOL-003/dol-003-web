@@ -6,11 +6,17 @@ subtitle: Want to contribute to the Compendium? Great! We ask everyone to read t
 
 Note that pull requests that do not follow these guidelines will not be accepted.
 
+## Compendium vision
+
+The end goal of the Compendium is to have a single hub of knowledge related to GameCube controllers, particularly about modding and repairing them. This means documenting every component (along with common issues, repairs and replacements), every mod (other than one-offs or meme mods), common recommendations, etc.
+
+The term "hub" is important to distinguish that not all documentation needs to live in the Compendium itself; many community members have created their own guides and other resources that should not be copied or plagiarized into the Compendium. Instead, they should be summarized and linked to, giving appropriate credit to their authors.
+
 ## Process
 
 The code for DOL-003.info, including Compendium content, lives in [GitHub](https://github.com/jmarquis/controllers){:target="\_blank"}. Simply fork the repo, push up your changes to your fork, and open a pull request.
 
-Pull requests are accepted on a case-by-case basis entirely at the DOL-003.info team's discretion. We welcome everyone's contributions, but take responsibility for curating Compendium content to keep it consistent and helpful.
+Pull requests are accepted on a case-by-case basis entirely at the admin team's discretion. We welcome everyone's contributions, but take responsibility for curating Compendium content to keep it consistent, useful, and aligned to the vision spelled out above.
 
 Here are some general guidelines for pull requests:
 
