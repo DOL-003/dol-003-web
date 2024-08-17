@@ -1,3 +1,0 @@
----
-title: Keyboard/MX triggers
----
