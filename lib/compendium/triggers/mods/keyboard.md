@@ -1,5 +1,6 @@
 ---
-title: Keyboard switches
+label: Keyboard switches
+title: Keyboard switch triggers
 subtitle: Replace the trigger assembly with a keyboard switch.
 stub: true
 ---
