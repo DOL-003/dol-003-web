@@ -20,6 +20,12 @@ It is possible, though somewhat difficult, to replace a worn rubber cap, but usu
 
 ### Loose fitting stick
 
+Aftermarket sticks and even OEM sticks can sometimes not fit tightly on the stickbox peg. When this happens, put a small piece of material like tape or plastic wrap around the top of the peg to make the thumbstick more snug. For more information including some other potential solutions, check out [this guide](https://dqcontrollers.godaddysites.com/fix-my-sticks/f/my-stick-is-loose-it-comes-off-the-post){:target="\_blank"} by DQ Controllers.
+
+### Stick rubbing on shell
+
+Aftermarket sticks often sit too low, which makes the rubber stick cap rub on the top of the gate. To fix it, put a tiny ball of tin foil or another hard object in the stick's slot to make it sit higher on the stickbox peg. For photos and alternate solutions, see [this guide](https://dqcontrollers.godaddysites.com/fix-my-sticks/f/my-stick-feels-like-the-rubber-is-rubbing-on-the-shell){:target="\_blank"} by DQ Controllers.
+
 ## Replacements
 
 There is no consistent source for standalone OEM sticks, new or used, except for other GCCs. Resin sticks are a popular alternative, especially because they can be made in practically any color, with or without OEM-like rubber caps.
