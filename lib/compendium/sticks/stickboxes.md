@@ -56,6 +56,6 @@ There have been various community efforts over the years to produce a T3-like st
 
 ## Modifications
 
-[Cleaning and lubing stickboxes](/compendium/sticks/mods/lubing) is a common practice to make the stickbox action smoother.
+[Cleaning and lubing stickboxes](/compendium/sticks/mods/lubing) is a common practice to make the stickbox movement smoother.
 
 [Replacing the stickbox spring](/compendium/sticks/mods/springs) is often done to change the feel of the resistance provided by the stickbox.

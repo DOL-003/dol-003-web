@@ -1,7 +1,7 @@
 ---
 label: Lubing
 title: Trigger lubing
-subtitle: Apply a lubricant to the trigger assembly to make the trigger action smoother.
+subtitle: Apply a lubricant to the trigger assembly to make the trigger movement smoother.
 ---
 
 A trigger can be **lubed** to make the act of pulling it feel smoother and quieter. This is done by applying a specialized grease to various locations within the trigger assembly.
