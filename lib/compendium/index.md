@@ -13,4 +13,6 @@ The [glossary](/compendium/glossary) is a good place to familiarize yourself wit
 
 ## Contributing
 
-This entire website is [open source](https://github.com/jmarquis/controllers){:target="\_blank"}, and contributions are welcome! The Compendium is intended to be a community resource, so if you have ideas for making it better, join us in [Discord](https://discord.gg/HwtPU7tkCT){:target="\_blank"} and let us know!
+This entire website is [open source](https://github.com/dol-003/dol-003-web){:target="\_blank"}, and contributions are welcome! The Compendium is intended to be a community resource, so if you have ideas for making it better, join us in [Discord](https://discord.gg/HwtPU7tkCT){:target="\_blank"} and let us know!
+
+There's also a list of [open Compendium issues](https://github.com/dol-003/dol-003-web/issues?q=is%3Aissue+is%3Aopen+label%3Acompendium){:target="\_blank"} meant to capture all the stuff we know is missing or incomplete.
