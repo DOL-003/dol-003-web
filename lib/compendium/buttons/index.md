@@ -56,3 +56,5 @@ There is no known source for OEM button pads other than GCCs. Some third-party o
 ## Resources
 
 The [GCC Library Internals Guide](https://gccontrollerlibrary.com/guides/gamecube-controller-internals-guide/){:target="\_blank"} contains information about button variations and the evolution of the OEM button pad design over the years.
+
+Jon of [NoJonsMods](/modders/nojonsmods){:target="\_blank"} made [a thorough write-up](https://www.reddit.com/r/customGCC/comments/mwotkd/buying_some_new_sticks_or_buttons_read_this_first/){:target="\_blank"} of what to look for when searching for replacement buttons and sticks.

@@ -1,6 +1,6 @@
 ---
-label: Reduced spring tension
-title: Reduced trigger spring tension
+label: Reducing spring tension
+title: Reducing trigger spring tension
 subtitle: Modify or replace the springs to reduce the amount of force needed to press the trigger.
 ---
 

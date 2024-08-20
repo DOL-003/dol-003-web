@@ -52,3 +52,7 @@ Many online retailers sell knockoff GCC thumbsticks, which are typically very ch
 - eBay
 - Etsy (except for handmade resin ones)
 - Retro gaming shops (except for handmade resin ones)
+
+## Resources
+
+Jon of [NoJonsMods](/modders/nojonsmods){:target="\_blank"} made [a thorough write-up](https://www.reddit.com/r/customGCC/comments/mwotkd/buying_some_new_sticks_or_buttons_read_this_first/){:target="\_blank"} of what to look for when searching for replacement buttons and sticks.
