@@ -1,5 +1,6 @@
 ---
-title: Notching
+label: Notching
+title: Shell notching
 subtitle: Subtly changing the shape of the gate to add notches in specific places makes hitting certain analog values easier.
 ---
 
