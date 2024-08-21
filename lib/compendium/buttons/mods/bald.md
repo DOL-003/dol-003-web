@@ -8,7 +8,7 @@ subtitle: Remove the letters and round the corners of OEM buttons to give them a
   <a href="/static/compendium/bald-buttons.jpg">
     <img src="/static/compendium/bald-buttons-thumb.jpg">
   </a>
-  <p>A Smalley L1 spring and a 0.03" washer/shim</p>
+  <p>Balded OEM buttons.</p>
 </aside>
 
 **Bald buttons** are buttons with no inset letters and rounded corners. The process of creating bald buttons is called **balding**. Typically the A, B, X and Y buttons are balded, and optionally the Z and Start buttons, and sometimes the D-pad.
