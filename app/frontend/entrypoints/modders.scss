@@ -345,6 +345,11 @@ body.modders.show {
     background-color: $crystal;
     display: flex;
 
+    @include dark {
+      background-color: $smoke;
+      border-color: $panasonic;
+    }
+
     > figure {
       flex: none;
       margin: 8px 0 0;
