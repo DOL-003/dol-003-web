@@ -37,7 +37,7 @@ header {
         color: lighten($indigo, 15%);
       }
 
-      @include small {
+      @include medium {
         display: flex;
       }
     }
@@ -54,7 +54,7 @@ header {
       align-items: center;
       padding: 0;
 
-      @include small {
+      @include medium {
         position: fixed;
         margin: 0;
         top: 0;
@@ -72,7 +72,7 @@ header {
         margin: 0;
         position: relative;
 
-        @include small {
+        @include medium {
           text-align: center;
         }
 
@@ -83,7 +83,7 @@ header {
           display: none;
           margin: 0;
 
-          @include small {
+          @include medium {
             display: block;
           }
 
@@ -109,7 +109,7 @@ header {
           font-weight: bold;
           white-space: nowrap;
 
-          @include small {
+          @include medium {
             font-size: 32px;
             color: $white;
 
@@ -122,7 +122,7 @@ header {
         + li {
           margin-left: 32px;
 
-          @include small {
+          @include medium {
             margin-left: 0;
             margin-top: 16px;
           }
@@ -140,7 +140,7 @@ header {
       margin-left: 24px;
       position: relative;
 
-      @include small {
+      @include medium {
         margin-left: 16px;
       }
 
