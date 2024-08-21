@@ -1,12 +1,14 @@
 <div class="content grid">
   <div class="sidebar span-3">
-    <input type="checkbox" class="sidebar-menu-toggle" id="sidebar-menu-toggle">
+    <input type="checkbox" class="sidebar-menu-toggle" id="sidebar-menu-toggle"<%= ' checked' if @path == 'index.md' %>>
     <h3>
       <label for="sidebar-menu-toggle" class="sidebar-menu-toggle-label">
         <%= inline_svg_tag 'caret-right.svg', class: 'open' %>
         <%= inline_svg_tag 'caret-down.svg', class: 'close' %>
       </label>
-      Compendium
+      <label for="sidebar-menu-toggle" class="sidebar-menu-toggle-title">
+        Compendium <span>Menu</span>
+      </label>
     </h3>
     <%= nav_tree @nav %>
   </div>

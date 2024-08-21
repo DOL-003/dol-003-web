@@ -29,6 +29,14 @@ body.compendium.show {
       @include medium {
         margin-top: 0;
       }
+
+      span {
+        display: none;
+
+        @include medium {
+          display: inline-block;
+        }
+      }
     }
 
     .sidebar-menu-toggle-label {
