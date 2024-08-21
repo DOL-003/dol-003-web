@@ -27,15 +27,15 @@ body.layout-default {
     max-width: 1200px;
     margin: 0 auto;
 
-    @include large() {
+    @include large {
       max-width: 94vw;
     }
 
-    @include medium() {
+    @include medium {
       max-width: 92vw;
     }
 
-    @include small() {
+    @include small {
       max-width: 90vw;
     }
 

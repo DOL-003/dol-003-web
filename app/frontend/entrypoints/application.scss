@@ -31,6 +31,16 @@ body.application.index {
       padding-top: 140px;
     }
 
+    strong {
+      background-color: rgba($smoke, 75%);
+      padding: 0 8px;
+      margin: 0 -8px;
+
+      @include dark {
+        background-color: rgba($crystal, 75%);
+      }
+    }
+
     &:not(.dark) {
       @include dark {
         display: none;

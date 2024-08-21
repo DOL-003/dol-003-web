@@ -1,8 +1,8 @@
 <div class="intro" style="background-image:url(<%= image_path 'index-bg.jpg' %>)">
   <div class="content grid">
     <section class="span-8">
-      <h1>A directory of GameCube controller modders and artists</h1>
-      <p class="big">Find your next controller, shell or button set, or connect with modders who can help with repairs or upgrades. <a href="/about">About DOL-003.info</a>
+      <h1>All about <strong>GameCube controllers</strong></h1>
+      <p class="big">Learn about modding GameCube controllers (GCCs) and connect with GCC modders and artists around the world. <a href="/about">About DOL-003.info</a>
     </section>
   </div>
 </div>
@@ -10,8 +10,8 @@
 <div class="intro dark" style="background-image:url(<%= image_path 'index-bg-dark.jpg' %>)">
   <div class="content grid">
     <section class="span-8">
-      <h1>A directory of GameCube controller modders and artists</h1>
-      <p class="big">Find your next controller, shell or button set, or connect with modders who can help with repairs or upgrades. <a href="/about">About DOL-003.info</a>
+      <h1>All about <strong>GameCube controllers</strong></h1>
+      <p class="big">Learn about modding GameCube controllers (GCCs) and connect with GCC modders and artists around the world. <a href="/about">About DOL-003.info</a>
     </section>
   </div>
 </div>
@@ -19,8 +19,8 @@
 <div class="content grid">
 
   <section class="span-8">
-    <h2>Search by <strong>tag</strong></h2>
-    <p>Find someone based on what services or parts they offer.</p>
+    <h2>Find modders by <strong>tag</strong></h2>
+    <p>Search for controller modders based on what services or parts they offer.</p>
     <ul class="service-list">
       <% ModderService.enabled_services.map do |service| %>
         <li><%= service_link(service) %></li>
@@ -31,7 +31,7 @@
   <section class="span-4">
 
     <h2>Browse the <%= link_to 'map', modders_path(map: 1) %></h2>
-    <p>Support local makers. Find a modder near you.</p>
+    <p>Find a modder near you.</p>
 
     <%= form_with url: modders_path, method: 'get', html: { class: 'location-search' } do |form| %>
       <%=
@@ -44,6 +44,10 @@
       <%= form.submit 'Search', class: 'button' %>
       <%= form.hidden_field :map, value: 1 %>
     <% end %>
+
+    <h2>Start <strong>learning</strong></h2>
+    <p>The Compendium is the ultimate hub for GCC modding knowledge.</p>
+    <p class="actions"><%= link_to 'View Compendium →', compendium_path, class: 'button secondary' %></p>
 
   </section>
 
