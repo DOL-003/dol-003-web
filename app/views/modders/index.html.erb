@@ -42,11 +42,6 @@
     </div>
 
     <div class="field">
-      <%= form.label :query, 'Modder name', class: 'label' %>
-      <%= form.text_field :query, value: @query || '', class: 'text-input xlarge search', placeholder: 'Optional', autocomplete: 'off' %>
-    </div>
-
-    <div class="field">
       <div class="checkbox">
         <input type="checkbox" id="services-visible" <%= @services_visible ? 'checked' : '' %>>
         <%= inline_svg_tag 'check.svg' %>
