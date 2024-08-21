@@ -138,10 +138,10 @@ export default (props: ModderMapProps) => {
             )
             return distanceA - distanceB
           })
-        : modders
+        : null
 
-      sortedModders
-        .slice(0, 5)
+      ;(sortedModders || modders)
+        .slice(0, sortedModders ? 5 : modders.length)
         .concat(currentPosition)
         .forEach((modder) => {
           if (!minLatitude || parseFloat(modder.latitude) < minLatitude)
