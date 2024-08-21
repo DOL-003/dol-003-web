@@ -39,13 +39,13 @@ class CompendiumController < ApplicationController
     @@pages[path] = {
       title: RubyPants.new(page['title']).to_html.html_safe,
       subtitle: page['subtitle'].present? ? RubyPants.new(page['subtitle']).to_html.html_safe : nil,
-      content: page['auto'].present? ? auto_page(path, filepath) : Kramdown::Document.new(page.content).to_html.html_safe,
+      content: page_content(path:, filepath:, page:),
       stub: page['stub'].present?,
       path: index_filepath.present? ? "#{path}/index.md" : "#{path}.md"
     }
   end
 
-  def auto_page(path, filepath)
+  def auto_page(path:, filepath:)
     subpages = []
     dirpath = filepath.gsub(/\.md$/, '')
     Dir.each_child(dirpath) do |filename|
@@ -59,6 +59,35 @@ class CompendiumController < ApplicationController
       }
     end
     render_to_string 'auto_page', layout: false, locals: { subpages: subpages.sort_by { |subpage| subpage[:title] } }
+  end
+
+  def list_page(match)
+    pages = all_pages.filter { |page| page[:path].match? match }.sort_by { |page| page[:title] }
+    render_to_string 'auto_page', layout: false, locals: { subpages: pages }
+  end
+
+  def all_pages(dir = '')
+    pages = []
+    Dir.each_child(File.join(CONTENT_DIR, dir)) do |path|
+      full_path = File.join(CONTENT_DIR, dir, path)
+      if Dir.exists? full_path
+        pages = pages.concat(all_pages(File.join(dir, path)))
+      else
+        page = FrontMatterParser::Parser.parse_file(full_path)
+        pages << { 
+path: File.join(dir, path).gsub(/\.md$/, ''),
+          title: page['title'],
+          subtitle: page['subtitle']
+        }
+      end
+    end
+    pages
+  end
+
+  def page_content(path:, filepath:, page:)
+    return auto_page(path:, filepath:) if page['auto'].present?
+    return list_page(page['list']) if page['list'].present?
+    Kramdown::Document.new(page.content).to_html.html_safe
   end
 
   def nav
