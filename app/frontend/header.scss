@@ -125,6 +125,10 @@ header {
           @include medium {
             margin-left: 0;
             margin-top: 16px;
+
+            &.modder-selector {
+              margin-top: 24px;
+            }
           }
         }
       }
