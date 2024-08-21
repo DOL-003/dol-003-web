@@ -17,8 +17,8 @@ interface Modder {
   readonly slug: string
   readonly name: string
   readonly city: string
-  readonly latitude: string
-  readonly longitude: string
+  latitude: string
+  longitude: string
   grouped?: boolean
 }
 
@@ -50,10 +50,10 @@ function splayModders(modders: Modder[]) {
 
       if (
         Math.abs(
-          parseFloat(modders[j].latitude) - parseFloat(modders[i].latitude)
+          parseFloat(modders[j].latitude) - parseFloat(modders[i].latitude),
         ) < modderSplayProximityThreshold &&
         Math.abs(
-          parseFloat(modders[j].longitude) - parseFloat(modders[j].longitude)
+          parseFloat(modders[j].longitude) - parseFloat(modders[i].longitude),
         ) < modderSplayProximityThreshold
       ) {
         modderGroups[i] = modderGroups[i].concat([j])
@@ -112,32 +112,32 @@ export default (props: ModderMapProps) => {
           : []
       const sortedModders = currentPosition[0]
         ? modders.sort((a, b) => {
-          const distanceA = Math.sqrt(
-            Math.pow(
-              parseFloat(currentPosition[0].latitude) -
-              parseFloat(a.latitude),
-              2
-            ) +
-            Math.pow(
-              parseFloat(currentPosition[0].longitude) -
-              parseFloat(a.longitude),
-              2
+            const distanceA = Math.sqrt(
+              Math.pow(
+                parseFloat(currentPosition[0].latitude) -
+                  parseFloat(a.latitude),
+                2,
+              ) +
+                Math.pow(
+                  parseFloat(currentPosition[0].longitude) -
+                    parseFloat(a.longitude),
+                  2,
+                ),
             )
-          )
-          const distanceB = Math.sqrt(
-            Math.pow(
-              parseFloat(currentPosition[0].latitude) -
-              parseFloat(b.latitude),
-              2
-            ) +
-            Math.pow(
-              parseFloat(currentPosition[0].longitude) -
-              parseFloat(b.longitude),
-              2
+            const distanceB = Math.sqrt(
+              Math.pow(
+                parseFloat(currentPosition[0].latitude) -
+                  parseFloat(b.latitude),
+                2,
+              ) +
+                Math.pow(
+                  parseFloat(currentPosition[0].longitude) -
+                    parseFloat(b.longitude),
+                  2,
+                ),
             )
-          )
-          return distanceA - distanceB
-        })
+            return distanceA - distanceB
+          })
         : modders
 
       sortedModders
@@ -196,9 +196,9 @@ export default (props: ModderMapProps) => {
                   center: feature.geometry.coordinates,
                   zoom,
                 })
-              }
+              },
             )
-        }
+        },
       )
 
       const modderNamePopup = new Popup({
@@ -225,7 +225,7 @@ export default (props: ModderMapProps) => {
             .setLngLat(coordinates)
             .setHTML(event.features[0].properties.name)
             .addTo(map.current.getMap())
-        }
+        },
       )
 
       map.current.on("mouseleave", "modder-points", () => {
@@ -253,7 +253,7 @@ export default (props: ModderMapProps) => {
             lat: maxLatitude + latitudePadding,
           },
         ],
-        { maxZoom: 8 }
+        { maxZoom: 8 },
       )
     }
   }
