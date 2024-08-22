@@ -10,11 +10,11 @@ The end goal of the Compendium is to have a single hub of knowledge related to G
 
 The term "hub" is important to distinguish that not all documentation needs to live in the Compendium itself; many community members have created their own guides and other resources that should not be copied or plagiarized into the Compendium. Instead, they should be summarized and linked to, giving appropriate credit to their authors.
 
-Looking for somewhere to get started? Check out the [open Compendium issues](https://github.com/dol-003/dol-003-web/issues?q=is%3Aissue+is%3Aopen+label%3Acompendium){:target="\_blank"}.
+Looking for somewhere to get started? Check out the [open Compendium issues](https://github.com/dol-003/dol-003-web/issues?q=is%3Aissue+is%3Aopen+label%3Acompendium).
 
 ## Process
 
-The code for DOL-003.info, including Compendium content, lives in [GitHub](https://github.com/dol-003/dol-003-web){:target="\_blank"}. Simply fork the repo, push up your changes to your fork, and open a pull request.
+The code for DOL-003.info, including Compendium content, lives in [GitHub](https://github.com/dol-003/dol-003-web). Simply fork the repo, push up your changes to your fork, and open a pull request.
 
 Pull requests are accepted on a case-by-case basis entirely at the admin team's discretion. We welcome everyone's contributions, but take responsibility for curating Compendium content to keep it consistent, useful, and aligned to the vision spelled out above.
 
@@ -22,7 +22,7 @@ Here are some general guidelines for pull requests:
 
 - Keep scope small. Several small pull requests are preferable to one large one, unless all the changes are closely related.
 - Write a good PR description explaining why you're making the change, and linking any supporting documentation for the topic you're writing about.
-- Feel free to share your PR in [Discord](https://discord.gg/HwtPU7tkCT){:target="\_blank"} for discussion!
+- Feel free to share your PR in [Discord](https://discord.gg/HwtPU7tkCT) for discussion!
 
 Note that pull requests that do not follow these guidelines will not be accepted.
 
@@ -67,4 +67,4 @@ Incomplete pages that do not follow this structure should be marked as stubs.
 
 Captioned photos are encouraged for all pages and subsections, especially to illustrate examples of different components and mods.
 
-When in doubt, try to make your contributions consistent with the other content in the Compendium. And don't be afraid to discuss your changes in [Discord](https://discord.gg/HwtPU7tkCT){:target="\_blank"}!
+When in doubt, try to make your contributions consistent with the other content in the Compendium. And don't be afraid to discuss your changes in [Discord](https://discord.gg/HwtPU7tkCT)!

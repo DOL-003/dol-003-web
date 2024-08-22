@@ -27,4 +27,4 @@ If you're using a digital trigger flex PCB, simply follow the included instructi
 
 ## Resources
 
-- Simple's [digital trigger guide](https://imgur.com/a/analog-press-on-digital-trigger-gcc-now-updated-with-transistor-mod-BNmDnVS){:target="\_blank"} consists of good photos of the process, as well as the optional transistor step that retains the digital input.
+- Simple's [digital trigger guide](https://imgur.com/a/analog-press-on-digital-trigger-gcc-now-updated-with-transistor-mod-BNmDnVS) consists of good photos of the process, as well as the optional transistor step that retains the digital input.

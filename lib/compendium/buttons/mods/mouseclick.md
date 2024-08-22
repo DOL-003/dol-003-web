@@ -29,4 +29,4 @@ The [PhobGCC](/boards#phobgcc) board has face button contacts and trigger contac
 
 ## Resources
 
-- This popular [mouse click guide](https://docs.google.com/document/d/1YkUPjrc_Hsnei26CaTdg-Ubucog0JvAj6t0Ued8Bybc){:target=>"\_blank"} includes parts links, photos and recommendations for all three places you might want to install mouse-click switches.
+- This popular [mouse click guide](https://docs.google.com/document/d/1YkUPjrc_Hsnei26CaTdg-Ubucog0JvAj6t0Ued8Bybc) includes parts links, photos and recommendations for all three places you might want to install mouse-click switches.

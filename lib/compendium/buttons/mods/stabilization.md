@@ -7,4 +7,4 @@ stub: true
 
 ## Resources
 
-- [FIRES Button Stabilization guide](https://firescc.com/fires-stabilized-buttons){:target="\_blank"}
+- [FIRES Button Stabilization guide](https://firescc.com/fires-stabilized-buttons)

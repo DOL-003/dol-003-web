@@ -13,13 +13,13 @@ Trigger plugs are typically 3D printed, which means they can be purchased or pri
 
 ### Prints for sale
 
-- [RockerGaming](https://www.etsy.com/listing/1175652981){:target="\_blank"}
-- [Mushroom Forge](https://www.etsy.com/listing/1567566039){:target="\_blank"}
-- [Other Etsy sellers](https://www.etsy.com/search?q=gamecube+trigger+plug){:target="\_blank"}
+- [RockerGaming](https://www.etsy.com/listing/1175652981)
+- [Mushroom Forge](https://www.etsy.com/listing/1567566039)
+- [Other Etsy sellers](https://www.etsy.com/search?q=gamecube+trigger+plug)
 
 ### STL files
 
-- [FIRES](https://github.com/FIRESCustom/GCC_Trigger_Plugs){:target="\_blank"}
+- [FIRES](https://github.com/FIRESCustom/GCC_Trigger_Plugs)
 
 ## Process
 

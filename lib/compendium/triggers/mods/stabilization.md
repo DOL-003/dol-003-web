@@ -7,4 +7,4 @@ stub: true
 
 ## Resources
 
-- [FIRES Button Stabilization guide](https://firescc.com/fires-stabilized-buttons){:target="\_blank"} includes instructions and photos related to stabilizing triggers.
+- [FIRES Button Stabilization guide](https://firescc.com/fires-stabilized-buttons) includes instructions and photos related to stabilizing triggers.

@@ -48,7 +48,7 @@ Because stickboxes use springs to return the stick to center and thumbsticks add
 
 There is no consistent source for OEM stickboxes other than other Nintendo controllers. Third-party stickboxes are not recommended.
 
-- **Other Nintendo-made GameCube controllers** always have OEM stickboxes, but make sure the controller you're harvesting from is a compatible variant. See this [Stickbox Variant Guide](https://gccontrollerlibrary.com/guides/){:target="\_blank"} (toward the bottom of the page) for which stamps on the back of the controller indicate which revision it contains.
+- **Other Nintendo-made GameCube controllers** always have OEM stickboxes, but make sure the controller you're harvesting from is a compatible variant. See this [Stickbox Variant Guide](https://gccontrollerlibrary.com/guides/) (toward the bottom of the page) for which stamps on the back of the controller indicate which revision it contains.
 - **Wii Classic Controllers** (both the normal and Pro variants) contain T3 stickboxes, and are often in good condition since these controllers are rarely used heavily compared to most GCCs.
 - **Wii Nunchucks** contain a mix of T2 and T3 stickboxes. It is more common to find T3 Nunchucks in Europe, and T2 Nunchucks elsewhere.
 

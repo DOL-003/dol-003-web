@@ -10,7 +10,7 @@ Sleeving a cable in braided nylon paracord is a very popular aesthetic mod. Thes
 - An OEM cable
 - A matching length of 550 paracord
 
-Some popular places to get inexpensive paracord are [Paracord Planet](https://paracordplanet.com){:target="\_blank"}, [Paracord Galaxy](https://paracordgalaxy.com){:target="\_blank"}, and local hardware or craft stores.
+Some popular places to get inexpensive paracord are [Paracord Planet](https://paracordplanet.com), [Paracord Galaxy](https://paracordgalaxy.com), and local hardware or craft stores.
 
 It is highly recommended to use 550 paracord, and to avoid paracord with metallic tracers as these are known to have fit issues when sleeving.
 
@@ -33,6 +33,6 @@ There are many methods for making paracord cables, but generally the process is 
 
 ## Resources
 
-- [Courtdate's paracorded cable guide](https://imgur.com/gallery/courtdates-paracorded-cable-guide-WsDmxOD){:target="\_blank"}
-- [Goomy's paracord tutorial](https://www.youtube.com/watch?v=x16St7md1ss){:target="\_blank"}
-- [Rocker's paracord tutorial](https://www.youtube.com/watch?v=BEJcXbueipo){:target="\_blank"}
+- [Courtdate's paracorded cable guide](https://imgur.com/gallery/courtdates-paracorded-cable-guide-WsDmxOD)
+- [Goomy's paracord tutorial](https://www.youtube.com/watch?v=x16St7md1ss)
+- [Rocker's paracord tutorial](https://www.youtube.com/watch?v=BEJcXbueipo)

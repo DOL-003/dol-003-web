@@ -1,4 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Open non-compendium links in a new tab
+  document.querySelectorAll("section.page a").forEach((link) => {
+    if (
+      !link.getAttribute("href") ||
+      link.getAttribute("href").includes("/compendium/")
+    ) {
+      return
+    }
+    link.setAttribute("target", "_blank")
+  })
+
   // Section anchors
   const linkIcon = document.querySelector("#link-icon")
   document
@@ -12,6 +23,4 @@ document.addEventListener("DOMContentLoaded", () => {
       link.classList.add("section-anchor")
       heading.appendChild(link)
     })
-
-  // Image links
 })

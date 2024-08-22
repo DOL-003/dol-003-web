@@ -44,13 +44,13 @@ If the click feeling is there but the expected input doesn't happen, this can in
 Like most stock parts, OEM triggers can only be found on original GameCube controllers. However, various third-party options exist:
 
 - [Resin triggers](/compendium/triggers/mods/resin) are available in many different colors, textures and shapes.
-- eXtremeRate includes triggers, and even replacement trigger assemblies, in [their shell + buttons sets](https://extremerate.com/collections/nintendo-gamecube-shells){:target="\_blank"}.
+- eXtremeRate includes triggers, and even replacement trigger assemblies, in [their shell + buttons sets](https://extremerate.com/collections/nintendo-gamecube-shells).
 
 Knockoff triggers from sites like AliExpress or Amazon are not recommended, as they are particularly prone to fit issues even compared to other knockoff buttons.
 
 ### Slider potentiometers
 
-The only place to get new OEM potentiometers is currently [Kadano](https://kadano.biz){:target="\_blank"}, who orders them in bulk from one of Nintendo's suppliers.
+The only place to get new OEM potentiometers is currently [Kadano](https://kadano.biz), who orders them in bulk from one of Nintendo's suppliers.
 
 Used slider potentiometers can be harvested from other GCCs or from Wii Classic Controllers (which interestingly don't actually use the sliders, but still have them for unknown reasons). Some modders sell extra potentiometers, usually on sites like Etsy.
 
@@ -58,6 +58,6 @@ Used slider potentiometers can be harvested from other GCCs or from Wii Classic 
 
 There is no known source for OEM button pads other than GCCs. Some third-party options exist, but are generally considered varying degrees of inferior to OEM pads.
 
-- Battle Beaver sells popular [replacement pads](https://battlebeavercustoms.com/products/battle-beaver-gamecube-contact-pads){:target="\_blank"}, though some have found their longevity to be much lower than that of OEM pads.
+- Battle Beaver sells popular [replacement pads](https://battlebeavercustoms.com/products/battle-beaver-gamecube-contact-pads), though some have found their longevity to be much lower than that of OEM pads.
 
-- eXtremeRate includes silicone pads with [their GameCube shells](https://extremerate.com/collections/nintendo-gamecube-shells){:target="\_blank"}.
+- eXtremeRate includes silicone pads with [their GameCube shells](https://extremerate.com/collections/nintendo-gamecube-shells).

@@ -6,4 +6,4 @@ stub: true
 
 ## Guides
 
-- [FIRES Liquid Cable Guide](https://firescc.com/mod-guides#/diy-custom-cables){:target="\_blank"}
+- [FIRES Liquid Cable Guide](https://firescc.com/mod-guides#/diy-custom-cables)

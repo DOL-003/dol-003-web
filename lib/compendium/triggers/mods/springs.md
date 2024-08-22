@@ -11,8 +11,8 @@ One of the most common complaints about the GameCube controller is hand fatigue 
 - Wiresnips or flush cutters (if modifying OEM springs)
 - Lighter (if modifying OEM springs)
 - Lower-tension springs (if replacing with aftermarket springs), for example:
-  - [Rienne springs](https://www.riennecustoms.com/shop/aftermarket-gamecube-controller-trigger-springs-set-of-2-pre-lubed/){:target="\_blank"}
-  - [FIRES springs](https://www.thespringstore.com/pc017-453-12300-sst-1500-c-n-in.html){:target="\_blank"} (bulk only)
+  - [Rienne springs](https://www.riennecustoms.com/shop/aftermarket-gamecube-controller-trigger-springs-set-of-2-pre-lubed/)
+  - [FIRES springs](https://www.thespringstore.com/pc017-453-12300-sst-1500-c-n-in.html) (bulk only)
 
 ## Process
 
@@ -22,4 +22,4 @@ Once the spring is trimmed, heat the trimmed end of it with a lighter until the 
 
 ## Resources
 
-- The [FIRES Triggers guide](https://firescc.com/mod-guides#/fires-triggers-stage-1){:target="\_blank"} contains information and photos related to trimming springs.
+- The [FIRES Triggers guide](https://firescc.com/mod-guides#/fires-triggers-stage-1) contains information and photos related to trimming springs.

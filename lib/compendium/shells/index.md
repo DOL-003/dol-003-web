@@ -56,10 +56,10 @@ Over-tightening screws can easily lead to screw posts breaking off the top shell
 
 OEM shells can only be obtained from other GCCs, but there are a number of third party options of varying quality that are compatible with OEM internals.
 
-- So-called "Ali shells" are very inexpensive [on AliExpress](https://www.aliexpress.us/item/3256805693064809.html){:target="\_blank"}. These are also called "Controller Chaos" or "CC" shells because the injection molds used to make them are believed to be from Controller Chaos (the early ones sold on AliExpress had the Controller Chaos logo molded into the shell).
-- [eXtremeRate](https://extremerate.com/collections/nintendo-gamecube-shells){:target="\_blank"} sells GCC shells in various colors and finishes.
-- [Foxpad Customs](https://foxpadcustoms.com){:target="\_blank"} sells OEM-compatible clear shells with various tints.
+- So-called "Ali shells" are very inexpensive [on AliExpress](https://www.aliexpress.us/item/3256805693064809.html). These are also called "Controller Chaos" or "CC" shells because the injection molds used to make them are believed to be from Controller Chaos (the early ones sold on AliExpress had the Controller Chaos logo molded into the shell).
+- [eXtremeRate](https://extremerate.com/collections/nintendo-gamecube-shells) sells GCC shells in various colors and finishes.
+- [Foxpad Customs](https://foxpadcustoms.com) sells OEM-compatible clear shells with various tints.
 
 ## Resources
 
-- The GCC Library website maintains a [complete list of OEM shell variants](https://gccontrollerlibrary.com/controllers/wired-gamecube-controller/){:target="\_blank"} and details about each of them.
+- The GCC Library website maintains a [complete list of OEM shell variants](https://gccontrollerlibrary.com/controllers/wired-gamecube-controller/) and details about each of them.

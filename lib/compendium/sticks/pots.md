@@ -18,11 +18,11 @@ Since PODE is caused by the carbon components within the potentiometer wearing o
 
 Potentiometers can also develop drift, which is similar to PODE but manifests as incorrect non-zero values when the stick is at the center/neutral position. Similarly, drift generally cannot be fixed without replacing the affected potentiometers.
 
-It is possible to [clean a potentiometer](https://www.youtube.com/watch?v=lPJ2ST9vTfQ){:target="\_blank"} by unclipping it, removing the wiper, and gently applying isopropyl alcohol. However, this generally will not fix issues caused by wear.
+It is possible to [clean a potentiometer](https://www.youtube.com/watch?v=lPJ2ST9vTfQ) by unclipping it, removing the wiper, and gently applying isopropyl alcohol. However, this generally will not fix issues caused by wear.
 
 ## Replacements
 
-The only place to get new OEM potentiometers is currently [Kadano](https://kadano.biz){:target="\_blank"}, who orders them in bulk from one of Nintendo's suppliers.
+The only place to get new OEM potentiometers is currently [Kadano](https://kadano.biz), who orders them in bulk from one of Nintendo's suppliers.
 
 Used potentiometers can be harvested from other Nintendo controllers, but be wary of how worn they are:
 

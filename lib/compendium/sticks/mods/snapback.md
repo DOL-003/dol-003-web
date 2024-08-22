@@ -15,10 +15,10 @@ Eventually, the idea of a snapback "module" came about, which integrates several
 
 A variety of companies and modders sell snapback modules of their own designs. Note that availability may vary.
 
-- [esca no-reset module](https://www.etsy.com/listing/1063578642/esca-gamecube-controller-snapback){:target="\_blank"}
-- [FIRES no-reset module](https://www.etsy.com/listing/1060466170/fires-no-reset-antisnapback-module-for){:target="\_blank"}
-- [Hand Held Legend flex PCB module](https://handheldlegend.com/products/no-reset-snapback-mod-for-the-gamecube-controller-hand-held-legend?variant=39711300354182){:target="\_blank"}
-- [Kadano](https://kadano.biz){:target="\_blank"} sells various revisions of his module designs
+- [esca no-reset module](https://www.etsy.com/listing/1063578642/esca-gamecube-controller-snapback)
+- [FIRES no-reset module](https://www.etsy.com/listing/1060466170/fires-no-reset-antisnapback-module-for)
+- [Hand Held Legend flex PCB module](https://handheldlegend.com/products/no-reset-snapback-mod-for-the-gamecube-controller-hand-held-legend?variant=39711300354182)
+- [Kadano](https://kadano.biz) sells various revisions of his module designs
 
 ## Process
 
@@ -26,4 +26,4 @@ A traditional module includes several small wires that must be soldered to the p
 
 ## Resources
 
-Kadano, who pioneered snapback modules, maintains a [detailed reference about his past module designs](https://kadano.net/SSBM/GCC/S2.html){:target="\_blank"}.
+Kadano, who pioneered snapback modules, maintains a [detailed reference about his past module designs](https://kadano.net/SSBM/GCC/S2.html).

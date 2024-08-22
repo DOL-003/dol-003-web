@@ -24,7 +24,7 @@ Note that retrobrighting can make shells more brittle, and care should be taken 
 - Hydrogen peroxide solution
   - The most commonly available recommended product is SalonCare Clear, which is available at most beauty supply stores.
 - Waterproof gloves
-- UV light string ([example product](https://www.amazon.com/gp/product/B07T9KJKSC){:target="\_blank"})
+- UV light string ([example product](https://www.amazon.com/gp/product/B07T9KJKSC))
 - Large opaque bin with lid
 - Small clear plastic bin
 - Aluminum foil
@@ -56,4 +56,4 @@ This method involves a little more up-front investment to build a reusable retro
 
 ## Resources
 
-- [Photo-based guide](https://imgur.com/a/tutorial-cleaning-transparent-plastic-UUv5l){:target="\_blank"} showing the cream method.
+- [Photo-based guide](https://imgur.com/a/tutorial-cleaning-transparent-plastic-UUv5l) showing the cream method.

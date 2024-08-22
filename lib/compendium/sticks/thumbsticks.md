@@ -20,11 +20,11 @@ It is possible, though somewhat difficult, to replace a worn rubber cap, but usu
 
 ### Loose fitting stick
 
-Aftermarket sticks and even OEM sticks can sometimes not fit tightly on the stickbox peg. When this happens, put a small piece of material like tape or plastic wrap around the top of the peg to make the thumbstick more snug. For more information including some other potential solutions, check out [this guide](https://dqcontrollers.godaddysites.com/fix-my-sticks/f/my-stick-is-loose-it-comes-off-the-post){:target="\_blank"} by [DQ Controllers](/modders/dq-controllers).
+Aftermarket sticks and even OEM sticks can sometimes not fit tightly on the stickbox peg. When this happens, put a small piece of material like tape or plastic wrap around the top of the peg to make the thumbstick more snug. For more information including some other potential solutions, check out [this guide](https://dqcontrollers.godaddysites.com/fix-my-sticks/f/my-stick-is-loose-it-comes-off-the-post) by [DQ Controllers](/modders/dq-controllers).
 
 ### Stick rubbing on shell
 
-Aftermarket sticks often sit too low, which makes the rubber stick cap rub on the top of the gate. To fix it, put a tiny ball of tin foil or another hard object in the stick's slot to make it sit higher on the stickbox peg. For photos and alternate solutions, see [this guide](https://dqcontrollers.godaddysites.com/fix-my-sticks/f/my-stick-feels-like-the-rubber-is-rubbing-on-the-shell){:target="\_blank"} by [DQ Controllers](/modders/dq-controllers).
+Aftermarket sticks often sit too low, which makes the rubber stick cap rub on the top of the gate. To fix it, put a tiny ball of tin foil or another hard object in the stick's slot to make it sit higher on the stickbox peg. For photos and alternate solutions, see [this guide](https://dqcontrollers.godaddysites.com/fix-my-sticks/f/my-stick-feels-like-the-rubber-is-rubbing-on-the-shell) by [DQ Controllers](/modders/dq-controllers).
 
 ## Replacements
 
@@ -61,4 +61,4 @@ Many online retailers sell knockoff GCC thumbsticks, which are typically very ch
 
 ## Resources
 
-Jon of [NoJonsMods](/modders/nojonsmods){:target="\_blank"} made [a thorough write-up](https://www.reddit.com/r/customGCC/comments/mwotkd/buying_some_new_sticks_or_buttons_read_this_first/){:target="\_blank"} of what to look for when searching for replacement buttons and sticks.
+Jon of [NoJonsMods](/modders/nojonsmods) made [a thorough write-up](https://www.reddit.com/r/customGCC/comments/mwotkd/buying_some_new_sticks_or_buttons_read_this_first/) of what to look for when searching for replacement buttons and sticks.

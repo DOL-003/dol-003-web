@@ -20,12 +20,12 @@ There are two primary methods for balding: sanding OEM buttons, which is the pri
 - A set of OEM buttons
 - Sandpaper in various grits between 800 and 8000
 - Polish
-  - [Novus 7030](https://www.amazon.com/gp/product/B000RT6RUG){:target="\_blank"} is commonly recommended for finishing
-  - Various automotive polishes like [Chemical Guys V32 / V34 / V36 / V38](https://www.chemicalguys.com/products/v-line-polish-compound-kit-for-light-to-heavy-swirls-scratches){:target="\_blank"} can work well
+  - [Novus 7030](https://www.amazon.com/gp/product/B000RT6RUG) is commonly recommended for finishing
+  - Various automotive polishes like [Chemical Guys V32 / V34 / V36 / V38](https://www.chemicalguys.com/products/v-line-polish-compound-kit-for-light-to-heavy-swirls-scratches) can work well
   - Other polishes can also work well as long as they are safe on ABS plastic
 - Microfiber cloth
-- Random orbital buffer with polishing pads, like the [Chemical Guys TORQX](https://www.chemicalguys.com/products/torqx-random-orbital-polisher-kit){:target="\_blank"} (optional)
-- [Padded sandpaper buffer pad](https://www.amazon.com/gp/product/B0922ZPQB5){:target="\_blank"} (optional)
+- Random orbital buffer with polishing pads, like the [Chemical Guys TORQX](https://www.chemicalguys.com/products/torqx-random-orbital-polisher-kit) (optional)
+- [Padded sandpaper buffer pad](https://www.amazon.com/gp/product/B0922ZPQB5) (optional)
 - Power drill with Torx bit (optional)
 
 ## Process
@@ -61,7 +61,7 @@ After going up through the grits like the manual process, switch to a cutting pa
   <a href="/static/compendium/bald-resin-buttons.jpg">
     <img src="/static/compendium/bald-resin-buttons-thumb.jpg">
   </a>
-  <p>Bald resin buttons created by <a href="/modders/nojonsmods" target="_blank">NoJonsMods</a> using the silicone drip method.</p>
+  <p>Bald resin buttons created by <a href="/modders/nojonsmods">NoJonsMods</a> using the silicone drip method.</p>
 </aside>
 
 After creating silicone molds of OEM buttons to use for [resin casting](/compendium/buttons/mods/resin), mix up some more silicone and drip it into each mold until it covers the letter. Gently tilt the molds in each direction to get some silicone in the corners to round the button edges as well. Lay the molds flat so the additional silicone can set evenly.
