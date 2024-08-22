@@ -12,7 +12,7 @@ subtitle: The GameCube controller has 6 standalone buttons and a 4-way D-pad.
 
 The **buttons** on a GCC are made of ABS plastic and push against a silicone pad (except for the Z button) when depressed. This bridges a contact pad on the [motherboard](/compendium/boards) to trigger a digital input.
 
-On the right side of the controller, the A, B, X and Y buttons constitute the "face buttons" (a term which sometimes also includes the Start button and/or D-pad). The Z button is uniquely positioned next to the R trigger, and presses directly against a mechanical switch instead of a silicone pad.
+On the right side of the controller, the A, B, X and Y buttons constitute the "face buttons" (a term which sometimes also includes the Start button and/or D-pad). The Z button is uniquely positioned next to the R trigger, and presses directly against a mechanical switch instead of a silicone pad. A metal clip attached to the underside of the Z button provides additional resistance; this clip is commonly bent or removed to reduce the force needed to press the button, especially for players who [remap](/compendium/boards/mods/remap) their Z button.
 
 ## Common issues & repairs
 
