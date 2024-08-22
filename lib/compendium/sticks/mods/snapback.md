@@ -3,7 +3,7 @@ title: Snapback modules
 subtitle: Install capacitors to prevent analog misinputs due to snapback.
 ---
 
-Most analog sticks naturally have [snapback](/compendium/sticks/stickboxes#snapback), and snapback modules are the current de facto standard way to prevent it during play.
+Most analog sticks naturally have [snapback](/compendium/sticks/stickboxes#snapback), and **anti-snapback modules** (commonly shortened to simply **snapback modules**) are the current de facto standard way to prevent it during play.
 
 ## History
 
@@ -16,14 +16,11 @@ Eventually, the idea of a snapback "module" came about, which integrates several
 A variety of companies and modders sell snapback modules of their own designs. Note that availability may vary.
 
 - [esca no-reset module](https://www.etsy.com/listing/1063578642/esca-gamecube-controller-snapback){:target="\_blank"}
-
 - [FIRES no-reset module](https://www.etsy.com/listing/1060466170/fires-no-reset-antisnapback-module-for){:target="\_blank"}
-
 - [Hand Held Legend flex PCB module](https://handheldlegend.com/products/no-reset-snapback-mod-for-the-gamecube-controller-hand-held-legend?variant=39711300354182){:target="\_blank"}
-
 - [Kadano](https://kadano.biz){:target="\_blank"} sells various revisions of his module designs
 
-## Installation
+## Process
 
 A traditional module includes several small wires that must be soldered to the potentiometer leads, and a separate mechanism to attach the module itself to the board. More recently, people have created flexible PCB modules that fit over the leads and can be soldered directly onto the board. Most modules include installation instructions pertaining to their specific design.
 
