@@ -26,7 +26,7 @@ In more recent years, several projects have created replacement motherboards for
 
 ### Goomwave
 
-The first well-known aftermarket motherboard was the Goomwave, which features hot-swappable [stickbox potentiometers](/compendium/sticks/pots), [notch](/compendium/shells/mods/notches) calibration, [pode](/compendium/sticks/pots#pode) emulation, and various other customizable settings. At the project's peak, many top Melee players used a Goomwave, and demand far outstripped supply since the project was closed-source and only the maintainers could produce the boards. More recently, the Goomwave project has been more dormant in the wake of PhobGCC's growing popularity.
+The first well-known aftermarket motherboard was the Goomwave, which features hot-swappable [stickbox potentiometers](/compendium/sticks/pots), [notch](/compendium/shells/mods/notches) calibration, [PODE](/compendium/sticks/pots#pode) emulation, and various other customizable settings. At the project's peak, many top Melee players used a Goomwave, and demand far outstripped supply since the project was closed-source and only the maintainers could produce the boards. More recently, the Goomwave project has been more dormant in the wake of PhobGCC's growing popularity, and due to some macro-like functionality Goomwave controllers may not be tournament-legal in the near future.
 
 ### PhobGCC
 
@@ -40,6 +40,12 @@ The first well-known aftermarket motherboard was the Goomwave, which features ho
 The PhobGCC project consists of an open-source PCB design paired with open-source firmware, designed to be fabricated, assembled and flashed by anyone. It replaces the OEM [stickbox potentiometers](/compendium/sticks/pots) with magnets and Hall effect sensors, and supports many customizable settings like stick calibration, built-in [snapback](/compendium/sticks/stickboxes#common-issues) filtering, software [button swaps](/compendium/boards/mods/button-swaps), [digital trigger](/compendium/triggers/mods/digital) emulation, and much more.
 
 Learn more at the [official PhobGCC docs](https://github.com/PhobGCC/PhobGCC-doc).
+
+### Cardboard
+
+The Cardboard is a custom PCB designed to use a transplanted CNT-DOL chip, the main chip on an OEM motherboard. It includes various popular mods as built-in features, such as a [heartbeat module](/compendium/sticks/mods/heartbeat), [digital triggers](/compendium/triggers/mods/digital), left Z, [mouse-click button](/compendium/buttons/mods/mouseclick) support, and more.
+
+Cardboard is developed by Cardosi Customs, and files can be downloaded or boards can be purchased on [their website](https://cardosicustoms.com).
 
 ## Common issues & repairs
 
