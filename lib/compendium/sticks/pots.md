@@ -10,7 +10,7 @@ Two **potentiometers** are responsible for translating the position of each [sti
 
 ### PODE
 
-As a potentiometer wears, it usually develops Potentiometer Oddity Degradation Effect (PODE). PODE is when a potentiometer no longer accurately reports the position of the stick, particularly during movement, which often results in missed inputs.
+As a potentiometer wears, it usually develops [Potentiometer Oddity Degradation Effect](/compendium/misc/pode) (PODE). PODE is when a potentiometer no longer accurately reports the position of the stick, particularly during movement, which often results in missed inputs.
 
 Since PODE is caused by the carbon components within the potentiometer wearing out, it cannot feasibly be repaired. Generally, the potentiometers are replaced to fix PODE. Alternatively, a [heartbeat module](/compendium/sticks/mods/heartbeat) can be installed to suppress the effects of PODE.
 

@@ -11,11 +11,13 @@ subtitle: Definitions of common terms and abbreviations related to GameCube cont
 
 [Goomwave](/compendium/boards#goomwave): A proprietary aftermarket GameCube motherboard
 
+[Heartbeat module](/compendium/sticks/mods/heartbeat): A [snapback module](/compendium/sticks/mods/snapback) with resistors that address the effects of [PODE](/compendium/misc/pode)
+
 **OEM**: Original Equipment Manufacturer — typically refers to Nintendo-made controllers or parts in the context of GCCs
 
 [Phob / PhobGCC](/compendium/boards#phobgcc): An open-source aftermarket GameCube motherboard
 
-[PODE](/compendium/sticks/pots#pode): Potentiometer Oddity Degradation Effect
+[PODE](/compendium/misc/pode): Potentiometer Oddity Degradation Effect
 
 **Pots**: [Potentiometers](/compendium/sticks/pots)
 
