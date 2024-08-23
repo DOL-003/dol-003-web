@@ -1,11 +1,11 @@
 module ApplicationHelper
 
   def current_layout
-    self.controller.send :_layout, self.lookup_context, []
+    controller.send :_layout, lookup_context, []
   end
 
   def current_modder
-    return nil if !user_signed_in?
+    return nil unless user_signed_in?
 
     Modder.find_by(user: current_user)
   end
@@ -15,13 +15,16 @@ module ApplicationHelper
       component:,
       props: props
         .merge({ csrf_token: form_authenticity_token })
-        .deep_transform_keys do |key| key.to_s.camelize(:lower) end
+        .deep_transform_keys do |key|
+          key.to_s.camelize(:lower) 
+        end
         .to_json
     }
   end
 
   def page_title
-    @title.present? ? "#{@title} • DOL-003.info" : 'DOL-003.info: The GameCube controller modder directory'
+    site_name = @compendium.present? ? 'The GameCube Controller Compendium' : 'DOL-003.info'
+    @title.present? ? "#{@title} • #{site_name}" : 'DOL-003.info: All about GameCube controllers'
   end
 
   def page_description

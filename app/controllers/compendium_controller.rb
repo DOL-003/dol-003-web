@@ -10,8 +10,10 @@ class CompendiumController < ApplicationController
     page = page_data(params[:path] || 'index')
     return not_found if page.blank?
 
+    @compendium = true
     @title = page[:title]
     @subtitle = page[:subtitle]
+    @description = @subtitle.present? ? "#{@subtitle} The GameCube Controller Compendium is a hub for GCC modding knowldge." : nil
     @content = page[:content]
     @stub = page[:stub]
     @path = page[:path]
