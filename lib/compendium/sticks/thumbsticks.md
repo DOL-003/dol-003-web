@@ -48,6 +48,8 @@ Thumbsticks from certain other Nintendo controllers are compatible with GCC stic
 
 - **Wii Nunchuck sticks** fit in a GCC, but are taller than standard GCC sticks and have a slightly different rubber cap design.
 - **Wii Classic Controller sticks** fit in a GCC and have the same rubber cap design as nunchuck sticks.
+- **Wii U Pro Controller sticks** fit in a GGC, shorter than the Wii Classic Controller/Nunchuck sticks, closer in size to the GCC OEM sticks.
+- **Wii U Tablet sticks** same as Wii U Pro Controller sticks.
 - **Resin sticks** are available in many varieties, from OEM profile to custom shapes like Spicy Sticks, which are often recommended for players who prefer a grippier surface. Resin sticks are made with and without OEM-like rubber caps.
 
 ### Sticks to avoid
