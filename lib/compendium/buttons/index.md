@@ -26,6 +26,8 @@ While there is no known source for standalone OEM buttons, there is a very activ
 
 The most common way people make custom buttons is to cast them out of resin. This allows a wide variety of both aesthetic options and modifications to the shape of the buttons. [Browse button makers on DOL-003.info](/modders?services=resin-buttons) to find artists who make resin buttons.
 
+Some resin buttons may be slightly too big for the controller shell and may need to be sanded down around the sides to achieve a better fit. This can be done in minutes with a dremel.
+
 ### [Bald buttons](/compendium/buttons/mods/bald)
 
 OEM buttons can be carefully sanded and polished to remove the imprinted letter and round the upper edges of the buttons for players who prefer a smoother-feeling button. These can then be used in a controller directly, or used as masters for resin buttons. Bald resin buttons can also be cast from regular button molds by dripping in a small amount of silicone into the finished molds to round out the bottom of the molds.
