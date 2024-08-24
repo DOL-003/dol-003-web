@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("section.page a").forEach((link) => {
     if (
       !link.getAttribute("href") ||
-      link.getAttribute("href").includes("/compendium/")
+      !/^http/.test(link.getAttribute("href"))
     ) {
       return
     }

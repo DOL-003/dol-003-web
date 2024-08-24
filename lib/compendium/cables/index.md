@@ -3,9 +3,9 @@ title: Cables
 subtitle: Every GCC has a cable that connects the controller to a GameCube, Wii, or PC (via a USB adapter).
 ---
 
-An OEM GCC **cable** consists of a twisted set of five insulated wires with a drain wire, a layer of copper shielding, and an outer layer of rubber insulation. The controller-side end connects directly to the [motherboard](/compendium/boards) via a soldered connector, while the console-side end terminates in a proprietary Nintendo-designed plug.
+An OEM GCC **cable** consists of a twisted set of five insulated wires with a drain wire, a layer of copper shielding, and an outer layer of rubber insulation. The controller-side end connects directly to the [motherboard](/boards) via a soldered connector, while the console-side end terminates in a proprietary Nintendo-designed plug.
 
-Stock cables come in two lengths. Smash Ultimate, Smash 4, and JP White controllers have 3 meter cables. All other controllers have 2 meter cables. All OEM cables have black insulation, except for the white Smash 4 and JP White controllers, which have white insulation. Various plug cover colors exist that correspond with [shell](/compendium/shells) colors.
+Stock cables come in two lengths. Smash Ultimate, Smash 4, and JP White controllers have 3 meter cables. All other controllers have 2 meter cables. All OEM cables have black insulation, except for the white Smash 4 and JP White controllers, which have white insulation. Various plug cover colors exist that correspond with [shell](/shells) colors.
 
 ## Common issues & repairs
 
@@ -17,4 +17,4 @@ Another common cause of cable issues is poor soldering of the cable to the mothe
 
 ## Replacements
 
-There is no known source for standalone OEM cables, but many modders have extra cables on hand from other controllers. Additionally, GCC-compatible cables can be [made from scratch](/compendium/cables/mods/liquid), and cheap third-party ones can be found on sites like AliExpress (though these are not recommended due to quality issues).
+There is no known source for standalone OEM cables, but many modders have extra cables on hand from other controllers. Additionally, GCC-compatible cables can be [made from scratch](/cables/mods/liquid), and cheap third-party ones can be found on sites like AliExpress (though these are not recommended due to quality issues).

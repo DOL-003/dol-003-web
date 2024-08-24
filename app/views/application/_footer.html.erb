@@ -2,17 +2,17 @@
   <div class="content grid">
 
     <div class="span-6">
-      <p class="small">DOL-003.info is a repository of GameCube controller information and a directory of community modders. <%= link_to 'Learn more', about_path %></p>
+      <p class="small">DOL-003.info is a repository of GameCube controller information and a directory of community modders. <%= link_to 'Learn more', about_url(subdomain: '') %></p>
       <p class="small">Modder info is provided for informational use only. DOL-003.info does not endorse any modder or modder-affiliated content presented.</p>
       <p class="small">© <%= Date.today.year %>. All rights reserved. Made with ♥ by <a href="https://twitter.com/mathssbm" target="_blank">Math</a>.</p>
-      <p class="small"><%= link_to 'Terms of Service', terms_path %> • <%= link_to 'Privacy Policy', privacy_path %> • <%= link_to 'House Rules', rules_path %></p>
+      <p class="small"><%= link_to 'Terms of Service', terms_url(subdomain: '') %> • <%= link_to 'Privacy Policy', privacy_url(subdomain: '') %> • <%= link_to 'House Rules', rules_url(subdomain: '') %></p>
     </div>
 
     <div class="span-6 sign-in-link">
       <% if user_signed_in? %>
         <%= inline_svg_tag 'plug.svg' %>
       <% else %>
-        <%= link_to 'Modder sign in', new_user_session_path, class: 'button secondary' %>
+        <%= link_to 'Modder sign in', new_user_session_url(subdomain: ''), class: 'button secondary' %>
       <% end %>
     </div>
 

@@ -5,22 +5,22 @@ subtitle: Definitions of common terms and abbreviations related to GameCube cont
 
 **Drift**: Unintentional analog input resulting from a potentiometer not registering a return to neutral
 
-**Gate**: The octagonal opening in the shell for the [analog stick](/compendium/sticks)
+**Gate**: The octagonal opening in the shell for the [analog stick](/sticks)
 
 **GCC**: GameCube controller
 
-[Goomwave](/compendium/boards#goomwave): A proprietary aftermarket GameCube motherboard
+[Goomwave](/boards#goomwave): A proprietary aftermarket GameCube motherboard
 
-[Heartbeat module](/compendium/sticks/mods/heartbeat): A [snapback module](/compendium/sticks/mods/snapback) with resistors that address the effects of [PODE](/compendium/misc/pode)
+[Heartbeat module](/sticks/mods/heartbeat): A [snapback module](/sticks/mods/snapback) with resistors that address the effects of [PODE](/misc/pode)
 
 **OEM**: Original Equipment Manufacturer — typically refers to Nintendo-made controllers or parts in the context of GCCs
 
-[Phob / PhobGCC](/compendium/boards#phobgcc): An open-source aftermarket GameCube motherboard
+[Phob / PhobGCC](/boards#phobgcc): An open-source aftermarket GameCube motherboard
 
-[PODE](/compendium/misc/pode): Potentiometer Oddity Degradation Effect
+[PODE](/misc/pode): Potentiometer Oddity Degradation Effect
 
-**Pots**: [Potentiometers](/compendium/sticks/pots)
+**Pots**: [Potentiometers](/sticks/pots)
 
 **Snapback**: Unintentional analog input resulting from an analog stick "snapping back" past the center/neutral coordinates
 
-**T1** / **T2** / **T3**: The three primary variants of OEM [boards](/compendium/boards) and [stickboxes](/compendium/sticks/stickboxes)
+**T1** / **T2** / **T3**: The three primary variants of OEM [boards](/boards) and [stickboxes](/sticks/stickboxes)

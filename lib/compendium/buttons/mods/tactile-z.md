@@ -5,7 +5,7 @@ subtitle: Replace the stock Z button switch with an aftermarket option for more 
 
 The Z button is the only button that uses a mechanical switch rather than a silicone membrane, but many find the OEM switch to feel mushy or otherwise unsatisfying to press. Numerous alternative switches have been used, and in general the replacement of the switch is often called **Tactile Z** because the aftermarket switches tend to have more distinct actuation feedback.
 
-Both Tactile Z switches and [mouse-click](/compendium/buttons/mods/mouseclick) switches can be described as "clicky," but mouse-click switches tend to have a lower actuation threshold than the stock switch, whereas Tactile Z switches usually have a higher actuation threshold (i.e. require more force to press).
+Both Tactile Z switches and [mouse-click](/buttons/mods/mouseclick) switches can be described as "clicky," but mouse-click switches tend to have a lower actuation threshold than the stock switch, whereas Tactile Z switches usually have a higher actuation threshold (i.e. require more force to press).
 
 ## Parts
 
@@ -21,7 +21,7 @@ Any switch that can be made to fit can theoretically work, but these are some of
 - Trigger switches from the Wii Classic Controller (sometimes called "OEM Tactile Z") — lighter resistance
 - [Omron B3F-3120](https://www.digikey.com/en/products/detail/omron-electronics-inc-emc-div/B3F-3120/38364) — medium resistance, requires modification
 - [Omron B3F-3122](https://www.digikey.com/en/products/detail/omron-electronics-inc-emc-div/B3F-3122/90406) — heavy resistance, requires modification
-- [Generic switch](https://www.abxyg.cc/product/tac-z) available from [Beta Buttons](/modders/beta-buttons)
+- [Generic switch](https://www.abxyg.cc/product/tac-z) available from [Beta Buttons](https://dol-003.info/modders/beta-buttons)
 
 ## Process
 

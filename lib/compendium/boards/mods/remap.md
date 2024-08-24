@@ -17,7 +17,7 @@ Only basic soldering supplies and small-gauge wires are required. Additionally, 
 
 On an OEM controller, this mod is fairly challenging. The chip pins corresponding to the buttons being swapped need to be lifted from their traces, and thin wires need to be soldered to both the pins and the traces. Optionally, a small switch can be used to easily toggle the button swap on or off without soldering.
 
-The [PhobGCC](/compendium/boards#phobgcc) firmware has built-in software support to swap either the Z, L or R inputs with either the X or Y inputs, without requiring any hardware modifications.
+The [PhobGCC](/boards#phobgcc) firmware has built-in software support to swap either the Z, L or R inputs with either the X or Y inputs, without requiring any hardware modifications.
 
 ## Resources
 

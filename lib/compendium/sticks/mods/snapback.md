@@ -3,7 +3,7 @@ title: Snapback modules
 subtitle: Install capacitors to prevent analog misinputs due to snapback.
 ---
 
-Most analog sticks naturally have [snapback](/compendium/sticks/stickboxes#snapback), and **anti-snapback modules** (commonly shortened to simply **snapback modules**) are the current de facto standard way to prevent it during play.
+Most analog sticks naturally have [snapback](/sticks/stickboxes#snapback), and **anti-snapback modules** (commonly shortened to simply **snapback modules**) are the current de facto standard way to prevent it during play.
 
 ## History
 

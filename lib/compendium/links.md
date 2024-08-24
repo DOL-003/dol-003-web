@@ -9,6 +9,6 @@ The [CGCC Discord](https://discord.gg/sac2cTD) is a central hub of GCC modding i
 
 [The GCC Library](https://gccontrollerlibrary.com) is a huge collection of general GCC information, particularly covering the many variants of the controller that were released over the years and different aspects of their internals.
 
-[Kadano](/modders/kadano), one of the most prolific GCC modders, maintains [a website full of technical GCC modding documentation](https://kadano.net/SSBM/GCC/).
+[Kadano](https://dol-003.info/modders/kadano), one of the most prolific GCC modders, maintains [a website full of technical GCC modding documentation](https://kadano.net/SSBM/GCC/).
 
 FIRES, another GCC modding pioneer, has published [a number of mod guides and other useful references](https://firescc.com).

@@ -13,7 +13,7 @@ subtitle: Remove the letters and round the corners of OEM buttons to give them a
 
 **Bald buttons** are buttons with no inset letters and rounded corners. The process of creating bald buttons is called **balding**. Typically the A, B, X and Y buttons are balded, and optionally the Z and Start buttons, and sometimes the D-pad.
 
-There are two primary methods for balding: sanding OEM buttons, which is the primary method covered here; or [using extra silicone](#the-alternative-silicone-drip-method) to bald molds for [resin casting](/compendium/buttons/mods/resin).
+There are two primary methods for balding: sanding OEM buttons, which is the primary method covered here; or [using extra silicone](#the-alternative-silicone-drip-method) to bald molds for [resin casting](/buttons/mods/resin).
 
 ## Parts
 
@@ -61,9 +61,9 @@ After going up through the grits like the manual process, switch to a cutting pa
   <a href="/static/compendium/bald-resin-buttons.jpg">
     <img src="/static/compendium/bald-resin-buttons-thumb.jpg">
   </a>
-  <p>Bald resin buttons created by <a href="/modders/nojonsmods">NoJonsMods</a> using the silicone drip method.</p>
+  <p>Bald resin buttons created by <a href="https://dol-003.info/modders/nojonsmods">NoJonsMods</a> using the silicone drip method.</p>
 </aside>
 
-After creating silicone molds of OEM buttons to use for [resin casting](/compendium/buttons/mods/resin), mix up some more silicone and drip it into each mold until it covers the letter. Gently tilt the molds in each direction to get some silicone in the corners to round the button edges as well. Lay the molds flat so the additional silicone can set evenly.
+After creating silicone molds of OEM buttons to use for [resin casting](/buttons/mods/resin), mix up some more silicone and drip it into each mold until it covers the letter. Gently tilt the molds in each direction to get some silicone in the corners to round the button edges as well. Lay the molds flat so the additional silicone can set evenly.
 
 Buttons cast in these molds will be shaped very similarly to buttons sanded using the technique above.

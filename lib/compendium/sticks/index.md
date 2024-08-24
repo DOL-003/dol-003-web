@@ -29,4 +29,4 @@ The mechanical component that lets you smoothly move the thumbstick, and returns
 
 ## [Potentiometers](sticks/pots)
 
-Two potentiometers serve as the electronic interface between each stickbox and the controller's processor, translating the movement of the stick along each axis into discrete input values. As potentiometers wear down, they develop an issue called [PODE](/compendium/misc/pode) that makes them less responsive to thumbstick input. This typically manifests in games like Smash as inconsistency performing tech that requires rapid analog inputs, like dashing.
+Two potentiometers serve as the electronic interface between each stickbox and the controller's processor, translating the movement of the stick along each axis into discrete input values. As potentiometers wear down, they develop an issue called [PODE](/misc/pode) that makes them less responsive to thumbstick input. This typically manifests in games like Smash as inconsistency performing tech that requires rapid analog inputs, like dashing.

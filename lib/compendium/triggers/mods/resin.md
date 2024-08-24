@@ -9,7 +9,7 @@ stub: true
   <a href="/static/compendium/resin-triggers.jpg">
     <img src="/static/compendium/resin-triggers-thumb.jpg">
   </a>
-  <p>A set of resin triggers by <a href="/modders/selstor-controllers">Selstor</a>.</p>
+  <p>A set of resin triggers by <a href="https://dol-003.info/modders/selstor-controllers">Selstor</a>.</p>
 </aside>
 
 ## Resources

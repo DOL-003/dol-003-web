@@ -4,7 +4,7 @@ title: Reducing trigger spring tension
 subtitle: Modify or replace the springs to reduce the amount of force needed to press the trigger.
 ---
 
-One of the most common complaints about the GameCube controller is hand fatigue caused by the large range of motion and relatively high resistance of the triggers. In addition to (or instead of) mods like [pad perforation](/compendium/triggers/mods/pad-perforation) or [trigger plugs](/compendium/triggers/mods/plugs), a trigger's springs can be shortened or replaced to make it easier to pull.
+One of the most common complaints about the GameCube controller is hand fatigue caused by the large range of motion and relatively high resistance of the triggers. In addition to (or instead of) mods like [pad perforation](/triggers/mods/pad-perforation) or [trigger plugs](/triggers/mods/plugs), a trigger's springs can be shortened or replaced to make it easier to pull.
 
 ## Parts
 

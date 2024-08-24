@@ -9,7 +9,7 @@ Compendium content is meant for anyone interested in GCC modding, whether you're
 
 ## Where to start
 
-The [glossary](/compendium/glossary) is a good place to familiarize yourself with GCC terminology. Otherwise, browse various components and related mods using the menu, or check out the [mod index](/compendium/mods) to see all mods at once.
+The [glossary](/glossary) is a good place to familiarize yourself with GCC terminology. Otherwise, browse various components and related mods using the menu, or check out the [mod index](/mods) to see all mods at once.
 
 ## Contributing
 

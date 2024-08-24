@@ -14,7 +14,7 @@ The **stickbox** is the mechanism that lets you smoothly move an analog stick ar
 
 ## Variants
 
-There are three iterations of stickboxes that correspond with the three [motherboard revisions](/compendium/boards#oem-variants), as well as stickboxes made by third parties.
+There are three iterations of stickboxes that correspond with the three [motherboard revisions](/boards#oem-variants), as well as stickboxes made by third parties.
 
 ### T1
 
@@ -42,7 +42,7 @@ Stickbox wear is unavoidable and unrepairable, and typically a stickbox is repla
 
 ### Snapback
 
-Because stickboxes use springs to return the stick to center and thumbsticks add some weight to the end of the stick, inertia can cause an overshoot past center when releasing the stick. This results in a brief oscillation of the stick before it settles back at the center point, which can cause misinputs even on brand new stock GCCs. [Snapback capacitors/modules](/compendium/sticks/mods/snapback) are the standard solution to filtering out these inputs at the electrical level, and some aftermarket boards like [PhobGCC](/compendium/boards#phobgcc) have software-based snapback filtering built in.
+Because stickboxes use springs to return the stick to center and thumbsticks add some weight to the end of the stick, inertia can cause an overshoot past center when releasing the stick. This results in a brief oscillation of the stick before it settles back at the center point, which can cause misinputs even on brand new stock GCCs. [Snapback capacitors/modules](/sticks/mods/snapback) are the standard solution to filtering out these inputs at the electrical level, and some aftermarket boards like [PhobGCC](/boards#phobgcc) have software-based snapback filtering built in.
 
 ## Replacements
 
@@ -56,6 +56,6 @@ There have been various community efforts over the years to produce a T3-like st
 
 ## Modifications
 
-[Cleaning and lubing stickboxes](/compendium/sticks/mods/lubing) is a common practice to make the stickbox movement smoother.
+[Cleaning and lubing stickboxes](/sticks/mods/lubing) is a common practice to make the stickbox movement smoother.
 
-[Replacing the stickbox spring](/compendium/sticks/mods/springs) is often done to change the feel of the resistance provided by the stickbox.
+[Replacing the stickbox spring](/sticks/mods/springs) is often done to change the feel of the resistance provided by the stickbox.

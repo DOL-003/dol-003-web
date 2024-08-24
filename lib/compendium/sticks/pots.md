@@ -4,15 +4,15 @@ title: Stickbox potentiometers
 subtitle: The electrical component of the analog stick assembly.
 ---
 
-Two **potentiometers** are responsible for translating the position of each [stickbox](/compendium/sticks/stickboxes) into values that the GCC processor can interpret as X and Y coordinates.
+Two **potentiometers** are responsible for translating the position of each [stickbox](/sticks/stickboxes) into values that the GCC processor can interpret as X and Y coordinates.
 
 ## Common issues & repairs
 
 ### PODE
 
-As a potentiometer wears, it usually develops [Potentiometer Oddity Degradation Effect](/compendium/misc/pode) (PODE). PODE is when a potentiometer no longer accurately reports the position of the stick, particularly during movement, which often results in missed inputs.
+As a potentiometer wears, it usually develops [Potentiometer Oddity Degradation Effect](/misc/pode) (PODE). PODE is when a potentiometer no longer accurately reports the position of the stick, particularly during movement, which often results in missed inputs.
 
-Since PODE is caused by the carbon components within the potentiometer wearing out, it cannot feasibly be repaired. Generally, the potentiometers are replaced to fix PODE. Alternatively, a [heartbeat module](/compendium/sticks/mods/heartbeat) can be installed to suppress the effects of PODE.
+Since PODE is caused by the carbon components within the potentiometer wearing out, it cannot feasibly be repaired. Generally, the potentiometers are replaced to fix PODE. Alternatively, a [heartbeat module](/sticks/mods/heartbeat) can be installed to suppress the effects of PODE.
 
 ### Drift
 
@@ -36,4 +36,4 @@ Third-party potentiometers are not recommended.
 
 ## Modifications
 
-[Snapback modules](/compendium/sticks/mods/snapback) attach capacitors to the potentiometer leads to filter out unintentional inputs caused by snapback.
+[Snapback modules](/sticks/mods/snapback) attach capacitors to the potentiometer leads to filter out unintentional inputs caused by snapback.

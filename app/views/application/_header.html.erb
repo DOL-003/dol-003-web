@@ -1,17 +1,17 @@
 <header>
   <div class="content">
 
-    <a href="/" class="logo">DOL-003</a>
+    <%= link_to 'DOL-003', root_url(subdomain: ''), class: 'logo' %>
 
     <label for="menu-toggle" id="menu-toggle-button"><%= inline_svg_tag 'menu.svg' %></label>
     <input type="checkbox" id="menu-toggle">
     <ul class="menu">
       <% if flag_enabled? :compendium %>
-        <li><%= link_to 'Compendium', compendium_path %></li>
+        <li><%= link_to 'Compendium', compendium_url %></li>
       <% end %>
-      <li><%= link_to 'Modder search', modders_path %></li>
+      <li><%= link_to 'Modder search', modders_url(subdomain: '') %></li>
       <% if user_signed_in? && current_modder.blank? %>
-        <li><%= link_to 'Set up profile', edit_profile_path %></li>
+        <li><%= link_to 'Set up profile', edit_profile_url(subdomain: '') %></li>
       <% end %>
       <li class="close"><label for="menu-toggle" id="menu-close"><%= inline_svg_tag 'x.svg' %></label></li>
       <% if flag_enabled? :jump_to_modder %>
@@ -22,7 +22,7 @@
                 {
                   name: modder.name,
                   logo_url: modder.logo.present? ? modder.logo_url : nil,
-                  link: modder_path(modder)
+                  link: modder_url(modder, subdomain: '')
                 }
               end
             }
@@ -47,11 +47,11 @@
         </label>
 
         <ul class="overlay">
-          <li class="name"><%= link_to current_modder.name, modder_path(current_modder), class: 'big' %></li>
-          <li><%= link_to 'Edit profile', edit_profile_path %></li>
-          <li><%= link_to 'Account settings', edit_user_registration_path %></li>
-          <li><%= link_to 'Invite people', new_invitation_path %></li>
-          <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+          <li class="name"><%= link_to current_modder.name, modder_url(current_modder, subdomain: ''), class: 'big' %></li>
+          <li><%= link_to 'Edit profile', edit_profile_url(subdomain: '') %></li>
+          <li><%= link_to 'Account settings', edit_user_registration_url(subdomain: '') %></li>
+          <li><%= link_to 'Invite people', new_invitation_url(subdomain: '') %></li>
+          <li><%= link_to 'Sign out', destroy_user_session_url(subdomain: ''), method: :delete %></li>
         </ul>
 
       </div>

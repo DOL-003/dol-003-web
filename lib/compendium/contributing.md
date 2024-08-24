@@ -39,7 +39,7 @@ Note that pull requests that do not follow these guidelines will not be accepted
 
 With specific exceptions, each top-level page should be a **component page** describing a component or group of components of a GameCube controller.
 
-A component page may describe subcomponents within the page, or split subcomponent information out into subpages if the amount of detail warrants it. For instance, the [buttons](/compendium/buttons) page describes all buttons inline since there isn't much to say about them, but the [analog sticks](/compendium/sticks) page has subpages for each different part of the analog stick assembly since each subcomponent has a large amount of related information.
+A component page may describe subcomponents within the page, or split subcomponent information out into subpages if the amount of detail warrants it. For instance, the [buttons](/buttons) page describes all buttons inline since there isn't much to say about them, but the [analog sticks](/sticks) page has subpages for each different part of the analog stick assembly since each subcomponent has a large amount of related information.
 
 Each mod should be covered by its own **mod page** nested under a **Mods** page under the relevant component.
 

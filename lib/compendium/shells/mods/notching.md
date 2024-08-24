@@ -4,7 +4,7 @@ title: Shell notching
 subtitle: Subtly changing the shape of the gate to add notches in specific places makes hitting certain analog values easier.
 ---
 
-**Notching** is the process of changing the shape of the [analog stick](/compendium/sticks) gate by adding new corner-like features, known as **notches**, in specific places. The exact location of each notch is designed to achieve certain coordinates that correspond to certain tech in a Smash game.
+**Notching** is the process of changing the shape of the [analog stick](/sticks) gate by adding new corner-like features, known as **notches**, in specific places. The exact location of each notch is designed to achieve certain coordinates that correspond to certain tech in a Smash game.
 
 ## Variants
 

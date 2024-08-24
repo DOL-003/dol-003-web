@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
   constraints subdomain: 'compendium' do
-    get '/', to: redirect('https://dol-003.info/compendium')
-    get '*path', to: redirect { |path_params| "https://dol-003.info/compendium/#{path_params[:path]}" }
+    get '(*path)', to: 'compendium#show', as: :compendium
   end
+
+  get 'compendium(/*path)', to: redirect { |path_params| "https://compendium.dol-003.info/#{path_params[:path]}" }
 
   namespace :admin do
     resources :modders
@@ -51,7 +52,5 @@ Rails.application.routes.draw do
     end
   end
   resources :invitations, only: %i[new create]
-
-  get 'compendium(/*path)', to: 'compendium#show', as: :compendium
 
 end

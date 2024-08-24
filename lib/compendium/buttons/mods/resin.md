@@ -11,7 +11,7 @@ stub: true
   <a href="/static/compendium/resin-buttons.jpg">
     <img src="/static/compendium/resin-buttons-thumb.jpg">
   </a>
-  <p>A resin button set by <a href="/modders/vulpine-customs">Vulpine Customs</a>.</p>
+  <p>A resin button set by <a href="https://dol-003.info/modders/vulpine-customs">Vulpine Customs</a>.</p>
 </aside>
 
 - [Casting everything for a GCC (videos)](https://www.youtube.com/watch?v=sP5XIeR-juM&list=PLhL6Yw7pEMaYdxP2ePy88Rb-naKIYYHt_) by North Gaming
