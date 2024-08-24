@@ -77,7 +77,7 @@ class CompendiumController < ApplicationController
       else
         page = FrontMatterParser::Parser.parse_file(full_path)
         pages << { 
-path: File.join(dir, path).gsub(/\.md$/, ''),
+          path: File.join(dir, path).gsub(/\.md$/, ''),
           title: page['title'],
           subtitle: page['subtitle']
         }

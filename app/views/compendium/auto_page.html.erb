@@ -1,4 +1,4 @@
 <% subpages.each do |subpage| %>
-  <h2><%= link_to subpage[:title], compendium_path(subpage[:path]) %></h2>
+  <h2><%= link_to subpage[:title], compendium_path(subpage[:path].gsub(/^\//, '')) %></h2>
   <p><%= subpage[:subtitle] %></p>
 <% end %>
