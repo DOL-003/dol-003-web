@@ -18,7 +18,7 @@ class CompendiumController < ApplicationController
     @stub = page[:stub]
     @path = page[:path]
     @nav = nav
-    @current_path = "/compendium/#{params[:path] || 'index'}"
+    @current_path = "/#{params[:path] || 'index'}"
   end
 
   private

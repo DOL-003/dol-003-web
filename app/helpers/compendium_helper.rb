@@ -1,6 +1,6 @@
 module CompendiumHelper
 
-  def nav_tree(tree, path = '/compendium', indent = 1)
+  def nav_tree(tree, path = '', indent = 1)
     render 'nav_tree', locals: {
       indent:,
       tree:
