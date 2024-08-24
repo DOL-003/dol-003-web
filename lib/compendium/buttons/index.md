@@ -24,7 +24,7 @@ While there is no known source for standalone OEM buttons, there is a very activ
 
 ### [Resin buttons](/buttons/mods/resin)
 
-The most common way people make custom buttons is to cast them out of resin. This allows a wide variety of both aesthetic options and modifications to the shape of the buttons. [Browse button makers on DOL-003.info](/modders?services=resin-buttons) to find artists who make resin buttons.
+The most common way people make custom buttons is to cast them out of resin. This allows a wide variety of both aesthetic options and modifications to the shape of the buttons. [Browse button makers](https://dol-003.info/modders?services=resin-buttons) to find artists who make resin buttons.
 
 ### [Bald buttons](/buttons/mods/bald)
 
@@ -57,4 +57,4 @@ There is no known source for OEM button pads other than GCCs. Some third-party o
 
 The [GCC Library Internals Guide](https://gccontrollerlibrary.com/guides/gamecube-controller-internals-guide/) contains information about button variations and the evolution of the OEM button pad design over the years.
 
-Jon of [NoJonsMods](/modders/nojonsmods) made [a thorough write-up](https://www.reddit.com/r/customGCC/comments/mwotkd/buying_some_new_sticks_or_buttons_read_this_first/) of what to look for when searching for replacement buttons and sticks.
+Jon of [NoJonsMods](https://dol-003.info/modders/nojonsmods) made [a thorough write-up](https://www.reddit.com/r/customGCC/comments/mwotkd/buying_some_new_sticks_or_buttons_read_this_first/) of what to look for when searching for replacement buttons and sticks.

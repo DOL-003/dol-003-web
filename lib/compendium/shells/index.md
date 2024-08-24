@@ -3,7 +3,7 @@ title: Shells
 subtitle: The outer plastic housing of a GameCube controller is known as the shell.
 ---
 
-The **shell** of a GameCube controller consists of two injection-molded ABS halves, commonly referred to as the **front shell** and the **back shell**, fastened together by six screws. The front shell has openings for the face [buttons](/compendium/buttons) and [analog sticks](/compendium/sticks), while the back shell has openings for each of the [triggers](/compendium/triggers). The Z button slots between the two halves in an opening formed by matching contours in the edges of each half. The shell is responsible for securely housing the [motherboard](/compendium/boards).
+The **shell** of a GameCube controller consists of two injection-molded ABS halves, commonly referred to as the **front shell** and the **back shell**, fastened together by six screws. The front shell has openings for the face [buttons](https://dol-003.info/compendium/buttons) and [analog sticks](https://dol-003.info/compendium/sticks), while the back shell has openings for each of the [triggers](https://dol-003.info/compendium/triggers). The Z button slots between the two halves in an opening formed by matching contours in the edges of each half. The shell is responsible for securely housing the [motherboard](https://dol-003.info/compendium/boards).
 
 ## Variants
 
@@ -41,7 +41,7 @@ Smash Ultimate shells are the most recent design produced, and have a slightly m
 
 ## Common issues & repairs
 
-Shells often accumulate wear & tear from use, and there's typically not much that can be done about scratches, scuffs, dents or other damage. Some marks can be removed with a magic eraser. Shells with a worn finish are often considered good candidates for [painting](/compendium/shells/mods/painting).
+Shells often accumulate wear & tear from use, and there's typically not much that can be done about scratches, scuffs, dents or other damage. Some marks can be removed with a magic eraser. Shells with a worn finish are often considered good candidates for [painting](https://dol-003.info/compendium/shells/mods/painting).
 
 Over-tightening screws can easily lead to screw posts breaking off the top shell. Sometimes these can be superglued back into place, though durability takes a big hit, so the problem is often ignored or the shell is replaced.
 
