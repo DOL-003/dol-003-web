@@ -52,5 +52,4 @@ Rails.application.routes.draw do
     end
   end
   resources :invitations, only: %i[new create]
-
 end

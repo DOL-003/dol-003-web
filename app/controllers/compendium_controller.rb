@@ -1,126 +1,105 @@
 class CompendiumController < ApplicationController
 
   CONTENT_DIR = File.join(File.expand_path('.'), 'lib/compendium')
-  @@pages = {}
-  @@nav = {}
 
   def show
     return not_found unless flag_enabled? :compendium
 
-    page = page_data(params[:path] || 'index')
-    return not_found if page.blank?
+    path = params[:path] || 'index'
+
+    filepath = "#{File.expand_path(File.join(CONTENT_DIR, File.basename(path)))}.md"
+    return not_found unless filepath.starts_with? CONTENT_DIR
+    return not_found unless File.exists? filepath
+
+    page = FrontMatterParser::Parser.parse_file(filepath)
 
     @compendium = true
-    @title = page[:title]
-    @subtitle = page[:subtitle]
-    @description = @subtitle.present? ? "#{@subtitle} The GameCube Controller Compendium is a hub for GCC modding knowldge." : nil
-    @content = page[:content]
-    @stub = page[:stub]
-    @path = page[:path]
     @nav = nav
-    @current_path = "/#{params[:path] || 'index'}"
+    @title = RubyPants.new(page['title']).to_html.html_safe
+    @subtitle = page['subtitle'].present? ? RubyPants.new(page['subtitle']).to_html.html_safe : nil
+    @description = @subtitle.present? ? "#{@subtitle} The GameCube Controller Compendium is a hub for GCC modding knowldge." : nil
+    @content = page_content(path:, filepath:, page:)
+    @stub = page['stub'].present?
+    @path = "#{path}.md"
+    @current_path = "/#{path}"
   end
 
   private
 
-  def page_data(path)
-    return @@pages[path] if @@pages[path].present? && !Rails.env.development?
-
-    filepath = "#{File.expand_path(File.join(CONTENT_DIR, path))}.md"
-    return nil unless filepath.starts_with? CONTENT_DIR
-
-    index_filepath = nil
-    unless File.file? filepath
-      index_filepath = File.expand_path(File.join(CONTENT_DIR, path, 'index.md'))
-      return nil unless index_filepath.starts_with? CONTENT_DIR
-      return nil unless File.file? index_filepath
+  def tag_page(tag:, sort:, path:)
+    pages = all_pages.filter { |page| (page[:tags] || []).include? tag }
+    pages = pages.sort_by { |page| page[sort.to_sym] } if sort.present?
+    pages = pages.map do |page|
+      page[:path] = File.join(path, page[:slug])
+      page
     end
-
-    page = FrontMatterParser::Parser.parse_file(index_filepath || filepath)
-
-    @@pages[path] = {
-      title: RubyPants.new(page['title']).to_html.html_safe,
-      subtitle: page['subtitle'].present? ? RubyPants.new(page['subtitle']).to_html.html_safe : nil,
-      content: page_content(path:, filepath:, page:),
-      stub: page['stub'].present?,
-      path: index_filepath.present? ? "#{path}/index.md" : "#{path}.md"
-    }
-  end
-
-  def auto_page(path:, filepath:)
-    subpages = []
-    dirpath = filepath.gsub(/\.md$/, '')
-    Dir.each_child(dirpath) do |filename|
-      next if filename == 'index.md'
-      page = FrontMatterParser::Parser.parse_file(File.expand_path(File.join(dirpath, filename)))
-      next if page.blank?
-      subpages << {
-        path: File.join(path, filename.gsub(/\.md$/, '')),
-        title: page['label'] || page['title'],
-        subtitle: page['subtitle']
-      }
-    end
-    render_to_string 'auto_page', layout: false, locals: { subpages: subpages.sort_by { |subpage| subpage[:title] } }
-  end
-
-  def list_page(match)
-    pages = all_pages.filter { |page| page[:path].match? match }.sort_by { |page| page[:title] }
     render_to_string 'auto_page', layout: false, locals: { subpages: pages }
   end
 
-  def all_pages(dir = '')
+  def all_pages
     pages = []
-    Dir.each_child(File.join(CONTENT_DIR, dir)) do |path|
-      full_path = File.join(CONTENT_DIR, dir, path)
-      if Dir.exists? full_path
-        pages = pages.concat(all_pages(File.join(dir, path)))
-      else
-        page = FrontMatterParser::Parser.parse_file(full_path)
-        pages << { 
-          path: File.join(dir, path).gsub(/\.md$/, ''),
-          title: page['title'],
-          subtitle: page['subtitle']
-        }
-      end
+    Dir.each_child(CONTENT_DIR) do |filename|
+      full_path = File.join(CONTENT_DIR, filename)
+      next unless File.file? full_path
+      page = FrontMatterParser::Parser.parse_file(full_path)
+      pages << {
+        slug: filename.gsub(/\.md$/, ''),
+        title: page['title'],
+        subtitle: page['subtitle'],
+        tags: page['tags']
+      }
     end
     pages
   end
 
   def page_content(path:, filepath:, page:)
-    return auto_page(path:, filepath:) if page['auto'].present?
-    return list_page(page['list']) if page['list'].present?
+    return tag_page(tag: page['tag'], sort: page['sort'], path:) if page['tag'].present?
     Kramdown::Document.new(page.content).to_html.html_safe
   end
 
   def nav
-    return @@nav if @@nav.present? && !Rails.env.development?
-
-    nav_data = YAML.load_file('./app/lib/compendium-nav.yml').deep_symbolize_keys.freeze
-
-    @@nav = nav_data[:pages].reduce([]) do |nav_items, path|
-      nav_items << generate_nav_item(path)
-    end
+    YAML.load_file('./app/lib/compendium-nav.yml').deep_symbolize_keys.freeze[:nav].map { |item| generate_nav_item(item) }
   end
 
-  def generate_nav_item(path)
-    return 'separator' if path == '---'
+  def generate_nav_item(item_data, path = '')
+    return 'separator' if item_data == '---'
 
-    path = path.gsub(/\.md$/, '')
-    filepath = File.expand_path(File.join(CONTENT_DIR, path))
-    dir = File.directory?(filepath)
-    page = FrontMatterParser::Parser.parse_file(dir ? File.join(filepath, 'index.md') : "#{filepath}.md")
+    nav_item = {}
 
-    nav_item = {
-      dir:,
-      path:,
-      label: page['label'] || page['title'] || '(blank)'
-    }
+    case item_data
+    when String
+      nav_item[:slug] = item_data
+    when Hash
+      nav_item[:slug] = item_data.keys.first.to_s
 
-    if dir
-      nav_item[:children] = Dir.each_child(filepath).map do |filename|
-        next if filename == 'index.md'
-        generate_nav_item(File.join(path, filename))
-      end.compact.sort_by { |item| "#{item[:dir]} #{item[:label]}" }
+      case item_data.values.first
+      when String
+        # The value is a label
+        nav_item[:label] = item_data.values.first
+      when Array
+        # The value is the children
+        nav_item[:children] = item_data.values.first
+      when Hash
+        # The values are explicitly mapped out in a hash
+        details = item_data.values.first
+        nav_item[:label] = details[:label] if details[:label].present?
+        nav_item[:children] = details[:children] if details[:children].present?
+        nav_item[:sort] = details[:sort] if details[:sort].present?
+      end
+    end
+
+    nav_item[:path] = File.join(path, nav_item[:slug]).gsub(%r{^/+}, '')
+
+    unless nav_item[:label].present?
+      filepath = File.expand_path(File.join(CONTENT_DIR, nav_item[:slug]))
+      page = FrontMatterParser::Parser.parse_file("#{filepath}.md")
+
+      nav_item[:label] = page['title'] || '(no title)'
+    end
+
+    if nav_item[:children].present?
+      nav_item[:children] = nav_item[:children].map { |item_data| generate_nav_item(item_data, File.join(path, nav_item[:slug])) }.compact
+      nav_item[:children] = nav_item[:children].sort_by { |child_item| child_item[nav_item[:sort].to_sym] } if nav_item[:sort].present?
     end
 
     nav_item

@@ -1,12 +1,11 @@
 ---
 title: Contributing guidelines
-label: Contributing
 subtitle: Want to contribute to the Compendium? Great! We ask everyone to read these guidelines before getting started.
 ---
 
 ## Compendium vision
 
-The end goal of the Compendium is to have a single hub of knowledge related to GameCube controllers, particularly about modding and repairing them. This means documenting every component (along with common issues, repairs and replacements), every mod (other than one-offs or meme mods), common recommendations, etc.
+The end goal of the Compendium is to have a single hub of knowledge related to GameCube controllers, particularly pertaining to modding and repairing. This means documenting every component (along with common issues, repairs and replacements), every mod (other than one-offs or meme mods), common recommendations, etc.
 
 The term "hub" is important to distinguish that not all documentation needs to live in the Compendium itself; many community members have created their own guides and other resources that should not be copied or plagiarized into the Compendium. Instead, they should be summarized and linked to, giving appropriate credit to their authors.
 
@@ -29,7 +28,7 @@ Note that pull requests that do not follow these guidelines will not be accepted
 ## Content guidelines
 
 - Do not use first person language.
-- Use an objective tone and characterize the basis of all subjective recommendations.
+- Use an objective tone for factual information, and explicitly characterize the basis of all subjective recommendations.
   - For instance, "Many community members recommend..." or "The general consensus of most modders..."
 - Speak in present tense unless describing specific historical or upcoming events. The Compendium is meant to represent the current state of GCC modding.
 - Do not use hyperbolic language.
@@ -37,17 +36,15 @@ Note that pull requests that do not follow these guidelines will not be accepted
 
 ### Organization
 
-With specific exceptions, each top-level page should be a **component page** describing a component or group of components of a GameCube controller.
+Similar to a wiki, all pages are top-level and should have slugs based on their titles, which should be singular unless the term is exclusively used in plural form. The navigation menu is a standalone construct meant to provide contextual structure for increased discoverability.
 
-A component page may describe subcomponents within the page, or split subcomponent information out into subpages if the amount of detail warrants it. For instance, the [buttons](/buttons) page describes all buttons inline since there isn't much to say about them, but the [analog sticks](/sticks) page has subpages for each different part of the analog stick assembly since each subcomponent has a large amount of related information.
-
-Each mod should be covered by its own **mod page** nested under a **Mods** page under the relevant component.
+Pages may describe child concepts within the page, or split child information out into subpages if the amount of detail warrants it. For instance, the [button](/button) page describes all button types inline since there isn't much to say about them, but the [analog stick](/analog-stick) page has subpages for each different part of the analog stick assembly since each subcomponent has a large amount of related information. Subpages should be reflected in the navigation.
 
 ### Pages
 
 Every page should be explanatory in tone, and generally go from more general to more detailed information.
 
-Component pages should cover, in roughly this order:
+Component-related pages should cover, in roughly this order:
 
 - Introductory information (i.e. what is this thing?)
 - High-level breakdown (e.g. what variants of this thing exist? what components does it consist of?)
@@ -62,6 +59,8 @@ Mod pages should cover, in roughly this order:
 - What parts are needed/available? (title: **Parts**)
 - How do you do the mod? (title: **Process**)
 - What are some guides or other resources for this mod? (title: **Resources**)
+
+Pages covering other topics can use headings as needed to similarly structure their contents, similar to a Wikipedia article.
 
 Incomplete pages that do not follow this structure should be marked as stubs.
 

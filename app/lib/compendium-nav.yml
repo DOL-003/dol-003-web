@@ -1,18 +1,89 @@
-pages:
+nav:
   - index
   # - guides
   - ---
-  - sticks
-  - boards
-  - buttons
-  - cables
-  - shells
-  - triggers
+  - button:
+      label: Buttons
+      children:
+        - button-mods:
+            label: Mods
+            sort: label
+            children:
+              - bald-button: Bald buttons
+              - button-dyeing: Dyeing
+              - mouse-click-button: Mouse-click buttons
+              - pad-perforation
+              - resin-casting
+              - button-stabilization: Stabilization
+              - tactile-z
+              - button-remapping
+  - cable:
+      children:
+        - cable-mods:
+            label: Mods
+            sort: label
+            children:
+              - aviator-cable
+              - detachable-cable
+              - liquid-cable
+              - paracord: Paracords
+  - motherboard:
+      - board-mods:
+          label: Mods
+          sort: label
+          children:
+            - button-remapping
+  - shell:
+      - shell-mods:
+          label: Mods
+          sort: label
+          children:
+            - shell-dyeing: Dyeing
+            - notches
+            - shell-painting: Painting
+            - retrobright
+            - shell-tinting: Tinting
+  - analog-stick:
+      label: Sticks
+      children:
+        - stickbox-potentiometer: Potentiometers
+        - stickbox: Stickboxes
+        - thumbstick: Thumbsticks
+        - stick-mods:
+            label: Mods
+            sort: label
+            children:
+              - resin-casting
+              - snapback-module
+              - heartbeat-module
+              - stickbox-lubing
+              - aftermarket-stickbox-spring: Aftermarket springs
+              - notches
+  - trigger:
+      label: Triggers
+      children:
+        - trigger-mods:
+            label: Mods
+            sort: label
+            children:
+              - digital-trigger: Digital triggers
+              - ergo-trigger: Ergo triggers
+              - mechanical-trigger: Mechanical triggers
+              - trigger-lubing: Lubing
+              - pad-perforation
+              - trigger-plug: Trigger plugs
+              - resin-casting
+              - aftermarket-trigger-spring: Aftermarket springs
+              - trigger-stabilization: Stabilization
+              - trigger-spring-trimming: Spring trimming
   - ---
-  - misc
+  - misc:
+      label: Miscellaneous
+      children:
+        - pode
   - ---
   - mods
   - glossary
   - links
   - ---
-  - contributing
+  - contributing: Contributing

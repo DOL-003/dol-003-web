@@ -11,7 +11,7 @@ Compendium content is meant for anyone interested in GCC modding, whether you're
 
 The [glossary](/glossary) is a good place to familiarize yourself with GCC terminology. Otherwise, browse various components and related mods using the menu, or check out the [mod index](/mods) to see all mods at once.
 
-## Contributing
+## [Contributing](/contributing)
 
 This entire website is [open source](https://github.com/dol-003/dol-003-web), and contributions are welcome! The Compendium is intended to be a community resource, so if you have ideas for making it better, join us in [Discord](https://discord.gg/HwtPU7tkCT) and let us know!
 

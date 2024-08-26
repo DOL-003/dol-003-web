@@ -1,3 +1,13 @@
+// Strip extra path segments to get the canonical path
+const segments = location.pathname.replace(/^\//, "").split("/")
+if (segments.length > 1) {
+  history.pushState(
+    null,
+    "",
+    `/${segments[segments.length - 1]}${location.hash}`,
+  )
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // Open non-compendium links in a new tab
   document.querySelectorAll("section.page a").forEach((link) => {
