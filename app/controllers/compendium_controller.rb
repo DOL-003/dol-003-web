@@ -7,6 +7,9 @@ class CompendiumController < ApplicationController
 
     path = params[:path] || 'index'
 
+    redirect_path = "#{File.expand_path(File.join(CONTENT_DIR, File.basename(path)))}.redirect"
+    return redirect_to File.read(redirect_path).strip if File.exists? redirect_path
+
     filepath = "#{File.expand_path(File.join(CONTENT_DIR, File.basename(path)))}.md"
     return not_found unless filepath.starts_with? CONTENT_DIR
     return not_found unless File.exists? filepath
@@ -41,6 +44,7 @@ class CompendiumController < ApplicationController
     Dir.each_child(CONTENT_DIR) do |filename|
       full_path = File.join(CONTENT_DIR, filename)
       next unless File.file? full_path
+      next unless File.extname(full_path) == '.md'
       page = FrontMatterParser::Parser.parse_file(full_path)
       pages << {
         slug: filename.gsub(/\.md$/, ''),
