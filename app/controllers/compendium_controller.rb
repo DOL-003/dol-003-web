@@ -1,17 +1,15 @@
 class CompendiumController < ApplicationController
 
-  CONTENT_DIR = File.join(File.expand_path('.'), 'lib/compendium')
-
   def show
     return not_found unless flag_enabled? :compendium
 
     path = params[:path] || 'index'
 
-    redirect_path = "#{File.expand_path(File.join(CONTENT_DIR, File.basename(path)))}.redirect"
+    redirect_path = "#{File.expand_path(File.join(Compendium::CONTENT_DIR, File.basename(path)))}.redirect"
     return redirect_to File.read(redirect_path).strip if File.exists? redirect_path
 
-    filepath = "#{File.expand_path(File.join(CONTENT_DIR, File.basename(path)))}.md"
-    return not_found unless filepath.starts_with? CONTENT_DIR
+    filepath = "#{File.expand_path(File.join(Compendium::CONTENT_DIR, File.basename(path)))}.md"
+    return not_found unless filepath.starts_with? Compendium::CONTENT_DIR
     return not_found unless File.exists? filepath
 
     page = FrontMatterParser::Parser.parse_file(filepath)
@@ -30,30 +28,13 @@ class CompendiumController < ApplicationController
   private
 
   def tag_page(tag:, sort:, path:)
-    pages = all_pages.filter { |page| (page[:tags] || []).include? tag }
+    pages = Compendium.all_pages.filter { |page| (page[:tags] || []).include? tag }
     pages = pages.sort_by { |page| page[sort.to_sym] } if sort.present?
     pages = pages.map do |page|
       page[:path] = File.join(path, page[:slug])
       page
     end
     render_to_string 'auto_page', layout: false, locals: { subpages: pages }
-  end
-
-  def all_pages
-    pages = []
-    Dir.each_child(CONTENT_DIR) do |filename|
-      full_path = File.join(CONTENT_DIR, filename)
-      next unless File.file? full_path
-      next unless File.extname(full_path) == '.md'
-      page = FrontMatterParser::Parser.parse_file(full_path)
-      pages << {
-        slug: filename.gsub(/\.md$/, ''),
-        title: page['title'],
-        subtitle: page['subtitle'],
-        tags: page['tags']
-      }
-    end
-    pages
   end
 
   def page_content(path:, filepath:, page:)
@@ -95,7 +76,7 @@ class CompendiumController < ApplicationController
     nav_item[:path] = File.join(path, nav_item[:slug]).gsub(%r{^/+}, '')
 
     unless nav_item[:label].present?
-      filepath = File.expand_path(File.join(CONTENT_DIR, nav_item[:slug]))
+      filepath = File.expand_path(File.join(Compendium::CONTENT_DIR, nav_item[:slug]))
       page = FrontMatterParser::Parser.parse_file("#{filepath}.md")
 
       nav_item[:label] = page['title'] || '(no title)'
