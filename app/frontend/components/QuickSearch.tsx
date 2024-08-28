@@ -21,6 +21,7 @@ interface QuickSearchProps {
       title: string
     },
   ]
+  compendiumDomain: string
 }
 
 interface ModderOption {
@@ -68,11 +69,18 @@ const Option = (props: OptionProps<ModderOption>) => {
 export default (props: QuickSearchProps) => {
   return (
     <Select
-      options={props.modders.map((modder) => ({
-        label: modder.name,
-        value: modder.link,
-        logoUrl: modder.logoUrl,
-      }))}
+      options={[
+        ...props.modders.map((modder) => ({
+          label: modder.name,
+          value: modder.link,
+          logoUrl: modder.logoUrl,
+        })),
+        ...props.pages.map((page) => ({
+          label: page.title,
+          value: `${props.compendiumDomain}${page.slug}`,
+          logoUrl: null,
+        })),
+      ]}
       unstyled={true}
       placeholder="Quick search"
       components={{ Control, Option }}
