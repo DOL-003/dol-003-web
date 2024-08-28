@@ -10,4 +10,4 @@ tags:
 
 ## Resources
 
-- [Kadano's video guide](https://www.youtube.com/watch?v=tL3zzBMGPaY){:target=""}
+- [Kadano](https://dol-003.info/modders/kadano)'s [video guide](https://www.youtube.com/watch?v=tL3zzBMGPaY){:target=""}

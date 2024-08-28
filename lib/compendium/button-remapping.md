@@ -15,7 +15,7 @@ Melee tournament rulesets generally allow this mod, as long as the controller ha
 
 ## Parts
 
-Only basic soldering supplies and small-gauge wires are required. Additionally, Kadano sells a toggleable button remap module on [his shop](https://kadano.biz).
+Only basic soldering supplies and small-gauge wires are required. Additionally, [Kadano](https://dol-003.info/modders/kadano) sells a toggleable button remap module on [his shop](https://kadano.biz).
 
 ## Process
 

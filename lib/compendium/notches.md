@@ -27,4 +27,4 @@ These lowered the bottom corner notches to make shield dropping more consistent,
 
 ## Resources
 
-- Kadano maintains a [detailed ordering guide](https://kadano.net/SSBM/GCC/) with photos of many types of notches for different purposes (scroll down to "Octagon gate modifications").
+- [Kadano](https://dol-003.info/modders/kadano) maintains a [detailed ordering guide](https://kadano.net/SSBM/GCC/) with photos of many types of notches for different purposes (scroll down to "Octagon gate modifications").

@@ -21,7 +21,7 @@ It is possible to [clean a potentiometer](https://www.youtube.com/watch?v=lPJ2ST
 
 ## Replacements
 
-The only place to get new OEM potentiometers is currently [Kadano](https://kadano.biz), who orders them in bulk from one of Nintendo's suppliers.
+The only place to get new OEM potentiometers is currently [Kadano's shop](https://kadano.biz). [Kadano](https://dol-003.info/modders/kadano) orders them in bulk from one of Nintendo's suppliers.
 
 Used potentiometers can be harvested from other Nintendo controllers, but be wary of how worn they are:
 

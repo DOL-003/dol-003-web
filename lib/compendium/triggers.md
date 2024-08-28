@@ -52,7 +52,7 @@ Knockoff triggers from sites like AliExpress or Amazon are not recommended, as t
 
 ### Slider potentiometers
 
-The only place to get new OEM potentiometers is currently [Kadano](https://kadano.biz), who orders them in bulk from one of Nintendo's suppliers.
+The only place to get new OEM potentiometers is currently [Kadano's shop](https://kadano.biz). [Kadano](https://dol-003.info/modders/kadano) orders them in bulk from one of Nintendo's suppliers.
 
 Used slider potentiometers can be harvested from other GCCs or from Wii Classic Controllers (which interestingly don't actually use the sliders, but still have them for unknown reasons). Some modders sell extra potentiometers, usually on sites like Etsy.
 
