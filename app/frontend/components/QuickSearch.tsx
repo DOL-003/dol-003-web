@@ -1,4 +1,4 @@
-import "./ModderSelector.scss"
+import "./QuickSearch.scss"
 
 import React from "react"
 import Select, { ControlProps, OptionProps, components } from "react-select"
@@ -7,12 +7,18 @@ import classNames from "classnames"
 import GccIcon from "@/icons/gcc.svg"
 import SearchIcon from "@/icons/search.svg"
 
-interface ModderSelectorProps {
+interface QuickSearchProps {
   readonly modders: [
     {
       name: string
       logoUrl: string
       link: string
+    },
+  ]
+  readonly pages: [
+    {
+      slug: string
+      title: string
     },
   ]
 }
@@ -40,8 +46,8 @@ const Option = (props: OptionProps<ModderOption>) => {
   return (
     <div
       {...props.innerProps}
-      className={classNames(props.className, "modder-selector__option", {
-        "modder-selector__option--is-focused": props.isFocused,
+      className={classNames(props.className, "quick-search__option", {
+        "quick-search__option--is-focused": props.isFocused,
       })}
     >
       <figure
@@ -59,7 +65,7 @@ const Option = (props: OptionProps<ModderOption>) => {
   )
 }
 
-export default (props: ModderSelectorProps) => {
+export default (props: QuickSearchProps) => {
   return (
     <Select
       options={props.modders.map((modder) => ({
@@ -68,10 +74,10 @@ export default (props: ModderSelectorProps) => {
         logoUrl: modder.logoUrl,
       }))}
       unstyled={true}
-      placeholder="Jump to a modder"
+      placeholder="Quick search"
       components={{ Control, Option }}
-      classNamePrefix="modder-selector"
-      className="ModderSelector"
+      classNamePrefix="quick-search"
+      className="QuickSearch"
       captureMenuScroll={true}
       closeMenuOnSelect={false}
       controlShouldRenderValue={false}

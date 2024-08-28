@@ -15,16 +15,17 @@
       <% end %>
       <li class="close"><label for="menu-toggle" id="menu-close"><%= inline_svg_tag 'x.svg' %></label></li>
       <% if flag_enabled? :jump_to_modder %>
-        <li class="modder-selector">
+        <li class="quick-search">
           <%=
-            react_component 'ModderSelector', {
+            react_component 'QuickSearch', {
               modders: Modder.active.map do |modder|
                 {
                   name: modder.name,
                   logo_url: modder.logo.present? ? modder.logo_url : nil,
                   link: modder_url(modder, subdomain: '')
                 }
-              end
+              end,
+              pages: Compendium.all_pages
             }
           %>
         </li>

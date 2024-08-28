@@ -1,10 +1,10 @@
 @import "@/colors";
 @import "@/dark";
 
-.ModderSelector {
+.QuickSearch {
   position: relative;
 
-  .modder-selector__control {
+  .quick-search__control {
     transition: none;
     width: 240px;
     height: 48px;
@@ -31,11 +31,11 @@
       }
     }
 
-    .modder-selector__indicators {
+    .quick-search__indicators {
       display: none;
     }
 
-    .modder-selector__placeholder {
+    .quick-search__placeholder {
       color: $panasonic;
     }
 
@@ -78,7 +78,7 @@
     }
   }
 
-  .modder-selector__menu {
+  .quick-search__menu {
     background-color: $white;
     border: 2px solid $spice;
     border-top: 0;
@@ -94,7 +94,7 @@
         0 16px 32px -48px var(--color-ink);
     }
 
-    .modder-selector__menu-notice--no-options {
+    .quick-search__menu-notice--no-options {
       padding: 12px 0;
       color: $platinum;
 
@@ -104,11 +104,11 @@
     }
   }
 
-  .modder-selector__menu-list {
+  .quick-search__menu-list {
     padding: 8px 0;
   }
 
-  .modder-selector__option {
+  .quick-search__option {
     display: flex;
     padding: 8px 12px;
     align-items: center;
