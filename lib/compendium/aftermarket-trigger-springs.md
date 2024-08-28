@@ -1,12 +1,12 @@
 ---
-title: Aftermarket trigger spring
+title: Aftermarket trigger springs
 subtitle: Replace the springs to change the resistance profile of a trigger.
 tags:
   - trigger-mod
   - mod
 ---
 
-An **aftermarket trigger spring** is a non-stock spring that fits into the OEM [trigger](/triggers) assembly. Various aftermarket springs are used to change the feel of a trigger, usually in the interest of reducing the force needed to press it. [Shortening the stock spring](/triggers/trigger-mods/trigger-spring-trimming) can have a similar effect.
+**Aftermarket trigger springs** are non-stock springs that fits into the OEM [trigger](/triggers) assembly. Various aftermarket springs are used to change the feel of a trigger, usually in the interest of reducing the force needed to press it. [Shortening the stock spring](/triggers/trigger-mods/trigger-spring-trimming) can have a similar effect.
 
 ## Parts
 

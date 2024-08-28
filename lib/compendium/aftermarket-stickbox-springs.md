@@ -1,12 +1,12 @@
 ---
-title: Aftermarket stickbox spring
+title: Aftermarket stickbox springs
 subtitle: Swap out the stock stickbox springs with alternatives to change the feel of the resistance.
 tags:
   - stick-mod
   - mod
 ---
 
-An **aftermarket stickbox spring** is a replacement stickbox spring with different characteristics from the stock spring. Stock springs tend to feel stiff to many players, and can also provide uneven resistance in different directions due to the non-uniform design of the spring. Swapping the spring can solve either or both of these issues.
+**Aftermarket stickbox springs** are replacement stickbox springs with different characteristics from stock springs. Stock springs tend to feel stiff to many players, and can also provide uneven resistance in different directions due to the non-uniform design of the spring. Swapping the spring can solve either or both of these issues.
 
 The idea of using a different spring for stickboxes was popularized by FIRES, who coined the term **slickbox** (stylized SLICKbox) to describe the mod with the parts he selected.
 
