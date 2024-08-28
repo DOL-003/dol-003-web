@@ -2,16 +2,15 @@ nav:
   - index
   # - guides
   - ---
-  - button:
-      label: Buttons
+  - buttons:
       children:
         - button-mods:
             label: Mods
             sort: label
             children:
-              - bald-button: Bald buttons
+              - bald-buttons
               - button-dyeing: Dyeing
-              - mouse-click-button: Mouse-click buttons
+              - mouse-click-buttons
               - pad-perforation
               - resin-casting
               - button-stabilization: Stabilization
@@ -26,7 +25,7 @@ nav:
               - aviator-cable
               - detachable-cable
               - liquid-cable
-              - paracord: Paracords
+              - paracords
   - motherboard:
       - board-mods:
           label: Mods
@@ -43,12 +42,12 @@ nav:
             - shell-painting: Painting
             - retrobright
             - shell-tinting: Tinting
-  - analog-stick:
+  - analog-sticks:
       label: Sticks
       children:
-        - stickbox-potentiometer: Potentiometers
-        - stickbox: Stickboxes
-        - thumbstick: Thumbsticks
+        - stickbox-potentiometers: Potentiometers
+        - stickboxes
+        - thumbsticks
         - stick-mods:
             label: Mods
             sort: label
@@ -57,23 +56,22 @@ nav:
               - snapback-module
               - heartbeat-module
               - stickbox-lubing
-              - aftermarket-stickbox-spring: Aftermarket springs
+              - aftermarket-stickbox-springs: Aftermarket springs
               - notches
-  - trigger:
-      label: Triggers
+  - triggers:
       children:
         - trigger-mods:
             label: Mods
             sort: label
             children:
-              - digital-trigger: Digital triggers
-              - ergo-trigger: Ergo triggers
-              - mechanical-trigger: Mechanical triggers
+              - digital-triggers
+              - ergo-triggers
+              - mechanical-triggers
               - trigger-lubing: Lubing
               - pad-perforation
-              - trigger-plug: Trigger plugs
+              - trigger-plugs
               - resin-casting
-              - aftermarket-trigger-spring: Aftermarket springs
+              - aftermarket-trigger-springs: Aftermarket springs
               - trigger-stabilization: Stabilization
               - trigger-spring-trimming: Spring trimming
   - ---
