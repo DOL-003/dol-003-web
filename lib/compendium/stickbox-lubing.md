@@ -6,7 +6,7 @@ tags:
   - mod
 ---
 
-**Stickbox lubing** is the process of adding lubricant to specific places on the inside of a [stickbox](/analog-stick/stickbox). As with any moving mechanical part, friction is a common cause of wear and inconsistent movement in stickboxes. Lubing a stickbox with an appropriate grease is a straightforward way to reduce friction and improve the feel for a reasonably long time.
+**Stickbox lubing** is the process of adding lubricant to specific places on the inside of a [stickbox](/analog-sticks/stickboxes). As with any moving mechanical part, friction is a common cause of wear and inconsistent movement in stickboxes. Lubing a stickbox with an appropriate grease is a straightforward way to reduce friction and improve the feel for a reasonably long time.
 
 ## Parts
 

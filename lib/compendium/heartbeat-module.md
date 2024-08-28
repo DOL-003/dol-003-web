@@ -6,11 +6,11 @@ tags:
   - mod
 ---
 
-Brand new analog sticks usually have [snapback](/analog-stick/stickbox#snapback), and as potentiometers wear, they tend to develop [PODE](/misc/pode). A **heartbeat module** is a set of adjustable capacitors and resistors designed to mitigate both of these unwanted effects.
+Brand new analog sticks usually have [snapback](/analog-sticks/stickbox#snapback), and as potentiometers wear, they tend to develop [PODE](/misc/pode). A **heartbeat module** is a set of adjustable capacitors and resistors designed to mitigate both of these unwanted effects.
 
 ## How it works
 
-Just like a standard [snapback module], capacitors are used to smooth out unwanted inputs caused by the analog stick overshooting the return to center due to the tension of the stickbox spring. A heartbeat module adds resistors that selectively drain built-up discharge within the potentiometer, removing the variance in current throughput caused by PODE.
+Just like a standard [snapback module](/analog-sticks/stick-mods/snapback-module), capacitors are used to smooth out unwanted inputs caused by the analog stick overshooting the return to center due to the tension of the stickbox spring. A heartbeat module adds resistors that selectively drain built-up discharge within the potentiometer, removing the variance in current throughput caused by PODE.
 
 ## Parts
 

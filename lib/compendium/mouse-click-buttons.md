@@ -1,12 +1,12 @@
 ---
-title: Mouse-click button
+title: Mouse-click buttons
 subtitle: Replace the OEM silicone button membranes with mouse-click switches for a clickier feel.
 tags:
   - button-mod
   - mod
 ---
 
-A **mouse-click button** is a [button](/button) that uses a mouse-click switch instead of a silicone button pad for both movement and input. This mod significantly changes the feel of face buttons, the Z button, or a trigger's digital press.
+**Mouse-click buttons** are [buttons](/buttons) that use a mouse-click switch instead of a silicone button pad for both movement and input. This mod significantly changes the feel of face buttons, the Z button, or a trigger's digital press.
 
 ## Parts
 

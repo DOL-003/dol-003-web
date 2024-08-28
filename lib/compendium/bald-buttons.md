@@ -1,5 +1,5 @@
 ---
-title: Bald button
+title: Bald buttons
 subtitle: Remove the letters and round the corners of OEM buttons to give them a smoother profile.
 tags:
   - button-mod
@@ -13,9 +13,9 @@ tags:
   <p>Balded OEM buttons.</p>
 </aside>
 
-A **bald button** is a [button](/button) with no inset letters and rounded corners. The process of creating bald buttons is called **balding**. Typically the A, B, X and Y buttons are balded, and optionally the Z and Start buttons, and sometimes the D-pad.
+**Bald buttons** are [buttons](/buttons) with no inset letters and rounded corners. The process of creating bald buttons is called **balding**. Typically the A, B, X and Y buttons are balded, and optionally the Z and Start buttons, and sometimes the D-pad.
 
-There are two primary methods for balding: sanding OEM buttons, which is the primary method covered here; or [using extra silicone](#the-alternative-silicone-drip-method) to bald molds for [resin casting](/button/button-mods/resin-casting).
+There are two primary methods for balding: sanding OEM buttons, which is the primary method covered here; or [using extra silicone](#the-alternative-silicone-drip-method) to bald molds for [resin casting](/buttons/button-mods/resin-casting).
 
 ## Parts
 
@@ -66,6 +66,6 @@ After going up through the grits like the manual process, switch to a cutting pa
   <p>Bald resin buttons created by <a href="https://dol-003.info/modders/nojonsmods">NoJonsMods</a> using the silicone drip method.</p>
 </aside>
 
-After creating silicone molds of OEM buttons to use for [resin casting](/button/button-mods/resin-casting), mix up some more silicone and drip it into each mold until it covers the letter. Gently tilt the molds in each direction to get some silicone in the corners to round the button edges as well. Lay the molds flat so the additional silicone can set evenly.
+After creating silicone molds of OEM buttons to use for [resin casting](/buttons/button-mods/resin-casting), mix up some more silicone and drip it into each mold until it covers the letter. Gently tilt the molds in each direction to get some silicone in the corners to round the button edges as well. Lay the molds flat so the additional silicone can set evenly.
 
 Buttons cast in these molds will be shaped very similarly to buttons sanded using the technique above.

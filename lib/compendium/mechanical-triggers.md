@@ -1,13 +1,13 @@
 ---
-title: Mechanical trigger
 subtitle: Replace the trigger assembly with a keyboard switch.
+title: Mechanical triggers
 stub: true
 tags:
   - trigger-mod
   - mod
 ---
 
-A **mechanical trigger** (also known as an **MX triggers\* or a**keyswitch trigger\*\*) is a trigger that uses a keyboard switch instead of the stock trigger assembly for both trigger movement and input.
+**Mechanical triggers** (also known as an **MX triggers** or **keyswitch triggers**) is a trigger mod that replaces the stock trigger assembly with a keyboard switch for both trigger movement and input.
 
 ## Resources
 

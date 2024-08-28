@@ -7,7 +7,7 @@ tags:
   - mod
 ---
 
-ABS plastic naturally yellows as it ages, which can result in a hazy look to clear shells or a sunburnt look to white shells. **Retrobrighting** (sometimes spelled **Retrobriting**) is the process of using hydrogen peroxide to undo this yellowing.
+ABS plastic naturally yellows as it ages, which can result in a hazy look to clear shells or a sunburnt look to white [shells](/shell). **Retrobrighting** (sometimes spelled **Retrobriting**) is the process of using hydrogen peroxide to undo this yellowing.
 
 Note that retrobrighting can make shells more brittle, and care should be taken afterward to avoid dropping or other impacts that may damage the shell.
 

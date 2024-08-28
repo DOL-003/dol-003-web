@@ -1,12 +1,12 @@
 ---
-title: Paracord
+title: Paracords
 subtitle: Replace a cable's rubber insulation with nylon paracord for a custom look and feel.
 tags:
   - cable-mod
   - mod
 ---
 
-A **paracord**, short for **paracorded cable**, is a [cable](/cable) with braided nylon paracord sleeving instead of rubber sleeving. Creating paracords is sometimes referred to as **paracording**.
+**Paracords**, short for **paracorded cables**, are [cables](/cable) with braided nylon paracord sleeving instead of rubber sleeving. Creating paracords is sometimes referred to as **paracording**.
 
 ## Parts
 

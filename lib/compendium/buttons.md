@@ -1,5 +1,5 @@
 ---
-title: Button
+title: Buttons
 subtitle: The GameCube controller has 6 standalone buttons and a 4-way D-pad.
 ---
 
@@ -10,11 +10,11 @@ subtitle: The GameCube controller has 6 standalone buttons and a 4-way D-pad.
   <p>A standard set of OEM buttons.</p>
 </aside>
 
-Each **button** on a GCC is made of ABS plastic and pushes against a silicone pad (except for the Z button) when depressed. This bridges a contact pad on the [motherboard](/motherboard) to trigger a digital input.
+The **buttons** on a GCC are made of ABS plastic and push against a silicone pad (except for the Z button) when depressed. This bridges a contact pad on the [motherboard](/motherboard) to trigger a digital input.
 
 On the right side of the controller, the A, B, X and Y buttons constitute the "face buttons" (a term which sometimes also includes the Start button and/or D-pad). The Z button is uniquely positioned next to the R trigger, and presses directly against a mechanical switch instead of a silicone pad. A metal clip attached to the underside of the Z button provides additional resistance; this clip is commonly bent or removed to reduce the force needed to press the button, especially for players who [remap](/motherboard/board-mods/button-remapping) their Z button.
 
-[Triggers](/trigger) are sometimes considered buttons, but the underlying mechanism differs significantly from the other buttons.
+[Triggers](/triggers) are sometimes considered buttons, but the underlying mechanism differs significantly from the other buttons.
 
 ## Common issues & repairs
 
@@ -24,11 +24,11 @@ Buttons are generally extremely durable and don't directly cause issues, but the
 
 While there is no known source for standalone OEM buttons, there is a very active scene of aftermarket button makers, particularly resin casters who make custom buttons with different aesthetic designs.
 
-### [Resin buttons](/button/button-mods/resin-buttons)
+### [Resin buttons](/buttons/button-mods/resin-casting)
 
 The most common way people make custom buttons is to cast them out of resin. This allows a wide variety of both aesthetic options and modifications to the shape of the buttons. [Browse button makers](https://dol-003.info/modders?services=resin-buttons) to find artists who make resin buttons.
 
-### [Bald buttons](/button/button-mods/bald-buttons)
+### [Bald buttons](/buttons/button-mods/bald-buttons)
 
 OEM buttons can be carefully sanded and polished to remove the imprinted letter and round the upper edges of the buttons for players who prefer a smoother-feeling button. These can then be used in a controller directly, or used as masters for resin buttons. Bald resin buttons can also be cast from regular button molds by dripping in a small amount of silicone into the finished molds to round out the bottom of the molds.
 

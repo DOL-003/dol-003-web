@@ -6,7 +6,7 @@ tags:
   - mod
 ---
 
-Most analog sticks naturally have [snapback](/analog-stick/stickbox#snapback), and an **anti-snapback module** (commonly shortened to **snapback module**) is the current de facto standard way to prevent it from causing misinputs.
+Most analog sticks naturally have [snapback](/analog-sticks/stickboxes#snapback), and an **anti-snapback module** (commonly shortened to **snapback module**) is the de facto standard way to prevent it from causing misinputs.
 
 ## History
 

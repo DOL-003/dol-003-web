@@ -6,7 +6,7 @@ tags:
   - mod
 ---
 
-A trigger can be **lubed** to make the act of pulling it feel smoother and quieter. This is done by applying a specialized grease to various locations within the trigger assembly.
+A [trigger](/triggers) can be **lubed** to make the act of pulling it feel smoother and quieter. This is done by applying a specialized grease to various locations within the trigger assembly.
 
 ## Parts
 

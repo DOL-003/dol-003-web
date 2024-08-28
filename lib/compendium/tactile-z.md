@@ -6,9 +6,9 @@ tags:
   - mod
 ---
 
-The Z button is the only button that uses a mechanical switch rather than a silicone membrane, but many find the OEM switch to feel mushy or otherwise unsatisfying to press. Numerous alternative switches have been used, and in general the replacement of the switch is often called **Tactile Z** because the aftermarket switches tend to have more distinct actuation feedback.
+The Z button is the only [button](/buttons) that uses a mechanical switch rather than a silicone membrane, but many find the OEM switch to feel mushy or otherwise unsatisfying to press. Numerous alternative switches have been used, and in general the replacement of the switch is often called **Tactile Z** because the aftermarket switches tend to have more distinct actuation feedback.
 
-Both Tactile Z switches and [mouse-click](/button/button-mods/mouse-click-button) switches can be described as "clicky," but mouse-click switches tend to have a lower actuation threshold than the stock switch, whereas Tactile Z switches usually have a higher actuation threshold (i.e. require more force to press).
+Both Tactile Z switches and [mouse-click](/buttons/button-mods/mouse-click-buttons) switches can be described as "clicky," but mouse-click switches tend to have a lower actuation threshold than the stock switch, whereas Tactile Z switches usually have a higher actuation threshold (i.e. require more force to press).
 
 ## Parts
 

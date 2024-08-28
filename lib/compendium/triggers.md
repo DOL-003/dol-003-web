@@ -1,5 +1,5 @@
 ---
-title: Trigger
+title: Triggers
 subtitle: The GameCube controller has a trigger button on each side of the controller.
 ---
 
@@ -10,9 +10,11 @@ subtitle: The GameCube controller has a trigger button on each side of the contr
   <p>A set of OEM triggers.</p>
 </aside>
 
-Each **trigger** is a shoulder button on either side of a GCC designed to be pulled with an index or middle finger. The triggers themselves are ABS plastic like the other buttons, but the underlying mechanism is more complex, allowing a larger range of motion and actuating both analog and digital inputs. The left trigger is referred to as the **L button**, while the right trigger is referred to as the **R button**.
+A GameCube controller's **triggers** are shoulder buttons on either side of a GCC designed to be pulled with an index or middle finger. The triggers themselves are ABS plastic like the other buttons, but the underlying mechanism is more complex, allowing a larger range of motion and actuating both analog and digital inputs. The left trigger is sometimes referred to as the **L button** (or simply **L**), while the right trigger is referred to as the **R button** (or **R**).
 
 The trigger assembly is one of the more complicated moving parts in a GameCube controller, consisting of several pieces including a graduated slider potentiometer that enables a range of analog inputs proportional to how far the trigger is pressed, as well as a silicone button pad and contact pad (on the corresponding trigger daughterboard) to activate a digital input when the trigger is fully pressed.
+
+Triggers are sometimes considered [buttons](/buttons), but the underlying mechanism differs significantly from the other buttons.
 
 ## Common issues & repairs
 
@@ -23,7 +25,7 @@ The trigger assembly is one of the more complicated moving parts in a GameCube c
   <p>A trigger slider potentiometer.</p>
 </aside>
 
-In addition to the following common problems, there are various [trigger mods](/trigger/trigger-mods) that address more subjective issues with triggers.
+In addition to the following common problems, there are various [trigger mods](/triggers/trigger-mods) that address more subjective issues with triggers.
 
 ### Trigger PODE
 
@@ -31,7 +33,7 @@ Perhaps the most common trigger issue caused by wear is trigger PODE (Potentiome
 
 ### Getting stuck on shell
 
-If a trigger seems to be catching on the shell on its way back up, it can help to trim a tiny bit of plastic off the shell next to the wing of the trigger that grips the slider. [Trigger stabilization](/trigger/trigger-mods/trigger-stabilization) is another good remedy for this.
+If a trigger seems to be catching on the shell on its way back up, it can help to trim a tiny bit of plastic off the shell next to the wing of the trigger that grips the slider. [Trigger stabilization](/triggers/trigger-mods/trigger-stabilization) is another good remedy for this.
 
 ### No digital press
 
@@ -43,7 +45,7 @@ If the click feeling is there but the expected input doesn't happen, this can in
 
 Like most stock parts, OEM triggers can only be found on original GameCube controllers. However, various third-party options exist:
 
-- [Resin triggers](/trigger/trigger-mods/resin-casting) are available in many different colors, textures and shapes.
+- [Resin triggers](/triggers/trigger-mods/resin-casting) are available in many different colors, textures and shapes.
 - eXtremeRate includes triggers, and even replacement trigger assemblies, in [their shell + buttons sets](https://extremerate.com/collections/nintendo-gamecube-shells).
 
 Knockoff triggers from sites like AliExpress or Amazon are not recommended, as they are particularly prone to fit issues even compared to other knockoff buttons.

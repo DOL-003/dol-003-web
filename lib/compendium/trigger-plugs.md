@@ -1,5 +1,5 @@
 ---
-title: Trigger plug
+title: Trigger plugs
 subtitle: Extend the shaft of a trigger to reduce the travel distance before actuating the digital press.
 tags:
   - trigger-mod
@@ -8,7 +8,7 @@ tags:
 
 A **trigger plug** is a small spacer inserted into a trigger's shaft that shortens the overall travel distance of the trigger, making it quicker to activate the digital press at the bottom of the travel. A trigger plug that removes almost all of the travel is called a **long plug** or **tall plug**, while a plug that removes around half the travel is called a **short plug**.
 
-Because Smash Ultimate does not read a trigger's digital input by default, players who want to use trigger plugs typically need to also use the [digital trigger mod](/trigger/trigger-mods/digital-trigger) to remap the digital press to an analog input. Similarly, tall plugs negate the usefulness of the analog input, which means a trigger with a tall plug cannot be used for light shielding in Melee unless the digital press is remapped to activate an analog value instead.
+Because Smash Ultimate does not read a trigger's digital input by default, players who want to use trigger plugs typically need to also use the [digital trigger mod](/triggers/trigger-mods/digital-triggers) to remap the digital press to an analog input. Similarly, tall plugs negate the usefulness of the analog input, which means a trigger with a tall plug cannot be used for light shielding in Melee unless the digital press is remapped to activate an analog value instead.
 
 ## Parts
 

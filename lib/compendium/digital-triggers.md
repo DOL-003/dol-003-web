@@ -1,12 +1,12 @@
 ---
-title: Digital trigger
+title: Digital triggers
 subtitle: Use a trigger's digital press to input an analog value.
 tags:
   - trigger-mod
   - mod
 ---
 
-The **digital trigger** mod rewires the digital press at the bottom of a trigger to instead (or in addition) input a static analog value. This mod is very popular for use with Smash Ultimate, primarily in combination with [trigger plugs](/trigger/trigger-mods/trigger-plug), because it is the only way to get trigger plugs to work with Ultimate. Ultimate does not read the trigger's digital input on a GCC, but instead looks for an analog value of 79 or higher to consider the trigger as being pressed.
+The **digital trigger** mod rewires the digital press at the bottom of a trigger to instead (or in addition) input a static analog value. This mod is very popular for use with Smash Ultimate, primarily in combination with [trigger plugs](/triggers/trigger-mods/trigger-plugs), because it is the only way to get trigger plugs to work with Ultimate. Ultimate does not read the trigger's digital input on a GCC, but instead looks for an analog value of 79 or higher to consider the trigger as being pressed.
 
 Note that aftermarket boards like the [PhobGCC](/motherboard#phobgcc) support this functionality in their software, so hardware modifications are not necessary.
 

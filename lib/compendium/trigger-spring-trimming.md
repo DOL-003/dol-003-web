@@ -6,7 +6,7 @@ tags:
   - mod
 ---
 
-**Trigger spring trimming** is the process of shortening the stock spring inside a [trigger](/trigger) to make it easier to press. One of the most common complaints about the GameCube controller is hand fatigue caused by the large range of motion and relatively high resistance of the triggers. In addition to (or instead of) mods like [pad perforation](/trigger/trigger-mods/pad-perforation) or [trigger plugs](/trigger/trigger-mods/trigger-plugs), a trigger's springs can be shortened (or [replaced](/trigger/trigger-mods/aftermarket-trigger-spring)) to make it lighter to pull.
+**Trigger spring trimming** is the process of shortening the stock spring inside a [trigger](/triggers) to make it easier to press. One of the most common complaints about the GameCube controller is hand fatigue caused by the large range of motion and relatively high resistance of the triggers. In addition to (or instead of) mods like [pad perforation](/triggers/trigger-mods/pad-perforation) or [trigger plugs](/triggers/trigger-mods/trigger-plugs), a trigger's springs can be shortened (or [replaced](/triggers/trigger-mods/aftermarket-trigger-springs)) to make it lighter to pull.
 
 ## Parts
 

@@ -7,7 +7,7 @@ tags:
   - mod
 ---
 
-**Notches** are vertices in the shape of a [shell](/shell)'s gate (the opening for an [analog stick](/analog-stick). **Notching** is the process of adding new notches in specific places. The exact location of each notch is typically designed to achieve certain coordinates that correspond to certain tech in a Smash game.
+**Notches** are vertices in the shape of a [shell](/shell)'s gate (the opening for an [analog stick](/analog-sticks). **Notching** is the process of adding new notches in specific places. The exact location of each notch is typically designed to achieve certain coordinates that correspond to certain tech in a Smash game.
 
 ## Variants
 

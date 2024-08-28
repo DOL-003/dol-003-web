@@ -9,7 +9,7 @@ tags:
   - mod
 ---
 
-**Resin casting** is the process of creating plastic parts by pouring liquid resin into silicone molds. In the context of GameCube controllers, molds are usually made of stock or modified OEM [buttons](/button), [thumbsticks](/analog-stick/thumbstick) or [triggers](/trigger) in order to produce duplicates in different colors and designs.
+**Resin casting** is the process of creating plastic parts by pouring liquid resin into silicone molds. In the context of GameCube controllers, molds are usually made of stock or modified OEM [buttons](/buttons), [thumbsticks](/analog-sticks/thumbsticks) or [triggers](/triggers) in order to produce duplicates in different colors and designs.
 
 ## Resources
 

@@ -36,9 +36,11 @@ Note that pull requests that do not follow these guidelines will not be accepted
 
 ### Organization
 
-Similar to a wiki, all pages are top-level and should have slugs based on their titles, which should be singular unless the term is exclusively used in plural form. The navigation menu is a standalone construct meant to provide contextual structure for increased discoverability.
+Similar to a wiki, all pages are top-level and should have slugs based on their titles. Titles should be singular by default, or plural if the term is primarily used as a plural in the context of GCCs. For instance, the [Buttons](/buttons) and [Triggers](/triggers) pages have plural titles because a GCC has multiple of each of them, and conceptually they are usually referred to as "buttons" and "triggers" in GCC parlance rather than "button" or "trigger." In contrast, the [Motherboard](/motherboard) and [Cable](/cable) pages have singular titles because a GCC only has a single instance of each, and they are often referred to in both a singular and plural sense. Likewise, mod pages should use singular titles unless the most common name of the mod is in plural form, such as [Digital triggers](/digital-triggers).
 
-Pages may describe child concepts within the page, or split child information out into subpages if the amount of detail warrants it. For instance, the [button](/button) page describes all button types inline since there isn't much to say about them, but the [analog stick](/analog-stick) page has subpages for each different part of the analog stick assembly since each subcomponent has a large amount of related information. Subpages should be reflected in the navigation.
+Pages may describe child concepts within the page, or split child information out into subpages if the amount of detail warrants it. For instance, the [Buttons](/buttons) page describes all button types inline since there isn't much to say about them, but the [Analog sticks](/analog-sticks) page has subpages for each different part of the analog stick assembly since each subcomponent has a large amount of related information. These organizational decisions can change as the amount of information related to each topic increases or decreases.
+
+The navigation menu is a standalone construct meant to provide contextual structure for increased discoverability. Not all pages need to be present in the navigation, but should be added if an appropriate place exists. All subpages should be reflected under their respective parent pages, and mod pages should be listed under a **Mods** page under their relative component to distinguish them from other subpages.
 
 ### Pages
 

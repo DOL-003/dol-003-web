@@ -7,7 +7,7 @@ tags:
   - mod
 ---
 
-A **Liquid Cable** is a custom GCC cable made entirely from aftermarket parts, as opposed to a typical [paracord](/cable/cable-mods/paracord) that is made from an OEM cable.
+A **Liquid Cable** is a custom GCC cable made entirely from aftermarket parts, as opposed to a typical [paracord](/cable/cable-mods/paracords) that is made from an OEM cable.
 
 ## Guides
 
