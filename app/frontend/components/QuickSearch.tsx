@@ -112,12 +112,12 @@ export default (props: QuickSearchProps) => {
         options={[
           ...props.modders.map((modder) => ({
             type: "modder",
-            value: modder.name,
+            value: `${modder.name} ${modder.city}`,
             ...modder,
           })),
           ...props.pages.map((page) => ({
             type: "page",
-            value: page.title,
+            value: `${page.title} ${page.subtitle}`,
             ...page,
           })),
         ]}
