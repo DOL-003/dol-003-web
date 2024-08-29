@@ -56,6 +56,7 @@ const Control = (props: ControlProps) => {
 const Option = (props: OptionProps<Modder | Page>) => {
   return (
     <div
+      ref={props.innerRef}
       {...props.innerProps}
       className={classNames(props.className, "quick-search__option", {
         "quick-search__option--is-focused": props.isFocused,
