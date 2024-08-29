@@ -1,5 +1,6 @@
 ---
 title: Motherboard
+subtitle: The primary circuit board inside a GameCube controller.
 ---
 
 The **motherboard** is a PCB that serves as the base of a GCC's internals. It connects the various electrical components to the CNT-DOL processor, which is responsible for communicating with the connected console or adapter via the [cable](/cable). There are also three **daughterboards** connected to the motherboard: the C-stick board and two [trigger](/triggers) boards (also commonly called trigger paddles).

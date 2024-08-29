@@ -89,7 +89,13 @@ const Option = (props: OptionProps<Modder | Page>) => {
         } else if (props.data.type === "page") {
           return (
             <>
-              <div>hi</div>
+              <figure>
+                <PageIcon />
+              </figure>
+              <div>
+                <h3>{props.data.title}</h3>
+                <p>{props.data.subtitle}</p>
+              </div>
             </>
           )
         }
@@ -104,8 +110,16 @@ export default (props: QuickSearchProps) => {
     <>
       <Select
         options={[
-          ...props.modders.map((modder) => ({ type: "modder", ...modder })),
-          ...props.pages.map((page) => ({ type: "page", ...page })),
+          ...props.modders.map((modder) => ({
+            type: "modder",
+            value: modder.name,
+            ...modder,
+          })),
+          ...props.pages.map((page) => ({
+            type: "page",
+            value: page.title,
+            ...page,
+          })),
         ]}
         unstyled={true}
         placeholder={

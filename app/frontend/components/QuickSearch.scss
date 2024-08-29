@@ -136,23 +136,29 @@
       }
     }
 
-    > .logo {
+    > figure {
       flex: none;
       margin: 0;
       width: 56px;
       height: 56px;
-      background-color: $platinum;
-      border-radius: 32px;
-      background-size: cover;
-      background-position: center;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: darken($platinum, 20%);
+      color: $panasonic;
 
       svg {
         width: 32px;
         height: 32px;
+        position: relative;
+        top: -1px;
+      }
+
+      &.logo {
+        background-color: $platinum;
+        border-radius: 32px;
+        background-size: cover;
+        background-position: center;
+        color: darken($platinum, 20%);
       }
     }
 
