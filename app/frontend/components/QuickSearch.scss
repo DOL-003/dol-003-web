@@ -2,7 +2,19 @@
 @import "@/dark";
 
 .QuickSearch {
-  position: relative;
+  position: absolute !important;
+  top: 16px;
+  left: calc(50% - 120px);
+
+  &.open {
+    left: calc(50% - 240px);
+    z-index: 10000;
+
+    .quick-search__control {
+      width: 480px;
+      border-radius: 8px 8px 0 0;
+    }
+  }
 
   .quick-search__control {
     transition: none;
@@ -113,11 +125,11 @@
     padding: 8px 12px;
     align-items: center;
     cursor: pointer;
+    height: 80px;
 
     &:hover,
     &--is-focused {
       background-color: $crystal;
-      font-weight: bold;
 
       @include dark {
         background-color: $smoke;
@@ -126,9 +138,9 @@
 
     > .logo {
       flex: none;
-      margin: 0 10px 0 0;
-      width: 40px;
-      height: 40px;
+      margin: 0;
+      width: 56px;
+      height: 56px;
       background-color: $platinum;
       border-radius: 32px;
       background-size: cover;
@@ -139,16 +151,58 @@
       color: darken($platinum, 20%);
 
       svg {
-        width: 24px;
-        height: 24px;
+        width: 32px;
+        height: 32px;
       }
     }
 
-    > span {
+    > div {
       flex: auto;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      min-width: 0;
+      margin-left: 12px;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: stretch;
+
+      > h3,
+      > p {
+        display: block;
+        width: 100%;
+        text-transform: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin: 0;
+      }
+
+      .city svg {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        vertical-align: middle;
+        position: relative;
+        top: -2px;
+      }
     }
+  }
+}
+
+.quicksearch-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: $smoke;
+  opacity: 0.1;
+  visibility: hidden;
+
+  @include dark {
+    background-color: $crystal;
+  }
+
+  &.open {
+    visibility: visible;
   }
 }

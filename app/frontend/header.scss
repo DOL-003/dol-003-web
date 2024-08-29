@@ -125,10 +125,6 @@ header {
           @include medium {
             margin-left: 0;
             margin-top: 16px;
-
-            &.quick-search {
-              margin-top: 24px;
-            }
           }
         }
       }
