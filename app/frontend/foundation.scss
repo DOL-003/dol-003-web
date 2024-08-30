@@ -29,6 +29,10 @@ body {
   @include dark {
     background-color: var(--color-black);
   }
+
+  &.scroll-locked {
+    overflow: hidden;
+  }
 }
 
 img,

@@ -122,6 +122,12 @@ export default (props: QuickSearchProps) => {
     })
   }, [])
 
+  const handleOpenChange = (open: boolean) => {
+    document.body.scrollTo(0, 0)
+    document.body.classList.toggle("scroll-locked", open)
+    setOpen(open)
+  }
+
   return (
     <>
       <Select
@@ -158,8 +164,8 @@ export default (props: QuickSearchProps) => {
         onChange={(option) =>
           handleOptionSelected(option, props.compendiumDomain)
         }
-        onFocus={() => setOpen(true)}
-        onBlur={() => setOpen(false)}
+        onFocus={() => handleOpenChange(true)}
+        onBlur={() => handleOpenChange(false)}
         onKeyDown={(event) =>
           event.key === "Escape" && field.current && field.current.blur()
         }
