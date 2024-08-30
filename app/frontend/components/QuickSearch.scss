@@ -1,18 +1,33 @@
 @import "@/colors";
 @import "@/dark";
+@import "@/breakpoints";
 
 .QuickSearch {
   position: absolute !important;
   top: 16px;
   left: calc(50% - 120px);
 
+  @include medium {
+    left: calc(50% - 24px);
+  }
+
   &.open {
     left: calc(50% - 240px);
     z-index: 10000;
 
+    @include medium {
+      left: calc(50% - 160px);
+    }
+
     .quick-search__control {
       width: 480px;
       border-radius: 8px 8px 0 0;
+
+      @include medium {
+        width: 320px;
+        padding: 0 24px 1px 46px;
+        font-size: inherit;
+      }
     }
 
     &::after {
@@ -36,6 +51,10 @@
       color: $panasonic;
       box-shadow: inset 0 0 0 1px $panasonic;
     }
+
+    @include medium {
+      display: none;
+    }
   }
 
   .quick-search__control {
@@ -46,6 +65,12 @@
     border-radius: 48px;
     cursor: text;
     background-color: $crystal;
+
+    @include medium {
+      width: 48px;
+      padding: 0;
+      font-size: 0;
+    }
 
     @include dark {
       background-color: $smoke;
@@ -71,6 +96,9 @@
 
     .quick-search__placeholder {
       color: $panasonic;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     &:hover {
