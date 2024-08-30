@@ -12,6 +12,7 @@ import PinIcon from "@/icons/pin.svg"
 
 type Modder = {
   readonly type: "modder"
+  readonly slug: string
   readonly name: string
   readonly logoUrl: string
   readonly link: string
@@ -20,14 +21,16 @@ type Modder = {
 
 type Page = {
   readonly type: "page"
+  readonly slug: string
   readonly title: string
   readonly subtitle: string
-  readonly slug: string
 }
 
 interface QuickSearchProps {
   readonly modders: [Modder]
   readonly pages: [Page]
+  readonly recentSlugs?: [string]
+  readonly slug: string
   readonly compendiumDomain: string
 }
 
@@ -104,28 +107,52 @@ const Option = (props: OptionProps<Modder | Page>) => {
   )
 }
 
-const filterOptions = (options: (Modder | Page)[], inputValue: string) => {
-  if (!inputValue) return options
-
-  const optionsWithScores = options.reduce((optionsWithScores, option) => {
+const filterOptions = (
+  options: (Modder | Page)[],
+  inputValue: string,
+  recentSlugs?: [string],
+) => {
+  let optionsWithScores = options.reduce((optionsWithScores, option) => {
     let score = 0
 
     switch (option.type) {
       case "modder":
-        if (option.name.toLowerCase().includes(inputValue.toLowerCase()))
-          score += 10
-        if (option.name.toLowerCase().indexOf(inputValue.toLowerCase()) === 0)
+        if (
+          inputValue &&
+          option.name.toLowerCase().includes(inputValue.toLowerCase())
+        )
+          score += 100
+        if (
+          inputValue &&
+          option.name.toLowerCase().indexOf(inputValue.toLowerCase()) === 0
+        )
           score += 100 - option.name.length
-        if (option.city.toLowerCase().includes(inputValue.toLowerCase()))
-          score += 5
+        if (
+          inputValue &&
+          option.city.toLowerCase().includes(inputValue.toLowerCase())
+        )
+          score += 50
+        if (recentSlugs && recentSlugs.includes(option.slug))
+          score += 10 - recentSlugs.indexOf(option.slug)
         break
       case "page":
-        if (option.title.toLowerCase().includes(inputValue.toLowerCase()))
-          score += 10
-        if (option.title.toLowerCase().indexOf(inputValue.toLowerCase()) === 0)
+        if (
+          inputValue &&
+          option.title.toLowerCase().includes(inputValue.toLowerCase())
+        )
+          score += 100
+        if (
+          inputValue &&
+          option.title.toLowerCase().indexOf(inputValue.toLowerCase()) === 0
+        )
           score += 100 - option.title.length
-        if (option.subtitle.toLowerCase().includes(inputValue.toLowerCase()))
-          score += 5
+        if (
+          inputValue &&
+          option.subtitle.toLowerCase().includes(inputValue.toLowerCase())
+        )
+          score += 50
+        if (recentSlugs && recentSlugs.includes(option.slug))
+          score += 10 - recentSlugs.indexOf(option.slug)
         break
     }
 
@@ -137,8 +164,13 @@ const filterOptions = (options: (Modder | Page)[], inputValue: string) => {
     ])
   }, [])
 
+  if (inputValue) {
+    optionsWithScores = optionsWithScores.filter(
+      (optionWithScore) => optionWithScore.score > 0,
+    )
+  }
+
   return optionsWithScores
-    .filter((optionWithScore) => optionWithScore.score > 0)
     .sort((a, b) => b.score - a.score)
     .map((optionWithScore) => optionWithScore.option)
 }
@@ -181,7 +213,7 @@ export default (props: QuickSearchProps) => {
     ]
 
     return new Promise<(Modder | Page)[]>((resolve) => {
-      resolve(filterOptions(options, inputValue))
+      resolve(filterOptions(options, inputValue, props.recentSlugs))
     })
   }
 

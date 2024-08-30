@@ -42,6 +42,7 @@ class ModdersController < ApplicationController
     return not_found if @modder.inactive? && @modder != current_modder
     @title = @modder.name
     @description = "#{@modder.name}’s profile on DOL-003.info, a directory of GameCube controller modders."
+    add_recent_slug(params[:id])
   end
 
   def new_report

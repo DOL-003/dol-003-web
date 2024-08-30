@@ -4,15 +4,18 @@ class CompendiumController < ApplicationController
     return not_found unless flag_enabled? :compendium
 
     path = params[:path] || 'index'
+    slug = File.basename(path)
 
-    redirect_path = "#{File.expand_path(File.join(Compendium::CONTENT_DIR, File.basename(path)))}.redirect"
+    redirect_path = "#{File.expand_path(File.join(Compendium::CONTENT_DIR, slug))}.redirect"
     return redirect_to File.read(redirect_path).strip if File.exists? redirect_path
 
-    filepath = "#{File.expand_path(File.join(Compendium::CONTENT_DIR, File.basename(path)))}.md"
+    filepath = "#{File.expand_path(File.join(Compendium::CONTENT_DIR, slug))}.md"
     return not_found unless filepath.starts_with? Compendium::CONTENT_DIR
     return not_found unless File.exists? filepath
 
     page = FrontMatterParser::Parser.parse_file(filepath)
+
+    add_recent_slug(slug)
 
     @compendium = true
     @nav = nav
@@ -23,6 +26,7 @@ class CompendiumController < ApplicationController
     @stub = page['stub'].present?
     @path = "#{path}.md"
     @current_path = "/#{path}"
+    @slug = slug
   end
 
   private

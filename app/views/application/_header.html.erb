@@ -9,6 +9,7 @@
           react_component 'QuickSearch', {
             modders: Modder.active.map do |modder|
               {
+                slug: modder.slug,
                 name: modder.name,
                 city: modder.city,
                 logo_url: modder.logo.present? ? modder.logo_url : nil,
@@ -16,6 +17,8 @@
               }
             end,
             pages: Compendium.all_pages.filter { |page| page[:slug] !~ /\-mods$/ },
+            recent_slugs: @recent_slugs,
+            slug: @slug,
             compendium_domain: compendium_url
           }
         %>
