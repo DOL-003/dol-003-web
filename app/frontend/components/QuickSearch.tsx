@@ -34,20 +34,6 @@ interface QuickSearchProps {
   readonly compendiumDomain: string
 }
 
-const handleOptionSelected = (
-  option: Modder | Page,
-  compendiumDomain: string,
-) => {
-  switch (option.type) {
-    case "page":
-      window.location.href = `${compendiumDomain}${option.slug}`
-      break
-    case "modder":
-      window.location.href = option.link
-      break
-  }
-}
-
 const Control = (props: ControlProps) => {
   return (
     <components.Control {...props}>
@@ -217,6 +203,21 @@ export default (props: QuickSearchProps) => {
     })
   }
 
+  const handleOptionSelected = (
+    option: Modder | Page,
+    compendiumDomain: string,
+  ) => {
+    setOpen(false)
+    switch (option.type) {
+      case "page":
+        window.location.href = `${compendiumDomain}${option.slug}`
+        break
+      case "modder":
+        window.location.href = option.link
+        break
+    }
+  }
+
   return (
     <>
       <AsyncSelect
@@ -231,7 +232,7 @@ export default (props: QuickSearchProps) => {
         classNamePrefix="quick-search"
         className={classNames("QuickSearch", { open })}
         captureMenuScroll={true}
-        closeMenuOnSelect={false}
+        closeMenuOnSelect={true}
         controlShouldRenderValue={false}
         escapeClearsValue={false}
         openMenuOnFocus={true}
