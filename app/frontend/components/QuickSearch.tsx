@@ -226,7 +226,11 @@ export default (props: QuickSearchProps) => {
         defaultOptions
         unstyled={true}
         placeholder={
-          open ? "Search modders and Compendium pages" : "Quick search"
+          open
+            ? window.innerWidth <= 960
+              ? "Search modders and pages"
+              : "Search modders and Compendium pages"
+            : "Quick search"
         }
         components={{ Control, Option }}
         classNamePrefix="quick-search"
