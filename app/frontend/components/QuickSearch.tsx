@@ -1,6 +1,6 @@
 import "./QuickSearch.scss"
 
-import React, { useState } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import Select, { ControlProps, OptionProps, components } from "react-select"
 import classNames from "classnames"
 
@@ -107,9 +107,25 @@ const Option = (props: OptionProps<Modder | Page>) => {
 
 export default (props: QuickSearchProps) => {
   const [open, setOpen] = useState(false)
+  const field = useRef()
+
+  useEffect(() => {
+    document.addEventListener("keypress", (event) => {
+      if (
+        event.target.tagName === "input" ||
+        event.target.tagName === "textarea"
+      )
+        return
+      if (event.key !== "/") return
+      field.current.focus()
+      event.preventDefault()
+    })
+  }, [])
+
   return (
     <>
       <Select
+        ref={field}
         options={[
           ...props.modders.map((modder) => ({
             type: "modder",
@@ -144,6 +160,9 @@ export default (props: QuickSearchProps) => {
         }
         onFocus={() => setOpen(true)}
         onBlur={() => setOpen(false)}
+        onKeyDown={(event) =>
+          event.key === "Escape" && field.current && field.current.blur()
+        }
         menuIsOpen={open}
       />
       <div className={classNames("quicksearch-backdrop", { open })} />
