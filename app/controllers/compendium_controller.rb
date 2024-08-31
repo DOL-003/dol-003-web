@@ -21,7 +21,7 @@ class CompendiumController < ApplicationController
     @nav = nav
     @title = RubyPants.new(page['title']).to_html.html_safe
     @subtitle = page['subtitle'].present? ? RubyPants.new(page['subtitle']).to_html.html_safe : nil
-    @description = @subtitle.present? ? "#{@subtitle} The GameCube Controller Compendium is a hub for GCC modding knowldge." : nil
+    @description = @subtitle.present? ? "#{@subtitle} The GameCube Controller Compendium is a hub for GCC modding knowledge." : nil
     @content = page_content(path:, filepath:, page:)
     @stub = page['stub'].present?
     @path = "#{path}.md"

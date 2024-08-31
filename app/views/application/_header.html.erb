@@ -28,10 +28,10 @@
     <label for="menu-toggle" id="menu-toggle-button"><%= inline_svg_tag 'menu.svg' %></label>
     <input type="checkbox" id="menu-toggle">
     <ul class="menu">
+      <li><%= link_to 'Directory', modders_url(subdomain: '') %></li>
       <% if flag_enabled? :compendium %>
         <li><%= link_to 'Compendium', compendium_url %></li>
       <% end %>
-      <li><%= link_to 'Modder search', modders_url(subdomain: '') %></li>
       <% if user_signed_in? && current_modder.blank? %>
         <li><%= link_to 'Set up profile', edit_profile_url(subdomain: '') %></li>
       <% end %>

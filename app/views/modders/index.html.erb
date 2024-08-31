@@ -1,5 +1,5 @@
 <div class="content">
-  <h1>Modder search</h1>
+  <h1>Modder directory</h1>
 </div>
 
 <div class="content grid search-fields">
@@ -87,7 +87,7 @@
       %>
 
       <div class="heading">
-        <h2><%= @results.length %> <%= 'result'.pluralize(@results.length) %></h2>
+        <h2><%= @results.length %> <%= (@services.present? ? 'result' : 'modder').pluralize(@results.length) %></h2>
         <button type="button" class="link map-toggle show-map"><%= inline_svg_tag 'map.svg' %>Show map</button>
         <button type="button" class="link map-toggle hide-map"><%= inline_svg_tag 'map.svg' %>Hide map</button>
       </div>
