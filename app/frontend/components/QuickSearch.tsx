@@ -152,7 +152,7 @@ const filterOptions = (
 
   if (inputValue) {
     optionsWithScores = optionsWithScores.filter(
-      (optionWithScore) => optionWithScore.score > 0,
+      (optionWithScore) => optionWithScore.score > 10,
     )
   }
 
