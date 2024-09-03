@@ -1,6 +1,6 @@
 ---
 title: Thumbsticks
-subtitle: The upper-most part of the analog stick assembly.
+subtitle: The user-facing part of the analog stick assembly.
 tags:
   - stick-component
 ---
@@ -22,15 +22,15 @@ It is possible, though somewhat difficult, to replace a worn rubber cap, but usu
 
 ### Loose fitting stick
 
-Aftermarket sticks and even OEM sticks can sometimes not fit tightly on the stickbox peg. When this happens, put a small piece of material like tape or plastic wrap around the top of the peg to make the thumbstick more snug. For more information including some other potential solutions, check out [this guide](https://dqcontrollers.godaddysites.com/fix-my-sticks/f/my-stick-is-loose-it-comes-off-the-post) by [DQ Controllers](https://dol-003.info/modders/dq-controllers).
+Aftermarket sticks and even OEM sticks can sometimes not fit tightly on the stickbox peg. When this happens, a small piece of material like tape or plastic can be wrapped around the top of the peg to make the thumbstick grip it more snugly. For more information including some other potential solutions, check out [this guide](https://dqcontrollers.godaddysites.com/fix-my-sticks/f/my-stick-is-loose-it-comes-off-the-post) by [DQ Controllers](https://dol-003.info/modders/dq-controllers).
 
 ### Stick rubbing on shell
 
-Aftermarket sticks often sit too low, which makes the rubber stick cap rub on the top of the gate. To fix it, put a tiny ball of tin foil or another hard object in the stick's slot to make it sit higher on the stickbox peg. For photos and alternate solutions, see [this guide](https://dqcontrollers.godaddysites.com/fix-my-sticks/f/my-stick-feels-like-the-rubber-is-rubbing-on-the-shell) by [DQ Controllers](https://dol-003.info/modders/dq-controllers).
+Aftermarket sticks often sit too low, which makes the rubber stick cap rub on the top of the gate. To fix it, a tiny ball of tin foil or another hard object can be inserted in the stick's slot to make it sit higher on the stickbox peg. For photos and alternate solutions, see [this guide](https://dqcontrollers.godaddysites.com/fix-my-sticks/f/my-stick-feels-like-the-rubber-is-rubbing-on-the-shell) by [DQ Controllers](https://dol-003.info/modders/dq-controllers).
 
 ## Replacements
 
-There is no consistent source for standalone OEM sticks, new or used, except for other GCCs. Resin sticks are a popular alternative, especially because they can be made in practically any color, with or without OEM-like rubber caps.
+There is no consistent source for standalone OEM thumbsticks, new or used, except for other GCCs. [Resin sticks](/analog-sticks/stick-mods/resin-casting) are a popular alternative, especially because they can be made in practically any color, with or without OEM-like rubber caps.
 
 ### Where to get OEM sticks
 
@@ -49,9 +49,8 @@ There is no consistent source for standalone OEM sticks, new or used, except for
 Thumbsticks from certain other Nintendo controllers are compatible with GCC stickboxes, and some players even prefer the alternate feel they have.
 
 - **Wii Nunchuck sticks** fit in a GCC, but are taller than standard GCC sticks and have a slightly different rubber cap design.
-- **Wii Classic Controller sticks** fit in a GCC and have the same rubber cap design as nunchuck sticks.
-- **Wii U Pro Controller sticks** fit in a GGC, shorter than the Wii Classic Controller/Nunchuck sticks, closer in size to the GCC OEM sticks.
-- **Wii U Tablet sticks** same as Wii U Pro Controller sticks.
+- **Wii Classic Controller sticks** fit in a GCC and have the same rubber cap design as Nunchuck sticks.
+- Sticks from the **Wii U Pro Controller** and **Wii U Gamepad** fit in a GGC and are shorter than the Wii Classic Controller and Nunchuck sticks, closer in size to the OEM GCC sticks.
 - **Resin sticks** are available in many varieties, from OEM profile to custom shapes like Spicy Sticks, which are often recommended for players who prefer a grippier surface. Resin sticks are made with and without OEM-like rubber caps.
 
 ### Sticks to avoid

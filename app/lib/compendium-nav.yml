@@ -46,7 +46,7 @@ nav:
       label: Sticks
       children:
         - stick-components:
-            label: Subcomponents
+            label: Components
             sort: label
             children:
               - stickbox-potentiometers: Potentiometers
