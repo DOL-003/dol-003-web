@@ -7,7 +7,7 @@ The **motherboard** is a PCB that serves as the base of a GCC's internals. It co
 
 ## OEM variants
 
-There have been three major revisions of the motherboard that correspond with the three [stickbox variants](/analog-sticks/stickboxes#variants).
+There have been three major revisions of the motherboard that correspond with the three [stickbox variants](/analog-sticks/stick-components/stickboxes#variants).
 
 ### T1
 
@@ -27,7 +27,7 @@ In more recent years, several projects have created replacement motherboards for
 
 ### Goomwave
 
-The first well-known aftermarket motherboard was the Goomwave, which features hot-swappable [stickbox potentiometers](/analog-sticks/stickbox-potentiometers), [notch](/shell/shell-mods/notches) calibration, [PODE](/analog-sticks/pode) emulation, and various other customizable settings. At the project's peak, many top Melee players used a Goomwave, and demand far outstripped supply since the project was closed-source and only the maintainers could produce the boards. More recently, the Goomwave project has been more dormant in the wake of PhobGCC's growing popularity, and due to some macro-like functionality Goomwave controllers may not be tournament-legal in the near future.
+The first well-known aftermarket motherboard was the Goomwave, which features hot-swappable [stickbox potentiometers](/analog-sticks/stick-components/stickbox-potentiometers), [notch](/shell/shell-mods/notches) calibration, [PODE](/analog-sticks/pode) emulation, and various other customizable settings. At the project's peak, many top Melee players used a Goomwave, and demand far outstripped supply since the project was closed-source and only the maintainers could produce the boards. More recently, the Goomwave project has been more dormant in the wake of PhobGCC's growing popularity, and due to some macro-like functionality Goomwave controllers may not be tournament-legal in the near future.
 
 ### PhobGCC
 
@@ -38,7 +38,7 @@ The first well-known aftermarket motherboard was the Goomwave, which features ho
   <p>A PhobGCC 2.0.2 board manufactured by Elecrow.</p>
 </aside>
 
-The PhobGCC project consists of an open-source PCB design paired with open-source firmware, designed to be fabricated, assembled and flashed by anyone. It replaces the OEM [stickbox potentiometers](/analog-sticks/stickbox-potentiometers) with magnets and Hall effect sensors, and supports many customizable settings like stick calibration, built-in [snapback](/analog-sticks/stickboxes#snapback) filtering, software [button swaps](/motherboard/board-mods/button-remapping), [digital trigger](/triggers/trigger-mods/digital-triggers) emulation, and much more.
+The PhobGCC project consists of an open-source PCB design paired with open-source firmware, designed to be fabricated, assembled and flashed by anyone. It replaces the OEM [stickbox potentiometers](/analog-sticks/stick-components/stickbox-potentiometers) with magnets and Hall effect sensors, and supports many customizable settings like stick calibration, built-in [snapback](/analog-sticks/stick-components/stickboxes#snapback) filtering, software [button swaps](/motherboard/board-mods/button-remapping), [digital trigger](/triggers/trigger-mods/digital-triggers) emulation, and much more.
 
 Learn more at the [official PhobGCC docs](https://github.com/PhobGCC/PhobGCC-doc).
 

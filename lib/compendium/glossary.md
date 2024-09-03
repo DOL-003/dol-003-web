@@ -19,8 +19,8 @@ subtitle: Definitions of common terms and abbreviations related to GameCube cont
 
 [PODE](/analog-sticks/pode): Potentiometer Oddity Degradation Effect
 
-**Pots**: [Potentiometers](/analog-sticks/stickbox-potentiometers)
+**Pots**: [Potentiometers](/analog-sticks/stick-components/stickbox-potentiometers)
 
 **Snapback**: Unintentional analog input resulting from an analog stick "snapping back" past the center/neutral coordinates
 
-**T1** / **T2** / **T3**: The three primary variants of OEM [boards](/motherboard) and [stickboxes](/analog-sticks/stickboxes)
+**T1** / **T2** / **T3**: The three primary variants of OEM [boards](/motherboard) and [stickboxes](/analog-sticks/stick-components/stickboxes)

@@ -5,7 +5,7 @@ tags:
   - stick-component
 ---
 
-**Stickbox potentiometers** are rotational variable resistors moved by the pegs on a [stickbox](/analog-sticks/stickboxes). Two potentiometers are responsible for translating the position of each stickbox into values that the GCC processor can interpret as X and Y coordinates.
+**Stickbox potentiometers** are rotational variable resistors moved by the pegs on a [stickbox](/analog-sticks/stick-components/stickboxes). Two potentiometers are responsible for translating the position of each stickbox into values that the GCC processor can interpret as X and Y coordinates.
 
 ## Common issues & repairs
 

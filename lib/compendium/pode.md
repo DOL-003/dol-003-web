@@ -3,7 +3,7 @@ title: PODE
 subtitle: All about Potentiometer Oddity Degradation Effect.
 ---
 
-**Potentiometer Oddity Degradation Effect** (**PODE**) is a phenomenon where a worn [stickbox potentiometer](/analogs-stick/stickbox-potentiometers) exhibits inaccurate position readings. This typically manifests as sluggish and/or sporadic unexpected input values when moving the stick.
+**Potentiometer Oddity Degradation Effect** (**PODE**) is a phenomenon where a worn [stickbox potentiometer](/analogs-stick/stick-components/stickbox-potentiometers) exhibits inaccurate position readings. This typically manifests as sluggish and/or sporadic unexpected input values when moving the stick.
 
 **Trigger PODE** is a related condition where a [trigger potentiometer](/triggers#trigger-pode) has a non-zero neutral value after the trigger released.
 
@@ -17,7 +17,7 @@ Trigger PODE is even easier to detect with an input viewer. After pulling the tr
 
 PODE subtly changes the timing and movement needed for various Melee tech that involve quickly moving the analog stick, such as smash turns, dashback and pivots. Since PODE usually develops gradually, it tends to make a controller perform less consistently over time, forcing the player to constantly adjust to the level of PODE.
 
-Historically, PODE was not well-understood and many players even considered it beneficial as it has the side effect of reducing [snapback](/analog-sticks/thumbsticks#snapback), as well as making certain vanilla Melee tech easier to perform, such as dashbacks. With the advent of [snapback modules](/analog-sticks/stick-mods/snapback-module) and more recently [heartbeat modules](/analog-sticks/stick-mods/heartbeat-module), PODE is now considered mostly detrimental, since it's possible to have an almost 100% consistent controller without it.
+Historically, PODE was not well-understood and many players even considered it beneficial as it has the side effect of reducing [snapback](/analog-sticks/stick-components/thumbsticks#snapback), as well as making certain vanilla Melee tech easier to perform, such as dashbacks. With the advent of [snapback modules](/analog-sticks/stick-mods/snapback-module) and more recently [heartbeat modules](/analog-sticks/stick-mods/heartbeat-module), PODE is now considered mostly detrimental, since it's possible to have an almost 100% consistent controller without it.
 
 Sufficiently severe trigger PODE causes lingering trigger analog input, which typically manifests as unintentionally holding shield in a Smash game.
 
