@@ -1,7 +1,7 @@
 ---
 title: Pad perforation
 subtitle: Perforate the silicone button pads to decrease the force needed to actuate the buttons.
-stub: true
+notice: stub
 tags:
   - button-mod
   - trigger-mod

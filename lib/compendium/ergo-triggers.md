@@ -1,7 +1,7 @@
 ---
 subtitle: Replacement trigger button with a smoother shape for a more ergonomic feel.
 title: Ergo triggers
-stub: true
+notice: stub
 tags:
   - trigger-mod
   - mod

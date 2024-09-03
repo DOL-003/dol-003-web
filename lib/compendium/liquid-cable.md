@@ -1,7 +1,7 @@
 ---
 title: Liquid Cable
 subtitle: Create GCC cables from scratch.
-stub: true
+notice: stub
 tags:
   - cable-mod
   - mod

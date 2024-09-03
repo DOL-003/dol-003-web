@@ -1,7 +1,7 @@
 ---
 title: Resin casting
 subtitle: Cast custom GCC buttons, sticks and triggers in resin with different colors and designs.
-stub: true
+notice: stub
 tags:
   - stick-mod
   - trigger-mod

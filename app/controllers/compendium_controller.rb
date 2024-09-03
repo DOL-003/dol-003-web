@@ -24,6 +24,7 @@ class CompendiumController < ApplicationController
     @description = @subtitle.present? ? "#{@subtitle} The GameCube Controller Compendium is a hub for GCC modding knowledge." : nil
     @content = page_content(path:, filepath:, page:)
     @stub = page['stub'].present?
+    @notices = page['notice'].present? ? [page['notice']] : page['notices']
     @path = "#{path}.md"
     @current_path = "/#{path}"
     @slug = slug

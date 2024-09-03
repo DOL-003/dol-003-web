@@ -1,7 +1,7 @@
 ---
 title: Trigger stabilization
 subtitle: Use PTFE tape to reduce the amount of play between each trigger and the shell.
-stub: true
+notice: stub
 tags:
   - trigger-mod
   - mod

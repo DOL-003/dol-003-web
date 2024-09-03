@@ -1,7 +1,7 @@
 ---
 title: Detachable cable
 subtitle: Make it easier to swap cables without soldering.
-stub: true
+notice: stub
 tags:
   - cable-mod
   - mod

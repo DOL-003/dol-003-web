@@ -1,7 +1,7 @@
 ---
 title: Shell tinting
 subtitle: Spray paint the inside of a clear shell to give it a splash of color.
-stub: true
+notice: stub
 tags:
   - shell-mod
   - mod

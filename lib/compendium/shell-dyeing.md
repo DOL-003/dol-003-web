@@ -1,7 +1,7 @@
 ---
 title: Shell dyeing
 subtitle: Dye a shell to give it a different hue.
-stub: true
+notice: stub
 tags:
   - shell-mod
   - mod

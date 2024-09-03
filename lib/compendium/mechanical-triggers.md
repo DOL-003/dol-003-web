@@ -1,7 +1,7 @@
 ---
 subtitle: Replace the trigger assembly with a keyboard switch.
 title: Mechanical triggers
-stub: true
+notice: stub
 tags:
   - trigger-mod
   - mod
