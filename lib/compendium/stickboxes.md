@@ -1,6 +1,8 @@
 ---
 title: Stickboxes
 subtitle: The mechanical component of the analog stick assembly.
+tags:
+  - stick-component
 ---
 
 <aside>

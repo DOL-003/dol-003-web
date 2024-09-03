@@ -1,6 +1,8 @@
 ---
 title: Thumbsticks
 subtitle: The upper-most part of the analog stick assembly.
+tags:
+  - stick-component
 ---
 
 <aside>

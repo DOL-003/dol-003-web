@@ -1,6 +1,8 @@
 ---
 title: Stickbox potentiometers
 subtitle: The electrical component of the analog stick assembly.
+tags:
+  - stick-component
 ---
 
 **Stickbox potentiometers** are rotational variable resistors moved by the pegs on a [stickbox](/analog-sticks/stickboxes). Two potentiometers are responsible for translating the position of each stickbox into values that the GCC processor can interpret as X and Y coordinates.
@@ -9,7 +11,7 @@ subtitle: The electrical component of the analog stick assembly.
 
 ### PODE
 
-As a potentiometer wears, it usually develops [Potentiometer Oddity Degradation Effect](/misc/pode) (PODE). PODE is when a potentiometer no longer accurately reports the position of the stick, particularly during movement, which often results in missed inputs.
+As a potentiometer wears, it usually develops [Potentiometer Oddity Degradation Effect](/analog-sticks/pode) (PODE). PODE is when a potentiometer no longer accurately reports the position of the stick, particularly during movement, which often results in missed inputs.
 
 Since PODE is caused by the carbon components within the potentiometer wearing out, it cannot feasibly be repaired. Generally, the potentiometers are replaced to fix PODE. Alternatively, a [heartbeat module](/analog-sticks/stick-mods/heartbeat-module) can be installed to suppress the effects of PODE.
 
@@ -37,4 +39,4 @@ Third-party potentiometers are not recommended.
 
 [Snapback modules](/analog-sticks/stick-mods/snapback-module) attach capacitors to the potentiometer leads to filter out unintentional inputs caused by snapback.
 
-[Heartbeat modules](/analog-sticks/stick-mods/heartbeat-module) build on the idea of a snapback module and add variable resistors that address [PODE](/misc/pode).
+[Heartbeat modules](/analog-sticks/stick-mods/heartbeat-module) build on the idea of a snapback module and add variable resistors that address [PODE](/analog-sticks/pode).

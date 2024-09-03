@@ -27,7 +27,7 @@ In more recent years, several projects have created replacement motherboards for
 
 ### Goomwave
 
-The first well-known aftermarket motherboard was the Goomwave, which features hot-swappable [stickbox potentiometers](/analog-sticks/stickbox-potentiometers), [notch](/shell/shell-mods/notches) calibration, [PODE](/misc/pode) emulation, and various other customizable settings. At the project's peak, many top Melee players used a Goomwave, and demand far outstripped supply since the project was closed-source and only the maintainers could produce the boards. More recently, the Goomwave project has been more dormant in the wake of PhobGCC's growing popularity, and due to some macro-like functionality Goomwave controllers may not be tournament-legal in the near future.
+The first well-known aftermarket motherboard was the Goomwave, which features hot-swappable [stickbox potentiometers](/analog-sticks/stickbox-potentiometers), [notch](/shell/shell-mods/notches) calibration, [PODE](/analog-sticks/pode) emulation, and various other customizable settings. At the project's peak, many top Melee players used a Goomwave, and demand far outstripped supply since the project was closed-source and only the maintainers could produce the boards. More recently, the Goomwave project has been more dormant in the wake of PhobGCC's growing popularity, and due to some macro-like functionality Goomwave controllers may not be tournament-legal in the near future.
 
 ### PhobGCC
 

@@ -45,9 +45,13 @@ nav:
   - analog-sticks:
       label: Sticks
       children:
-        - stickbox-potentiometers: Potentiometers
-        - stickboxes
-        - thumbsticks
+        - stick-components:
+            label: Subcomponents
+            sort: label
+            children:
+              - stickbox-potentiometers: Potentiometers
+              - stickboxes
+              - thumbsticks
         - stick-mods:
             label: Mods
             sort: label
@@ -58,27 +62,23 @@ nav:
               - stickbox-lubing
               - aftermarket-stickbox-springs: Aftermarket springs
               - notches
+        - pode
   - triggers:
       children:
         - trigger-mods:
-            label: Mods
-            sort: label
-            children:
-              - digital-triggers
-              - ergo-triggers
-              - mechanical-triggers
-              - trigger-lubing: Lubing
-              - pad-perforation
-              - trigger-plugs
-              - resin-casting
-              - aftermarket-trigger-springs: Aftermarket springs
-              - trigger-stabilization: Stabilization
-              - trigger-spring-trimming: Spring trimming
-  - ---
-  - misc:
-      label: Miscellaneous
-      children:
-        - pode
+          label: Mods
+          sort: label
+          children:
+            - digital-triggers
+            - ergo-triggers
+            - mechanical-triggers
+            - trigger-lubing: Lubing
+            - pad-perforation
+            - trigger-plugs
+            - resin-casting
+            - aftermarket-trigger-springs: Aftermarket springs
+            - trigger-stabilization: Stabilization
+            - trigger-spring-trimming: Spring trimming
   - ---
   - mods
   - glossary
