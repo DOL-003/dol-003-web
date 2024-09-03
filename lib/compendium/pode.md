@@ -1,6 +1,7 @@
 ---
 title: PODE
 subtitle: All about Potentiometer Oddity Degradation Effect.
+notice: imagery
 ---
 
 **Potentiometer Oddity Degradation Effect** (**PODE**) is a phenomenon where a worn [stickbox potentiometer](/analogs-stick/stick-components/stickbox-potentiometers) exhibits inaccurate position readings. This typically manifests as sluggish and/or sporadic unexpected input values when moving the stick.

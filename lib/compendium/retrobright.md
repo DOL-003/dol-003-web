@@ -1,7 +1,7 @@
 ---
 title: Retrobright
 subtitle: Use hydrogen peroxide to remove yellowing from clear or white shells.
-notice: stub
+notice: imagery
 tags:
   - shell-mod
   - mod

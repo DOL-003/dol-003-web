@@ -1,6 +1,7 @@
 ---
 title: Cable
 subtitle: Every GCC has a cable that connects the controller to a GameCube, Wii, or PC (via a USB adapter).
+notice: imagery
 ---
 
 An OEM GCC **cable** consists of a twisted set of five insulated wires with a drain wire, a layer of copper shielding, and an outer layer of rubber insulation. The controller-side end connects directly to the [motherboard](/motherboard) via a soldered connector, while the console-side end terminates in a proprietary Nintendo-designed plug.

@@ -1,6 +1,7 @@
 ---
 title: Snapback module
 subtitle: Install capacitors to prevent analog misinputs due to snapback.
+notice: imagery
 tags:
   - stick-mod
   - mod

@@ -1,6 +1,7 @@
 ---
 title: Shell
 subtitle: The outer plastic housing of a GameCube controller is known as the shell.
+notice: imagery
 ---
 
 The **shell** of a GameCube controller consists of two injection-molded ABS halves, commonly referred to as the **front shell** and the **back shell**, fastened together by six tri-point screws. The front shell has openings for the face [buttons](/buttons) and [analog sticks](/analog-sticks), while the back shell has openings for each of the [triggers](/triggers). The Z button slots between the two halves in an opening formed by matching contours in the edges of each half. The shell is responsible for securely housing the [motherboard](/motherboard).

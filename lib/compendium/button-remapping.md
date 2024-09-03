@@ -1,6 +1,7 @@
 ---
 title: Button remapping
 subtitle: Swap button inputs to enable Z jump or trigger jump in Melee.
+notice: imagery
 tags:
   - board-mod
   - button-mod

@@ -1,6 +1,7 @@
 ---
 title: Trigger lubing
 subtitle: Apply a lubricant to the trigger assembly to make the trigger movement smoother.
+notice: imagery
 tags:
   - trigger-mod
   - mod

@@ -1,6 +1,7 @@
 ---
 title: Trigger plugs
 subtitle: Extend the shaft of a trigger to reduce the travel distance before actuating the digital press.
+notice: imagery
 tags:
   - trigger-mod
   - mod

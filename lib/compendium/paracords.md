@@ -1,6 +1,7 @@
 ---
 title: Paracords
 subtitle: Replace a cable's rubber insulation with nylon paracord for a custom look and feel.
+notice: imagery
 tags:
   - cable-mod
   - mod

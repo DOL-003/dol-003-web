@@ -1,6 +1,7 @@
 ---
 title: Heartbeat module
 subtitle: Resolve both snapback and PODE with a combination of capacitors and resistors.
+notice: imagery
 tags:
   - stick-mod
   - mod

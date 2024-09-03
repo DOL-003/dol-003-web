@@ -66,19 +66,19 @@ nav:
   - triggers:
       children:
         - trigger-mods:
-          label: Mods
-          sort: label
-          children:
-            - digital-triggers
-            - ergo-triggers
-            - mechanical-triggers
-            - trigger-lubing: Lubing
-            - pad-perforation
-            - trigger-plugs
-            - resin-casting
-            - aftermarket-trigger-springs: Aftermarket springs
-            - trigger-stabilization: Stabilization
-            - trigger-spring-trimming: Spring trimming
+            label: Mods
+            sort: label
+            children:
+              - digital-triggers
+              - ergo-triggers
+              - mechanical-triggers
+              - trigger-lubing: Lubing
+              - pad-perforation
+              - trigger-plugs
+              - resin-casting
+              - aftermarket-trigger-springs: Aftermarket springs
+              - trigger-stabilization: Stabilization
+              - trigger-spring-trimming: Spring trimming
   - ---
   - mods
   - glossary

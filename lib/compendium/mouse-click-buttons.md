@@ -1,6 +1,7 @@
 ---
 title: Mouse-click buttons
 subtitle: Replace the OEM silicone button membranes with mouse-click switches for a clickier feel.
+notice: imagery
 tags:
   - button-mod
   - mod

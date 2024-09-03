@@ -1,6 +1,7 @@
 ---
 title: Digital triggers
 subtitle: Use a trigger's digital press to input an analog value.
+notice: imagery
 tags:
   - trigger-mod
   - mod

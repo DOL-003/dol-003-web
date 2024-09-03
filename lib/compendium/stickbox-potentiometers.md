@@ -1,6 +1,7 @@
 ---
 title: Stickbox potentiometers
 subtitle: The electrical component of the analog stick assembly.
+notice: imagery
 tags:
   - stick-component
 ---

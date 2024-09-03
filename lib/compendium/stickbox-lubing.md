@@ -1,6 +1,7 @@
 ---
 title: Stickbox lubing
 subtitle: Apply specialized grease to the inside of a stickbox to improve the smoothness of the movement.
+notice: imagery
 tags:
   - stick-mod
   - mod

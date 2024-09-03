@@ -1,6 +1,7 @@
 ---
 title: Aftermarket trigger springs
 subtitle: Replace the springs to change the resistance profile of a trigger.
+notice: imagery
 tags:
   - trigger-mod
   - mod

@@ -1,6 +1,7 @@
 ---
 title: Trigger spring trimming
 subtitle: Shorten the spring to reduce the amount of force needed to press a trigger.
+notice: imagery
 tags:
   - trigger-mod
   - mod
