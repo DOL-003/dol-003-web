@@ -9,6 +9,7 @@ namespace :backfills do
         Modder::VISIBILITY_HIDDEN
       end
       puts "Updating modder #{modder.slug} to #{modder.visibility} because status is #{modder.status}"
+      modder.record_timestamps = false
       modder.save!
     end
   end
