@@ -250,6 +250,12 @@ body.modders.index {
       }
     }
 
+    .view-options {
+      margin-top: 16px;
+      display: flex;
+      gap: 32px;
+    }
+
     &.initialized .heading {
       transition: margin-top 0.5s ease-in-out;
     }
@@ -284,6 +290,7 @@ body.modders.index {
       > .photos {
         position: relative;
         margin-top: 64px;
+        display: var(--photos-display, block);
 
         &::after {
           content: "";

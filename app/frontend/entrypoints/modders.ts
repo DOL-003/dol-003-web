@@ -22,9 +22,22 @@ window.addEventListener("DOMContentLoaded", () => {
         .querySelector("#modder-search-results")
         .style.setProperty(
           "--service-display",
-          serviceVisibilityToggle.checked ? "block" : "none"
+          serviceVisibilityToggle.checked ? "block" : "none",
         )
       Cookies.set("services_visible", serviceVisibilityToggle.checked ? 1 : 0)
+    })
+  }
+
+  const photosVisibilityToggle = document.querySelector("#photos-visible")
+  if (photosVisibilityToggle) {
+    photosVisibilityToggle.addEventListener("change", () => {
+      document
+        .querySelector("#modder-search-results")
+        .style.setProperty(
+          "--photos-display",
+          photosVisibilityToggle.checked ? "block" : "none",
+        )
+      Cookies.set("photos_visible", photosVisibilityToggle.checked ? 1 : 0)
     })
   }
 

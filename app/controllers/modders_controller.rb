@@ -22,6 +22,7 @@ class ModdersController < ApplicationController
     @query = params[:query]
     @map = params[:map] == '1' || (@latitude.present? && @longitude.present?)
     @services_visible = cookies[:services_visible] != '0'
+    @photos_visible = cookies[:photos_visible] != '0'
 
     @results = Modder.visible
 

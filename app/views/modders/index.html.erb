@@ -41,14 +41,6 @@
       %>
     </div>
 
-    <div class="field" style="margin-top: 32px;">
-      <div class="checkbox">
-        <input type="checkbox" id="services-visible" <%= @services_visible ? 'checked' : '' %>>
-        <%= inline_svg_tag 'check.svg' %>
-        <label for="services-visible">Show tags in results</label>
-      </div>
-    </div>
-
     <div class="actions">
       <%= form.submit 'Update search', name: nil, class: 'button' %>
     </div>
@@ -90,6 +82,22 @@
         <h2><%= @results.length %> <%= (@services.present? ? 'result' : 'modder').pluralize(@results.length) %></h2>
         <button type="button" class="link map-toggle show-map"><%= inline_svg_tag 'map.svg' %>Show map</button>
         <button type="button" class="link map-toggle hide-map"><%= inline_svg_tag 'map.svg' %>Hide map</button>
+      </div>
+
+      <div class="view-options">
+
+        <div class="checkbox">
+          <input type="checkbox" id="photos-visible" <%= @photos_visible ? 'checked' : '' %>>
+          <%= inline_svg_tag 'check.svg' %>
+          <label for="photos-visible">Show photos</label>
+        </div>
+
+        <div class="checkbox">
+          <input type="checkbox" id="services-visible" <%= @services_visible ? 'checked' : '' %>>
+          <%= inline_svg_tag 'check.svg' %>
+          <label for="services-visible">Show tags</label>
+        </div>
+
       </div>
 
     <% end %>
