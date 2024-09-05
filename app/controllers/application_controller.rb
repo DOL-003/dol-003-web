@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   layout 'default'
 
   before_action :set_recent_slugs
+  before_action :touch_last_active_at
 
   def index
     @user_id = current_user&.id
@@ -75,6 +76,12 @@ class ApplicationController < ActionController::Base
 
   def set_recent_slugs
     @recent_slugs = cookies[:recent_slugs].present? ? JSON.parse(cookies[:recent_slugs]) : nil
+  end
+
+  def touch_last_active_at
+    return unless user_signed_in?
+
+    current_user.touch :last_active_at
   end
 
 end
