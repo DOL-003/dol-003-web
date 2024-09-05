@@ -1,6 +1,3 @@
 AllCops:
   DisabledByDefault: true
   NewCops: enable
-
-Style:
-  Enabled: true

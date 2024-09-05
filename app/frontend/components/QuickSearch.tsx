@@ -105,17 +105,17 @@ const filterOptions = (
       case "modder":
         if (
           inputValue &&
-          option.name.toLowerCase().includes(inputValue.toLowerCase())
+          option.name?.toLowerCase().includes(inputValue.toLowerCase())
         )
           score += 100
         if (
           inputValue &&
-          option.name.toLowerCase().indexOf(inputValue.toLowerCase()) === 0
+          option.name?.toLowerCase().indexOf(inputValue.toLowerCase()) === 0
         )
           score += 100 - option.name.length
         if (
           inputValue &&
-          option.city.toLowerCase().includes(inputValue.toLowerCase())
+          option.city?.toLowerCase().includes(inputValue.toLowerCase())
         )
           score += 50
         if (recentSlugs && recentSlugs.includes(option.slug))
@@ -124,17 +124,17 @@ const filterOptions = (
       case "page":
         if (
           inputValue &&
-          option.title.toLowerCase().includes(inputValue.toLowerCase())
+          option.title?.toLowerCase().includes(inputValue.toLowerCase())
         )
           score += 100
         if (
           inputValue &&
-          option.title.toLowerCase().indexOf(inputValue.toLowerCase()) === 0
+          option.title?.toLowerCase().indexOf(inputValue.toLowerCase()) === 0
         )
           score += 100 - option.title.length
         if (
           inputValue &&
-          option.subtitle.toLowerCase().includes(inputValue.toLowerCase())
+          option.subtitle?.toLowerCase().includes(inputValue.toLowerCase())
         )
           score += 50
         if (recentSlugs && recentSlugs.includes(option.slug))
