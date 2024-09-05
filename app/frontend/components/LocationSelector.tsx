@@ -101,7 +101,7 @@ export default (props: LocationSelectorProps) => {
           defaultValue={props.city}
           options={{ fields: ["geometry.location", "formatted_address"] }}
           onFocus={(event) => setTimeout(() => event.target.select(), 10)}
-          placeholder={props.placeholder || "Enter your location"}
+          placeholder={props.placeholder || "Start typing a location"}
           disabled={loading}
         />
       )}
