@@ -11,8 +11,8 @@ body.modders {
       .logo {
         flex: none;
         margin: 0;
-        width: 64px;
-        height: 64px;
+        width: 80px;
+        height: 80px;
         background-color: $platinum;
         border-radius: 64px;
         margin-left: -2px;
@@ -24,8 +24,8 @@ body.modders {
         color: darken($platinum, 20%);
 
         svg {
-          width: 32px;
-          height: 32px;
+          width: 40px;
+          height: 40px;
         }
       }
 
@@ -33,7 +33,7 @@ body.modders {
         display: flex;
         align-items: center;
         color: var(--typography-highlight-color);
-        margin-top: 4px;
+        margin-top: 0;
         gap: 12px;
         font-weight: 500;
 
@@ -91,7 +91,7 @@ body.modders {
       > div {
         flex: auto;
         margin-left: 24px;
-        padding-top: 13px;
+        padding-top: 5px;
         min-width: 0;
       }
     }
@@ -299,20 +299,32 @@ body.modders.index {
       .meta {
         margin-top: 24px;
 
+        .logo {
+          width: 64px;
+          height: 64px;
+
+          > svg {
+            width: 32px;
+            height: 32px;
+          }
+        }
+
         h3 {
+          font-size: 24px;
           text-transform: none;
           letter-spacing: 0;
         }
 
         > div {
-          padding-top: 10px;
+          margin-left: 20px;
+          padding-top: 6px;
         }
       }
 
       .services {
         display: var(--service-display, block);
         margin-top: 16px;
-        margin-left: 86px;
+        margin-left: 82px;
 
         @include medium {
           margin-left: 0;

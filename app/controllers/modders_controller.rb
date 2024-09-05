@@ -1,7 +1,7 @@
 class ModdersController < ApplicationController
 
   def index
-    @title = 'Modder search'
+    @title = 'Modder directory'
 
     @services = []
     if params[:services].present?
