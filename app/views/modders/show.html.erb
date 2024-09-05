@@ -51,10 +51,13 @@
         <h1><%= @modder.name %></h1>
         <p class="city">
           <%= inline_svg_tag 'pin.svg' %><%= @modder.city %>
-          <% if @modder.vetted? %>
-            <%= link_to vetting_path, class: 'vetted', title: 'This modder has been vetted by an administrator. Click for more information.' do %><%= inline_svg_tag 'check.svg' %>Vetted<% end %>
-          <% end %>
         </p>
+        <div class="status">
+          <div class="status-pill <%= @modder.status %>"><%= @modder.status.titleize %></div>
+          <% if @modder.vetted? %>
+            <%= link_to vetting_path, class: 'status-pill vetted', title: 'This modder has been vetted by an administrator. Click for more information.' do %><%= inline_svg_tag 'check.svg' %>Vetted<% end %>
+          <% end %>
+        </div>
         <%= format_bio(@modder.bio) %>
       </div>
     </div>
