@@ -21,10 +21,13 @@ class ModdersController < ApplicationController
     @longitude = params[:longitude]
     @query = params[:query]
     @map = params[:map] == '1' || (@latitude.present? && @longitude.present?)
+    @active = params[:active] != '0'
+
     @services_visible = cookies[:services_visible] != '0'
     @photos_visible = cookies[:photos_visible] != '0'
 
     @results = Modder.visible
+    @results = @results.active if @active
 
     if @services.present?
       eligible_modders = ModderService.where(service: @services).group(:modder_id).having('count(modder_id) = ?', @services.count).count.keys

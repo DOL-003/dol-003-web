@@ -41,6 +41,14 @@
       %>
     </div>
 
+    <div class="field" style="margin-top: 32px;">
+      <div class="checkbox">
+        <%= form.check_box :active, checked: @active, value: 0, id: 'active-input' %>
+        <%= inline_svg_tag 'check.svg' %>
+        <label for="active-input">Active modders only</label>
+      </div>
+    </div>
+
     <div class="actions">
       <%= form.submit 'Update search', name: nil, class: 'button' %>
     </div>
