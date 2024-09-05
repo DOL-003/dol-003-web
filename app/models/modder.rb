@@ -18,6 +18,7 @@
 #  twitter_username   :string
 #  uuid               :string
 #  vetting_status     :string
+#  visibility         :string           not null
 #  website_url        :string
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
@@ -49,6 +50,14 @@ class Modder < ApplicationRecord
     ['Inactive', STATUS_INACTIVE]
   ]
 
+  VISIBILITY_VISIBLE = 'visible'
+  VISIBILITY_HIDDEN = 'hidden'
+
+  VISIBILITY_OPTIONS = [
+    ['Visible', VISIBILITY_VISIBLE],
+    ['Hidden', VISIBILITY_HIDDEN]
+  ]
+
   VETTING_STATUS_VETTED = 'vetted'
   VETTING_STATUS_REJECTED = 'rejected'
 
@@ -62,8 +71,11 @@ class Modder < ApplicationRecord
   has_many :modder_services
   has_many :modder_photos, -> { order(index: :asc) }
 
-  attribute :status, :string, default: 'active'
+  attribute :status, :string, default: STATUS_ACTIVE
   validates :status, inclusion: { in: [STATUS_ACTIVE, STATUS_INACTIVE, STATUS_BANNED] }
+
+  attribute :visibility, :string, default: VISIBILITY_VISIBLE
+  validates :visibility, inclusion: { in: [VISIBILITY_VISIBLE, VISIBILITY_HIDDEN] }
 
   validates :name, presence: true, length: { minimum: 3, maximum: 50 }
   validates :bio, length: { maximum: 1000 }
@@ -104,11 +116,11 @@ class Modder < ApplicationRecord
 
   mount_uploader :logo, ModderLogoUploader
 
-  scope :order_by_proximity, -> (latitude, longitude) {
+  scope :order_by_proximity, lambda  { |latitude, longitude|
     select('*').select(sanitize_sql_array(['|/((? - latitude::DECIMAL) ^ 2 + (? - longitude::DECIMAL) ^ 2) as distance', latitude, longitude])).order(distance: :asc)
   }
 
-  scope :name_similar_to, ->(query) {
+  scope :name_similar_to, lambda { |query|
     quoted_query = ActiveRecord::Base.connection.quote_string(query)
     where('name % :query', query:).
       order(Arel.sql("similarity(name, '#{quoted_query}') desc"))
@@ -119,6 +131,7 @@ class Modder < ApplicationRecord
   scope :has_logo, -> { where('logo is not null') }
   scope :has_photos, -> { where.associated(:modder_photos).group(:id) }
   scope :active, -> { where(status: STATUS_ACTIVE) }
+  scope :visible, -> { where(visibility: VISIBILITY_VISIBLE) }
 
   def to_param
     slug
@@ -214,6 +227,14 @@ class Modder < ApplicationRecord
 
   def inactive?
     !active?
+  end
+
+  def visible?
+    visibility == VISIBILITY_VISIBLE
+  end
+
+  def hidden?
+    visibility == VISIBILITY_HIDDEN
   end
 
   def vetted?

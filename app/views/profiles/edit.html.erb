@@ -180,14 +180,28 @@
     </div>
 
     <div class="span-4 caption">
-      <%= form.label :status, 'Profile status', class: 'label large' %>
-      <p class="small">Inactive profiles will not show up in search results or be visible to anyone but you.</p>
+      <%= form.label :status, 'Status', class: 'label large' %>
+      <p class="small">Let people know whether you are currently active as a modder. This will show on your profile.</p>
     </div>
 
     <div class="span-8 input-container">
       <div class="field">
         <div class="select-input-container">
           <%= form.select :status, Modder::STATUS_OPTIONS, {}, { class: 'select-input' } %>
+        </div>
+      </div>
+    </div>
+
+    <div class="span-4 caption">
+      <%= form.label :visibility, 'Profile visibility', class: 'label large' %>
+      <p class="small">A hidden profile will not show up in search results or be visible to anyone but you.</p>
+      <p class="small">If you are currently inactive or on a hiatus, leave your profile visible and change your status instead to let people know you aren't active right now.</p>
+    </div>
+
+    <div class="span-8 input-container">
+      <div class="field">
+        <div class="select-input-container">
+          <%= form.select :visibility, Modder::VISIBILITY_OPTIONS, {}, { class: 'select-input' } %>
         </div>
       </div>
     </div>

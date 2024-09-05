@@ -23,7 +23,7 @@ class ModdersController < ApplicationController
     @map = params[:map] == '1' || (@latitude.present? && @longitude.present?)
     @services_visible = cookies[:services_visible] != '0'
 
-    @results = Modder.active
+    @results = Modder.visible
 
     if @services.present?
       eligible_modders = ModderService.where(service: @services).group(:modder_id).having('count(modder_id) = ?', @services.count).count.keys
@@ -39,7 +39,7 @@ class ModdersController < ApplicationController
 
   def show
     @modder = Modder.find_by(slug: params[:id]) or not_found
-    return not_found if @modder.inactive? && @modder != current_modder
+    return not_found if @modder.hidden? && @modder != current_modder
     @title = @modder.name
     @description = "#{@modder.name}’s profile on DOL-003.info, a directory of GameCube controller modders."
     add_recent_slug(params[:id])
@@ -47,13 +47,13 @@ class ModdersController < ApplicationController
 
   def new_report
     @modder = Modder.find_by(slug: params[:id]) or not_found
-    return not_found if @modder.inactive? && @modder != current_modder
+    return not_found if @modder.hidden? && @modder != current_modder
     @title = 'Report modder'
   end
 
   def create_report
     @modder = Modder.find_by(slug: params[:id]) or not_found
-    return not_found if @modder.inactive? && @modder != current_modder
+    return not_found if @modder.hidden? && @modder != current_modder
 
     unless params[:email].present? && params[:details].present?
       flash[:error] = 'Please fill out all fields.'

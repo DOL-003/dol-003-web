@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_13_195807) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_05_132809) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -56,6 +56,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_13_195807) do
     t.string "vetting_status"
     t.string "instagram_username"
     t.string "discord_username"
+    t.string "visibility", null: false
     t.index ["name"], name: "index_modders_on_name", opclass: :gin_trgm_ops, using: :gin
     t.index ["slug"], name: "index_modders_on_slug", unique: true
     t.index ["user_id"], name: "index_modders_on_user_id"

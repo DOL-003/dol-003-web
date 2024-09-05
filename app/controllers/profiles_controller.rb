@@ -65,11 +65,10 @@ class ProfilesController < ApplicationController
           :discord_username
         ))
 
-        if current_user.admin?
-          @modder.update!(params.require(:modder).permit(:vetting_status))
-        end
+        @modder.update!(params.require(:modder).permit(:vetting_status)) if current_user.admin?
 
         @modder.status = params[:modder][:status] if params[:modder][:status].in? [Modder::STATUS_ACTIVE, Modder::STATUS_INACTIVE]
+        @modder.visibility = params[:modder][:visibility] if params[:modder][:visibility].in? [Modder::VISIBILITY_VISIBLE, Modder::VISIBILITY_HIDDEN]
         @modder.logo = params[:modder][:logo]
         @modder.save!
 

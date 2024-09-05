@@ -18,6 +18,7 @@
 #  twitter_username   :string
 #  uuid               :string
 #  vetting_status     :string
+#  visibility         :string           not null
 #  website_url        :string
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null

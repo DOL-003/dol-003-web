@@ -7,7 +7,7 @@
       <div class="quick-search">
         <%=
           react_component 'QuickSearch', {
-            modders: Modder.active.map do |modder|
+            modders: Modder.visible.map do |modder|
               {
                 slug: modder.slug,
                 name: modder.name,
