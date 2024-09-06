@@ -221,6 +221,13 @@ class Modder < ApplicationRecord
     end
   end
 
+  def formatted_city
+    city
+      .gsub(/\s?[0-9]{5}\s?/, '') # remove US zip
+      .gsub(/\s?[0-9][A-Z][0-9]\s?/, '') # remove CA postal code
+      .gsub(/\s?[A-Z][0-9][A-Z]\s?/, '') # remove CA postal code
+  end
+
   def active?
     status == STATUS_ACTIVE
   end

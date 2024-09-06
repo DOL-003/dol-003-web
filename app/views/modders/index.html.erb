@@ -78,7 +78,7 @@
               url: modder_url(modder),
               slug: modder.slug,
               name: modder.name,
-              city: modder.city,
+              city: modder.formatted_city,
               latitude: modder.latitude,
               longitude: modder.longitude
             }
@@ -134,7 +134,7 @@
             <h3><%= link_to modder.name, modder %></h3>
             <p class="city">
               <%= inline_svg_tag 'pin.svg' %>
-              <%= modder.city %>
+              <%= modder.formatted_city %>
             </p>
             <div class="status">
               <div class="status-pill <%= modder.status %>"><%= modder.status.titleize %></div>

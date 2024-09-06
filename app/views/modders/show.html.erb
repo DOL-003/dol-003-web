@@ -50,7 +50,7 @@
       <div>
         <h1><%= @modder.name %></h1>
         <p class="city">
-          <%= inline_svg_tag 'pin.svg' %><%= @modder.city %>
+          <%= inline_svg_tag 'pin.svg' %><%= @modder.formatted_city %>
         </p>
         <div class="status">
           <div class="status-pill <%= @modder.status %>"><%= @modder.status.titleize %></div>
