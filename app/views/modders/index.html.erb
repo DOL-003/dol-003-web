@@ -57,7 +57,7 @@
 
   <% end %>
 
-  <section class="results span-8 <%= 'map-visible' if @map %>" id="modder-search-results" style="--service-display: <%= @services_visible ? 'block' : 'none' %>;">
+  <section class="results span-8 <%= 'map-visible' if @map %>" id="modder-search-results" style="--service-display: <%= @services_visible ? 'block' : 'none' %>; --photos-display: <%= @photos_visible ? 'block' : 'none' %>;">
 
     <% if @results.empty? %>
 
