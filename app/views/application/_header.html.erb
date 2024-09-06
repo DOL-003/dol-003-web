@@ -55,6 +55,12 @@
 
         <ul class="overlay">
           <li class="name"><%= link_to current_modder.name, modder_url(current_modder, subdomain: ''), class: 'big' %></li>
+          <li class="status">
+            <div class="status-pill <%= current_modder.status %>"><%= current_modder.status.titleize %></div>
+            <% if current_modder.vetted? %>
+              <%= link_to vetting_path, class: 'status-pill vetted', title: 'You have been vetted by an admin. Click for more information.' do %><%= inline_svg_tag 'check.svg' %>Vetted<% end %>
+            <% end %>
+          </li>
           <li><%= link_to 'Edit profile', edit_profile_url(subdomain: '') %></li>
           <li><%= link_to 'Account settings', edit_user_registration_url(subdomain: '') %></li>
           <li><%= link_to 'Invite people', new_invitation_url(subdomain: '') %></li>

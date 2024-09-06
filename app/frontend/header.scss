@@ -265,12 +265,11 @@ header {
           padding: 0;
 
           &.name {
-            margin-bottom: 12px;
             white-space: nowrap;
 
             a {
               color: var(--color-black);
-              font-weight: bold;
+              font-weight: bold !important;
 
               @include dark {
                 color: var(--color-crystal);
@@ -278,7 +277,14 @@ header {
             }
           }
 
-          a {
+          &.status {
+            margin-bottom: 12px;
+            display: flex;
+            gap: 8px;
+            padding: 2px 0;
+          }
+
+          a:not(.status-pill) {
             display: inline-block;
             white-space: nowrap;
             padding: 4px;
