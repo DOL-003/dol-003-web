@@ -3,29 +3,27 @@ nav:
   # - guides
   - ---
   - buttons:
-      children:
-        - button-mods:
-            label: Mods
-            sort: label
-            children:
-              - bald-buttons
-              - button-dyeing: Dyeing
-              - mouse-click-buttons
-              - pad-perforation
-              - resin-casting
-              - button-stabilization: Stabilization
-              - tactile-z
-              - button-remapping
+      - button-mods:
+          label: Mods
+          sort: label
+          children:
+            - bald-buttons
+            - button-dyeing: Dyeing
+            - mouse-click-buttons
+            - pad-perforation
+            - resin-casting
+            - button-stabilization: Stabilization
+            - tactile-z
+            - button-remapping
   - cable:
-      children:
-        - cable-mods:
-            label: Mods
-            sort: label
-            children:
-              - aviator-cable
-              - detachable-cable
-              - liquid-cable
-              - paracords
+      - cable-mods:
+          label: Mods
+          sort: label
+          children:
+            - aviator-cable
+            - detachable-cable
+            - liquid-cable
+            - paracords
   - motherboard:
       - board-mods:
           label: Mods
@@ -64,21 +62,28 @@ nav:
               - notches
         - pode
   - triggers:
-      children:
-        - trigger-mods:
-            label: Mods
-            sort: label
-            children:
-              - digital-triggers
-              - ergo-triggers
-              - mechanical-triggers
-              - trigger-lubing: Lubing
-              - pad-perforation
-              - trigger-plugs
-              - resin-casting
-              - aftermarket-trigger-springs: Aftermarket springs
-              - trigger-stabilization: Stabilization
-              - trigger-spring-trimming: Spring trimming
+      - trigger-mods:
+          label: Mods
+          sort: label
+          children:
+            - digital-triggers
+            - ergo-triggers
+            - mechanical-triggers
+            - trigger-lubing: Lubing
+            - pad-perforation
+            - trigger-plugs
+            - resin-casting
+            - aftermarket-trigger-springs: Aftermarket springs
+            - trigger-stabilization: Stabilization
+            - trigger-spring-trimming: Spring trimming
+  - ---
+  - tools:
+      - screwdrivers
+      # - flush-cutters
+      # - tweezers
+      # - pliers
+      # - soldering-tools
+      # - wire-tools
   - ---
   - mods
   - glossary
