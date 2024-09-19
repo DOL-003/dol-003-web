@@ -92,4 +92,4 @@ gem 'mini_magick'
 gem 'front_matter_parser'
 gem 'kramdown'
 
-gem "rails_cloudflare_turnstile", "~> 0.2.1"
+gem "rails_cloudflare_turnstile", "~> 0.2.1", force_ruby_platform: true
