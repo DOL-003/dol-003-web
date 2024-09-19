@@ -4,6 +4,9 @@ class Authentication::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
+  before_action :validate_cloudflare_turnstile, only: [:create]
+  rescue_from RailsCloudflareTurnstile::Forbidden, with: :handle_registration_blocked
+
   # GET /resource/sign_up
   def new
     @title = 'Modder registration'
@@ -97,5 +100,10 @@ class Authentication::RegistrationsController < Devise::RegistrationsController
 
   def after_update_path_for(resource)
     edit_user_registration_path
+  end
+
+  def handle_registration_blocked
+    flash[:error] = 'Authenticity could not be verified. Please try again, and message us in Discord if the problem persists.'
+    redirect_to root_path
   end
 end

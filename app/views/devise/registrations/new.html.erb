@@ -1,3 +1,5 @@
+<%= cloudflare_turnstile_script_tag %>
+
 <div class="content grid">
 
   <section class="span-5">
@@ -30,6 +32,10 @@
         field_type: :password_field,
         options: { autocomplete: 'new-password', class: 'text-input large', disabled: !@allow_register }
       } %>
+
+      <div class="field turnstile">
+        <%= cloudflare_turnstile %>
+      </div>
 
       <div class="actions">
         <%= form.submit 'Sign up', class: 'button', disabled: !@allow_register %>

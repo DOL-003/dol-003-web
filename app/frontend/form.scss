@@ -26,6 +26,10 @@
 
     & + .field {
       margin-top: 16px;
+
+      &.turnstile {
+        margin-top: 32px;
+      }
     }
 
     & + .actions {
