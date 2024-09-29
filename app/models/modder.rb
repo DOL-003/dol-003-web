@@ -222,6 +222,8 @@ class Modder < ApplicationRecord
   end
 
   def formatted_city
+    return '' if city.blank?
+
     city
       .gsub(/\s?[0-9]{5}\s?/, '') # remove US zip
       .gsub(/\s?[0-9][A-Z][0-9]\s?/, '') # remove CA postal code
