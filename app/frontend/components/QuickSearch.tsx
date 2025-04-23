@@ -168,8 +168,8 @@ export default (props: QuickSearchProps) => {
   useEffect(() => {
     document.addEventListener("keypress", (event) => {
       if (
-        event.target.tagName === "input" ||
-        event.target.tagName === "textarea"
+        event.target.tagName.toLowerCase() === "input" ||
+        event.target.tagName.toLowerCase() === "textarea"
       )
         return
       if (event.key !== "/") return
