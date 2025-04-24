@@ -69,7 +69,7 @@ class ProfilesController < ApplicationController
 
         @modder.status = params[:modder][:status] if params[:modder][:status].in? [Modder::STATUS_ACTIVE, Modder::STATUS_INACTIVE]
         @modder.visibility = params[:modder][:visibility] if params[:modder][:visibility].in? [Modder::VISIBILITY_VISIBLE, Modder::VISIBILITY_HIDDEN]
-        @modder.logo = params[:modder][:logo]
+        @modder.logo = params[:modder][:logo] if params[:modder][:logo].present?
         @modder.save!
 
         @modder.modder_services.destroy_all
