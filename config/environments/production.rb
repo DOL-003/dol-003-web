@@ -103,10 +103,10 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   ActionMailer::Base.smtp_settings = {
-    user_name: 'apikey',
-    password: Rails.application.credentials.dig(:sendgrid, :api_key),
+    user_name: 'no-reply@dol-003.info',
+    password: Rails.application.credentials.dig(:mailgun, :smtp_password),
     domain: 'dol-003.info',
-    address: 'smtp.sendgrid.net',
+    address: 'smtp.mailgun.org',
     port: 587,
     authentication: :plain,
     enable_starttls_auto: true
