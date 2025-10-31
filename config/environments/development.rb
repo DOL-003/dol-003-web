@@ -1,4 +1,5 @@
 require 'active_support/core_ext/integer/time'
+require 'detailed_log_formatter'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -88,4 +89,8 @@ Rails.application.configure do
   }
 
   config.action_dispatch.tld_length = 0
+
+  # Log to STDOUT by default
+  config.logger = ActiveSupport::Logger.new(STDOUT)
+  config.logger.formatter = DetailedLogFormatter.new
 end
