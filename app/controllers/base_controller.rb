@@ -1,17 +1,15 @@
 class BaseController < ActionController::Base
 
   before_action :set_logger_metadata
-
-  # TODO: statsd
-  # around_action :record_action_metrics
+  around_action :record_action_metrics
 
   private
 
   def record_action_metrics
-    # StatsD.increment("request.#{controller_name}.#{action_name}")
-    # StatsD.measure("request.#{controller_name}.#{action_name}") do
-    #   yield
-    # end
+    StatsD.increment("request.#{controller_name}.#{action_name}")
+    StatsD.measure("request.#{controller_name}.#{action_name}") do
+      yield
+    end
   end
 
   def set_logger_metadata

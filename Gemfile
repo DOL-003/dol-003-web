@@ -97,3 +97,5 @@ gem 'faraday-net_http', '~> 3.3.0', force_ruby_platform: true
 gem "rails_cloudflare_turnstile", "~> 0.2.1"
 
 gem 'ruby-clock', require: false
+
+gem 'statsd-instrument'
