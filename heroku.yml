@@ -7,3 +7,9 @@ release:
   image: web
   command:
     - ./deployment-tasks.sh
+run:
+  web: bundle exec rails s -b0
+  cron:
+    command:
+      - bundle exec clock
+    image: web
