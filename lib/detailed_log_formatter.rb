@@ -4,7 +4,7 @@ class DetailedLogFormatter < Logger::Formatter
 
   def set_entrypoint(entrypoint)
     Thread.current[:entrypoint] = entrypoint
-    Thread.current[:uuid] = SecureRandom.uuid_v4
+    Thread.current[:uuid] = SecureRandom.uuid
   end
 
   def call(severity, time, progname, msg)
