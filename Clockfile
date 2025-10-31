@@ -25,6 +25,6 @@ end
 
 # 8:00am UTC
 cron '* * * * *', locals: { task: 'cleanup:delete_old_tournaments' }, overlap: false do
-  puts 'Clock tick'
+  Rails.logger.info 'Clock tick'
 end
 
