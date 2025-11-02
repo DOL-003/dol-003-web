@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   root 'application#index'
 
-  get 'ping', to: 'application#ping'
+  get 'up' => 'rails/health#show', as: :rails_health_check
 
   get 'about', to: 'application#about'
   get 'vetting', to: 'application#vetting'

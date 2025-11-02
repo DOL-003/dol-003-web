@@ -12,10 +12,6 @@ class ApplicationController < BaseController
     @featured_modders = Modder.featured_modders
   end
 
-  def ping
-    head :no_content
-  end
-
   def about
     @title = 'About'
   end
