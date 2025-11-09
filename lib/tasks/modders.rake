@@ -12,7 +12,7 @@ namespace :modders do
     Rails.logger.info "Found #{inactive_users.count} inactive users"
 
     inactive_users.each do |user|
-      UserMailer.with(user_id: user.id).warn_inactive.deliver_now
+      UserMailer.with(user_id: user.id).warn_inactive.deliver_later
       user.touch :inactive_warning_sent_at
     end
   end
