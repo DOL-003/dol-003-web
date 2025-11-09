@@ -23,7 +23,12 @@ end
 
 ### DAILY JOBS
 
-# 8:00am UTC
-cron '* * * * *', locals: { task: 'tick' }, overlap: false do
-  Rails.logger.info 'Clock tick'
+# 3:05pm UTC
+cron '5 15 * * *', locals: { task: 'modders:mark_inactive' }, overlap: false do
+  # rake_async 'modders:mark_inactive'
+end
+
+# 5:05pm UTC
+cron '5 17 * * *', locals: { task: 'modders:warn_inactive' }, overlap: false do
+  # rake_async 'modders:warn_inactive'
 end

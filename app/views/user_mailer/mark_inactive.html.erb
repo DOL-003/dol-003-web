@@ -1,0 +1,19 @@
+<p>Hi
+  <%= @modder.name %>,</p>
+
+<p>You haven't signed into your DOL-003.info profile in a while, so we have
+  marked your profile inactive.</p>
+
+<p>Prioritizing active modders keeps search results relevant for people browsing
+  the directory.
+  <strong>If you are still active, you can sign into your profile at any time and
+    manually mark yourself as active</strong>
+  by editing your profile and updating your status to Active. Your profile has
+  not been deleted, and will never be deleted without cause or your request.</p>
+
+<p><%= link_to "Sign in now →", new_user_session_url(subdomain: ""), class: "button" %></p>
+
+<p>If you have any questions or concerns, please let us know
+  <a href="https://discord.gg/HwtPU7tkCT" target="_blank">in Discord</a>.</p>
+
+<p>— The DOL-003.info team</p>

@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: event_logs
+#
+#  id         :bigint           not null, primary key
+#  data       :json
+#  event_name :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  event_name: MyString
+  data: 
+
+two:
+  event_name: MyString
+  data: 

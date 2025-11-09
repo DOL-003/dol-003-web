@@ -10,4 +10,24 @@ class UserMailer < ApplicationMailer
     )
   end
 
+  def warn_inactive
+    @user = User.find(params[:user_id])
+    @modder = @user.modder
+
+    mail(
+      to: @user.email,
+      subject: 'Action requested: You will be marked inactive on DOL-003.info'
+    )
+  end
+
+  def mark_inactive
+    @user = User.find(params[:user_id])
+    @modder = @user.modder
+
+    mail(
+      to: @user.email,
+      subject: 'Attention: You have been marked inactive on DOL-003.info'
+    )
+  end
+
 end

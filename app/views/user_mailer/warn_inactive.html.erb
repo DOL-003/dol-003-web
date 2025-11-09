@@ -1,0 +1,23 @@
+<p>Hi
+  <%= @modder.name %>,</p>
+
+<p>We noticed you haven't signed into your DOL-003.info profile in a while.</p>
+
+<p>In order to keep search results as relevant as possible,
+  <strong>we will automatically mark your profile as inactive 14 days from today</strong>, unless you log in to DOL-003.info before then. If you are still actively
+  modding and want to remain active in the directory, simply sign in within the
+  next 2 weeks and this pending action will be canceled. This is also a good
+  chance to review the services you have listed and make sure your profile is
+  up to date with your current offerings.</p>
+
+<p><%= link_to "Sign in now →", new_user_session_url(subdomain: ""), class: "button" %></p>
+
+<p>Inactive profiles are not shown in search results by default. If you are
+  marked inactive, you can sign in at any point after that point and manually
+  reactivate your profile. We will never delete your profile without cause or
+  your request.</p>
+
+<p>If you have any questions or concerns, please let us know
+  <a href="https://discord.gg/HwtPU7tkCT" target="_blank">in Discord</a>.</p>
+
+<p>— The DOL-003.info team</p>
