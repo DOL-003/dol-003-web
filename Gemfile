@@ -64,7 +64,8 @@ group :development do
   gem 'web-console'
 
   gem 'annotate'
-  gem 'solargraph'
+  gem 'ruby-lsp'
+  gem 'rubocop'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
