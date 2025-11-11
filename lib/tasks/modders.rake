@@ -13,7 +13,7 @@ namespace :modders do
     Rails.logger.info "Found #{inactive_users.count} inactive users"
 
     inactive_users.each do |user|
-      UserMailer.with(user_id: user.id).warn_inactive.deliver_later
+      UserMailer.with(user_id: user.id).warn_inactive.deliver_now
       user.touch :inactive_warning_sent_at
     end
   end
@@ -34,7 +34,7 @@ namespace :modders do
       Rails.logger.info "Marked modder #{modder.name} inactive"
       EventLog.log 'mark_modder_inactive', user_id: user.id, modder_id: modder.id, modder_slug: modder.slug
 
-      UserMailer.with(user_id: user.id).mark_inactive.deliver_later
+      UserMailer.with(user_id: user.id).mark_inactive.deliver_now
     end
   end
 
