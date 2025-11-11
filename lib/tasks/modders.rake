@@ -8,13 +8,15 @@ namespace :modders do
       .where(inactive_warning_sent_at: nil)
       .where(modder: { status: Modder::STATUS_ACTIVE })
       .order(last_active_at: :desc)
-      .limit(1)
+      .limit(10)
 
     Rails.logger.info "Found #{inactive_users.count} inactive users"
 
     inactive_users.each do |user|
       UserMailer.with(user_id: user.id).warn_inactive.deliver_now
       user.touch :inactive_warning_sent_at
+
+      sleep 5
     end
   end
 
