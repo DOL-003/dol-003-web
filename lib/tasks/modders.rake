@@ -6,6 +6,7 @@ namespace :modders do
       .where('last_active_at < ?', 180.days.ago)
       .or(User.where(last_active_at: nil))
       .where(inactive_warning_sent_at: nil)
+      .where(modder: { status: Modder::STATUS_ACTIVE })
       .order(last_active_at: :desc)
       .limit(1)
 
@@ -18,9 +19,12 @@ namespace :modders do
   end
 
   task mark_inactive: [:environment] do
-    users_to_mark_inactive = User.where('inactive_warning_sent_at < ?', 2.weeks.ago)
+    users_to_mark_inactive = User
+      .joins(:modder)
+      .where('inactive_warning_sent_at < ?', 2.weeks.ago)
+      .where(modder: { status: Modder::STATUS_ACTIVE })
 
-    Rails.logger.info "Found #{users_to_mark_inactive} users to mark inactive"
+    Rails.logger.info "Found #{users_to_mark_inactive.count} users to mark inactive"
 
     users_to_mark_inactive.each do |user|
       modder = user.modder
@@ -28,7 +32,7 @@ namespace :modders do
       modder.save
 
       Rails.logger.info "Marked modder #{modder.name} inactive"
-      EventLog.log 'mark_modder_inactive', user_id: user.id, modder_id: modder.id
+      EventLog.log 'mark_modder_inactive', user_id: user.id, modder_id: modder.id, modder_slug: modder.slug
 
       UserMailer.with(user_id: user.id).mark_inactive.deliver_later
     end
