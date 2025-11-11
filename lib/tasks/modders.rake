@@ -34,7 +34,7 @@ namespace :modders do
       modder.save
 
       Rails.logger.info "Marked modder #{modder.name} inactive"
-      EventLog.log 'mark_modder_inactive', user_id: user.id, modder_id: modder.id, modder_slug: modder.slug
+      EventLog.log 'marked_modder_inactive', user_id: user.id, modder_id: modder.id, modder_slug: modder.slug
 
       UserMailer.with(user_id: user.id).mark_inactive.deliver_now
     end
