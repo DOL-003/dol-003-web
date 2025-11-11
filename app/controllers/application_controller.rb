@@ -5,7 +5,7 @@ class ApplicationController < BaseController
   layout 'default'
 
   before_action :set_recent_slugs
-  before_action :touch_last_active_at
+  before_action :update_user_activity
 
   def index
     @user_id = current_user&.id
@@ -74,8 +74,19 @@ class ApplicationController < BaseController
     @recent_slugs = cookies[:recent_slugs].present? ? JSON.parse(cookies[:recent_slugs]) : nil
   end
 
-  def touch_last_active_at
+  def update_user_activity
     return unless user_signed_in?
+
+    if current_modder && current_user.inactive_warning_sent_at.present?
+      if current_modder.active?
+        current_user.inactive_warning_sent_at = nil
+        current_user.save
+
+        flash[:notice] = "You will no longer be marked inactive. While you're here, check your profile to make sure your services and links are up to date."
+      elsif current_modder.inactive? && current_user.inactive_warning_sent_at > current_user.last_active_at
+        flash[:error] = 'You have been marked inactive. Edit your profile to set your status back to active.'
+      end
+    end
 
     current_user.touch :last_active_at
   end
