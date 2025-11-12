@@ -10,6 +10,7 @@
 #
 class EventLog < ApplicationRecord
   def self.log(event_name, data)
+    StatsD::increment("events.#{event_name}")
     self.create!(event_name:, data:)
   end
 end
