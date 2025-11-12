@@ -40,10 +40,14 @@ class Authentication::RegistrationsController < Devise::RegistrationsController
 
     super
 
-    if resource.persisted? && invitation.present?
-      invitation.status = UserInvitation::STATUS_CLAIMED
-      invitation.invitee_user = resource
-      invitation.save
+    if resource.persisted?
+      EventLog.log 'user_created', user_id: resource.id, email: resource.email
+
+      if invitation.present?
+        invitation.status = UserInvitation::STATUS_CLAIMED
+        invitation.invitee_user = resource
+        invitation.save
+      end
     end
   end
 

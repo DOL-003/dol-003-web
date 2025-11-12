@@ -86,7 +86,12 @@ class ProfilesController < ApplicationController
 
       end
 
-      AdminMailer.with(modder: @modder).new_modder.deliver_later if @modder.user.present? && @onboarding
+      if @modder.user.present? && @onboarding
+        EventLog.log 'modder_profile_created', user_id: current_user.id, modder_slug: @modder.slug
+        AdminMailer.with(modder: @modder).new_modder.deliver_later
+      end
+
+      EventLog.log 'modder_profile_updated', editing_user_id: current_user.id, modder_slug: @modder.slug
 
       flash[:notice] = 'Your profile was updated.'
       redirect_to modder_path(@modder)

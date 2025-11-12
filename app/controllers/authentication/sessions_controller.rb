@@ -13,6 +13,12 @@ class Authentication::SessionsController < Devise::SessionsController
   def create
     @title = 'Modder sign in'
     super
+
+    if user_signed_in?
+      EventLog.log 'user_auth_success', user_id: current_user.id
+    else
+      EventLog.log 'user_auth_failure', email: params[:email]
+    end
   end
 
   # DELETE /resource/sign_out

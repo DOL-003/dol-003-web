@@ -5,7 +5,7 @@ class ApplicationMailer < ActionMailer::Base
 
   def log_delivery
     Rails.logger.info "Sent email: #{mailer_name}##{action_name}"
-    EventLog.log 'sent_email', {
+    EventLog.log 'email_sent', {
       mailer: mailer_name,
       email_name: action_name,
       params:
