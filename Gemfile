@@ -100,3 +100,7 @@ gem "rails_cloudflare_turnstile", "~> 0.2.1"
 gem 'ruby-clock', require: false
 
 gem 'statsd-instrument'
+
+group :production do
+  gem 'cloudflare-rails'
+end
