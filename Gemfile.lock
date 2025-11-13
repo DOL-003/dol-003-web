@@ -113,6 +113,11 @@ GEM
       image_processing (~> 1.1)
       marcel (~> 1.0.0)
       ssrf_filter (~> 1.0)
+    cloudflare-rails (6.2.0)
+      actionpack (>= 7.1.0, < 8.1.0)
+      activesupport (>= 7.1.0, < 8.1.0)
+      railties (>= 7.1.0, < 8.1.0)
+      zeitwerk (>= 2.5.0)
     coderay (1.1.3)
     concurrent-ruby (1.3.3)
     connection_pool (2.4.1)
@@ -427,6 +432,7 @@ DEPENDENCIES
   bootsnap
   capybara
   carrierwave (>= 3.0.0.beta, < 4.0)
+  cloudflare-rails
   debug
   devise
   faraday (~> 2.12.0)
