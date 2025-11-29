@@ -84,7 +84,7 @@ class ApplicationController < BaseController
 
         EventLog.log 'inactive_warning_cleared', user_id: current_user.id, modder_slug: current_modder.slug
         flash[:notice] = "You will no longer be marked inactive. While you're here, check your profile to make sure your services and links are up to date."
-      elsif current_modder.inactive? && current_user.inactive_warning_sent_at > current_user.last_active_at
+      elsif current_modder.inactive? && (current_user.last_active_at.blank? || (current_user.inactive_warning_sent_at > current_user.last_active_at))
         EventLog.log 'inactive_flash_displayed', user_id: current_user.id, modder_slug: current_modder.slug
         flash[:error] = 'You have been marked inactive. Edit your profile to set your status back to active.'
       end
