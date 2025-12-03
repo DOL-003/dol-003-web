@@ -29,5 +29,7 @@ module App
     config.exceptions_app = ->(env) { ExceptionsController.action(:show).call(env) }
 
     config.action_cable.mount_path = nil
+
+    config.middleware.insert 0, Rack::Sanitizer
   end
 end

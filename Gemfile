@@ -104,3 +104,5 @@ gem 'statsd-instrument'
 group :production do
   gem 'cloudflare-rails'
 end
+
+gem "rack-sanitizer", "~> 2.0"
