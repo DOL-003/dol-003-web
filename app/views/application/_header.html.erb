@@ -3,6 +3,21 @@
 
     <%= link_to 'DOL-003', root_url(subdomain: ''), class: 'logo' %>
 
+    <label for="menu-toggle" id="menu-toggle-button"><%= inline_svg_tag 'menu.svg' %></label>
+    <input type="checkbox" id="menu-toggle">
+    <ul class="menu">
+      <li><%= link_to 'Modders', modders_url(subdomain: '') %></li>
+      <li><%= link_to 'Compendium', compendium_url %></li>
+      <% if user_signed_in? && current_modder.blank? %>
+        <li><%= link_to 'Set up profile', edit_profile_url(subdomain: '') %></li>
+      <% elsif !user_signed_in? %>
+        <li><%= link_to 'Get listed', new_user_registration_url(subdomain: '') %></li>
+      <% end %>
+      <li class="discord"><a href="https://discord.gg/HwtPU7tkCT" target="_blank"><%= inline_svg_tag 'discord.svg' %></a></li>
+      <li class="twitter"><a href="https://x.com/dol003info" target="_blank"><%= inline_svg_tag 'twitter.svg' %></a></li>
+      <li class="close"><label for="menu-toggle" id="menu-close"><%= inline_svg_tag 'x.svg' %></label></li>
+    </ul>
+
     <div class="quick-search">
       <%=
         react_component 'QuickSearch', {
@@ -22,17 +37,6 @@
         }
       %>
     </div>
-
-    <label for="menu-toggle" id="menu-toggle-button"><%= inline_svg_tag 'menu.svg' %></label>
-    <input type="checkbox" id="menu-toggle">
-    <ul class="menu">
-      <li><%= link_to 'Compendium', compendium_url %></li>
-      <li><a href="https://discord.gg/HwtPU7tkCT" target="_blank">Discord</a></li>
-      <% if user_signed_in? && current_modder.blank? %>
-        <li><%= link_to 'Set up profile', edit_profile_url(subdomain: '') %></li>
-      <% end %>
-      <li class="close"><label for="menu-toggle" id="menu-close"><%= inline_svg_tag 'x.svg' %></label></li>
-    </ul>
 
     <% if current_modder.present? %>
       <div class="user-menu">

@@ -3,9 +3,6 @@
 @import "@/breakpoints";
 
 .QuickSearch {
-  position: absolute !important;
-  top: 16px;
-  left: calc(50% - 120px);
 
   @include medium {
     left: calc(50% - 24px);

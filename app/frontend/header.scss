@@ -22,7 +22,7 @@ header {
 
     #menu-toggle-button {
       color: $indigo;
-      margin: 0 0 0 auto;
+      margin: 0 0 0 24px;
       padding: 4px;
       width: 32px;
       height: 32px;
@@ -47,7 +47,7 @@ header {
     }
 
     .menu {
-      margin: 0 0 0 auto;
+      margin: 0 0 0 32px;
       list-style: none;
       display: flex;
       flex-flow: row nowrap;
@@ -119,6 +119,16 @@ header {
           }
         }
 
+        &.discord {
+          position: relative;
+          top: -1px;
+        }
+
+        &.twitter {
+          position: relative;
+          top: 1px;
+        }
+
         + li {
           margin-left: 32px;
 
@@ -134,10 +144,14 @@ header {
       visibility: visible;
     }
 
+    .quick-search {
+      margin-left: auto;
+    }
+
     .user-menu {
       width: 48px;
       height: 48px;
-      margin-left: 32px;
+      margin-left: 24px;
       position: relative;
 
       @include medium {
