@@ -2,7 +2,7 @@
   <div class="content grid">
     <section class="span-8">
       <h1>All about <br><strong>GameCube controllers</strong></h1>
-      <p class="big">Learn about modding GameCube controllers (GCCs) and connect with GCC modders and artists around the world. <a href="/about">About DOL-003.info</a>
+      <p class="big">Learn about modding GameCube controllers and connect with modders and artists around the world. <a href="/about">About DOL-003.info</a>
     </section>
   </div>
 </div>
@@ -11,7 +11,7 @@
   <div class="content grid">
     <section class="span-8">
       <h1>All about <br><strong>GameCube controllers</strong></h1>
-      <p class="big">Learn about modding GameCube controllers (GCCs) and connect with GCC modders and artists around the world. <a href="/about">About DOL-003.info</a>
+      <p class="big">Learn about modding GameCube controllers and connect with modders and artists around the world. <a href="/about">About DOL-003.info</a>
     </section>
   </div>
 </div>
@@ -20,7 +20,7 @@
 
   <section class="span-8">
     <h2>Find modders by <strong>tag</strong></h2>
-    <p>Search for controller modders based on what services or parts they offer.</p>
+    <p>Search for modders/artists based on what services or parts they offer.</p>
     <ul class="service-list">
       <% ModderService.enabled_services.map do |service| %>
         <li><%= service_link(service) %></li>
@@ -31,7 +31,7 @@
   <section class="span-4">
 
     <h2>Browse the <%= link_to 'map', modders_path(map: 1) %></h2>
-    <p>Find a modder near you.</p>
+    <p>Find a modder or artist near you.</p>
 
     <%= form_with url: modders_path, method: 'get', html: { class: 'location-search' } do |form| %>
       <%=
