@@ -26,9 +26,7 @@
     <label for="menu-toggle" id="menu-toggle-button"><%= inline_svg_tag 'menu.svg' %></label>
     <input type="checkbox" id="menu-toggle">
     <ul class="menu">
-      <% if flag_enabled? :compendium %>
-        <li><%= link_to 'Compendium', compendium_url %></li>
-      <% end %>
+      <li><%= link_to 'Compendium', compendium_url %></li>
       <li><a href="https://discord.gg/HwtPU7tkCT" target="_blank">Discord</a></li>
       <% if user_signed_in? && current_modder.blank? %>
         <li><%= link_to 'Set up profile', edit_profile_url(subdomain: '') %></li>

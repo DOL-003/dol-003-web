@@ -1,8 +1,6 @@
 class CompendiumController < ApplicationController
 
   def show
-    return not_found unless flag_enabled? :compendium
-
     path = params[:path] || 'index'
     slug = File.basename(path)
 
