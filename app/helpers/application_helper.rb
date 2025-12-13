@@ -22,9 +22,18 @@ module ApplicationHelper
     }
   end
 
-  def page_title
-    site_name = @compendium.present? ? 'The GameCube Controller Compendium' : 'DOL-003.info'
-    @title.present? ? "#{@title} • #{site_name}" : 'DOL-003.info: All about GameCube controllers'
+  def page_title(include_site_name: true)
+    if @title.blank?
+      'DOL-003.info: All about GameCube controllers'
+    elsif include_site_name
+      "#{@title} • #{site_name}"
+    else
+      @title
+    end
+  end
+
+  def site_name
+    @compendium.present? ? 'The GameCube Controller Compendium' : 'DOL-003.info'
   end
 
   def page_description

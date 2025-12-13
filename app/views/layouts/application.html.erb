@@ -3,7 +3,7 @@
 
   <head>
 
-    <title><%= page_title %></title>
+    <title><%= page_title(include_site_name: true) %></title>
     <meta name="description" content="<%= page_description %>">
     <meta property="og:description" content="<%= page_description %>">
 
@@ -14,9 +14,9 @@
 
     <% if controller_name != 'exceptions' %>
       <link rel="canonical" href="<%= canonical_link %>">
-      <link property="og:url" content="<%= canonical_link %>">
-      <link property="og:site_name" content="DOL-003.info">
-      <meta property="og:title" content="<%= page_title %>">
+      <meta property="og:url" content="<%= canonical_link %>">
+      <meta property="og:site_name" content="<%= site_name %>">
+      <meta property="og:title" content="<%= page_title(include_site_name: false) %>">
       <meta property="og:type" content="website">
       <meta property="og:image" content="<%= request.base_url %>/images/logo-large.png?2231">
       <meta name="twitter:card" content="summary">
