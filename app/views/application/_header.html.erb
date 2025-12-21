@@ -13,8 +13,10 @@
       <% elsif !user_signed_in? %>
         <li><%= link_to 'Get listed', new_user_registration_url(subdomain: '') %></li>
       <% end %>
-      <li class="discord"><a href="https://discord.gg/HwtPU7tkCT" target="_blank"><%= inline_svg_tag 'discord.svg' %></a></li>
-      <li class="twitter"><a href="https://x.com/dol003info" target="_blank"><%= inline_svg_tag 'twitter.svg' %></a></li>
+      <li class="social">
+        <a class="discord" href="https://discord.gg/HwtPU7tkCT" target="_blank"><%= inline_svg_tag 'discord.svg' %></a>
+        <a class="twitter" href="https://x.com/dol003info" target="_blank"><%= inline_svg_tag 'twitter.svg' %></a>
+      </li>
       <li class="close"><label for="menu-toggle" id="menu-close"><%= inline_svg_tag 'x.svg' %></label></li>
     </ul>
 
