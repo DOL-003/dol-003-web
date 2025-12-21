@@ -4,17 +4,11 @@
 
 .QuickSearch {
 
-  @include medium {
-    left: calc(50% - 24px);
-  }
-
   &.open {
-    left: calc(50% - 240px);
+    position: absolute;
+    top: 0;
+    right: 0;
     z-index: 10000;
-
-    @include medium {
-      left: calc(50% - 160px);
-    }
 
     .quick-search__control {
       width: 480px;
