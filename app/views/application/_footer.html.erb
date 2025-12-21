@@ -6,7 +6,13 @@
       <p class="small">Modder info is provided for informational use only. DOL-003.info does not endorse any modder or modder-affiliated content presented.</p>
       <p class="small">© <%= Date.today.year %>. All rights reserved. Made with ♥ by <a href="https://twitter.com/mathssbm" target="_blank">Math</a>.</p>
       <p class="small">As an Amazon Associate I earn from qualifying purchases. Affiliate income is used to cover website hosting costs.</p>
-      <p class="small"><%= link_to 'Terms of Service', terms_url(subdomain: '') %> • <%= link_to 'Privacy Policy', privacy_url(subdomain: '') %> • <%= link_to 'House Rules', rules_url(subdomain: '') %></p>
+      <p class="small">
+        <%= link_to 'Terms of Service', terms_url(subdomain: '') %>
+         • <%= link_to 'Privacy Policy', privacy_url(subdomain: '') %>
+         • <%= link_to 'House Rules', rules_url(subdomain: '') %>
+         • <a class="discord" href="https://discord.gg/HwtPU7tkCT" target="_blank"><%= inline_svg_tag 'discord.svg' %></a>
+         <a class="twitter" href="https://x.com/dol003info" target="_blank"><%= inline_svg_tag 'twitter.svg' %></a>
+      </p>
     </div>
 
     <div class="span-6 sign-in-link">

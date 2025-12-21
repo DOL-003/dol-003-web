@@ -120,19 +120,31 @@ header {
         }
 
         &.social {
+          display: flex;
+
           > * + * {
-            margin-left: 16px;
+            margin-left: 24px;
+          }
+
+          svg {
+            width: 20px;
+            height: 20px;
+
+            @include medium {
+              width: 36px;
+              height: 36px;
+            }
           }
         }
 
         .discord {
           position: relative;
-          top: -1px;
+          // top: -1px;
         }
 
         .twitter {
           position: relative;
-          top: 1px;
+          // top: 1px;
         }
 
         + li {

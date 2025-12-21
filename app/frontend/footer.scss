@@ -11,6 +11,12 @@ body > footer {
     background-color: var(--color-ink);
   }
 
+  svg {
+    width: 20px;
+    height: 20px;
+    margin: 0 4px;
+  }
+
   a {
     color: $spice;
   }
