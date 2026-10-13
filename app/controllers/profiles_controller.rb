@@ -39,11 +39,14 @@ class ProfilesController < ApplicationController
       authenticate_admin!
       @modder = Modder.find_by(slug: params[:id])
       @modder.record_timestamps = false
+      @form_submit_path = admin_update_profile_path(@modder)
     elsif params.require(:modder).permit(:unclaimed).present?
       authenticate_admin!
       @modder = Modder.new
+      @form_submit_path = profiles_path
     else
       @modder = current_modder || Modder.new(user: current_user)
+      @form_submit_path = profile_path
     end
 
     @onboarding = !@modder.persisted?
@@ -98,6 +101,7 @@ class ProfilesController < ApplicationController
     rescue StandardError
       flash[:error] = 'There was a problem saving your profile. See error messages below.'
       @title = @onboarding ? 'Create profile' : 'Edit profile'
+      @is_admin = current_user.admin?
       render :edit
     end
   end
