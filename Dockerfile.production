@@ -1,6 +1,9 @@
 FROM ruby:3.1.3-alpine
 
+ARG RAILS_ENV=production
+
 RUN apk add --update --no-cache \
+  curl \
   build-base \
   less \
   nodejs\
@@ -27,8 +30,7 @@ ENV YARN_CACHE_FOLDER /opt/yarn
 RUN yarn config set cache-folder $YARN_CACHE_FOLDER && yarn install --frozen-lockfile --production
 
 COPY . ./
-
-RUN --mount=type=secret,id=master_key,dst=/opt/rails/config/master.key --mount=type=secret,id=production_key,dst=/opt/rails/config/credentials/production.key rm -rf public/assets/builds && RAILS_ENV=production rails assets:precompile
+RUN SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile && rm -rf node_modules
 
 EXPOSE 3000
 
@@ -37,4 +39,7 @@ ENV RAILS_LOG_TO_STDOUT=1
 
 HEALTHCHECK --interval=10s --timeout=3s --start-period=30s --retries=3 CMD wget -qO /dev/null http://localhost:3000/up || exit 1
 
-CMD ["rails", "s", "-b0"]
+RUN ["chmod", "+x", "bin/docker-entrypoint"]
+ENTRYPOINT ["bin/docker-entrypoint"]
+
+CMD ["./bin/rails", "server", "-b0"]
