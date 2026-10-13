@@ -3,6 +3,7 @@ FROM ruby:3.1.3-alpine
 RUN apk add --update --no-cache \
   vimdiff \
   build-base \
+  bash \
   less \
   nodejs\
   postgresql-dev \

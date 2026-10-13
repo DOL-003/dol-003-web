@@ -5,6 +5,7 @@ ARG RAILS_ENV=production
 RUN apk add --update --no-cache \
   curl \
   build-base \
+  bash \
   less \
   nodejs\
   postgresql-dev \
