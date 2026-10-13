@@ -26,7 +26,7 @@
 #
 # Indexes
 #
-#  index_modders_on_name            (name) USING gin
+#  index_modders_on_name            (name gin_trgm_ops) USING gin
 #  index_modders_on_slug            (slug) UNIQUE
 #  index_modders_on_user_id         (user_id)
 #  index_modders_on_vetting_status  (vetting_status)
